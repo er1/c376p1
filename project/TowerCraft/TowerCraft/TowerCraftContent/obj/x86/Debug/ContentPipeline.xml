@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>MapTextures\grass_texture.jpg</Source>
+      <Name>MapTextures\grass_texture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\MapTextures\grass_texture.xnb</Output>
+      <Time>2011-10-29T17:30:58.0761719-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MapTextures\rockTile.png</Source>
+      <Name>MapTextures\rockTile</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\MapTextures\rockTile.xnb</Output>
+      <Time>2011-10-29T17:30:58.0761719-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Enemy\badguy.png</Source>
+      <Name>Enemy\badguy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\Enemy\badguy.xnb</Output>
+      <Time>2011-10-30T16:12:02.2011718-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Tower\tower1.png</Source>
+      <Name>Tower\tower1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\Tower\tower1.xnb</Output>
+      <Time>2011-11-01T10:44:13.1240235-04:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraftContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraftContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-09-21T13:38:03.7425-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

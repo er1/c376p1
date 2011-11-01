@@ -1,0 +1,10 @@
+c:\users\kylechan\documents\visual studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\TowerCraft.exe
+c:\users\kylechan\documents\visual studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\TowerCraft.pdb
+c:\users\kylechan\documents\visual studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\kylechan\documents\visual studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\kylechan\documents\visual studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\obj\x86\Debug\TowerCraft.exe
+c:\users\kylechan\documents\visual studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\obj\x86\Debug\TowerCraft.pdb
+C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\MapTextures\grass_texture.xnb
+C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\MapTextures\rockTile.xnb
+C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\Enemy\badguy.xnb
+C:\Users\kylechan\Documents\Visual Studio 2010\Projects\TowerCraft\TowerCraft\TowerCraft\bin\x86\Debug\Content\Tower\tower1.xnb
