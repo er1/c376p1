@@ -21,7 +21,9 @@ namespace TowerCraft3D
         Camera cam;
         player character;
         Model MinecraftLikeModel;
+        Model Monster1;
         int worldSize;
+        static Random random = new Random();
         #region Cube World Variables
         BasicEffect effect;
         protected VertexBuffer vertexBuffer;
@@ -31,7 +33,9 @@ namespace TowerCraft3D
         world worldBox;
         Texture2D boxTexture;
         #endregion
+        List<monster> monsters = new List<monster>();
 
+        int numberOfMonster1s = 30;
 
         public ModelManager(Game game)
             : base(game)
@@ -65,7 +69,13 @@ namespace TowerCraft3D
             effect = new BasicEffect(GraphicsDevice);
             #endregion
             MinecraftLikeModel = Game.Content.Load<Model>(@"Models\\Char\\Char");
+            Monster1 = Game.Content.Load<Model>(@"Models\\Monster1\\monster1");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
+
+            for (int i = 0; i < numberOfMonster1s; i++)
+            {
+                monsters.Add(new monster(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)), new Vector3(1, 0, 0)));
+            }
 
             base.LoadContent();
         }
@@ -82,6 +92,11 @@ namespace TowerCraft3D
 
             //Update Player
             character.Update();
+
+            for (int i = 0; i < monsters.Count; i++)
+            {
+                monsters[i].Update();
+            }
 
             base.Update(gameTime);
         }
@@ -114,8 +129,38 @@ namespace TowerCraft3D
             #endregion
             //Draw Player
             character.DrawModel(cam);
+            for (int i = 0; i < monsters.Count; i++)
+            {
+                monsters[i].DrawModel(cam);
+            }
+
+
             Game.GraphicsDevice.DepthStencilState = DepthStencilState.None;
             base.Draw(gameTime);
         }
+
+
+        #region XNA Wiki Random Function
+        //XNA WIKI Random stuff
+        private  int RandomNumber(int min, int max)
+        {
+             
+            return random.Next(min, max);
+        }
+        public  float RandomBetween(double min, double max)
+        {
+            
+            return (float)(min + (float)random.NextDouble() * (max - min));
+        }
+        //public static Vector3 RandomPosition(Vector3 minBoxPos, Vector3 maxBoxPos)
+        //{
+        //    return new Vector3(
+        //             RandomBetween(minBoxPos.X, maxBoxPos.X),
+        //             RandomBetween(minBoxPos.Y, maxBoxPos.Y),
+        //             RandomBetween(minBoxPos.Z, maxBoxPos.Z));
+        //}
+        #endregion
     }
+
+
 }
