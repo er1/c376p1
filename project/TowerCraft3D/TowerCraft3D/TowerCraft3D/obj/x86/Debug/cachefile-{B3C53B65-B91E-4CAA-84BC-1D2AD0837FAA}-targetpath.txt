@@ -1,0 +1,14 @@
+Content\Models\Char\Arm1.xnb
+Content\Models\Char\Arm2.xnb
+Content\Models\Char\Head.xnb
+Content\Models\Char\Leg1.xnb
+Content\Models\Char\Leg2.xnb
+Content\Models\Char\torso.xnb
+Content\Models\Char\Char.xnb
+Content\Models\Char\Head_0.xnb
+Content\Models\Char\Arm2_0.xnb
+Content\Models\Char\Leg2_0.xnb
+Content\Models\Char\Arm1_0.xnb
+Content\Models\Char\Leg1_0.xnb
+Content\Models\Char\torso_0.xnb
+Content\Textures\background\back512.xnb

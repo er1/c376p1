@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Models\Char\Arm1.bmp</Source>
+      <Name>Models\Char\Arm1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1.xnb</Output>
+      <Time>2011-11-22T23:32:27.8691407-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Arm2.bmp</Source>
+      <Name>Models\Char\Arm2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2.xnb</Output>
+      <Time>2011-11-22T23:32:27.8740235-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Head.bmp</Source>
+      <Name>Models\Char\Head</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head.xnb</Output>
+      <Time>2011-11-22T23:32:27.8828125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Leg1.bmp</Source>
+      <Name>Models\Char\Leg1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1.xnb</Output>
+      <Time>2011-11-22T23:32:27.8876953-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Leg2.bmp</Source>
+      <Name>Models\Char\Leg2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2.xnb</Output>
+      <Time>2011-11-22T23:32:27.8945313-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\torso.bmp</Source>
+      <Name>Models\Char\torso</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso.xnb</Output>
+      <Time>2011-11-22T23:32:27.9003907-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Char.x</Source>
+      <Name>Models\Char\Char</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Char.xnb</Output>
+      <Time>2011-11-22T23:32:53.3964844-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Char\Char_0.xml</Key>
+        <Value>2011-11-22T23:33:49.7792969-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Char\Char.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Char\Char_0.xml</Output>
+      <Time>2011-11-22T23:32:53.3964844-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Head.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Output>
+      <Time>2011-11-22T23:32:27.8828125-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Arm2.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Output>
+      <Time>2011-11-22T23:32:27.8740235-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Leg2.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Output>
+      <Time>2011-11-22T23:32:27.8945313-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Arm1.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Output>
+      <Time>2011-11-22T23:32:27.8691407-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Leg1.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Output>
+      <Time>2011-11-22T23:32:27.8876953-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\torso.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Output>
+      <Time>2011-11-22T23:32:27.9003907-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\background\back512.png</Source>
+      <Name>Textures\background\back512</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\background\back512.xnb</Output>
+      <Time>2011-11-22T23:44:41.0810547-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-09-21T13:38:03.7425-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
