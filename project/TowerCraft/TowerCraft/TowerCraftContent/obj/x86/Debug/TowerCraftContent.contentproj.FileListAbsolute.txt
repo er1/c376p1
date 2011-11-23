@@ -1,1 +1,0 @@
-c:\users\kylechan\documents\visual studio 2010\Projects\TowerCraft\TowerCraft\TowerCraftContent\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -1,4 +1,0 @@
-Content\MapTextures\grass_texture.xnb
-Content\MapTextures\rockTile.xnb
-Content\Enemy\badguy.xnb
-Content\Tower\tower1.xnb
