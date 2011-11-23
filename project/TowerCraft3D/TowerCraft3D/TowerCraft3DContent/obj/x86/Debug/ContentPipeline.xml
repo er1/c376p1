@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1.xnb</Output>
-      <Time>2011-11-22T23:32:27.8691407-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1.xnb</Output>
+      <Time>2011-11-23T16:27:50.4272378-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Arm2.bmp</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2.xnb</Output>
-      <Time>2011-11-22T23:32:27.8740235-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2.xnb</Output>
+      <Time>2011-11-23T16:27:50.430238-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Head.bmp</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head.xnb</Output>
-      <Time>2011-11-22T23:32:27.8828125-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head.xnb</Output>
+      <Time>2011-11-23T16:27:50.4342382-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Leg1.bmp</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1.xnb</Output>
-      <Time>2011-11-22T23:32:27.8876953-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1.xnb</Output>
+      <Time>2011-11-23T16:27:50.4392385-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Leg2.bmp</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2.xnb</Output>
-      <Time>2011-11-22T23:32:27.8945313-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2.xnb</Output>
+      <Time>2011-11-23T16:27:50.4422386-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\torso.bmp</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso.xnb</Output>
-      <Time>2011-11-22T23:32:27.9003907-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso.xnb</Output>
+      <Time>2011-11-23T16:27:50.4472389-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\background\back512.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\background\back512.xnb</Output>
-      <Time>2011-11-22T23:44:41.0810547-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\background\back512.xnb</Output>
+      <Time>2011-11-23T16:27:50.4552394-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube1_auv.jpg</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube1_auv.xnb</Output>
-      <Time>2011-11-23T15:21:29.0986328-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube1_auv.xnb</Output>
+      <Time>2011-11-23T16:27:50.448239-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_auv.jpg</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_auv.xnb</Output>
-      <Time>2011-11-23T15:21:29.0996094-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_auv.xnb</Output>
+      <Time>2011-11-23T16:27:50.449239-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy3_auv.jpg</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv.xnb</Output>
-      <Time>2011-11-23T15:21:29.1025391-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv.xnb</Output>
+      <Time>2011-11-23T16:27:50.4502391-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy4_auv.jpg</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv.xnb</Output>
-      <Time>2011-11-23T15:21:29.140625-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv.xnb</Output>
+      <Time>2011-11-23T16:27:50.4512392-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy5_auv.jpg</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv.xnb</Output>
-      <Time>2011-11-23T15:21:29.1425781-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv.xnb</Output>
+      <Time>2011-11-23T16:27:50.4522392-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy6_auv.jpg</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv.xnb</Output>
-      <Time>2011-11-23T15:21:29.1435547-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv.xnb</Output>
+      <Time>2011-11-23T16:27:50.4522392-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Char.x</Source>
@@ -124,18 +124,18 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Char.xnb</Output>
-      <Time>2011-11-22T23:32:53.3964844-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Char.xnb</Output>
+      <Time>2011-11-23T16:27:50.431238-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Char\Char_0.xml</Key>
-        <Value>2011-11-23T15:28:49.2197266-05:00</Value>
+        <Value>2011-11-23T16:32:28.0111147-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Monster1\monster1.x</Source>
@@ -143,25 +143,25 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\monster1.xnb</Output>
-      <Time>2011-11-23T15:31:17.8818359-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\monster1.xnb</Output>
+      <Time>2011-11-23T16:27:50.4532393-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Monster1\monster1_0.xml</Key>
-        <Value>2011-11-23T15:31:18.4619141-05:00</Value>
+        <Value>2011-11-23T16:32:29.0031714-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Request>
+      <Request>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Char\Char.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Char\Char_0.xml</Output>
-      <Time>2011-11-22T23:32:53.3964844-05:00</Time>
+      <Time>2011-11-23T16:27:50.431238-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Head.bmp</Source>
@@ -176,8 +176,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Output>
-      <Time>2011-11-22T23:32:27.8828125-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4342382-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Arm2.bmp</Source>
@@ -192,8 +192,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Output>
-      <Time>2011-11-22T23:32:27.8740235-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.430238-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Leg2.bmp</Source>
@@ -208,8 +208,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Output>
-      <Time>2011-11-22T23:32:27.8945313-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4422386-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Arm1.bmp</Source>
@@ -224,8 +224,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Output>
-      <Time>2011-11-22T23:32:27.8691407-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4272378-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Leg1.bmp</Source>
@@ -240,8 +240,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Output>
-      <Time>2011-11-22T23:32:27.8876953-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4392385-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\torso.bmp</Source>
@@ -256,15 +256,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Output>
-      <Time>2011-11-22T23:32:27.9003907-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4472389-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\monster1.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Monster1\monster1_0.xml</Output>
-      <Time>2011-11-23T15:31:17.8818359-05:00</Time>
+      <Time>2011-11-23T16:27:50.4532393-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy6_auv.jpg</Source>
@@ -279,8 +279,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Output>
-      <Time>2011-11-23T15:21:29.1435547-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4522392-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy5_auv.jpg</Source>
@@ -295,8 +295,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Output>
-      <Time>2011-11-23T15:21:29.1425781-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4522392-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy4_auv.jpg</Source>
@@ -311,8 +311,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Output>
-      <Time>2011-11-23T15:21:29.140625-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4512392-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy3_auv.jpg</Source>
@@ -327,8 +327,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Output>
-      <Time>2011-11-23T15:21:29.1025391-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.4502391-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_auv.jpg</Source>
@@ -343,8 +343,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Output>
-      <Time>2011-11-23T15:21:29.0996094-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.449239-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube1_auv.jpg</Source>
@@ -359,8 +359,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Output>
-      <Time>2011-11-23T15:21:29.0986328-05:00</Time>
+      <Output>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Output>
+      <Time>2011-11-23T16:27:50.448239-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -368,39 +368,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
         <Value>2010-08-23T12:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-09-21T13:38:03.7425-04:00</Value>
+        <Value>2011-06-27T15:04:26.0779306-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
