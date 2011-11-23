@@ -22,6 +22,7 @@ namespace TowerCraft3D
         player character;
         Model MinecraftLikeModel;
         Model Monster1;
+        Model bullet;
         int worldSize;
         static Random random = new Random();
         #region Cube World Variables
@@ -34,6 +35,7 @@ namespace TowerCraft3D
         Texture2D boxTexture;
         #endregion
         List<monster> monsters = new List<monster>();
+        List<projectile> projectiles = new List<projectile>();
 
         int numberOfMonster1s = 30;
 
@@ -70,6 +72,7 @@ namespace TowerCraft3D
             #endregion
             MinecraftLikeModel = Game.Content.Load<Model>(@"Models\\Char\\Char");
             Monster1 = Game.Content.Load<Model>(@"Models\\Monster1\\monster1");
+            bullet = Game.Content.Load<Model>(@"Models\\Bullet\\bullet");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
 
             for (int i = 0; i < numberOfMonster1s; i++)
