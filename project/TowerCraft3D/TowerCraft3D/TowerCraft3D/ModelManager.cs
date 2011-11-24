@@ -24,6 +24,7 @@ namespace TowerCraft3D
         Model MinecraftLikeModel;
         Model Monster1;
         Model bullet;
+        int currentWave;
         int worldSize;
         static Random random = new Random();
         #region Cube World Variables
@@ -37,6 +38,8 @@ namespace TowerCraft3D
         #endregion
         List<monster> monsters = new List<monster>();
         List<projectile> projectiles = new List<projectile>();
+        //First level Waves
+        List<waveManager> wavesLevel1 = new List<waveManager>();
 
         int numberOfMonster1s = 30;
 
@@ -77,10 +80,13 @@ namespace TowerCraft3D
             bullet = Game.Content.Load<Model>(@"Models\\Bullet\\bullet");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
 
-            for (int i = 0; i < numberOfMonster1s; i++)
-            {
-                monsters.Add(new monster(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)), new Vector3(1, 0, 0)));
-            }
+            //LOAD WAVE information for Level1
+            wavesLevel1.Add(new waveManager(1,10,TimeSpan.FromMinutes(2.0),TimeSpan.FromSeconds(3.0)));
+
+            //for (int i = 0; i < numberOfMonster1s; i++)
+            //{
+            //    monsters.Add(new monster(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)), new Vector3(1, 0, 0)));
+            //}
 
             base.LoadContent();
         }
@@ -95,9 +101,26 @@ namespace TowerCraft3D
             // TODO: Add your update code here
 
             tower towerTest = new tower(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)));
-
             towerTest.map = map;
 
+            #region Update Level1
+            //Level 1
+            wavesLevel1[currentWave].UpdateWave(gameTime);
+            //Check if this Waves Timer is done or monsters are all dead (so wave is done)
+            if ((wavesLevel1[currentWave].levelTimer <= TimeSpan.Zero && wavesLevel1[currentWave].spawn <= 0)
+                || wavesLevel1[currentWave].spawn <= 0)
+            {
+                //Game.Exit();
+                currentWave++;
+            }
+                //If Level isn't done then check the Timer to add monsters at invervals
+            else if (wavesLevel1[currentWave].canSpawn && wavesLevel1[currentWave].spawn > 0)
+            {
+                wavesLevel1[currentWave].spawn--;
+                wavesLevel1[currentWave].canSpawn = false;
+                monsters.Add(new monster(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)), new Vector3(1, 0, 0)));
+            }
+            #endregion
 
             for (int i = 0; i < monsters.Count; i++)
             {
