@@ -2,6 +2,5 @@
 C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\obj\x86\Debug\ResolveAssemblyReference.cache
 =======
 C:\Users\kylechan\Desktop\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Skald\Git\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3DContent\obj\x86\Debug\ResolveAssemblyReference.cache
 >>>>>>> 98c1fd6c760c458eea76f17b18f2dcee6d98665c
