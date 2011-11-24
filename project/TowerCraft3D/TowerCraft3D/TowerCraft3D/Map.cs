@@ -10,15 +10,20 @@ namespace TowerCraft3D
 {
     public struct TileCoord
     {
-        int x;
-        int y;
+        public int x, y;
+
+        public TileCoord(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
     }
 
     class Map
     {
-        private Dictionary<TileCoord, Tile> map { get; set; }
-
-        private Map()
+        public Dictionary<TileCoord, Tile> map { get; set; }
+        
+        public Map()
         {
             map = new Dictionary<TileCoord, Tile>();
         }

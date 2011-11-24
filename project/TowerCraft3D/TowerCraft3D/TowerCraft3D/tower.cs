@@ -11,10 +11,13 @@ namespace TowerCraft3D
 
     class tower : model
     {
+
         private Vector3 position;
         private int upgradeLevel;
-        private int radius;
+        private float radius;
         private monster target;
+        public Map map;
+        private const float TILESIZE = 10;
         
 
         public tower(ref Model temp, Vector3 location)
@@ -27,7 +30,7 @@ namespace TowerCraft3D
 
         public void Update()
         {
-            if (lookForTarget())
+            //if (lookForTarget())
             {
                 Shoot();
             }
@@ -35,10 +38,21 @@ namespace TowerCraft3D
 
         public bool lookForTarget()
         {
-            if (target.getPosition().X > 0)
+            
+            int numberOfTileRange = (int)Math.Ceiling(radius/TILESIZE);
+            List<model> targets = new List<model>();
+            for (int i = 0; i < numberOfTileRange; i++)
             {
-                return true;
+                for (int j = 0; j < numberOfTileRange; j++)
+                {
+                    
+                    if(map.doesTileExist(new TileCoord(i, j)))
+                    {
+                        targets.AddRange(map.GetTile(new TileCoord(i, j)).getEntities().ToList() );
+                    }
+                }
             }
+
             return false;
         }
 
