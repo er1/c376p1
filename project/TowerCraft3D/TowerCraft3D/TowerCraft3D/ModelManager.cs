@@ -97,8 +97,7 @@ namespace TowerCraft3D
             tower towerTest = new tower(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)));
 
             towerTest.map = map;
-            
-            character.Update();
+
 
             for (int i = 0; i < monsters.Count; i++)
             {
@@ -115,7 +114,7 @@ namespace TowerCraft3D
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Viewport = viewport;
-           
+            Game.GraphicsDevice.DepthStencilState = DepthStencilState.None;
             #region Draw Cube World
             // Set the vertex buffer on the GraphicsDevice
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
@@ -151,7 +150,7 @@ namespace TowerCraft3D
                 projectiles[i].DrawModel(cam);
             }
 
-            Game.GraphicsDevice.DepthStencilState = DepthStencilState.None;
+            
             base.Draw(gameTime);
         }
 
