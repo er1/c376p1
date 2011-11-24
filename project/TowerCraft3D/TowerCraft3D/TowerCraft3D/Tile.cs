@@ -11,6 +11,23 @@ namespace TowerCraft3D
 
         public Tile()
         {
+            entities = new HashSet<model>();
+        }
+
+        public HashSet<model> getEntities()
+        {
+            return entities;
+        }
+
+
+        public void addEntity(model model)
+        {
+            entities.Add(model);
+        }
+
+        public void removeEntity(model model)
+        {
+            entities.Remove(model);
         }
 
 

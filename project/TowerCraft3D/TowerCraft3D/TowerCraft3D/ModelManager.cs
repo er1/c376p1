@@ -55,6 +55,7 @@ namespace TowerCraft3D
             viewport = ((Game1)Game).MainScreen;
             cam = ((Game1)Game).cameraMain;
             worldSize = ((Game1)Game).worldSize;
+            
             base.Initialize();
         }
         protected override void  LoadContent()
@@ -91,6 +92,9 @@ namespace TowerCraft3D
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
+
+            //towerTest.map = ((Game1)Game).map;
+
             //Update Player
             character.Update();
 
