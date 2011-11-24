@@ -19,7 +19,6 @@ namespace TowerCraft3D
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public Camera cameraMain { get; protected set; }
-        public Map map { get; set; }
         public Viewport MainScreen;
         private int worldWidth;
         private int worldHeight;
@@ -64,7 +63,6 @@ namespace TowerCraft3D
 
             
             //Model Manager
-            map = new Map();
             modelManager = new ModelManager(this);
             Components.Add(modelManager);        
             
@@ -121,5 +119,6 @@ namespace TowerCraft3D
 
             base.Draw(gameTime);
         }
+
     }
 }

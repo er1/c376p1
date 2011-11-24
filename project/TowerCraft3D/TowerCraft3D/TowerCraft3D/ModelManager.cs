@@ -18,6 +18,7 @@ namespace TowerCraft3D
     public class ModelManager : DrawableGameComponent
     {
         Viewport viewport;
+        Map map;
         Camera cam;
         player character;
         Model MinecraftLikeModel;
@@ -93,8 +94,10 @@ namespace TowerCraft3D
         {
             // TODO: Add your update code here
 
-            //towerTest.map = ((Game1)Game).map;
-            //Update Player
+            tower towerTest = new tower(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)));
+
+            towerTest.map = map;
+            
             character.Update();
 
             for (int i = 0; i < monsters.Count; i++)

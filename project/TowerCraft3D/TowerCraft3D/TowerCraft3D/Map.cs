@@ -21,7 +21,7 @@ namespace TowerCraft3D
 
     class Map
     {
-        public Dictionary<TileCoord, Tile> map { get; set; }
+        private Dictionary<TileCoord, Tile> map { get; set; }
         
         public Map()
         {
