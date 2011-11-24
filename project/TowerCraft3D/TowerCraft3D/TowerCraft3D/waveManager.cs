@@ -9,20 +9,18 @@ namespace TowerCraft3D
 {
     class waveManager
     {
-        public int maxSpawn { get; protected set; }
-        public int minSpawn { get; protected set; }
+        public int spawn { get;  set; }
         public TimeSpan levelTimer { get; protected set; }
         public TimeSpan monsterTimer { get; protected set; }
         private TimeSpan managerTimer { get; set; }
         public int level{ get; protected set; }
-        public bool canSpawn { get; protected set; }
+        public bool canSpawn { get;  set; }
 
 
-        public waveManager(int currentLevel,int min, int max, TimeSpan levelTime, TimeSpan monsterTime)
+        public waveManager(int currentLevel,int numSpawn, TimeSpan levelTime, TimeSpan monsterTime)
         {
             level = currentLevel;
-            maxSpawn = max;
-            minSpawn = min;
+            spawn = numSpawn;
             levelTimer = levelTime;
             monsterTimer = monsterTime;
             managerTimer = monsterTimer;
@@ -37,23 +35,16 @@ namespace TowerCraft3D
             }
             else
             {
-
                 //Timer for Spawn time between monsters
                 managerTimer -= gameTime.ElapsedGameTime;
                 if (managerTimer <= TimeSpan.Zero)
                 {
                     canSpawn = true;
                     managerTimer = monsterTimer;
+                    
                 }
-
             }
-
-
-
         }
-
-
-
 
     }
 }
