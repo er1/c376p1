@@ -91,8 +91,6 @@ namespace TowerCraft3D
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-           
-
             //Update Player
             character.Update();
 
@@ -111,7 +109,7 @@ namespace TowerCraft3D
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Viewport = viewport;
-           
+            Game.GraphicsDevice.DepthStencilState = DepthStencilState.None;
             #region Draw Cube World
             // Set the vertex buffer on the GraphicsDevice
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
@@ -147,7 +145,7 @@ namespace TowerCraft3D
                 projectiles[i].DrawModel(cam);
             }
 
-            Game.GraphicsDevice.DepthStencilState = DepthStencilState.None;
+            
             base.Draw(gameTime);
         }
 
