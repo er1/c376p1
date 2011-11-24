@@ -15,6 +15,7 @@ namespace TowerCraft3D
         private int upgradeLevel;
         private int radius;
         private monster target;
+        
 
         public tower(ref Model temp, Vector3 location)
             : base(temp)

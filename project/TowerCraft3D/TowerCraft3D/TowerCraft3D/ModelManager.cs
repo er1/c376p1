@@ -100,7 +100,11 @@ namespace TowerCraft3D
             {
                 monsters[i].Update();
             }
-
+            //updates projectile list
+            for (int i = 0; i < projectiles.Count; i++)
+            {
+                projectiles[i].Update();
+            }
             base.Update(gameTime);
         }
 
@@ -132,14 +136,26 @@ namespace TowerCraft3D
             #endregion
             //Draw Player
             character.DrawModel(cam);
+            //Draw Monsters
             for (int i = 0; i < monsters.Count; i++)
             {
                 monsters[i].DrawModel(cam);
             }
-
+            //Draws projectiles list
+            for (int i = 0; i < projectiles.Count; i++) 
+            {
+                projectiles[i].DrawModel(cam);
+            }
 
             Game.GraphicsDevice.DepthStencilState = DepthStencilState.None;
             base.Draw(gameTime);
+        }
+
+        //Add projectiles to the List(to update - check collision - draw)
+        public void addProject(Vector3 position, Vector3 direction)
+        {
+            //Remember to change Model for diff bullets
+            projectiles.Add(new projectile(ref bullet, position, direction));
         }
 
 
