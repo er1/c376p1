@@ -20,6 +20,7 @@ namespace TowerCraft3D
         public double minMove { get; set; }
         public double maxMove { get; set; }
         protected float move = 0.5f;
+        public bool hitColony {get;set;}
 
         public monster(ref Model temp, Vector3 location, Vector3 newDirection)
             : base(temp)
@@ -27,6 +28,7 @@ namespace TowerCraft3D
             world = Matrix.CreateTranslation(location);
             direction = newDirection*move;
             //initialDirection = newDirection;
+            hitColony = false;
 
         }
         //Random Function
@@ -40,8 +42,11 @@ namespace TowerCraft3D
             
             ////World wrapping
             ////X coordinates
-            //if (world.M41 >= worldSize)
-            //{ world = Matrix.CreateTranslation(new Vector3(-worldSize + 1, world.M42, world.M43)); }
+            if (world.M41 >= 0)
+            { 
+                hitColony = true;
+                //world = Matrix.CreateTranslation(new Vector3(-worldSize + 1, world.M42, world.M43));
+            }
             //if (world.M41 <= -worldSize)
             //{ world = Matrix.CreateTranslation(new Vector3(worldSize - 1, world.M42, world.M43)); }
             ////Y coordinates
