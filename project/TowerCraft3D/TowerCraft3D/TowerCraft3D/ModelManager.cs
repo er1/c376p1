@@ -25,6 +25,7 @@ namespace TowerCraft3D
         Model Monster1;
         Model bullet;
         Model tile;
+        Model colony;
         int currentWave;
         int worldSize;
         static Random random = new Random();
@@ -42,6 +43,8 @@ namespace TowerCraft3D
         List<projectile> projectiles = new List<projectile>();
         //First level Waves
         List<waveManager> wavesLevel1 = new List<waveManager>();
+
+        Colony mainBase;
 
         public ModelManager(Game game)
             : base(game)
@@ -78,18 +81,21 @@ namespace TowerCraft3D
             MinecraftLikeModel = Game.Content.Load<Model>(@"Models\\Char\\Char");
             Monster1 = Game.Content.Load<Model>(@"Models\\Monster1\\monster1");
             tile = Game.Content.Load<Model>(@"Models\\Map\\Tile");
+            colony = Game.Content.Load<Model>(@"Models\\Map\\Colony");
             bullet = Game.Content.Load<Model>(@"Models\\Bullet\\bullet");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
 
             //LOAD WAVE information for Level1
             wavesLevel1.Add(new waveManager(1,20,TimeSpan.FromMinutes(2.0),TimeSpan.FromSeconds(3.0)));
 
+            mainBase = new Colony(ref colony, new Vector3(-10, -30, -12));
+
             //Draw Map
             for (int i = 0; i < 20; i++)
             {
                 for (int j = -4; j < 4; j++)
                 {
-                    tiles.Add(new monster(ref tile, new Vector3(i * -20, -10, j * 20), new Vector3(0, 0, 0)));
+                    tiles.Add(new monster(ref tile, new Vector3(i * -20, 0, j * 20), new Vector3(0, 0, 0)));
                 }
             }
 
@@ -133,6 +139,7 @@ namespace TowerCraft3D
             {
                 tiles[i].Update();
             }
+            mainBase.Update();
 
             for (int i = 0; i < monsters.Count; i++)
             {
@@ -186,6 +193,7 @@ namespace TowerCraft3D
             {
                 tiles[i].DrawModel(cam);
             }
+            mainBase.DrawModel(cam);
 
             //Draw Monsters
             for (int i = 0; i < monsters.Count; i++)
