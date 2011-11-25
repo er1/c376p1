@@ -12,7 +12,7 @@ namespace TowerCraft3D
     class tower : model
     {
 
-
+        public int towerType { get; set; }
         private Vector3 position;
         private int upgradeLevel;
         private float radius;
@@ -41,7 +41,7 @@ namespace TowerCraft3D
             {
                 Shoot();
             }
-            world *= Matrix.CreateTranslation(position);
+            world = Matrix.CreateTranslation(position);
         }
 
         public bool iWantToShoot(GameTime gameTime)
