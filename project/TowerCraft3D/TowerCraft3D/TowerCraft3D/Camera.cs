@@ -123,14 +123,14 @@ namespace TowerCraft3D
             {
                 // TODO: Add your update code here
                 //Translation and Strafing
-                if (Keyboard.GetState().IsKeyDown(Keys.W))
-                {
-                    cameraPosition += cameraDirection * move;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.S))
-                {
-                    cameraPosition -= cameraDirection * move;
-                }
+                //if (Keyboard.GetState().IsKeyDown(Keys.W))
+                //{
+                //    cameraPosition += cameraDirection * move;
+                //}
+                //if (Keyboard.GetState().IsKeyDown(Keys.S))
+                //{
+                //    cameraPosition -= cameraDirection * move;
+                //}
                 if (cameraPosition.X >= -350)
                 {
                     if (Keyboard.GetState().IsKeyDown(Keys.Left))
