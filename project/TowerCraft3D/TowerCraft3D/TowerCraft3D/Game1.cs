@@ -41,7 +41,7 @@ namespace TowerCraft3D
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            worldSize = 100;
+            worldSize = 390;
             worldHeight = graphics.PreferredBackBufferHeight;
             worldWidth = graphics.PreferredBackBufferWidth;
             #region Viewport stuff
@@ -56,7 +56,7 @@ namespace TowerCraft3D
             //Camera component
             Components.Remove(cameraMain);
             Components.Remove(modelManager);
-            cameraMain = new Camera(this, new Vector3(0, 125, 125), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
+            cameraMain = new Camera(this, new Vector3(0, 125, 118), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
             Components.Add(cameraMain);
             
             this.IsFixedTimeStep = false;

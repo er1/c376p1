@@ -46,7 +46,7 @@ namespace TowerCraft3D
             cameraUp = up;
             CreateLootAt();
             viewport = NewViewport;
-            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)viewport.Width / (float)viewport.Height, 1, 500);
+            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)viewport.Width / (float)viewport.Height, 1, 2000);
             moveAllowed = move;
         }
         // Create look at function
@@ -118,15 +118,20 @@ namespace TowerCraft3D
                 //{
                 //    cameraPosition -= cameraDirection * move;
                 //}
-                if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                if (cameraPosition.X >= -350)
                 {
-                    cameraPosition += Vector3.Cross(cameraUp, cameraDirection) * move;
+                    if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                    {
+                        cameraPosition += Vector3.Cross(cameraUp, cameraDirection) * move;
+                    }
                 }
-                if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                if (cameraPosition.X <= 350)
                 {
-                    cameraPosition -= Vector3.Cross(cameraUp, cameraDirection) * move;
+                    if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                    {
+                        cameraPosition -= Vector3.Cross(cameraUp, cameraDirection) * move;
+                    }
                 }
-
                 //// Yaw rotation
                 //if (Keyboard.GetState().IsKeyDown(Keys.Left))
                 //{

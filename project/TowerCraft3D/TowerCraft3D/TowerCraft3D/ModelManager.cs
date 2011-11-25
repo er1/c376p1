@@ -164,26 +164,26 @@ namespace TowerCraft3D
             GraphicsDevice.Viewport = viewport;
             Game.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             #region Draw Cube World
-            //// Set the vertex buffer on the GraphicsDevice
-            //GraphicsDevice.SetVertexBuffer(vertexBuffer);
-            ////Set object and camera info
-            ////effect.World = Matrix.Identity;
-            //effect.World = world;
-            ////effect.World = worldRotation * worldTranslation * worldRotation;
-            //effect.View = cam.view;
-            //effect.Projection = cam.projection;
-            ////effect.VertexColorEnabled = true;
-            //effect.Texture = boxTexture;
-            //effect.TextureEnabled = true;
+            // Set the vertex buffer on the GraphicsDevice
+            GraphicsDevice.SetVertexBuffer(vertexBuffer);
+            //Set object and camera info
+            //effect.World = Matrix.Identity;
+            effect.World = world;
+            //effect.World = worldRotation * worldTranslation * worldRotation;
+            effect.View = cam.view;
+            effect.Projection = cam.projection;
+            //effect.VertexColorEnabled = true;
+            effect.Texture = boxTexture;
+            effect.TextureEnabled = true;
 
 
-            //// Begin effect and draw for each pass
-            //foreach (EffectPass pass in effect.CurrentTechnique.Passes)
-            //{
-            //    pass.Apply();
-            //    GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>
-            //        (PrimitiveType.TriangleStrip, worldBox.getCubeVertices(), 0, 24);
-            //}
+            // Begin effect and draw for each pass
+            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            {
+                pass.Apply();
+                GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>
+                    (PrimitiveType.TriangleStrip, worldBox.getCubeVertices(), 0, 24);
+            }
             #endregion
             //Draw Player
             character.DrawModel(cam);
