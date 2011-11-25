@@ -43,6 +43,7 @@ namespace TowerCraft3D
         List<projectile> projectiles = new List<projectile>();
         //First level Waves
         List<waveManager> wavesLevel1 = new List<waveManager>();
+        List<tower> towers = new List<tower>();
 
         TileCoord chosenTile;
 
