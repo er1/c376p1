@@ -169,13 +169,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Towers\GunTower\GunTower.X">
-      <Name>GunTower</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Models\Towers\GunTower\GunTowerText.jpg">
       <Name>GunTowerText</Name>
       <Importer>TextureImporter</Importer>
