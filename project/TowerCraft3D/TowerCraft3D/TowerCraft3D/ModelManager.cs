@@ -92,11 +92,11 @@ namespace TowerCraft3D
             //}
 
             //Draw Map
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 20; i++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int j = -4; j < 4; j++)
                 {
-                    tiles.Add(new monster(ref tile, new Vector3(i * 20, -10, j * 20), new Vector3(0, 0, 0)));
+                    tiles.Add(new monster(ref tile, new Vector3(i * -20, -10, j * 20), new Vector3(0, 0, 0)));
                 }
             }
 
