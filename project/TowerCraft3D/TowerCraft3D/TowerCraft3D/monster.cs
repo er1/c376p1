@@ -74,6 +74,11 @@ namespace TowerCraft3D
             return new Vector3((float)world.M41, (float)world.M42, (float)world.M43);
         }
 
+        public void setPosition(Vector3 newPos)
+        {
+            world = Matrix.CreateTranslation(newPos);
+        }
+
         public void setDirection(Vector3 dir)
         {
             world *= Matrix.CreateTranslation(dir);

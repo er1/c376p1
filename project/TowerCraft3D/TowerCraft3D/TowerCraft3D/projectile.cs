@@ -29,6 +29,7 @@ namespace TowerCraft3D
             direction = newDirection;
             projectileDistanceTime = 450;
             projectileTimer = projectileDistanceTime;
+
         }
         public void setSpeed(float move)
         {
