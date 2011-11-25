@@ -26,6 +26,7 @@ namespace TowerCraft3D
         Model bullet;
         Model tile;
         Model colony;
+        Model gunTower;
         int currentWave;
         int worldSize;
         static Random random = new Random();
@@ -88,6 +89,7 @@ namespace TowerCraft3D
             tile = Game.Content.Load<Model>(@"Models\\Map\\Tile");
             colony = Game.Content.Load<Model>(@"Models\\Map\\Colony");
             bullet = Game.Content.Load<Model>(@"Models\\Bullet\\bullet");
+            gunTower = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
 
             //LOAD WAVE information for Level1
@@ -148,6 +150,11 @@ namespace TowerCraft3D
             //Selected tile
             chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
             tiles[tiles.Count - 1].Update();
+            //KeyboardState keyStatus = Keyboard.GetState();
+            if(Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
+                towers.Add(new tower(ref gunTower, (new Vector3(chosenTile.x*20, 2, chosenTile.y*20))));
+            }
 
             for (int i = 0; i < monsters.Count; i++)
             {
@@ -158,6 +165,11 @@ namespace TowerCraft3D
                     monsters.RemoveAt(i);
                     i--;
                 }
+            }
+             //Draws Tower list
+            for (int i = 0; i < towers.Count; i++)
+            {
+                towers[i].Update();
             }
             //updates projectile list
             for (int i = 0; i < projectiles.Count; i++)
@@ -216,7 +228,11 @@ namespace TowerCraft3D
             {
                 projectiles[i].DrawModel(cam);
             }
-
+            //Draws Tower list
+            for (int i = 0; i < towers.Count; i++)
+            {
+                towers[i].DrawModel(cam);
+            }
             
             base.Draw(gameTime);
         }
