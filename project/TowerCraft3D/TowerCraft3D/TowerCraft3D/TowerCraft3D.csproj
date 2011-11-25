@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
+    <Compile Include="Colony.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="model.cs" />
     <Compile Include="ModelManager.cs" />
