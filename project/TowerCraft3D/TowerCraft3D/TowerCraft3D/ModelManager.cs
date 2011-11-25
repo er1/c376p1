@@ -24,6 +24,7 @@ namespace TowerCraft3D
         Model MinecraftLikeModel;
         Model Monster1;
         Model bullet;
+        Model tile;
         int currentWave;
         int worldSize;
         static Random random = new Random();
@@ -37,6 +38,7 @@ namespace TowerCraft3D
         Texture2D boxTexture;
         #endregion
         List<monster> monsters = new List<monster>();
+        List<monster> tiles = new List<monster>();
         List<projectile> projectiles = new List<projectile>();
         //First level Waves
         List<waveManager> wavesLevel1 = new List<waveManager>();
@@ -77,6 +79,7 @@ namespace TowerCraft3D
             #endregion
             MinecraftLikeModel = Game.Content.Load<Model>(@"Models\\Char\\Char");
             Monster1 = Game.Content.Load<Model>(@"Models\\Monster1\\monster1");
+            tile = Game.Content.Load<Model>(@"Models\\Map\\Tile");
             bullet = Game.Content.Load<Model>(@"Models\\Bullet\\bullet");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
 
@@ -87,6 +90,15 @@ namespace TowerCraft3D
             //{
             //    monsters.Add(new monster(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)), new Vector3(1, 0, 0)));
             //}
+
+            //Draw Map
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    tiles.Add(new monster(ref tile, new Vector3(i * 20, -10, j * 20), new Vector3(0, 0, 0)));
+                }
+            }
 
             base.LoadContent();
         }
@@ -99,9 +111,6 @@ namespace TowerCraft3D
         public override void Update(GameTime gameTime)
         {
             // TODO: Add your update code here
-
-            tower towerTest = new tower(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)));
-            towerTest.map = map;
 
             #region Update Level1
             //Level 1
@@ -126,6 +135,12 @@ namespace TowerCraft3D
             }
             #endregion
 
+            //update Map
+            for (int i = 0; i < tiles.Count; i++)
+            {
+                tiles[i].Update();
+            }
+
             for (int i = 0; i < monsters.Count; i++)
             {
                 monsters[i].Update();
@@ -141,31 +156,38 @@ namespace TowerCraft3D
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Viewport = viewport;
-            Game.GraphicsDevice.DepthStencilState = DepthStencilState.None;
-            #region Draw Cube World
-            // Set the vertex buffer on the GraphicsDevice
-            GraphicsDevice.SetVertexBuffer(vertexBuffer);
-            //Set object and camera info
-            //effect.World = Matrix.Identity;
-            effect.World = world;
-            //effect.World = worldRotation * worldTranslation * worldRotation;
-            effect.View = cam.view;
-            effect.Projection = cam.projection;
-            //effect.VertexColorEnabled = true;
-            effect.Texture = boxTexture;
-            effect.TextureEnabled = true;
+            Game.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            //#region Draw Cube World
+            //// Set the vertex buffer on the GraphicsDevice
+            //GraphicsDevice.SetVertexBuffer(vertexBuffer);
+            ////Set object and camera info
+            ////effect.World = Matrix.Identity;
+            //effect.World = world;
+            ////effect.World = worldRotation * worldTranslation * worldRotation;
+            //effect.View = cam.view;
+            //effect.Projection = cam.projection;
+            ////effect.VertexColorEnabled = true;
+            //effect.Texture = boxTexture;
+            //effect.TextureEnabled = true;
 
 
-            // Begin effect and draw for each pass
-            foreach (EffectPass pass in effect.CurrentTechnique.Passes)
-            {
-                pass.Apply();
-                GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>
-                    (PrimitiveType.TriangleStrip, worldBox.getCubeVertices(), 0, 24);
-            }
-            #endregion
+            //// Begin effect and draw for each pass
+            //foreach (EffectPass pass in effect.CurrentTechnique.Passes)
+            //{
+            //    pass.Apply();
+            //    GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>
+            //        (PrimitiveType.TriangleStrip, worldBox.getCubeVertices(), 0, 24);
+            //}
+            //#endregion
             //Draw Player
             character.DrawModel(cam);
+
+            //Draw Map
+            for (int i = 0; i < tiles.Count; i++)
+            {
+                tiles[i].DrawModel(cam);
+            }
+
             //Draw Monsters
             for (int i = 0; i < monsters.Count; i++)
             {

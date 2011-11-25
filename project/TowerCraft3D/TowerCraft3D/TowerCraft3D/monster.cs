@@ -38,23 +38,23 @@ namespace TowerCraft3D
         public override void Update()
         {
             
-            //World wrapping
-            //X coordinates
-            if (world.M41 >= worldSize)
-            { world = Matrix.CreateTranslation(new Vector3(-worldSize + 1, world.M42, world.M43)); }
-            if (world.M41 <= -worldSize)
-            { world = Matrix.CreateTranslation(new Vector3(worldSize - 1, world.M42, world.M43)); }
-            //Y coordinates
-            if (world.M42 >= worldSize)
-            { world = Matrix.CreateTranslation(new Vector3(world.M41, -worldSize + 1, world.M43)); }
-            if (world.M42 <= -worldSize)
-            { world = Matrix.CreateTranslation(new Vector3(world.M41, worldSize - 1, world.M43)); }
+            ////World wrapping
+            ////X coordinates
+            //if (world.M41 >= worldSize)
+            //{ world = Matrix.CreateTranslation(new Vector3(-worldSize + 1, world.M42, world.M43)); }
+            //if (world.M41 <= -worldSize)
+            //{ world = Matrix.CreateTranslation(new Vector3(worldSize - 1, world.M42, world.M43)); }
+            ////Y coordinates
+            //if (world.M42 >= worldSize)
+            //{ world = Matrix.CreateTranslation(new Vector3(world.M41, -worldSize + 1, world.M43)); }
+            //if (world.M42 <= -worldSize)
+            //{ world = Matrix.CreateTranslation(new Vector3(world.M41, worldSize - 1, world.M43)); }
 
-            // Z coordinates
-            if (world.M43 >= worldSize)
-            { world = Matrix.CreateTranslation(new Vector3(world.M41, world.M42, -worldSize + 1)); }
-            if (world.M43 <= -worldSize)
-            { world = Matrix.CreateTranslation(new Vector3(world.M41, world.M42, worldSize - 1)); }
+            //// Z coordinates
+            //if (world.M43 >= worldSize)
+            //{ world = Matrix.CreateTranslation(new Vector3(world.M41, world.M42, -worldSize + 1)); }
+            //if (world.M43 <= -worldSize)
+            //{ world = Matrix.CreateTranslation(new Vector3(world.M41, world.M42, worldSize - 1)); }
 
             world *= Matrix.CreateTranslation(direction);
             //rotation *= Matrix.CreateRotationY(MathHelper.PiOver4 / 60);

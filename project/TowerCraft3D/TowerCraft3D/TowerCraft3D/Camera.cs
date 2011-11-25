@@ -76,6 +76,8 @@ namespace TowerCraft3D
         public override void Initialize()
         {
             // TODO: Add your initialization code here
+            
+
             base.Initialize();
         }
         public void setCamPosition(Vector3 pos)
@@ -88,21 +90,21 @@ namespace TowerCraft3D
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            //Wrap the camera around the world
-            if (cameraPosition.X >= worldSize)
-            { cameraPosition = new Vector3(-worldSize + 1, cameraPosition.Y, cameraPosition.Z); }
-            if (cameraPosition.X <= -worldSize)
-            { cameraPosition = new Vector3(worldSize - 1, cameraPosition.Y, cameraPosition.Z); }
+            ////Wrap the camera around the world
+            //if (cameraPosition.X >= worldSize)
+            //{ cameraPosition = new Vector3(-worldSize + 1, cameraPosition.Y, cameraPosition.Z); }
+            //if (cameraPosition.X <= -worldSize)
+            //{ cameraPosition = new Vector3(worldSize - 1, cameraPosition.Y, cameraPosition.Z); }
 
-            if (cameraPosition.Y >= worldSize)
-            { cameraPosition = new Vector3(cameraPosition.X, -worldSize + 1, cameraPosition.Z); }
-            if (cameraPosition.Y <= -worldSize)
-            { cameraPosition = new Vector3(cameraPosition.X, worldSize - 1, cameraPosition.Z); }
+            //if (cameraPosition.Y >= worldSize)
+            //{ cameraPosition = new Vector3(cameraPosition.X, -worldSize + 1, cameraPosition.Z); }
+            //if (cameraPosition.Y <= -worldSize)
+            //{ cameraPosition = new Vector3(cameraPosition.X, worldSize - 1, cameraPosition.Z); }
 
-            if (cameraPosition.Z >= worldSize)
-            { cameraPosition = new Vector3(cameraPosition.X, cameraPosition.Y, -worldSize + 1); }
-            if (cameraPosition.Z <= -worldSize)
-            { cameraPosition = new Vector3(cameraPosition.X, cameraPosition.Y, worldSize - 1); }
+            //if (cameraPosition.Z >= worldSize)
+            //{ cameraPosition = new Vector3(cameraPosition.X, cameraPosition.Y, -worldSize + 1); }
+            //if (cameraPosition.Z <= -worldSize)
+            //{ cameraPosition = new Vector3(cameraPosition.X, cameraPosition.Y, worldSize - 1); }
 
             if (moveAllowed)
             {
@@ -124,8 +126,8 @@ namespace TowerCraft3D
                 {
                     cameraPosition -= Vector3.Cross(cameraUp, cameraDirection) * move;
                 }
-                // Yaw rotation
 
+                // Yaw rotation
                 if (Keyboard.GetState().IsKeyDown(Keys.Left))
                 {
                     cameraDirection = Vector3.Transform(cameraDirection,
