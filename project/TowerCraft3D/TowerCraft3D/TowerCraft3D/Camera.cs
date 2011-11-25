@@ -35,10 +35,16 @@ namespace TowerCraft3D
         float maxPitch = MathHelper.PiOver2; //90 degree
         float currentPitch = 0;
 
+        TileCoord currentTC;
+        private TimeSpan timer;
+        bool moveable;
+
+
         public Camera(Game game, Vector3 newPosition, Vector3 direction, Vector3 up, Viewport NewViewport, bool move, int WorldSize)
             : base(game)
         {
             // TODO: Construct any child components here
+            currentTC = new TileCoord(0,0);
             worldSize = WorldSize;
             cameraPosition = newPosition;
             cameraDirection = direction - newPosition;
@@ -48,6 +54,9 @@ namespace TowerCraft3D
             viewport = NewViewport;
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)viewport.Width / (float)viewport.Height, 1, 2000);
             moveAllowed = move;
+            timer = TimeSpan.FromSeconds(0.3);
+            moveable = true;
+
         }
         // Create look at function
         private void CreateLootAt()
@@ -68,6 +77,10 @@ namespace TowerCraft3D
         public Vector3 getCamUp()
         {
             return cameraUp;
+        }
+        public TileCoord getCurrentTC()
+        {
+            return currentTC;
         }
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting
@@ -132,6 +145,40 @@ namespace TowerCraft3D
                         cameraPosition -= Vector3.Cross(cameraUp, cameraDirection) * move;
                     }
                 }
+
+                timer -= gameTime.ElapsedGameTime;
+                if ((timer <= TimeSpan.Zero) && (!moveable))
+                {
+                    //Reset Timer
+                    timer = TimeSpan.FromSeconds(0.3);
+                    moveable = true;
+                }
+
+                if ((Keyboard.GetState().IsKeyDown(Keys.W)) && (currentTC.y > -4) && moveable)
+                {
+                    currentTC.y--;
+                    moveable = false;
+                }
+                if ((Keyboard.GetState().IsKeyDown(Keys.S)) && (currentTC.y < 3) && moveable)
+                {
+                    currentTC.y++;
+                    moveable = false;
+
+                }
+                if ((Keyboard.GetState().IsKeyDown(Keys.D)) && (currentTC.x < 0) && moveable)
+                {
+                    currentTC.x++;
+                    moveable = false;
+
+                }
+                if ((Keyboard.GetState().IsKeyDown(Keys.A)) && (currentTC.x > -19) && moveable)
+                {
+                    currentTC.x--;
+                    moveable = false;
+
+                }
+
+
                 //// Yaw rotation
                 //if (Keyboard.GetState().IsKeyDown(Keys.Left))
                 //{

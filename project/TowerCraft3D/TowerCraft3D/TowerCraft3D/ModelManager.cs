@@ -44,6 +44,8 @@ namespace TowerCraft3D
         //First level Waves
         List<waveManager> wavesLevel1 = new List<waveManager>();
 
+        TileCoord chosenTile;
+
         Colony mainBase;
 
         public ModelManager(Game game)
@@ -62,7 +64,9 @@ namespace TowerCraft3D
             viewport = ((Game1)Game).MainScreen;
             cam = ((Game1)Game).cameraMain;
             worldSize = ((Game1)Game).worldSize;
-            
+
+            chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
+
             base.Initialize();
         }
         protected override void  LoadContent()
@@ -98,7 +102,7 @@ namespace TowerCraft3D
                     tiles.Add(new monster(ref tile, new Vector3(i * -20, 0, j * 20), new Vector3(0, 0, 0)));
                 }
             }
-
+            tiles.Add(new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0)));
             base.LoadContent();
         }
         
@@ -135,11 +139,14 @@ namespace TowerCraft3D
             #endregion
 
             //update Map
-            for (int i = 0; i < tiles.Count; i++)
+            for (int i = 0; i < tiles.Count - 1; i++)
             {
                 tiles[i].Update();
             }
             mainBase.Update();
+            //Selected tile
+            chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
+            tiles[tiles.Count - 1].Update();
 
             for (int i = 0; i < monsters.Count; i++)
             {
@@ -194,6 +201,9 @@ namespace TowerCraft3D
                 tiles[i].DrawModel(cam);
             }
             mainBase.DrawModel(cam);
+            //Selected tile
+            chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
+            tiles[tiles.Count - 1].setPosition(new Vector3(chosenTile.x*20, 2, chosenTile.y*20));
 
             //Draw Monsters
             for (int i = 0; i < monsters.Count; i++)
