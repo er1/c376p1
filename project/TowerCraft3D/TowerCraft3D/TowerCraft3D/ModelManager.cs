@@ -43,8 +43,6 @@ namespace TowerCraft3D
         //First level Waves
         List<waveManager> wavesLevel1 = new List<waveManager>();
 
-        int numberOfMonster1s = 30;
-
         public ModelManager(Game game)
             : base(game)
         {
@@ -84,12 +82,7 @@ namespace TowerCraft3D
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
 
             //LOAD WAVE information for Level1
-            wavesLevel1.Add(new waveManager(1,10,TimeSpan.FromMinutes(2.0),TimeSpan.FromSeconds(3.0)));
-
-            //for (int i = 0; i < numberOfMonster1s; i++)
-            //{
-            //    monsters.Add(new monster(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)), new Vector3(1, 0, 0)));
-            //}
+            wavesLevel1.Add(new waveManager(1,20,TimeSpan.FromMinutes(2.0),TimeSpan.FromSeconds(3.0)));
 
             //Draw Map
             for (int i = 0; i < 20; i++)
@@ -130,7 +123,7 @@ namespace TowerCraft3D
                 {
                     wavesLevel1[currentWave].spawn--;
                     wavesLevel1[currentWave].canSpawn = false;
-                    monsters.Add(new monster(ref Monster1, new Vector3(-worldSize + 1, 0, RandomNumber(-worldSize, worldSize)), new Vector3(1, 0, 0)));
+                    monsters.Add(new monster(ref Monster1, new Vector3(-390 + 1, 0, RandomNumber(-80, 80)), new Vector3(1, 0, 0)));
                 }
             }
             #endregion
@@ -144,6 +137,12 @@ namespace TowerCraft3D
             for (int i = 0; i < monsters.Count; i++)
             {
                 monsters[i].Update();
+                // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
+                if (monsters[i].hitColony)
+                {
+                    monsters.RemoveAt(i);
+                    i--;
+                }
             }
             //updates projectile list
             for (int i = 0; i < projectiles.Count; i++)
@@ -157,7 +156,7 @@ namespace TowerCraft3D
         {
             GraphicsDevice.Viewport = viewport;
             Game.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-            //#region Draw Cube World
+            #region Draw Cube World
             //// Set the vertex buffer on the GraphicsDevice
             //GraphicsDevice.SetVertexBuffer(vertexBuffer);
             ////Set object and camera info
@@ -178,7 +177,7 @@ namespace TowerCraft3D
             //    GraphicsDevice.DrawUserPrimitives<VertexPositionTexture>
             //        (PrimitiveType.TriangleStrip, worldBox.getCubeVertices(), 0, 24);
             //}
-            //#endregion
+            #endregion
             //Draw Player
             character.DrawModel(cam);
 
