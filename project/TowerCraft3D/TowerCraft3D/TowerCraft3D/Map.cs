@@ -30,6 +30,10 @@ namespace TowerCraft3D
 
         public Tile GetTile(TileCoord tc)
         {
+            if (!doesTileExist(tc))
+            {
+                map.Add(tc, new Tile());
+            }
             return map[tc];
         }
 

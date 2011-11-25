@@ -66,8 +66,7 @@ namespace TowerCraft3D
             {
                 for (int j = 0; j < numberOfTileRange; j++)
                 {
-                    
-                    if(map.doesTileExist(new TileCoord(i, j)))
+                    if (map.doesTileExist(new TileCoord((int)position.X + i, (int)position.Z + j)))
                     {
                         targets.AddRange(map.GetTile(new TileCoord(i, j)).getEntities().ToList() );
                     }
