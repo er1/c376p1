@@ -119,6 +119,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="tower.cs" />
+    <Compile Include="TowerManager.cs" />
     <Compile Include="waveManager.cs" />
     <Compile Include="world.cs" />
   </ItemGroup>
