@@ -21,14 +21,16 @@ namespace TowerCraft3D
             return entities;
         }
 
-
         public void addEntity(model model)
         {
             if ((model is resource) && (resourceCount >= 3))
             {
+                //for upgrading?
             }
             else if ((model is resource) && (resourceCount < 3))
             {
+                resourceCount++;
+                entities.Add(model);
             }
             else
             {
@@ -52,15 +54,28 @@ namespace TowerCraft3D
             return false;
         }
 
-        public void towerConstruction()
+        public int getResourceCount()
+        {
+            return resourceCount;
+        }
+
+        public int towerConstruction()
         {
             if (resourceCount == 3)
             {
-
+                int totalValue = 0;
+                for (int i = 0; i < entities.Count(); i++)
+                {
+                    if (entities[i] is resource)
+                    {
+                        totalValue += ((resource)entities[i]).getValue();
+                    }
+                }
+                return totalValue;
             }
+            else
+                return 0;
         }
-
-
 
     }
 }
