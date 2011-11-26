@@ -55,6 +55,18 @@ namespace TowerCraft3D
             }
         }
 
+        public bool anyMonsters()
+        {
+            for (int i = 0; i < entities.Count(); i++)
+            {
+                if (entities[i] is monster)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public bool anyTower()
         {
             for (int i = 0; i < entities.Count(); i++)

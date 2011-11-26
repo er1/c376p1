@@ -52,6 +52,8 @@ namespace TowerCraft3D
         List<tower> towers = new List<tower>();
         TileCoord chosenTile;
         Colony mainBase;
+        bool collisionFlag = false;
+
         #region bool Input (bobo Input Manager
         bool SpaceBar = false;
 
@@ -174,9 +176,10 @@ namespace TowerCraft3D
 
             //Check Collision
             CheckCollision();
-            
+
+            #region Tower Adding
             //Temporary way to add towers.
-            if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower())&& !SpaceBar)
+            if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar)
             {
                 SpaceBar = true;
                 map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
@@ -206,6 +209,8 @@ namespace TowerCraft3D
             {
                 SpaceBar = false;
             }
+            #endregion
+
             #region Update Monster, Tower, bullets + a little logic
             for (int i = 0; i < monsters.Count; i++)
             {
@@ -226,7 +231,7 @@ namespace TowerCraft3D
             {
                 towers[i].Update();
                 //Shoots a projectile based on a Timer from tower
-                if (towers[i].iWantToShoot(gameTime))
+                if ((towers[i].iWantToShoot(gameTime)) && (towers[i].lookForTarget(map)))
                 {
                     addProject(towers[i].getPosition()+ new Vector3(0,25,0), new Vector3(-1, 0, 0));
                 }
@@ -332,18 +337,24 @@ namespace TowerCraft3D
         {
             for (int i = 0; i < projectiles.Count; i++)
             {
-                for (int j = 0; j < monsters.Count; j++)
+                if (!collisionFlag)
                 {
-                    if (projectiles[i].IsCollision(monsters[j]))
+                    for (int j = 0; j < monsters.Count; j++)
                     {
-                        projectiles.RemoveAt(i);
-                        monsters.RemoveAt(j);
-                        //if (i != 0)
-                        //    i--;
-                        //if (j!=0)
-                        //    j--;
+                        if (projectiles[i].IsCollision(monsters[j]))
+                        {
+                            projectiles.RemoveAt(i);
+                            monsters.RemoveAt(j);
+                            if (i != 0)
+                                i--;
+                            if (j != 0)
+                                j--;
+                            collisionFlag = true;
+                            break;
+                        }
                     }
                 }
+                collisionFlag = false;
             }
         }
         #endregion
