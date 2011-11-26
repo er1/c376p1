@@ -52,6 +52,10 @@ namespace TowerCraft3D
         List<tower> towers = new List<tower>();
         TileCoord chosenTile;
         Colony mainBase;
+        #region bool Input (bobo Input Manager
+        bool SpaceBar = false;
+
+        #endregion
 
         public ModelManager(Game game)
             : base(game)
@@ -172,8 +176,9 @@ namespace TowerCraft3D
             CheckCollision();
             
             //Temporary way to add towers.
-            if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()))
+            if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower())&& !SpaceBar)
             {
+                SpaceBar = true;
                 map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
 
                 int resourceValue = map.GetTile(chosenTile).towerConstruction();
@@ -195,9 +200,12 @@ namespace TowerCraft3D
                 {
 
                 }
-
+                
             }
-
+            if ((Keyboard.GetState().IsKeyUp(Keys.Space)))
+            {
+                SpaceBar = false;
+            }
             #region Update Monster, Tower, bullets + a little logic
             for (int i = 0; i < monsters.Count; i++)
             {
@@ -205,7 +213,7 @@ namespace TowerCraft3D
 
                 TileCoord monsterLocation = new TileCoord((int)Math.Floor(monsters[i].getPosition().X / 20.0), (int)Math.Floor(monsters[i].getPosition().Z / 20.0));
 
-                map.GetTile(monsterLocation).addEntity(monster[i]);
+                map.GetTile(monsterLocation).addEntity(monsters[i]);
                 // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
                 if (monsters[i].hitColony)
                 {
@@ -330,10 +338,10 @@ namespace TowerCraft3D
                     {
                         projectiles.RemoveAt(i);
                         monsters.RemoveAt(j);
-                        if (i != 0)
-                            i--;
-                        if (j!=0)
-                            j--;
+                        //if (i != 0)
+                        //    i--;
+                        //if (j!=0)
+                        //    j--;
                     }
                 }
             }
