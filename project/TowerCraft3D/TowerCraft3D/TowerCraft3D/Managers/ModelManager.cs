@@ -173,7 +173,7 @@ namespace TowerCraft3D
             //Temporary way to add towers.
             if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()))
             {
-                map.GetTile(chosenTile).addEntity(new resource(ref bullet, 2));
+                map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
 
                 int resourceValue = map.GetTile(chosenTile).towerConstruction();
 

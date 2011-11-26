@@ -22,6 +22,7 @@ namespace TowerCraft3D
         protected float move = 0.5f;
         public bool hitColony {get;set;}
 
+
         public monster(ref Model temp, Vector3 location, Vector3 newDirection)
             : base(temp)
         {
