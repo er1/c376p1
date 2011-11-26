@@ -17,7 +17,7 @@ namespace TowerCraft3D
         private int upgradeLevel;
         private float radius;
         private monster target;
-        private TimeSpan timer;
+        protected TimeSpan timer { get; set; }
         public Map map;
         private const float TILESIZE = 10;
 
@@ -30,7 +30,7 @@ namespace TowerCraft3D
             position = location;
             upgradeLevel = 0;
             //usually set a different timer depending on different types of tower
-            timer = TimeSpan.FromSeconds(2.0);
+            //timer = TimeSpan.FromSeconds(2.0);
         }
 
         public  override void  Update()

@@ -114,6 +114,7 @@
     <Compile Include="Managers\ModelManager.cs" />
     <Compile Include="Monsters\monster.cs" />
     <Compile Include="Model\player.cs" />
+    <Compile Include="Towers\GunTower.cs" />
     <Compile Include="Towers\projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

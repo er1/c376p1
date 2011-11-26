@@ -173,7 +173,7 @@ namespace TowerCraft3D
             //Temporary way to add towers.
             if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()))
             {
-                towers.Add(new tower(ref gunTower, (new Vector3(chosenTile.x*20, 0, chosenTile.y*20))));
+                towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x*20, 0, chosenTile.y*20))));
                 map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20))));
             }
 
