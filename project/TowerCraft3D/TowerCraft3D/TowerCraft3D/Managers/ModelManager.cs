@@ -338,10 +338,10 @@ namespace TowerCraft3D
                     {
                         projectiles.RemoveAt(i);
                         monsters.RemoveAt(j);
-                        //if (i != 0)
-                        //    i--;
-                        //if (j!=0)
-                        //    j--;
+                        if (i != 0)
+                            i--;
+                        if (j != 0)
+                            j--;
                     }
                 }
             }
