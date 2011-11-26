@@ -17,8 +17,8 @@ namespace TowerCraft3D
         protected Vector3 direction;
         protected float moveBalloons = 0.5f;
         static Random random = new Random(); //random number (used with function)
-        protected int projectileDistanceTime;
-        public int projectileTimer { get; set; }
+        protected TimeSpan projectileDistanceTime;
+        public TimeSpan projectileTimer { get; set; }
 
 
 
@@ -27,7 +27,7 @@ namespace TowerCraft3D
         {
             world = Matrix.CreateTranslation(location);
             direction = newDirection;
-            projectileDistanceTime = 450;
+            projectileDistanceTime = TimeSpan.FromSeconds(8);
             projectileTimer = projectileDistanceTime;
 
         }
@@ -62,6 +62,16 @@ namespace TowerCraft3D
 
             world *= Matrix.CreateTranslation(direction);
             //rotation *= Matrix.CreateRotationY(MathHelper.PiOver4 / 60);
+        }
+        public bool removeProject(GameTime gameTime)
+        {
+            projectileTimer -= gameTime.ElapsedGameTime;
+            if (projectileTimer <= TimeSpan.Zero)
+            {
+                return true;
+            }
+            else
+                return false;
         }
 
         public void setDirection(Vector3 dir)
