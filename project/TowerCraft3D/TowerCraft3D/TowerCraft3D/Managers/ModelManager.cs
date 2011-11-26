@@ -71,6 +71,8 @@ namespace TowerCraft3D
             worldSize = ((Game1)Game).worldSize;
             chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
 
+            map = new Map();
+
             base.Initialize();
         }
         protected override void  LoadContent()
@@ -169,9 +171,10 @@ namespace TowerCraft3D
             CheckCollision();
             
             //Temporary way to add towers.
-            if(Keyboard.GetState().IsKeyDown(Keys.Space))
+            if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()))
             {
                 towers.Add(new tower(ref gunTower, (new Vector3(chosenTile.x*20, 0, chosenTile.y*20))));
+                map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20))));
             }
 
             #region Update Monster, Tower, bullets + a little logic
