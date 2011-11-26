@@ -173,8 +173,28 @@ namespace TowerCraft3D
             //Temporary way to add towers.
             if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()))
             {
-                towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x*20, 0, chosenTile.y*20))));
-                map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20))));
+                map.GetTile(chosenTile).addEntity(new resource(ref bullet, 2));
+
+                int resourceValue = map.GetTile(chosenTile).towerConstruction();
+
+                if (resourceValue == 0)
+                {
+
+                }
+                else if ((resourceValue >= 3) && (resourceValue <= 5))
+                {
+                    towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20))));
+                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20))));
+                }
+                else if ((resourceValue >= 3) && (resourceValue <= 5))
+                {
+
+                }
+                else if ((resourceValue >= 3) && (resourceValue <= 5))
+                {
+
+                }
+
             }
 
             #region Update Monster, Tower, bullets + a little logic

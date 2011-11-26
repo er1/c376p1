@@ -36,5 +36,10 @@ namespace TowerCraft3D
 
         }
 
+        public int getValue()
+        {
+            return value;
+        }
+
     }
 }
