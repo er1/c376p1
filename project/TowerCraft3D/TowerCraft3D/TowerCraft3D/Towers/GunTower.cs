@@ -11,7 +11,7 @@ namespace TowerCraft3D
     class GunTower : tower
     {
 
-        public GunTower(ref Model gunModel, Vector3 pos) : base(ref gunModel,pos)
+        public GunTower(ref Model gunModel, Vector3 pos, TileCoord tc) : base(ref gunModel,pos, tc)
         {
             life = 50;
             towerDmg = 10;

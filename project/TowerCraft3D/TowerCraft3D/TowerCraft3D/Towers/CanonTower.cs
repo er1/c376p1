@@ -11,8 +11,8 @@ namespace TowerCraft3D
     class CanonTower : tower
     {
 
-        public CanonTower(ref Model canonModel, Vector3 pos)
-            : base(ref canonModel, pos)
+        public CanonTower(ref Model canonModel, Vector3 pos, TileCoord tc)
+            : base(ref canonModel, pos, tc)
         {
             life = 50;
             towerDmg = 10;

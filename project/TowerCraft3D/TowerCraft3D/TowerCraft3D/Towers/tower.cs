@@ -14,6 +14,7 @@ namespace TowerCraft3D
 
         public int towerType { get; set; }
         private Vector3 position;
+        private TileCoord tc;
         private int upgradeLevel;
         private float radius;
         private monster target;
@@ -24,11 +25,12 @@ namespace TowerCraft3D
         public bool isDead {get; protected set;}
         protected int towerDmg { get; set; }
 
-        public tower(ref Model temp, Vector3 location)
+        public tower(ref Model temp, Vector3 location, TileCoord currentTC)
             : base(temp)
         {
             world = Matrix.CreateTranslation(location);
             position = location;
+            tc = currentTC;
             upgradeLevel = 0;
             isDead = false; 
             //usually set a different timer depending on different types of tower
@@ -37,7 +39,7 @@ namespace TowerCraft3D
 
         public  override void  Update()
         {
-            //if (lookForTarget())
+            if (lookForTarget())
             {
                 Shoot();
             }
@@ -49,6 +51,13 @@ namespace TowerCraft3D
             world = Matrix.CreateTranslation(position);
         }
 
+<<<<<<< HEAD
+        private bool lookForTarget()
+        {
+            return true;
+        }
+=======
+>>>>>>> 0b0b25c5828eb883f0a0b8dcefda298cc98bd37c
 
         public bool iWantToShoot(GameTime gameTime)
         {
