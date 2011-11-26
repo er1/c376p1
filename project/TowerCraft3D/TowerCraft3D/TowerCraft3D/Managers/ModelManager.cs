@@ -218,7 +218,7 @@ namespace TowerCraft3D
 
                 TileCoord monsterLocation 
                     =
-                    new TileCoord((int)Math.Floor(monsters[i].getPosition().X / 20.0), (int)Math.Ceiling(monsters[i].getPosition().Z / 20.0));
+                    new TileCoord((int)Math.Floor((monsters[i].getPosition().X+10) / 20.0), (int)Math.Floor((monsters[i].getPosition().Z+10) / 20.0));
 
                 map.GetTile(monsterLocation).addEntity(monsters[i]);
                 // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
