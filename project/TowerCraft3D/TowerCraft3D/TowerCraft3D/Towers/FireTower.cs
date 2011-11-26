@@ -14,6 +14,8 @@ namespace TowerCraft3D
         public FireTower(ref Model missileModel, Vector3 pos)
             : base(ref missileModel, pos)
         {
+            life = 50;
+            towerDmg = 10;
             timer = TimeSpan.FromSeconds(5.0);
         }
 

@@ -13,6 +13,8 @@ namespace TowerCraft3D
 
         public GunTower(ref Model gunModel, Vector3 pos) : base(ref gunModel,pos)
         {
+            life = 50;
+            towerDmg = 10;
             timer =  TimeSpan.FromSeconds(2.0);
         }
 

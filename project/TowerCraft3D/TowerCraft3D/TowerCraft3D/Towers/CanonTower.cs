@@ -14,6 +14,8 @@ namespace TowerCraft3D
         public CanonTower(ref Model canonModel, Vector3 pos)
             : base(ref canonModel, pos)
         {
+            life = 50;
+            towerDmg = 10;
             timer = TimeSpan.FromSeconds(10.0);
         }
 
