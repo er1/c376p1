@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerCraft3D", "TowerCraft3D\TowerCraft3D\TowerCraft3D.csproj", "{BE79B0EF-1469-4906-93B6-A3C314ACA650}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TowerCraft3DContent", "TowerCraft3D\TowerCraft3DContent\TowerCraft3DContent.contentproj", "{B3C53B65-B91E-4CAA-84BC-1D2AD0837FAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerCraft3DContent", "TowerCraft3D\TowerCraft3DContent\TowerCraft3DContent.contentproj", "{B3C53B65-B91E-4CAA-84BC-1D2AD0837FAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

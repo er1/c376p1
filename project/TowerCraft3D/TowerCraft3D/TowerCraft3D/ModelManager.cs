@@ -42,7 +42,6 @@ namespace TowerCraft3D
         List<monster> monsters = new List<monster>();
         List<monster> tiles = new List<monster>();
         List<projectile> projectiles = new List<projectile>();
-        //First level Waves
         List<waveManager> wavesLevel1 = new List<waveManager>();
         List<tower> towers = new List<tower>();
 
@@ -170,16 +169,25 @@ namespace TowerCraft3D
             for (int i = 0; i < towers.Count; i++)
             {
                 towers[i].Update();
+                //Shoots a projectile based on a Timer from tower
                 if (towers[i].iWantToShoot(gameTime))
                 {
-                    addProject(towers[i].getPosition()+ new Vector3(0,1,0), new Vector3(-1, 0, 0));
+                    addProject(towers[i].getPosition()+ new Vector3(0,25,0), new Vector3(-1, 0, 0));
                 }
             }
             //updates projectile list
             for (int i = 0; i < projectiles.Count; i++)
             {
                 projectiles[i].Update();
+                //Check if projectile Timer is at zero to remove
+                if (projectiles[i].removeProject(gameTime))
+                {
+                    projectiles.RemoveAt(i);
+                    i--;
+                }
             }
+            //Check Collision
+            CheckCollision();
             base.Update(gameTime);
         }
 
@@ -187,6 +195,7 @@ namespace TowerCraft3D
         {
             GraphicsDevice.Viewport = viewport;
             Game.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            //Draw the Texture world around the game.
             #region Draw Cube World
             // Set the vertex buffer on the GraphicsDevice
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
@@ -217,6 +226,7 @@ namespace TowerCraft3D
             {
                 tiles[i].DrawModel(cam);
             }
+            //Draw the left base
             mainBase.DrawModel(cam);
             //Selected tile
             chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
@@ -247,6 +257,7 @@ namespace TowerCraft3D
             //Remember to change Model for diff bullets
             projectiles.Add(new projectile(ref bullet, position, direction));
         }
+        //Checks for collision between projectile list and monster list
         public void CheckCollision()
         {
             for (int i = 0; i < projectiles.Count; i++)

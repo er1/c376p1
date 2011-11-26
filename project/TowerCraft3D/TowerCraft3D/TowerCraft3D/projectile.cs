@@ -27,7 +27,7 @@ namespace TowerCraft3D
         {
             world = Matrix.CreateTranslation(location);
             direction = newDirection;
-            projectileDistanceTime = TimeSpan.FromSeconds(8);
+            projectileDistanceTime = TimeSpan.FromSeconds(4);
             projectileTimer = projectileDistanceTime;
 
         }
