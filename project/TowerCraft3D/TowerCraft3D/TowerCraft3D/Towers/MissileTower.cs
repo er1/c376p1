@@ -11,8 +11,8 @@ namespace TowerCraft3D
     class MissileTower : tower
     {
 
-        public MissileTower(ref Model missileModel, Vector3 pos)
-            : base(ref missileModel, pos)
+        public MissileTower(ref Model missileModel, Vector3 pos, TileCoord tc)
+            : base(ref missileModel, pos, tc)
         {
             timer = TimeSpan.FromSeconds(8.0);
         }

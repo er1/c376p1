@@ -183,8 +183,8 @@ namespace TowerCraft3D
                 }
                 else if ((resourceValue >= 3) && (resourceValue <= 5))
                 {
-                    towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20))));
-                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20))));
+                    towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
+                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
                 else if ((resourceValue >= 3) && (resourceValue <= 5))
                 {

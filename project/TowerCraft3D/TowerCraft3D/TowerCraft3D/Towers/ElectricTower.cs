@@ -11,8 +11,8 @@ namespace TowerCraft3D
     class ElectricTower : tower
     {
 
-        public ElectricTower(ref Model missileModel, Vector3 pos)
-            : base(ref missileModel, pos)
+        public ElectricTower(ref Model missileModel, Vector3 pos, TileCoord tc)
+            : base(ref missileModel, pos, tc)
         {
             timer = TimeSpan.FromSeconds(5.0);
         }
