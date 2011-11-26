@@ -88,7 +88,7 @@ namespace TowerCraft3D
             Monster1 = Game.Content.Load<Model>(@"Models\\Monster1\\monster1");
             tile = Game.Content.Load<Model>(@"Models\\Map\\Tile");
             colony = Game.Content.Load<Model>(@"Models\\Map\\Colony");
-            bullet = Game.Content.Load<Model>(@"Models\\Bullet\\bullet");
+            bullet = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\Bullet");
             gunTower = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
 
