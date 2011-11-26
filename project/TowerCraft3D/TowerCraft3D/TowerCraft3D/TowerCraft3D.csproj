@@ -107,22 +107,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camera.cs" />
-    <Compile Include="Colony.cs" />
-    <Compile Include="Map.cs" />
-    <Compile Include="model.cs" />
-    <Compile Include="ModelManager.cs" />
-    <Compile Include="monster.cs" />
-    <Compile Include="player.cs" />
-    <Compile Include="projectile.cs" />
+    <Compile Include="Camera\Camera.cs" />
+    <Compile Include="Map\Colony.cs" />
+    <Compile Include="Map\Map.cs" />
+    <Compile Include="Model\model.cs" />
+    <Compile Include="Managers\ModelManager.cs" />
+    <Compile Include="Monsters\monster.cs" />
+    <Compile Include="Model\player.cs" />
+    <Compile Include="Towers\projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Tile.cs" />
-    <Compile Include="tower.cs" />
-    <Compile Include="TowerManager.cs" />
-    <Compile Include="waveManager.cs" />
-    <Compile Include="world.cs" />
+    <Compile Include="Towers\Tile.cs" />
+    <Compile Include="Towers\tower.cs" />
+    <Compile Include="Towers\TowerManager.cs" />
+    <Compile Include="Managers\waveManager.cs" />
+    <Compile Include="Map\world.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
