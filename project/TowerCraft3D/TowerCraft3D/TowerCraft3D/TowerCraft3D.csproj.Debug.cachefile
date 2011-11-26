@@ -37,3 +37,6 @@ Content\Models\Map\ColonyText_0.xnb
 Content\Models\Towers\GunTower\GunTowerText.xnb
 Content\Models\Towers\GunTower\GunTower.xnb
 Content\Models\Towers\GunTower\GunTowerText_0.xnb
+Content\Models\Towers\GunTower\BulletText.xnb
+Content\Models\Towers\GunTower\Bullet.xnb
+Content\Models\Towers\GunTower\BulletText_0.xnb

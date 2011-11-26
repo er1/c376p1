@@ -155,8 +155,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Map\Colony.X">
-      <Name>Colony</Name>
+    <Compile Include="Models\Towers\GunTower\GunTowerText.jpg">
+      <Name>GunTowerText</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Towers\GunTower\GunTower.X">
+      <Name>GunTower</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Towers\GunTower\BulletText.jpg">
+      <Name>BulletText</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Towers\GunTower\Bullet.X">
+      <Name>Bullet</Name>
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
@@ -169,15 +190,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Towers\GunTower\GunTowerText.jpg">
-      <Name>GunTowerText</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Models\Towers\GunTower\GunTower.X">
-      <Name>GunTower</Name>
+    <Compile Include="Models\Map\Colony.X">
+      <Name>Colony</Name>
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
