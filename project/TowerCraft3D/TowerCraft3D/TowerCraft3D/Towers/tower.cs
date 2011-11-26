@@ -21,7 +21,9 @@ namespace TowerCraft3D
         protected TimeSpan timer { get; set; }
         public Map map;
         private const float TILESIZE = 10;
-
+        public int life { get; set; }
+        public bool isDead {get; protected set;}
+        protected int towerDmg { get; set; }
 
         public tower(ref Model temp, Vector3 location, TileCoord currentTC)
             : base(temp)
@@ -30,6 +32,7 @@ namespace TowerCraft3D
             position = location;
             tc = currentTC;
             upgradeLevel = 0;
+            isDead = false; 
             //usually set a different timer depending on different types of tower
             //timer = TimeSpan.FromSeconds(2.0);
         }
@@ -40,13 +43,21 @@ namespace TowerCraft3D
             {
                 Shoot();
             }
+            if (life <= 0)
+            {
+                isDead = true;
+            }
+
             world = Matrix.CreateTranslation(position);
         }
 
+<<<<<<< HEAD
         private bool lookForTarget()
         {
             return true;
         }
+=======
+>>>>>>> 0b0b25c5828eb883f0a0b8dcefda298cc98bd37c
 
         public bool iWantToShoot(GameTime gameTime)
         {
