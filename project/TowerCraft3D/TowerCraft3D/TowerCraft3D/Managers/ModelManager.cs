@@ -155,7 +155,7 @@ namespace TowerCraft3D
                 {
                     wavesLevel1[currentWave].spawn--;
                     wavesLevel1[currentWave].canSpawn = false;
-                    monsters.Add(new monster(ref Monster1, new Vector3(-390 + 1, 0, RandomNumber(-80, 80)), new Vector3(1, 0, 0)));
+                    monsters.Add(new monster(ref Monster1, new Vector3(-390 + 1, 0, RandomNumber(-80, 60)), new Vector3(1, 0, 0)));
                 }
             }
             #endregion

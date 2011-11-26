@@ -38,14 +38,14 @@ namespace TowerCraft3D
             Vector2 bottomRight = new Vector2(1.0f, 1.0f);//3
 
             //Cube World points (too lazy to write them, taken from a forum)
-            Vector3 topLeftBack = cubePosition + new Vector3(-1.0f, 1.0f, -0.22f) * cubeSize;
-            Vector3 bottomLeftBack = cubePosition + new Vector3(-1.0f, -0.1f, -0.22f) * cubeSize;
-            Vector3 topRightBack = cubePosition + new Vector3(1.0f, 1.0f, -0.22f) * cubeSize;
-            Vector3 bottomRightBack = cubePosition + new Vector3(1.0f, -0.1f, -0.22f) * cubeSize;
-            Vector3 topLeftFront = cubePosition + new Vector3(-1.0f, 1.0f, 0.28f) * cubeSize;
-            Vector3 topRightFront = cubePosition + new Vector3(1.0f, 1.0f, 0.28f) * cubeSize;
-            Vector3 bottomLeftFront = cubePosition + new Vector3(-1.0f, -0.1f, 0.28f) * cubeSize;
-            Vector3 bottomRightFront = cubePosition + new Vector3(1.0f, -0.1f, 0.28f) * cubeSize;
+            Vector3 topLeftBack = cubePosition + new Vector3(-1.0f, 1.0f, -0.24f) * cubeSize;
+            Vector3 bottomLeftBack = cubePosition + new Vector3(-1.0f, -0.1f, -0.24f) * cubeSize;
+            Vector3 topRightBack = cubePosition + new Vector3(1.0f, 1.0f, -0.24f) * cubeSize;
+            Vector3 bottomRightBack = cubePosition + new Vector3(1.0f, -0.1f, -0.24f) * cubeSize;
+            Vector3 topLeftFront = cubePosition + new Vector3(-1.0f, 1.0f, 0.18f) * cubeSize;
+            Vector3 topRightFront = cubePosition + new Vector3(1.0f, 1.0f, 0.18f) * cubeSize;
+            Vector3 bottomLeftFront = cubePosition + new Vector3(-1.0f, -0.1f, 0.18f) * cubeSize;
+            Vector3 bottomRightFront = cubePosition + new Vector3(1.0f, -0.1f, 0.18f) * cubeSize;
 
             //Back of Cube
             cubeVertices[0] = new VertexPositionTexture(topLeftBack, topLeft);
