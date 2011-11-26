@@ -52,6 +52,10 @@ namespace TowerCraft3D
         List<tower> towers = new List<tower>();
         TileCoord chosenTile;
         Colony mainBase;
+        #region bool Input (bobo Input Manager
+        bool SpaceBar = false;
+
+        #endregion
 
         public ModelManager(Game game)
             : base(game)
@@ -171,8 +175,9 @@ namespace TowerCraft3D
             CheckCollision();
             
             //Temporary way to add towers.
-            if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()))
+            if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower())&& !SpaceBar)
             {
+                SpaceBar = true;
                 map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
 
                 int resourceValue = map.GetTile(chosenTile).towerConstruction();
@@ -194,9 +199,12 @@ namespace TowerCraft3D
                 {
 
                 }
-
+                
             }
-
+            if ((Keyboard.GetState().IsKeyUp(Keys.Space)))
+            {
+                SpaceBar = false;
+            }
             #region Update Monster, Tower, bullets + a little logic
             for (int i = 0; i < monsters.Count; i++)
             {
