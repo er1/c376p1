@@ -21,7 +21,6 @@ namespace TowerCraft3D
         public Map map;
         private const float TILESIZE = 10;
 
-        
 
         public tower(ref Model temp, Vector3 location)
             : base(temp)
@@ -53,24 +52,6 @@ namespace TowerCraft3D
             }
             else
                 return false;
-        }
-
-        public bool lookForTarget()
-        {
-            int numberOfTileRange = (int)Math.Ceiling(radius/TILESIZE);
-            List<model> targets = new List<model>();
-            for (int i = 0; i < numberOfTileRange; i++)
-            {
-                for (int j = 0; j < numberOfTileRange; j++)
-                {
-                    if (map.doesTileExist(new TileCoord((int)position.X + i, (int)position.Z + j)))
-                    {
-                        targets.AddRange(map.GetTile(new TileCoord(i, j)).getEntities().ToList() );
-                    }
-                }
-            }
-
-            return false;
         }
 
         public void Shoot()

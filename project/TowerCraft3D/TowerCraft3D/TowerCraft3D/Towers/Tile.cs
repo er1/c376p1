@@ -8,10 +8,12 @@ namespace TowerCraft3D
     class Tile
     {
         List<model> entities;
+        int resourceCount;
 
         public Tile()
         {
             entities = new List<model>();
+            resourceCount = 0;
         }
 
         public List<model> getEntities()
@@ -22,7 +24,16 @@ namespace TowerCraft3D
 
         public void addEntity(model model)
         {
-            entities.Add(model);
+            if ((model is resource) && (resourceCount >= 3))
+            {
+            }
+            else if ((model is resource) && (resourceCount < 3))
+            {
+            }
+            else
+            {
+                entities.Add(model);
+            }
         }
 
         public void removeEntity(model model)
@@ -39,6 +50,14 @@ namespace TowerCraft3D
             }
 
             return false;
+        }
+
+        public void towerConstruction()
+        {
+            if (resourceCount == 3)
+            {
+
+            }
         }
 
 
