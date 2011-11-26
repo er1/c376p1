@@ -120,7 +120,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Towers\Tile.cs" />
     <Compile Include="Towers\tower.cs" />
-    <Compile Include="Towers\TowerManager.cs" />
+    <Compile Include="Managers\TowerManager.cs" />
     <Compile Include="Managers\waveManager.cs" />
     <Compile Include="Map\world.cs" />
   </ItemGroup>
