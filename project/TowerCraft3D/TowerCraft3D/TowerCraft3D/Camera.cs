@@ -179,38 +179,38 @@ namespace TowerCraft3D
                 }
 
 
-                // Yaw rotation
-                if (Keyboard.GetState().IsKeyDown(Keys.Left))
-                {
-                    cameraDirection = Vector3.Transform(cameraDirection,
-                    Matrix.CreateFromAxisAngle(cameraUp, (-MathHelper.PiOver4 / 150) * -movePitchYaw));
+                //// Yaw rotation
+                //if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                //{
+                //    cameraDirection = Vector3.Transform(cameraDirection,
+                //    Matrix.CreateFromAxisAngle(cameraUp, (-MathHelper.PiOver4 / 150) * -movePitchYaw));
 
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.Right))
-                {
-                    cameraDirection = Vector3.Transform(cameraDirection,
-                    Matrix.CreateFromAxisAngle(cameraUp, (-MathHelper.PiOver4 / 150) * movePitchYaw));
+                //}
+                //if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                //{
+                //    cameraDirection = Vector3.Transform(cameraDirection,
+                //    Matrix.CreateFromAxisAngle(cameraUp, (-MathHelper.PiOver4 / 150) * movePitchYaw));
 
-                }
-                //Pitch rotation
-                if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                {
-                    float pitchRotation = (MathHelper.PiOver4 / 180) * movePitchYaw;
-                    if (Math.Abs(currentPitch + pitchRotation) < maxPitch)
-                    {
-                        cameraDirection = Vector3.Transform(cameraDirection, Matrix.CreateFromAxisAngle(Vector3.Cross(cameraUp, cameraDirection), pitchRotation));
-                        currentPitch += pitchRotation;
-                    }
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.Up))
-                {
-                    float pitchRotation = (MathHelper.PiOver4 / 180) * -movePitchYaw;
-                    if (Math.Abs(currentPitch + pitchRotation) < maxPitch)
-                    {
-                        cameraDirection = Vector3.Transform(cameraDirection, Matrix.CreateFromAxisAngle(Vector3.Cross(cameraUp, cameraDirection), pitchRotation));
-                        currentPitch += pitchRotation;
-                    }
-                }
+                //}
+                ////Pitch rotation
+                //if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                //{
+                //    float pitchRotation = (MathHelper.PiOver4 / 180) * movePitchYaw;
+                //    if (Math.Abs(currentPitch + pitchRotation) < maxPitch)
+                //    {
+                //        cameraDirection = Vector3.Transform(cameraDirection, Matrix.CreateFromAxisAngle(Vector3.Cross(cameraUp, cameraDirection), pitchRotation));
+                //        currentPitch += pitchRotation;
+                //    }
+                //}
+                //if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                //{
+                //    float pitchRotation = (MathHelper.PiOver4 / 180) * -movePitchYaw;
+                //    if (Math.Abs(currentPitch + pitchRotation) < maxPitch)
+                //    {
+                //        cameraDirection = Vector3.Transform(cameraDirection, Matrix.CreateFromAxisAngle(Vector3.Cross(cameraUp, cameraDirection), pitchRotation));
+                //        currentPitch += pitchRotation;
+                //    }
+                //}
 
                 CreateLootAt();
             }

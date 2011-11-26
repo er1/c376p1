@@ -31,13 +31,11 @@ namespace TowerCraft3D
             upgradeLevel = 0;
             //usually set a different timer depending on different types of tower
             timer = TimeSpan.FromSeconds(10.0);
-
         }
 
         public  override void  Update()
         {
             //if (lookForTarget())
-
             {
                 Shoot();
             }
@@ -59,7 +57,6 @@ namespace TowerCraft3D
 
         public bool lookForTarget()
         {
-            
             int numberOfTileRange = (int)Math.Ceiling(radius/TILESIZE);
             List<model> targets = new List<model>();
             for (int i = 0; i < numberOfTileRange; i++)
