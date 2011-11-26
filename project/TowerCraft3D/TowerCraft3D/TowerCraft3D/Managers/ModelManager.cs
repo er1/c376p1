@@ -160,6 +160,7 @@ namespace TowerCraft3D
             {
                 tiles[i].Update();
             }
+            map.Update();
             mainBase.Update();
             //Selected tile
             chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
@@ -173,7 +174,7 @@ namespace TowerCraft3D
             //Temporary way to add towers.
             if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()))
             {
-                map.GetTile(chosenTile).addEntity(new resource(ref bullet, 2));
+                map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
 
                 int resourceValue = map.GetTile(chosenTile).towerConstruction();
 
@@ -201,6 +202,10 @@ namespace TowerCraft3D
             for (int i = 0; i < monsters.Count; i++)
             {
                 monsters[i].Update();
+
+                TileCoord monsterLocation = new TileCoord((int)Math.Floor(monsters[i].getPosition().X / 20.0), (int)Math.Floor(monsters[i].getPosition().Z / 20.0));
+
+                map.GetTile(monsterLocation).addEntity(monster[i]);
                 // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
                 if (monsters[i].hitColony)
                 {

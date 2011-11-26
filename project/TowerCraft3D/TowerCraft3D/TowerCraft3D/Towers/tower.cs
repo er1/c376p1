@@ -51,13 +51,10 @@ namespace TowerCraft3D
             world = Matrix.CreateTranslation(position);
         }
 
-<<<<<<< HEAD
         private bool lookForTarget()
         {
             return true;
         }
-=======
->>>>>>> 0b0b25c5828eb883f0a0b8dcefda298cc98bd37c
 
         public bool iWantToShoot(GameTime gameTime)
         {

@@ -37,6 +37,14 @@ namespace TowerCraft3D
             return map[tc];
         }
 
+        public void Update()
+        {
+            foreach (KeyValuePair<TileCoord, Tile> pair in map)
+            {
+                pair.Value.removeAllMonsters();
+            }
+        }
+
         public void SetTile(TileCoord tc, Tile tile)
         {
             map[tc] = tile;

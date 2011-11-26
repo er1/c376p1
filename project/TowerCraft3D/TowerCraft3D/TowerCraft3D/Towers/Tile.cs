@@ -43,6 +43,18 @@ namespace TowerCraft3D
             entities.Remove(model);
         }
 
+        public void removeAllMonsters()
+        {
+            for (int i = 0; i < entities.Count(); i++)
+            {
+                if (entities[i] is monster)
+                {
+                    entities.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
         public bool anyTower()
         {
             for (int i = 0; i < entities.Count(); i++)
