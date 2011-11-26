@@ -153,7 +153,7 @@ namespace TowerCraft3D
             //KeyboardState keyStatus = Keyboard.GetState();
             if(Keyboard.GetState().IsKeyDown(Keys.Space))
             {
-                towers.Add(new tower(ref gunTower, (new Vector3(chosenTile.x*20, 2, chosenTile.y*20))));
+                towers.Add(new tower(ref gunTower, (new Vector3(chosenTile.x*20, 0, chosenTile.y*20))));
             }
 
             for (int i = 0; i < monsters.Count; i++)
@@ -170,6 +170,10 @@ namespace TowerCraft3D
             for (int i = 0; i < towers.Count; i++)
             {
                 towers[i].Update();
+                if (towers[i].iWantToShoot(gameTime))
+                {
+                    addProject(towers[i].getPosition()+ new Vector3(0,1,0), new Vector3(-1, 0, 0));
+                }
             }
             //updates projectile list
             for (int i = 0; i < projectiles.Count; i++)
@@ -242,6 +246,22 @@ namespace TowerCraft3D
         {
             //Remember to change Model for diff bullets
             projectiles.Add(new projectile(ref bullet, position, direction));
+        }
+        public void CheckCollision()
+        {
+            for (int i = 0; i < projectiles.Count; i++)
+            {
+                for (int j = 0; j < monsters.Count; j++)
+                {
+                    if (projectiles[i].IsCollision(monsters[j]))
+                    {
+                        projectiles.RemoveAt(i);
+                        monsters.RemoveAt(j);
+                        i--;
+                        j--;
+                    }
+                }
+            }
         }
 
 

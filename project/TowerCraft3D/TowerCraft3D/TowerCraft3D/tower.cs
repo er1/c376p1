@@ -30,7 +30,7 @@ namespace TowerCraft3D
             position = location;
             upgradeLevel = 0;
             //usually set a different timer depending on different types of tower
-            timer = TimeSpan.FromSeconds(10.0);
+            timer = TimeSpan.FromSeconds(2.0);
         }
 
         public  override void  Update()
@@ -48,7 +48,7 @@ namespace TowerCraft3D
             if (timer <= TimeSpan.Zero)
             {
                  //Reset Timer
-                timer = TimeSpan.FromSeconds(10.0);
+                timer = TimeSpan.FromSeconds(2.0);
                 return true;
             }
             else
@@ -78,6 +78,9 @@ namespace TowerCraft3D
 
         }
 
-
+        public Vector3 getPosition()
+        {
+            return new Vector3(world.M41, world.M42, world.M43);
+        }
     }
 }
