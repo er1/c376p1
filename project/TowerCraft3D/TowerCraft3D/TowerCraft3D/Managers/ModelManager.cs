@@ -106,7 +106,7 @@ namespace TowerCraft3D
             bullet = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             gunTower = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
-
+            
             #endregion
 
             #region Load Game Map
