@@ -175,7 +175,7 @@ namespace TowerCraft3D
             #endregion
 
             //Check Collision
-            CheckCollision();
+            CheckBoxCollision();
 
             #region Tower Adding
             //Temporary way to add towers.
@@ -344,6 +344,31 @@ namespace TowerCraft3D
                     for (int j = 0; j < monsters.Count; j++)
                     {
                         if (projectiles[i].IsCollision(monsters[j]))
+                        {
+                            projectiles.RemoveAt(i);
+                            monsters.RemoveAt(j);
+                            if (i != 0)
+                                i--;
+                            if (j != 0)
+                                j--;
+                            collisionFlag = true;
+                            break;
+                        }
+                    }
+                }
+                collisionFlag = false;
+            }
+        }
+
+        public void CheckBoxCollision()
+        {
+            for (int i = 0; i < projectiles.Count; i++)
+            {
+                if (!collisionFlag)
+                {
+                    for (int j = 0; j < monsters.Count; j++)
+                    {
+                        if (projectiles[i].IsCollisionBox(monsters[j]))
                         {
                             projectiles.RemoveAt(i);
                             monsters.RemoveAt(j);
