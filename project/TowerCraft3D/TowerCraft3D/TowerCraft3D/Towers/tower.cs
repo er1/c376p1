@@ -28,7 +28,7 @@ namespace TowerCraft3D
         public tower(ref Model temp, Vector3 location, TileCoord currentTC)
             : base(temp)
         {
-            world = Matrix.CreateTranslation(location);
+            
             position = location;
             tc = currentTC;
             upgradeLevel = 0;
@@ -45,7 +45,7 @@ namespace TowerCraft3D
                 isDead = true;
             }
 
-            world = Matrix.CreateTranslation(position);
+           // world = Matrix.CreateTranslation(position);
         }
 
         public bool lookForTarget(Map mainMap)

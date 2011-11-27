@@ -22,20 +22,19 @@ namespace TowerCraft3D
         Map map;
         Camera cam;
         player character;
+        TileCoord chosenTile;
+        Colony mainBase;
 
-        //Model Declaration
+        #region Model Declaration
         Model boundingBox;
-
         Model MinecraftLikeModel;
         Model Monster1;
         Model bullet;
         Model tile;
         Model colony;
         Model gunTower;
-        int percentage;
-        int currentWave;
-        int worldSize;
-        static Random random = new Random();
+        #endregion
+
         #region Cube World Variables
         BasicEffect effect;
         protected VertexBuffer vertexBuffer;
@@ -45,44 +44,58 @@ namespace TowerCraft3D
         world worldBox;
         Texture2D boxTexture;
         #endregion
-        
-        //Lists of entities
+
+        #region List of entities
         List<monster> monsters = new List<monster>();
         List<monster> tiles = new List<monster>();
         List<projectile> projectiles = new List<projectile>();
         List<waveManager> wavesLevel1 = new List<waveManager>();
         List<tower> towers = new List<tower>();
-        TileCoord chosenTile;
-        Colony mainBase;
+        #endregion
+
+        #region Variables...
+        int percentage;
+        int currentWave;
+        int worldSize;
+        static Random random = new Random();
         bool collisionFlag = false;
+        #endregion
 
         #region bool Input (bobo Input Manager
         bool SpaceBar = false;
 
         #endregion
 
+        #region Particle effect stuff
+        List<ParticleExplosion> explosions = new List<ParticleExplosion>();
+        ParticleExplosionSettings particleExplosionSettings = new ParticleExplosionSettings();
+        ParticleSettings particleSettings = new ParticleSettings();
+        Texture2D explosionTexture;
+        Texture2D explosionColorsTexture;
+        Effect explosionEffect;
+
+        #endregion
+
         public ModelManager(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
+            
         }
 
-        /// <summary>
-        /// Allows the game component to perform any initialization it needs to before starting
-        /// to run.  This is where it can query for any required services and load content.
-        /// </summary>
+
         public override void Initialize()
         {
-            // TODO: Add your initialization code here
+            #region Initialize viewport, cam, worldsize, tile, map
             viewport = ((Game1)Game).MainScreen;
             cam = ((Game1)Game).cameraMain;
             worldSize = ((Game1)Game).worldSize;
             chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
-
             map = new Map();
-
+            #endregion
             base.Initialize();
         }
+
+
         protected override void  LoadContent()
         {
             
@@ -124,22 +137,32 @@ namespace TowerCraft3D
             tiles.Add(new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0)));
             #endregion
 
+            #region Load incoming waves
             //LOAD WAVE information for Level1
+            //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
             wavesLevel1.Add(new waveManager(1,20,TimeSpan.FromMinutes(2.0),TimeSpan.FromSeconds(3.0)));
+            #endregion
 
-            
+            #region Load particle effect stuff
+            // Load explosion textures and effect
+            explosionTexture = Game.Content.Load<Texture2D>(@"Effect\\Particle");
+            explosionColorsTexture = Game.Content.Load<Texture2D>(@"Effect\\ParticleColors");
+            explosionEffect = Game.Content.Load<Effect>(@"Effect\\particlefx");
+
+            // Set effect parameters that don't change per particle
+            explosionEffect.CurrentTechnique = explosionEffect.Techniques["Technique1"];
+            explosionEffect.Parameters["theTexture"].SetValue(explosionTexture);
+
+            #endregion
+
+
             base.LoadContent();
         }
         
         
-        /// <summary>
-        /// Allows the game component to update itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
-
+           
             #region Update Level1
             //Level 1
             if (currentWave < wavesLevel1.Count)
@@ -179,11 +202,10 @@ namespace TowerCraft3D
 
             #endregion
 
-            //Check Collision
             CheckBoxCollision();
-
             RemoveDeadEntities();
-
+            UpdateExplosions(gameTime);
+            //Has some key input here
             #region Tower Adding
             //Temporary way to add towers.
             if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar)
@@ -354,6 +376,11 @@ namespace TowerCraft3D
             }
             #endregion
 
+            foreach (ParticleExplosion temp in explosions)
+            {
+                temp.Draw(((Game1)Game).cameraMain);
+            }
+
             base.Draw(gameTime);
         }
 
@@ -419,14 +446,29 @@ namespace TowerCraft3D
         }
         #endregion
 
-
-        #region function to remove object when dead (no life)
+        #region function to remove object when dead (no life) + particle effect call
         public void RemoveDeadEntities()
         {
             for (int j = 0; j < monsters.Count; j++)
             {
                 if (monsters[j].isDead)
                 {
+                    explosions.Add(new ParticleExplosion(GraphicsDevice,
+                               monsters[j].getWorld().Translation,
+                               random.Next(
+                                   particleExplosionSettings.minLife,
+                                   particleExplosionSettings.maxLife),
+                               random.Next(
+                                   particleExplosionSettings.minRoundTime,
+                                   particleExplosionSettings.maxRoundTime),
+                               random.Next(
+                                   particleExplosionSettings.minParticlesPerRound,
+                                   particleExplosionSettings.maxParticlesPerRound),
+                               random.Next(
+                                   particleExplosionSettings.minParticles,
+                                   particleExplosionSettings.maxParticles),
+                               explosionColorsTexture, particleSettings,
+                               explosionEffect));
                     monsters.RemoveAt(j);
                     ((Game1)Game).spriteManager.removeLifeBarsMonsters(j);
                     if (j != 0)
@@ -436,6 +478,24 @@ namespace TowerCraft3D
 
         }
 
+
+        #endregion
+
+        #region Particle effect Update
+        protected void UpdateExplosions(GameTime gameTime)
+        {
+            // Loop through and update explosions
+            for (int i = 0; i < explosions.Count; ++i)
+            {
+                explosions[i].Update(gameTime);
+                // If explosion is finished, remove it
+                if (explosions[i].IsDead)
+                {
+                    explosions.RemoveAt(i);
+                    --i;
+                }
+            }
+        }
 
         #endregion
 

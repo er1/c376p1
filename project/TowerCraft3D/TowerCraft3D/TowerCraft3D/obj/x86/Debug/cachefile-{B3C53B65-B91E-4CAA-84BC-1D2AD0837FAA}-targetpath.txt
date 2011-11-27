@@ -48,3 +48,6 @@ Content\Textures\life\life25.xnb
 Content\Textures\life\life50.xnb
 Content\Textures\life\life75.xnb
 Content\Font\GameFont.xnb
+Content\Effect\Particle.xnb
+Content\Effect\ParticleColors.xnb
+Content\Effect\Particlefx.xnb
