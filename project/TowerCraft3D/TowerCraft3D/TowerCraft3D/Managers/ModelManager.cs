@@ -402,11 +402,12 @@ namespace TowerCraft3D
                         if (projectiles[i].IsCollisionBox(monsters[j]))
                         {
                             projectiles.RemoveAt(i);
-                            monsters.RemoveAt(j);
+                            monsters[j].life -= 25;
+                            //monsters.RemoveAt(j);
                             if (i != 0)
                                 i--;
-                            if (j != 0)
-                                j--;
+                            //if (j != 0)
+                            //    j--;
                             collisionFlag = true;
                             break;
                         }
