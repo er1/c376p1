@@ -32,7 +32,7 @@ namespace TowerCraft3D
         Model tile;
         Model colony;
         Model gunTower;
-        
+        int percentage;
         int currentWave;
         int worldSize;
         static Random random = new Random();
@@ -156,9 +156,11 @@ namespace TowerCraft3D
                 //If Level isn't done then check the Timer to add monsters at invervals
                 else if (wavesLevel1[currentWave].canSpawn && wavesLevel1[currentWave].spawn > 0)
                 {
+                    int z = RandomNumber(-80, 60);
                     wavesLevel1[currentWave].spawn--;
                     wavesLevel1[currentWave].canSpawn = false;
-                    monsters.Add(new monster(ref Monster1, new Vector3(-390 + 1, 0, RandomNumber(-80, 60)), new Vector3(1, 0, 0)));
+                    monsters.Add(new monster(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                    ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                 }
             }
             #endregion
@@ -219,8 +221,32 @@ namespace TowerCraft3D
             #region Update Monster, Tower, bullets + a little logic
             for (int i = 0; i < monsters.Count; i++)
             {
-                monsters[i].Update();
+                percentage = 0;
 
+                if ((monsters[i].life / 100) * 100 == 100)
+                {
+                    percentage = 100;
+                }
+                else if ((monsters[i].life / 100) * 100 >= 75 && (monsters[i].life / 100) * 100 <= 99)
+                {
+                    percentage = 100;
+                }
+                else if ((monsters[i].life / 100) * 100 >= 50 && (monsters[i].life / 100) * 100 <= 74)
+                {
+                    percentage = 75;
+                }
+                else if ((monsters[i].life / 100) * 100 >= 25 && (monsters[i].life / 100) * 100 <= 49)
+                {
+                    percentage = 50;
+                }
+                else if ((monsters[i].life / 100) * 100 <= 25)
+                {
+                    percentage = 25;
+                }
+
+
+                monsters[i].Update();
+                ((Game1)Game).spriteManager.updateLifeBarsMonsters(i, percentage, monsters[i].getPosition(), ((Game1)Game).cameraMain, viewport);
                 TileCoord monsterLocation 
                     =
                     new TileCoord((int)Math.Floor((monsters[i].getPosition().X+10) / 20.0), (int)Math.Floor((monsters[i].getPosition().Z+10) / 20.0));
@@ -230,6 +256,7 @@ namespace TowerCraft3D
                 if (monsters[i].hitColony)
                 {
                     monsters.RemoveAt(i);
+                    ((Game1)Game).spriteManager.removeLifeBarsMonsters(i);
                     i--;
                 }
             }
@@ -399,6 +426,7 @@ namespace TowerCraft3D
                 if (monsters[j].isDead)
                 {
                     monsters.RemoveAt(j);
+                    ((Game1)Game).spriteManager.removeLifeBarsMonsters(j);
                     if (j != 0)
                         j--;
                 }
