@@ -18,8 +18,10 @@ namespace TowerCraft3D
     public class SpriteManager : DrawableGameComponent
     {
         SpriteBatch batch;
+
         List<Sprite> monstersLife = new List<Sprite>();
         List<Sprite> towersLife = new List<Sprite>();
+
         Texture2D life100;
         Texture2D life75;
         Texture2D life50;
@@ -29,16 +31,13 @@ namespace TowerCraft3D
         public SpriteManager(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
+            
         }
 
-        /// <summary>
-        /// Allows the game component to perform any initialization it needs to before starting
-        /// to run.  This is where it can query for any required services and load content.
-        /// </summary>
+
         public override void Initialize()
         {
-            // TODO: Add your initialization code here
+           
             batch = new SpriteBatch(Game.GraphicsDevice);
             base.Initialize();
         }
@@ -52,22 +51,17 @@ namespace TowerCraft3D
             base.LoadContent();
         }
 
-        /// <summary>
-        /// Allows the game component to update itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
-            
-
-
+           
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
             batch.Begin();
+
             batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(0,0), Color.Black);
             
             for (int i = 0; i < monstersLife.Count; i++)
@@ -75,17 +69,17 @@ namespace TowerCraft3D
                 monstersLife[i].Draw(batch);
             }
 
-
-
             batch.End();
             base.Draw(gameTime);
         }
 
-
+        #region Lifebar stuff for Monsters
+        //Add a life bar to the monster life var list
         public void addLifeBarsMonsters(Vector2 pos)
         {
             monstersLife.Add(new Sprite(ref life100,  pos));
         }
+        //Updates the life bar texture
         public void updateLifeBarsMonsters(int i,int percentage, Vector3 position, Camera cam, Viewport viewport)
         {
             Vector3 posi = viewport.Project(position, cam.projection, cam.view, Matrix.Identity);
@@ -100,10 +94,11 @@ namespace TowerCraft3D
             if (percentage == 25)
                 monstersLife[i].Update(ref life25, pos);
         }
+        //Removes the life bar sprite from the list when the monster died
         public void removeLifeBarsMonsters(int i)
         {
             monstersLife.RemoveAt(i);
         }
-
+        #endregion
     }
 }
