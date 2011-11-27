@@ -15,7 +15,7 @@ namespace TowerCraft3D
         {
             life = 50;
             towerDmg = 10;
-            timer =  TimeSpan.FromSeconds(2.0);
+            timer =  TimeSpan.FromSeconds(0.5);
         }
 
     }

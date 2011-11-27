@@ -21,7 +21,8 @@ namespace TowerCraft3D
         public double maxMove { get; set; }
         protected float move = 0.5f;
         public bool hitColony {get;set;}
-
+        public int life { get; set; }
+        public bool isDead {get; protected set;}
 
         public monster(ref Model temp, Vector3 location, Vector3 newDirection)
             : base(temp)
@@ -30,6 +31,7 @@ namespace TowerCraft3D
             direction = newDirection*move;
             //initialDirection = newDirection;
             hitColony = false;
+            life = 100;
 
         }
         //Random Function
@@ -40,30 +42,17 @@ namespace TowerCraft3D
 
         public override void Update()
         {
-            
-            ////World wrapping
-            ////X coordinates
             if (world.M41 >= 0)
             { 
                 hitColony = true;
-                //world = Matrix.CreateTranslation(new Vector3(-worldSize + 1, world.M42, world.M43));
             }
-            //if (world.M41 <= -worldSize)
-            //{ world = Matrix.CreateTranslation(new Vector3(worldSize - 1, world.M42, world.M43)); }
-            ////Y coordinates
-            //if (world.M42 >= worldSize)
-            //{ world = Matrix.CreateTranslation(new Vector3(world.M41, -worldSize + 1, world.M43)); }
-            //if (world.M42 <= -worldSize)
-            //{ world = Matrix.CreateTranslation(new Vector3(world.M41, worldSize - 1, world.M43)); }
 
-            //// Z coordinates
-            //if (world.M43 >= worldSize)
-            //{ world = Matrix.CreateTranslation(new Vector3(world.M41, world.M42, -worldSize + 1)); }
-            //if (world.M43 <= -worldSize)
-            //{ world = Matrix.CreateTranslation(new Vector3(world.M41, world.M42, worldSize - 1)); }
+            if (life <= 0)
+            {
+                isDead = true;
+            }
 
             world *= Matrix.CreateTranslation(direction);
-            //rotation *= Matrix.CreateRotationY(MathHelper.PiOver4 / 60);
         }
         public Vector3 getDirection()
         {

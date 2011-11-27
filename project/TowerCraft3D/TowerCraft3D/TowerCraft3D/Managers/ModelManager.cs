@@ -177,6 +177,8 @@ namespace TowerCraft3D
             //Check Collision
             CheckBoxCollision();
 
+            RemoveDeadEntities();
+
             #region Tower Adding
             //Temporary way to add towers.
             if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar)
@@ -346,11 +348,10 @@ namespace TowerCraft3D
                         if (projectiles[i].IsCollision(monsters[j]))
                         {
                             projectiles.RemoveAt(i);
-                            monsters.RemoveAt(j);
+                            monsters[j].life -= 25;
                             if (i != 0)
                                 i--;
-                            if (j != 0)
-                                j--;
+                            
                             collisionFlag = true;
                             break;
                         }
@@ -384,6 +385,25 @@ namespace TowerCraft3D
                 collisionFlag = false;
             }
         }
+        #endregion
+
+
+        #region function to remove object when dead (no life)
+        public void RemoveDeadEntities()
+        {
+            for (int j = 0; j < monsters.Count; j++)
+            {
+                if (monsters[j].isDead)
+                {
+                    monsters.RemoveAt(j);
+                    if (j != 0)
+                        j--;
+                }
+            }
+
+        }
+
+
         #endregion
 
         #region XNA Wiki Random Function
