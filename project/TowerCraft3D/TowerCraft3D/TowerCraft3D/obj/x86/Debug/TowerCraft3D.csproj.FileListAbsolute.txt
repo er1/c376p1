@@ -105,3 +105,6 @@ C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\Tower
 C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\life\life50.xnb
 C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\life\life75.xnb
 C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Font\GameFont.xnb
+C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Effect\Particle.xnb
+C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Effect\ParticleColors.xnb
+C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Effect\Particlefx.xnb

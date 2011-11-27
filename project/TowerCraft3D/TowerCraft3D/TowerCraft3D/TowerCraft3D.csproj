@@ -116,6 +116,8 @@
     <Compile Include="Model\Sprite.cs" />
     <Compile Include="Monsters\monster.cs" />
     <Compile Include="Model\player.cs" />
+    <Compile Include="ParticleEffect\ParticleExplosion.cs" />
+    <Compile Include="ParticleEffect\ParticleSettings.cs" />
     <Compile Include="Towers\CanonTower.cs" />
     <Compile Include="Towers\ChickenTower.cs" />
     <Compile Include="Towers\ElectricTower.cs" />
@@ -129,7 +131,6 @@
     <Compile Include="Towers\resource.cs" />
     <Compile Include="Towers\Tile.cs" />
     <Compile Include="Towers\tower.cs" />
-    <Compile Include="Managers\TowerManager.cs" />
     <Compile Include="Managers\waveManager.cs" />
     <Compile Include="Map\world.cs" />
   </ItemGroup>

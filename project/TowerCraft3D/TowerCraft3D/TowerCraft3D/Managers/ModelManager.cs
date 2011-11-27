@@ -66,6 +66,16 @@ namespace TowerCraft3D
 
         #endregion
 
+        #region Particle effect stuff
+        List<ParticleExplosion> explosions = new List<ParticleExplosion>();
+        ParticleExplosionSettings particleExplosionSettings = new ParticleExplosionSettings();
+        ParticleSettings particleSettings = new ParticleSettings();
+        Texture2D explosionTexture;
+        Texture2D explosionColorsTexture;
+        Effect explosionEffect;
+
+        #endregion
+
         public ModelManager(Game game)
             : base(game)
         {
@@ -133,6 +143,19 @@ namespace TowerCraft3D
             wavesLevel1.Add(new waveManager(1,20,TimeSpan.FromMinutes(2.0),TimeSpan.FromSeconds(3.0)));
             #endregion
 
+            #region Load particle effect stuff
+            // Load explosion textures and effect
+            explosionTexture = Game.Content.Load<Texture2D>(@"Effect\\Particle");
+            explosionColorsTexture = Game.Content.Load<Texture2D>(@"Effect\\ParticleColors");
+            explosionEffect = Game.Content.Load<Effect>(@"Effect\\particlefx");
+
+            // Set effect parameters that don't change per particle
+            explosionEffect.CurrentTechnique = explosionEffect.Techniques["Technique1"];
+            explosionEffect.Parameters["theTexture"].SetValue(explosionTexture);
+
+            #endregion
+
+
             base.LoadContent();
         }
         
@@ -181,7 +204,8 @@ namespace TowerCraft3D
 
             CheckBoxCollision();
             RemoveDeadEntities();
-
+            UpdateExplosions(gameTime);
+            //Has some key input here
             #region Tower Adding
             //Temporary way to add towers.
             if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar)
@@ -352,6 +376,11 @@ namespace TowerCraft3D
             }
             #endregion
 
+            foreach (ParticleExplosion temp in explosions)
+            {
+                temp.Draw(((Game1)Game).cameraMain);
+            }
+
             base.Draw(gameTime);
         }
 
@@ -417,13 +446,29 @@ namespace TowerCraft3D
         }
         #endregion
 
-        #region function to remove object when dead (no life)
+        #region function to remove object when dead (no life) + particle effect call
         public void RemoveDeadEntities()
         {
             for (int j = 0; j < monsters.Count; j++)
             {
                 if (monsters[j].isDead)
                 {
+                    explosions.Add(new ParticleExplosion(GraphicsDevice,
+                               monsters[j].getWorld().Translation,
+                               random.Next(
+                                   particleExplosionSettings.minLife,
+                                   particleExplosionSettings.maxLife),
+                               random.Next(
+                                   particleExplosionSettings.minRoundTime,
+                                   particleExplosionSettings.maxRoundTime),
+                               random.Next(
+                                   particleExplosionSettings.minParticlesPerRound,
+                                   particleExplosionSettings.maxParticlesPerRound),
+                               random.Next(
+                                   particleExplosionSettings.minParticles,
+                                   particleExplosionSettings.maxParticles),
+                               explosionColorsTexture, particleSettings,
+                               explosionEffect));
                     monsters.RemoveAt(j);
                     ((Game1)Game).spriteManager.removeLifeBarsMonsters(j);
                     if (j != 0)
@@ -433,6 +478,24 @@ namespace TowerCraft3D
 
         }
 
+
+        #endregion
+
+        #region Particle effect Update
+        protected void UpdateExplosions(GameTime gameTime)
+        {
+            // Loop through and update explosions
+            for (int i = 0; i < explosions.Count; ++i)
+            {
+                explosions[i].Update(gameTime);
+                // If explosion is finished, remove it
+                if (explosions[i].IsDead)
+                {
+                    explosions.RemoveAt(i);
+                    --i;
+                }
+            }
+        }
 
         #endregion
 
