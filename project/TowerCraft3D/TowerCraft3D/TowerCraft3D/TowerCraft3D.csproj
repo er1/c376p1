@@ -108,8 +108,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera\Camera.cs" />
+    <Compile Include="Managers\SpriteManager.cs" />
     <Compile Include="Map\Colony.cs" />
     <Compile Include="Map\Map.cs" />
+    <Compile Include="Model\Sprite.cs" />
     <Compile Include="Model\model.cs" />
     <Compile Include="Managers\ModelManager.cs" />
     <Compile Include="Monsters\monster.cs" />
