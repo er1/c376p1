@@ -13,6 +13,9 @@ namespace TowerCraft3D
 
         public GunTower(ref Model gunModel, Vector3 pos, TileCoord tc) : base(ref gunModel,pos, tc)
         {
+            
+            world *= Matrix.CreateRotationY(MathHelper.ToRadians(180));
+            world *= Matrix.CreateTranslation(pos);
             life = 50;
             towerDmg = 10;
             timer =  TimeSpan.FromSeconds(0.5);
