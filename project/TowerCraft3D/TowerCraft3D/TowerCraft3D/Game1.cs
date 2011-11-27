@@ -23,7 +23,6 @@ namespace TowerCraft3D
         private int worldWidth;
         private int worldHeight;
         ModelManager modelManager;
-        public SpriteManager spriteManager;
         public int worldSize{get;protected set;}
 
         public Game1()
@@ -57,7 +56,6 @@ namespace TowerCraft3D
             //Camera component
             Components.Remove(cameraMain);
             Components.Remove(modelManager);
-            Components.Remove(modelManager);
             cameraMain = new Camera(this, new Vector3(0, 140, 95), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
             Components.Add(cameraMain);
             
@@ -66,11 +64,8 @@ namespace TowerCraft3D
             
             //Model Manager
             modelManager = new ModelManager(this);
-            Components.Add(modelManager);
-
-            spriteManager = new SpriteManager(this);
-            Components.Add(spriteManager);  
-
+            Components.Add(modelManager);        
+            
             base.Initialize();
 
         }
