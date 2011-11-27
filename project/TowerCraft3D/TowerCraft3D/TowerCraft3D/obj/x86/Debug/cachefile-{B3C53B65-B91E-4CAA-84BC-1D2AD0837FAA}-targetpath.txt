@@ -4,7 +4,6 @@ Content\Models\Char\Head.xnb
 Content\Models\Char\Leg1.xnb
 Content\Models\Char\Leg2.xnb
 Content\Models\Char\torso.xnb
-Content\Textures\background\back512.xnb
 Content\Models\Monster1\cube1_auv.xnb
 Content\Models\Monster1\cube2_auv.xnb
 Content\Models\Monster1\cube2_copy3_auv.xnb
@@ -16,6 +15,8 @@ Content\Models\Map\TileText.xnb
 Content\Models\Towers\GunTower\GunTowerText.xnb
 Content\Models\Towers\GunTower\BulletText.xnb
 Content\Models\Map\ColonyText.xnb
+Content\Textures\background\back512.xnb
+Content\Models\BoundingBoxText.xnb
 Content\Models\Char\Char.xnb
 Content\Models\Monster1\monster1.xnb
 Content\Models\Bullet\bullet.xnb
@@ -23,6 +24,7 @@ Content\Models\Map\Tile.xnb
 Content\Models\Towers\GunTower\GunTower.xnb
 Content\Models\Towers\GunTower\Bullet.xnb
 Content\Models\Map\Colony.xnb
+Content\Models\BoundingBox.xnb
 Content\Models\Char\Head_0.xnb
 Content\Models\Char\Arm2_0.xnb
 Content\Models\Char\Leg2_0.xnb
@@ -40,6 +42,9 @@ Content\Models\Map\TileText_0.xnb
 Content\Models\Towers\GunTower\GunTowerText_0.xnb
 Content\Models\Towers\GunTower\BulletText_0.xnb
 Content\Models\Map\ColonyText_0.xnb
-Content\Models\BoundingBoxText.xnb
-Content\Models\BoundingBox.xnb
 Content\Models\BoundingBoxText_0.xnb
+Content\Textures\life\life100.xnb
+Content\Textures\life\life25.xnb
+Content\Textures\life\life50.xnb
+Content\Textures\life\life75.xnb
+Content\Font\GameFont.xnb
