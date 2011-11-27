@@ -22,20 +22,19 @@ namespace TowerCraft3D
         Map map;
         Camera cam;
         player character;
+        TileCoord chosenTile;
+        Colony mainBase;
 
-        //Model Declaration
+        #region Model Declaration
         Model boundingBox;
-
         Model MinecraftLikeModel;
         Model Monster1;
         Model bullet;
         Model tile;
         Model colony;
         Model gunTower;
-        int percentage;
-        int currentWave;
-        int worldSize;
-        static Random random = new Random();
+        #endregion
+
         #region Cube World Variables
         BasicEffect effect;
         protected VertexBuffer vertexBuffer;
@@ -45,16 +44,22 @@ namespace TowerCraft3D
         world worldBox;
         Texture2D boxTexture;
         #endregion
-        
-        //Lists of entities
+
+        #region List of entities
         List<monster> monsters = new List<monster>();
         List<monster> tiles = new List<monster>();
         List<projectile> projectiles = new List<projectile>();
         List<waveManager> wavesLevel1 = new List<waveManager>();
         List<tower> towers = new List<tower>();
-        TileCoord chosenTile;
-        Colony mainBase;
+        #endregion
+
+        #region Variables...
+        int percentage;
+        int currentWave;
+        int worldSize;
+        static Random random = new Random();
         bool collisionFlag = false;
+        #endregion
 
         #region bool Input (bobo Input Manager
         bool SpaceBar = false;
@@ -64,25 +69,23 @@ namespace TowerCraft3D
         public ModelManager(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
+            
         }
 
-        /// <summary>
-        /// Allows the game component to perform any initialization it needs to before starting
-        /// to run.  This is where it can query for any required services and load content.
-        /// </summary>
+
         public override void Initialize()
         {
-            // TODO: Add your initialization code here
+            #region Initialize viewport, cam, worldsize, tile, map
             viewport = ((Game1)Game).MainScreen;
             cam = ((Game1)Game).cameraMain;
             worldSize = ((Game1)Game).worldSize;
             chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
-
             map = new Map();
-
+            #endregion
             base.Initialize();
         }
+
+
         protected override void  LoadContent()
         {
             
@@ -124,22 +127,19 @@ namespace TowerCraft3D
             tiles.Add(new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0)));
             #endregion
 
+            #region Load incoming waves
             //LOAD WAVE information for Level1
+            //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
             wavesLevel1.Add(new waveManager(1,20,TimeSpan.FromMinutes(2.0),TimeSpan.FromSeconds(3.0)));
+            #endregion
 
-            
             base.LoadContent();
         }
         
         
-        /// <summary>
-        /// Allows the game component to update itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            // TODO: Add your update code here
-
+           
             #region Update Level1
             //Level 1
             if (currentWave < wavesLevel1.Count)
@@ -179,9 +179,7 @@ namespace TowerCraft3D
 
             #endregion
 
-            //Check Collision
             CheckBoxCollision();
-
             RemoveDeadEntities();
 
             #region Tower Adding
@@ -418,7 +416,6 @@ namespace TowerCraft3D
             }
         }
         #endregion
-
 
         #region function to remove object when dead (no life)
         public void RemoveDeadEntities()
