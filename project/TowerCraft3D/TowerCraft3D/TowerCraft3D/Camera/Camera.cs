@@ -103,6 +103,37 @@ namespace TowerCraft3D
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
+            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
+
+            if (gamePadState.IsConnected)
+            {
+
+                if ((gamePadState.DPad.Up == ButtonState.Pressed) && (currentTC.y > -4) && moveable)
+                {
+                    currentTC.y--;
+                    moveable = false;
+                }
+                if ((gamePadState.DPad.Down == ButtonState.Pressed) && (currentTC.y < 3) && moveable)
+                {
+                    currentTC.y++;
+                    moveable = false;
+
+                }
+                if ((gamePadState.DPad.Right == ButtonState.Pressed) && (currentTC.x < 0) && moveable)
+                {
+                    currentTC.x++;
+                    moveable = false;
+
+                }
+                if ((gamePadState.DPad.Left == ButtonState.Pressed) && (currentTC.x > -19) && moveable)
+                {
+                    currentTC.x--;
+                    moveable = false;
+
+                }
+
+               
+            }
 
             if (moveAllowed)
             {
