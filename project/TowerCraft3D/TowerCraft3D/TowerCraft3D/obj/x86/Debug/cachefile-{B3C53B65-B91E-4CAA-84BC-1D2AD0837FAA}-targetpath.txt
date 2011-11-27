@@ -40,7 +40,13 @@ Content\Models\Map\TileText_0.xnb
 Content\Models\Towers\GunTower\GunTowerText_0.xnb
 Content\Models\Towers\GunTower\BulletText_0.xnb
 Content\Models\Map\ColonyText_0.xnb
+<<<<<<< HEAD
 Content\Textures\life\life100.xnb
 Content\Textures\life\life25.xnb
 Content\Textures\life\life50.xnb
 Content\Textures\life\life75.xnb
+=======
+Content\Models\BoundingBoxText.xnb
+Content\Models\BoundingBox.xnb
+Content\Models\BoundingBoxText_0.xnb
+>>>>>>> 4a70ae98acd930bf188c00b1f9945d3539484d4b

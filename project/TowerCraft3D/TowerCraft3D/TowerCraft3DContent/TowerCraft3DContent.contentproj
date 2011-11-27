@@ -197,6 +197,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Textures\life\life100.png">
       <Name>life100</Name>
       <Importer>TextureImporter</Importer>
@@ -216,6 +217,19 @@
       <Name>life75</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+=======
+    <Compile Include="Models\BoundingBoxText.jpg">
+      <Name>BoundingBoxText</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\BoundingBox.X">
+      <Name>BoundingBox</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+>>>>>>> 4a70ae98acd930bf188c00b1f9945d3539484d4b
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

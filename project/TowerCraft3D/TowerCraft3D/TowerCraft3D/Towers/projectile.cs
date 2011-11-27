@@ -19,12 +19,13 @@ namespace TowerCraft3D
         static Random random = new Random(); //random number (used with function)
         protected TimeSpan projectileDistanceTime;
         public TimeSpan projectileTimer { get; set; }
+        public Model collisionModel { get; set; }
 
 
-
-        public projectile(ref Model temp, Vector3 location, Vector3 newDirection)
+        public projectile(ref Model temp, ref Model colModel, Vector3 location, Vector3 newDirection)
             : base(temp)
         {
+            collisionModel = colModel;
             world = Matrix.CreateTranslation(location);
             direction = newDirection;
             projectileDistanceTime = TimeSpan.FromSeconds(4);

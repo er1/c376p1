@@ -28,6 +28,7 @@ namespace TowerCraft3D
         {
             for (int meshIndex1 = 0; meshIndex1 < this.getModel().Meshes.Count; meshIndex1++)
             {
+                
                 BoundingSphere sphere1 = this.getModel().Meshes[meshIndex1].BoundingSphere;
                 sphere1 = sphere1.Transform(this.getWorld());
 
@@ -42,7 +43,76 @@ namespace TowerCraft3D
             }
             return false;
         }
+        public bool IsCollisionBox(model model2)
+        {
+            if (this is projectile)
+            {
+                for (int meshIndex1 = 0; meshIndex1 < ((projectile)this).collisionModel.Meshes.Count; meshIndex1++)
+                {
 
+                    BoundingBox box1 = UpdateBoundingBox(((projectile)this).collisionModel, this.getWorld());
+
+                    for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
+                    {
+                        BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
+
+                        if (box1.Intersects(box2))
+                            return true;
+                    }
+                }
+            }
+            else
+            {
+                for (int meshIndex1 = 0; meshIndex1 < this.getModel().Meshes.Count; meshIndex1++)
+                {
+
+                    BoundingBox box1 = UpdateBoundingBox(this.getModel(), this.getWorld());
+
+                    for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
+                    {
+                        BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
+
+                        if (box1.Intersects(box2))
+                            return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        protected BoundingBox UpdateBoundingBox(Model model, Matrix worldTransform)
+        {
+            // Initialize minimum and maximum corners of the bounding box to max and min values
+            Vector3 min = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
+            Vector3 max = new Vector3(float.MinValue, float.MinValue, float.MinValue);
+
+            // For each mesh of the model
+            foreach (ModelMesh mesh in model.Meshes)
+            {
+                foreach (ModelMeshPart meshPart in mesh.MeshParts)
+                {
+                    // Vertex buffer parameters
+                    int vertexStride = meshPart.VertexBuffer.VertexDeclaration.VertexStride;
+                    int vertexBufferSize = meshPart.NumVertices * vertexStride;
+
+                    // Get vertex data as float
+                    float[] vertexData = new float[vertexBufferSize / sizeof(float)];
+                    meshPart.VertexBuffer.GetData<float>(vertexData);
+
+                    // Iterate through vertices (possibly) growing bounding box, all calculations are done in world space
+                    for (int i = 0; i < vertexBufferSize / sizeof(float); i += vertexStride / sizeof(float))
+                    {
+                        Vector3 transformedPosition = Vector3.Transform(new Vector3(vertexData[i], vertexData[i + 1], vertexData[i + 2]), worldTransform);
+
+                        min = Vector3.Min(min, transformedPosition);
+                        max = Vector3.Max(max, transformedPosition);
+                    }
+                }
+            }
+
+            // Create and return bounding box
+            return new BoundingBox(min, max);
+        }
         public virtual Matrix getWorld()
         {
             return world;
