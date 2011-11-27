@@ -49,12 +49,12 @@ namespace TowerCraft3D
             for (int meshIndex1 = 0; meshIndex1 < this.getModel().Meshes.Count; meshIndex1++)
             {
 
-                BoundingBox box1 = CalculateBoundingBox(this.getModel());
+                BoundingBox box1 = UpdateBoundingBox(this.getModel(), this.getWorld());
                 //box1 = box1.Transform(this.getWorld());
 
                 for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
                 {
-                    BoundingBox box2 = CalculateBoundingBox(model2.getModel());
+                    BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
 
                     if (box1.Intersects(box2))
                         return true;
@@ -62,55 +62,38 @@ namespace TowerCraft3D
             }
             return false;
         }
-        public BoundingBox ComputeBoundingBox()
+
+        protected BoundingBox UpdateBoundingBox(Model model, Matrix worldTransform)
         {
+            // Initialize minimum and maximum corners of the bounding box to max and min values
             Vector3 min = new Vector3(float.MaxValue, float.MaxValue, float.MaxValue);
             Vector3 max = new Vector3(float.MinValue, float.MinValue, float.MinValue);
 
-            Matrix[] bones = new Matrix[this.getModel().Bones.Count];
-            this.getModel().CopyAbsoluteBoneTransformsTo(bones);
-
-            List<Vector3> vertices = new List<Vector3>();
-
-            foreach (ModelMesh mesh in this.getModel().Meshes)
+            // For each mesh of the model
+            foreach (ModelMesh mesh in model.Meshes)
             {
-                //get the transform of the current mesh
-                Matrix transform = bones[mesh.ParentBone.Index];
-
-                foreach (ModelMeshPart part in mesh.MeshParts)
+                foreach (ModelMeshPart meshPart in mesh.MeshParts)
                 {
-                    //get the current mesh info
-                    part.
-                    int stride = part.VertexStride;
-                    int numVertices = part.NumVertices;
-                    byte[] verticesData = new byte[stride * numVertices];
+                    // Vertex buffer parameters
+                    int vertexStride = meshPart.VertexBuffer.VertexDeclaration.VertexStride;
+                    int vertexBufferSize = meshPart.NumVertices * vertexStride;
 
-                    mesh.VertexBuffer.GetData(verticesData);
-                    for (int i = 0; i < verticesData.Length; i += stride)
+                    // Get vertex data as float
+                    float[] vertexData = new float[vertexBufferSize / sizeof(float)];
+                    meshPart.VertexBuffer.GetData<float>(vertexData);
+
+                    // Iterate through vertices (possibly) growing bounding box, all calculations are done in world space
+                    for (int i = 0; i < vertexBufferSize / sizeof(float); i += vertexStride / sizeof(float))
                     {
-                        float x = BitConverter.ToSingle(verticesData, i);
-                        float y = BitConverter.ToSingle(verticesData, i + sizeof(float));
-                        float z = BitConverter.ToSingle(verticesData, i + 2 * sizeof(float));
+                        Vector3 transformedPosition = Vector3.Transform(new Vector3(vertexData[i], vertexData[i + 1], vertexData[i + 2]), worldTransform);
 
-                        Vector3 vector = new Vector3(x, y, z);
-                        //apply transform to the current point
-                        vector = Vector3.Transform(vector, transform);
-
-                        vertices.Add(vector);
-
-                        if (vector.X < min.X) min.X = vector.X;
-                        if (vector.Y < min.Y) min.Y = vector.Y;
-                        if (vector.Z < min.Z) min.Z = vector.Z;
-                        if (vector.X > max.X) max.X = vector.X;
-                        if (vector.Y > max.Y) max.Y = vector.Y;
-                        if (vector.Z > max.Z) max.Z = vector.Z;
+                        min = Vector3.Min(min, transformedPosition);
+                        max = Vector3.Max(max, transformedPosition);
                     }
                 }
             }
 
-            //this._VerticesCount = vertices.Count;
-            //this._Vertices = vertices.ToArray();
-
+            // Create and return bounding box
             return new BoundingBox(min, max);
         }
         public virtual Matrix getWorld()
