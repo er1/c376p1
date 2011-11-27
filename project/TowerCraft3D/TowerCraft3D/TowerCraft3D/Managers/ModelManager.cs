@@ -162,6 +162,7 @@ namespace TowerCraft3D
         
         public override void Update(GameTime gameTime)
         {
+            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
            
             #region Update Level1
             //Level 1
@@ -208,6 +209,33 @@ namespace TowerCraft3D
             //Has some key input here
             #region Tower Adding
             //Temporary way to add towers.
+            if (gamePadState.IsConnected)
+            {
+                if (gamePadState.Buttons.A == ButtonState.Pressed)
+                {
+                    map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
+
+                    int resourceValue = map.GetTile(chosenTile).towerConstruction();
+
+                    if (resourceValue == 0)
+                    {
+
+                    }
+                    else if ((resourceValue >= 3) && (resourceValue <= 5))
+                    {
+                        towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
+                        map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
+                    }
+                    else if ((resourceValue >= 3) && (resourceValue <= 5))
+                    {
+
+                    }
+                    else if ((resourceValue >= 3) && (resourceValue <= 5))
+                    {
+
+                    }
+                }
+            }
             if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar)
             {
                 SpaceBar = true;
