@@ -258,6 +258,7 @@ namespace TowerCraft3D
                     monsters.RemoveAt(i);
                     ((Game1)Game).spriteManager.removeLifeBarsMonsters(i);
                     i--;
+                    ((Game1)Game).LIFE -= 10;
                 }
             }
              //Draws Tower list

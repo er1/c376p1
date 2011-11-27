@@ -24,6 +24,7 @@ namespace TowerCraft3D
         Texture2D life75;
         Texture2D life50;
         Texture2D life25;
+        SpriteFont font;
 
         public SpriteManager(Game game)
             : base(game)
@@ -47,6 +48,7 @@ namespace TowerCraft3D
             life75 = Game.Content.Load<Texture2D>(@"Textures\\life\life75");
             life50 = Game.Content.Load<Texture2D>(@"Textures\\life\life50");
             life25 = Game.Content.Load<Texture2D>(@"Textures\\life\life25");
+            font = Game.Content.Load<SpriteFont>(@"Font\\GameFont");
             base.LoadContent();
         }
 
@@ -66,10 +68,15 @@ namespace TowerCraft3D
         public override void Draw(GameTime gameTime)
         {
             batch.Begin();
+            batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(0,0), Color.Black);
+            
             for (int i = 0; i < monstersLife.Count; i++)
             {
                 monstersLife[i].Draw(batch);
             }
+
+
+
             batch.End();
             base.Draw(gameTime);
         }

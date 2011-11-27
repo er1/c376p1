@@ -25,6 +25,7 @@ namespace TowerCraft3D
         ModelManager modelManager;
         public int worldSize{get;protected set;}
         public SpriteManager spriteManager;
+        public int LIFE {get;set;}
 
         public Game1()
         {
@@ -42,6 +43,7 @@ namespace TowerCraft3D
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            LIFE = 1000;
             worldSize = 390;
             worldHeight = graphics.PreferredBackBufferHeight;
             worldWidth = graphics.PreferredBackBufferWidth;

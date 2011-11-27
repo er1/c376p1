@@ -47,3 +47,4 @@ Content\Textures\life\life100.xnb
 Content\Textures\life\life25.xnb
 Content\Textures\life\life50.xnb
 Content\Textures\life\life75.xnb
+Content\Font\GameFont.xnb
