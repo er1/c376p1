@@ -43,21 +43,38 @@ namespace TowerCraft3D
             }
             return false;
         }
-
         public bool IsCollisionBox(model model2)
         {
-            for (int meshIndex1 = 0; meshIndex1 < this.getModel().Meshes.Count; meshIndex1++)
+            if (this is projectile)
             {
-
-                BoundingBox box1 = UpdateBoundingBox(this.getModel(), this.getWorld());
-                //box1 = box1.Transform(this.getWorld());
-
-                for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
+                for (int meshIndex1 = 0; meshIndex1 < ((projectile)this).collisionModel.Meshes.Count; meshIndex1++)
                 {
-                    BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
 
-                    if (box1.Intersects(box2))
-                        return true;
+                    BoundingBox box1 = UpdateBoundingBox(((projectile)this).collisionModel, this.getWorld());
+
+                    for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
+                    {
+                        BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
+
+                        if (box1.Intersects(box2))
+                            return true;
+                    }
+                }
+            }
+            else
+            {
+                for (int meshIndex1 = 0; meshIndex1 < this.getModel().Meshes.Count; meshIndex1++)
+                {
+
+                    BoundingBox box1 = UpdateBoundingBox(this.getModel(), this.getWorld());
+
+                    for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
+                    {
+                        BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
+
+                        if (box1.Intersects(box2))
+                            return true;
+                    }
                 }
             }
             return false;

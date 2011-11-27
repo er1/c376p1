@@ -24,6 +24,8 @@ namespace TowerCraft3D
         player character;
 
         //Model Declaration
+        Model boundingBox;
+
         Model MinecraftLikeModel;
         Model Monster1;
         Model bullet;
@@ -96,11 +98,12 @@ namespace TowerCraft3D
             #endregion
 
             #region Load Models
+            boundingBox = Game.Content.Load<Model>(@"Models\\BoundingBox");
             MinecraftLikeModel = Game.Content.Load<Model>(@"Models\\Char\\Char");
             Monster1 = Game.Content.Load<Model>(@"Models\\Monster1\\monster1");
             tile = Game.Content.Load<Model>(@"Models\\Map\\Tile");
             colony = Game.Content.Load<Model>(@"Models\\Map\\Colony");
-            bullet = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\Bullet");
+            bullet = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             gunTower = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
 
@@ -331,7 +334,7 @@ namespace TowerCraft3D
         public void addProject(Vector3 position, Vector3 direction)
         {
             //Remember to change Model for diff bullets
-            projectiles.Add(new projectile(ref bullet, position, direction));
+            projectiles.Add(new projectile(ref bullet, ref boundingBox, position, direction));
         }
         #endregion
 
