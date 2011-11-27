@@ -33,7 +33,7 @@ namespace TowerCraft3D
             tc = currentTC;
             upgradeLevel = 0;
             isDead = false;
-            range = 5;
+            range = 10;
             //usually set a different timer depending on different types of tower
             //timer = TimeSpan.FromSeconds(2.0);
         }
