@@ -33,10 +33,6 @@ namespace TowerCraft3D
             box = UpdateBoundingBox(this.getModel(), this.getWorld());
 
         }
-        protected virtual Model getModel()
-        {
-            return collisionModel;
-        }
 
         protected virtual Model getActualModel()
         {
@@ -50,6 +46,11 @@ namespace TowerCraft3D
         private int RandomNumber(int min, int max)
         {
             return random.Next(min, max);
+        }
+
+        public Vector3 getPosition()
+        {
+            return new Vector3((float)world.M41, (float)world.M42, (float)world.M43);
         }
 
         public override void Update()

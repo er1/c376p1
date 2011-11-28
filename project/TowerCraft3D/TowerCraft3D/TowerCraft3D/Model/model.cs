@@ -19,9 +19,15 @@ namespace TowerCraft3D
         protected Matrix world = Matrix.Identity;
         protected BoundingBox box;
 
+        private static int totalID = 0;
+        private int modelID;
+
         public model(Model newModel)
         {
             this.currentModel = newModel;
+
+            modelID = totalID;
+            totalID++;
             //this.location = newLocation;
             box = UpdateBoundingBox(this.getModel(), this.getWorld());
         }
@@ -47,22 +53,44 @@ namespace TowerCraft3D
         }
         public bool IsCollisionBox(model model2)
         {
-            for (int meshIndex1 = 0; meshIndex1 < this.getModel().Meshes.Count; meshIndex1++)
+            if (this is projectile)
             {
-
-                BoundingBox box1 = UpdateBoundingBox(this.getModel(), this.getWorld());
-
-                for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
+                for (int meshIndex1 = 0; meshIndex1 < ((projectile)this).collisionModel.Meshes.Count; meshIndex1++)
                 {
-                    BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
+                    BoundingBox box1 = UpdateBoundingBox(((projectile)this).collisionModel, this.getWorld());
 
-                    if (box1.Intersects(box2))
-                        return true;
+                    for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
+                    {
+                        BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
+
+                        if (box1.Intersects(box2))
+                            return true;
+                    }
+                }
+            }
+            else
+            {
+                for (int meshIndex1 = 0; meshIndex1 < this.getModel().Meshes.Count; meshIndex1++)
+                {
+
+                    BoundingBox box1 = UpdateBoundingBox(this.getModel(), this.getWorld());
+
+                    for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
+                    {
+                        BoundingBox box2 = UpdateBoundingBox(model2.getModel(), model2.getWorld());
+
+                        if (box1.Intersects(box2))
+                            return true;
+                    }
                 }
             }
             return false;
         }
 
+        public int getID()
+        {
+            return modelID;
+        }
         
         public virtual Matrix getWorld()
         {

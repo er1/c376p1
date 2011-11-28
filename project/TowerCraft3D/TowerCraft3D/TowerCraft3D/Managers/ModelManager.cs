@@ -218,7 +218,6 @@ namespace TowerCraft3D
 
             #endregion
 
-            CheckBoxCollision();
             RemoveDeadEntities();
             UpdateExplosions(gameTime);
             //Has some key input here
@@ -320,6 +319,13 @@ namespace TowerCraft3D
             for (int i = 0; i < projectiles.Count; i++)
             {
                 projectiles[i].Update();
+
+                TileCoord projectileLocation
+                    =
+                    new TileCoord((int)Math.Floor((projectiles[i].getPosition().X + 10) / 20.0), (int)Math.Floor((projectiles[i].getPosition().Z + 10) / 20.0));
+
+                 map.GetTile(projectileLocation).addEntity(projectiles[i]);
+
                 //Check if projectile Timer is at zero to remove
                 if (projectiles[i].removeProject(gameTime))
                 {
@@ -328,6 +334,16 @@ namespace TowerCraft3D
                 }
             }
             #endregion
+
+            //CheckBoxCollision();
+            foreach (KeyValuePair<TileCoord, Tile> pair in map.getDictionary())
+            {
+
+                if ((pair.Value.anyMonsters()) && (pair.Value.anyProjectile()))
+                {
+                    CheckTileCollision(pair.Value.getEntities());
+                }
+            }
 
             base.Update(gameTime);
         }
@@ -453,6 +469,41 @@ namespace TowerCraft3D
                         if (projectiles[i].IsCollisionBox(monsters[j]))
                         {
                             projectiles.RemoveAt(i);
+                            monsters[j].life -= 25;
+                            //monsters.RemoveAt(j);
+                            if (i != 0)
+                                i--;
+                            //if (j != 0)
+                            //    j--;
+                            collisionFlag = true;
+                            break;
+                        }
+                    }
+                }
+                collisionFlag = false;
+            }
+        }
+
+        private void CheckTileCollision(List<model> listOnTile)
+        {
+            for (int i = 0; i < listOnTile.Count; i++)
+            {
+                if (!collisionFlag)
+                {
+                    for (int j = 0; j < listOnTile.Count; j++)
+                    {
+                        if (listOnTile[i].IsCollisionBox(listOnTile[j]))
+                        {
+                            //projectiles.RemoveAt(i);
+                            for (int z = 0; z < projectiles.Count; z++)
+                            {
+                                if (projectiles[z].getID() == listOnTile[i].getID())
+                                {
+                                    projectiles.RemoveAt(z);
+                                    break;
+                                }
+                            }
+                            
                             monsters[j].life -= 25;
                             //monsters.RemoveAt(j);
                             if (i != 0)
