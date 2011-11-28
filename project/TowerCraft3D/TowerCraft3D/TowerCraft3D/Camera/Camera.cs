@@ -119,7 +119,7 @@ namespace TowerCraft3D
                 {
                     cameraPosition -= cameraDirection * move;
                 }
-                if (cameraPosition.X >= -200)
+                if (cameraPosition.X >= -300)
                 {
                     if (Keyboard.GetState().IsKeyDown(Keys.Left))
                     {
@@ -127,7 +127,7 @@ namespace TowerCraft3D
                     }
                     cameraPosition += Vector3.Cross(cameraUp,cameraDirection) * gamePadState.ThumbSticks.Left.X;
                 }
-                if (cameraPosition.X <= 200)
+                if (cameraPosition.X <= 300)
                 {
                     if (Keyboard.GetState().IsKeyDown(Keys.Right))
                     {
