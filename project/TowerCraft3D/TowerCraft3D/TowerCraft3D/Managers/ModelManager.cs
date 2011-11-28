@@ -49,7 +49,7 @@ namespace TowerCraft3D
         List<monster> monsters = new List<monster>();
         List<monster> tiles = new List<monster>();
         List<projectile> projectiles = new List<projectile>();
-        List<waveManager> wavesLevel1 = new List<waveManager>();
+        List<waveManager> wavesLevel = new List<waveManager>();
         List<tower> towers = new List<tower>();
         #endregion
 
@@ -140,7 +140,22 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel1.Add(new waveManager(1,20,TimeSpan.FromMinutes(2.0),TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0),TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
+            
             #endregion
 
             #region Load particle effect stuff
@@ -166,23 +181,23 @@ namespace TowerCraft3D
            
             #region Update Level1
             //Level 1
-            if (currentWave < wavesLevel1.Count)
+            if (currentWave < wavesLevel.Count)
             {
-                wavesLevel1[currentWave].UpdateWave(gameTime);
-
+                wavesLevel[currentWave].UpdateWave(gameTime);
+                ((Game1)Game).spriteManager.drawHUD(wavesLevel[currentWave].levelTimer, wavesLevel[currentWave].level);
                 //Check if this Waves Timer is done or monsters are all dead (so wave is done)
-                if ((wavesLevel1[currentWave].levelTimer <= TimeSpan.Zero && wavesLevel1[currentWave].spawn <= 0)
-                    || wavesLevel1[currentWave].spawn <= 0)
+                if ((wavesLevel[currentWave].levelDone && wavesLevel[currentWave].spawn <= 1))
+                   
                 {
                     //Game.Exit();
                     currentWave++;
                 }
                 //If Level isn't done then check the Timer to add monsters at invervals
-                else if (wavesLevel1[currentWave].canSpawn && wavesLevel1[currentWave].spawn > 0)
+                else if (wavesLevel[currentWave].canSpawn && wavesLevel[currentWave].spawn > 0)
                 {
                     int z = RandomNumber(-80, 60);
-                    wavesLevel1[currentWave].spawn--;
-                    wavesLevel1[currentWave].canSpawn = false;
+                    wavesLevel[currentWave].spawn--;
+                    wavesLevel[currentWave].canSpawn = false;
                     monsters.Add(new monster(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
                     ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                 }

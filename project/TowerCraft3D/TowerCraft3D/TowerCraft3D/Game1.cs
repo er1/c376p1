@@ -32,6 +32,7 @@ namespace TowerCraft3D
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
+            ////this.graphics.IsFullScreen = true;
             this.graphics.PreferredBackBufferWidth = 1280;
             this.graphics.PreferredBackBufferHeight = 720;
         }
@@ -59,7 +60,7 @@ namespace TowerCraft3D
             Components.Remove(modelManager);
             Components.Remove(spriteManager);
 
-            cameraMain = new Camera(this, new Vector3(0, 200, 225), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
+            cameraMain = new Camera(this, new Vector3(0, 200, 199), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
             modelManager = new ModelManager(this);
             spriteManager = new SpriteManager(this);
 
@@ -91,6 +92,10 @@ namespace TowerCraft3D
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                this.Exit();
+            }
 
             base.Update(gameTime);
         }
