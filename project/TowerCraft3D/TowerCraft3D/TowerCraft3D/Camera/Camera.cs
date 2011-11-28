@@ -34,7 +34,6 @@ namespace TowerCraft3D
         bool moveAllowed = false;
         float maxPitch = MathHelper.PiOver2; //90 degree
         float currentPitch = 0;
-
         TileCoord currentTC;
         private TimeSpan timer;
         bool moveable;
@@ -110,6 +109,8 @@ namespace TowerCraft3D
             if (moveAllowed)
             {
                 // TODO: Add your update code here
+                
+
                 //Translation and Strafing
                 if (Keyboard.GetState().IsKeyDown(Keys.Up))
                 {

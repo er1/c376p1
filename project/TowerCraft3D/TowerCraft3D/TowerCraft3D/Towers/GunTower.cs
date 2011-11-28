@@ -20,7 +20,7 @@ namespace TowerCraft3D
             towerDmg = 10;
             timer =  TimeSpan.FromSeconds(1.0);
         }
-
+        public void Shoot()
 
        
 

@@ -78,7 +78,7 @@ namespace TowerCraft3D
                 shooting = false;
             return shooting;
         }
-        public void Shoot()
+        public virtual void Shoot()
         {
 
         }
