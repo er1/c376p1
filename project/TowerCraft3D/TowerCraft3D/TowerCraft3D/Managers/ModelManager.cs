@@ -311,6 +311,7 @@ namespace TowerCraft3D
                     if (towers[i].shooting)
                     {
                         towers[i].shooting = false;
+                        towers[i].timer = TimeSpan.FromSeconds(1.0);
                         addProject(towers[i].getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0));
                     }
                 }
@@ -506,14 +507,15 @@ namespace TowerCraft3D
                             
                             monsters[j].life -= 25;
                             //monsters.RemoveAt(j);
-                            if (i != 0)
-                                i--;
+                            //if (i != 0)
+                            //    i--;
                             //if (j != 0)
                             //    j--;
                             collisionFlag = true;
                             break;
                         }
                     }
+                    break;
                 }
                 collisionFlag = false;
             }
