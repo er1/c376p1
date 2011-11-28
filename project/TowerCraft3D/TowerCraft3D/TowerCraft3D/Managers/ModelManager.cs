@@ -116,7 +116,7 @@ namespace TowerCraft3D
             Monster1 = Game.Content.Load<Model>(@"Models\\Monster1\\monster1");
             tile = Game.Content.Load<Model>(@"Models\\Map\\Tile");
             colony = Game.Content.Load<Model>(@"Models\\Map\\Colony");
-            bullet = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
+            bullet = Game.Content.Load<Model>(@"Models\\Bullet\\Bullet");
             gunTower = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             character = new player(ref MinecraftLikeModel, new Vector3(0, -worldSize+1, 0), worldSize);
             
@@ -461,23 +461,23 @@ namespace TowerCraft3D
             {
                 if (monsters[j].isDead)
                 {
-                    //explosions.Add(new ParticleExplosion(GraphicsDevice,
-                    //           monsters[j].getWorld().Translation,
-                    //           random.Next(
-                    //               particleExplosionSettings.minLife,
-                    //               particleExplosionSettings.maxLife),
-                    //           random.Next(
-                    //               particleExplosionSettings.minRoundTime,
-                    //               particleExplosionSettings.maxRoundTime),
-                    //           random.Next(
-                    //               particleExplosionSettings.minParticlesPerRound,
-                    //               particleExplosionSettings.maxParticlesPerRound),
-                    //           random.Next(
-                    //               particleExplosionSettings.minParticles,
-                    //               particleExplosionSettings.maxParticles),
-                    //           explosionColorsTexture, particleSettings,
-                    //           explosionEffect));
-                    //monsters.RemoveAt(j);
+                    explosions.Add(new ParticleExplosion(GraphicsDevice,
+                               monsters[j].getWorld().Translation,
+                               random.Next(
+                                   particleExplosionSettings.minLife,
+                                   particleExplosionSettings.maxLife),
+                               random.Next(
+                                   particleExplosionSettings.minRoundTime,
+                                   particleExplosionSettings.maxRoundTime),
+                               random.Next(
+                                   particleExplosionSettings.minParticlesPerRound,
+                                   particleExplosionSettings.maxParticlesPerRound),
+                               random.Next(
+                                   particleExplosionSettings.minParticles,
+                                   particleExplosionSettings.maxParticles),
+                               explosionColorsTexture, particleSettings,
+                               explosionEffect));
+                    monsters.RemoveAt(j);
                     ((Game1)Game).spriteManager.removeLifeBarsMonsters(j);
                     if (j != 0)
                         j--;
