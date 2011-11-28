@@ -43,16 +43,38 @@ namespace TowerCraft3D
             entities.Remove(model);
         }
 
-        public void removeAllMonsters()
+        public void removeAllMonstersAndProjectiles()
         {
             for (int i = 0; i < entities.Count(); i++)
             {
-                if (entities[i] is monster)
+                if ((entities[i] is monster) || (entities[i] is projectile))
                 {
                     entities.RemoveAt(i);
                     i--;
                 }
             }
+        }
+        public bool anyProjectile()
+        {
+            for (int i = 0; i < entities.Count(); i++)
+            {
+                if (entities[i] is projectile)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool anyMonster()
+        {
+            for (int i = 0; i < entities.Count(); i++)
+            {
+                if (entities[i] is monster)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool anyMonsters()

@@ -14,14 +14,22 @@ namespace TowerCraft3D
     // What I did was slap it toghether and modified to my need to make it easy to use.
     class model
     {
-        Model currentModel;
+        protected Model currentModel;
         //Vector3 location;
         protected Matrix world = Matrix.Identity;
+        protected BoundingBox box;
+
+        private static int totalID = 0;
+        private int modelID;
 
         public model(Model newModel)
         {
             this.currentModel = newModel;
+
+            modelID = totalID;
+            totalID++;
             //this.location = newLocation;
+            box = UpdateBoundingBox(this.getModel(), this.getWorld());
         }
 
         public bool IsCollision(model model2)
@@ -49,7 +57,6 @@ namespace TowerCraft3D
             {
                 for (int meshIndex1 = 0; meshIndex1 < ((projectile)this).collisionModel.Meshes.Count; meshIndex1++)
                 {
-
                     BoundingBox box1 = UpdateBoundingBox(((projectile)this).collisionModel, this.getWorld());
 
                     for (int meshIndex2 = 0; meshIndex2 < model2.getModel().Meshes.Count; meshIndex2++)
@@ -80,6 +87,23 @@ namespace TowerCraft3D
             return false;
         }
 
+        public int getID()
+        {
+            return modelID;
+        }
+        
+        public virtual Matrix getWorld()
+        {
+            return world;
+        }
+        protected virtual Model getModel()
+        {
+            return currentModel;
+        }
+        protected virtual BoundingBox getCollisionBox()
+        {
+            return box;
+        }
         protected BoundingBox UpdateBoundingBox(Model model, Matrix worldTransform)
         {
             // Initialize minimum and maximum corners of the bounding box to max and min values
@@ -113,18 +137,8 @@ namespace TowerCraft3D
             // Create and return bounding box
             return new BoundingBox(min, max);
         }
-        public virtual Matrix getWorld()
-        {
-            return world;
-        }
-        protected virtual Model getModel()
-        {
-            return currentModel;
-        }
-
         public virtual void Update()
         { }
-
         public void DrawModel(Camera cam)
         {
 

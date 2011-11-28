@@ -18,7 +18,7 @@ namespace TowerCraft3D
         private int upgradeLevel;
         private float range;
         private monster target;
-        protected TimeSpan timer { get; set; }
+        public TimeSpan timer { get; set; }
         public Map map;
         private const float TILESIZE = 10;
         public int life { get; set; }
@@ -34,7 +34,7 @@ namespace TowerCraft3D
             tc = currentTC;
             upgradeLevel = 0;
             isDead = false;
-            range = 5;
+            range = 10;
             //usually set a different timer depending on different types of tower
             //timer = TimeSpan.FromSeconds(2.0);
         }
@@ -70,15 +70,14 @@ namespace TowerCraft3D
             if (timer <= TimeSpan.Zero)
             {
                 //Reset Timer
-                timer = TimeSpan.FromSeconds(2.0);
+                
                 shooting = true;
-                return true;
+                return shooting;
             }
             else
                 shooting = false;
-                return false;
+            return shooting;
         }
-
         public void Shoot()
         {
 

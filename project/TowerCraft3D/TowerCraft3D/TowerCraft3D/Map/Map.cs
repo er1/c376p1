@@ -37,11 +37,16 @@ namespace TowerCraft3D
             return map[tc];
         }
 
+        public Dictionary<TileCoord, Tile> getDictionary()
+        {
+            return map;
+        }
+
         public void Update()
         {
             foreach (KeyValuePair<TileCoord, Tile> pair in map)
             {
-                pair.Value.removeAllMonsters();
+                pair.Value.removeAllMonstersAndProjectiles();
             }
         }
 

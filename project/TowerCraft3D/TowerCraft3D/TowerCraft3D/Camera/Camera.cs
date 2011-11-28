@@ -119,21 +119,23 @@ namespace TowerCraft3D
                 {
                     cameraPosition -= cameraDirection * move;
                 }
-                if (cameraPosition.X >= -300)
+                if (cameraPosition.X >= -200)
                 {
                     if (Keyboard.GetState().IsKeyDown(Keys.Left))
                     {
                         cameraPosition += Vector3.Cross(cameraUp, cameraDirection) * move;
                     }
-                    cameraPosition += Vector3.Cross(cameraUp,cameraDirection) * gamePadState.ThumbSticks.Left.X;
+                    int test = (int)((gamePadState.ThumbSticks.Left.X * 3));
+                    cameraPosition += new Vector3(1,0,0)* test;
                 }
-                if (cameraPosition.X <= 300)
+                if (cameraPosition.X <= 200)
                 {
                     if (Keyboard.GetState().IsKeyDown(Keys.Right))
                     {
                         cameraPosition -= Vector3.Cross(cameraUp, cameraDirection) * move;
                     }
-                    cameraPosition -= Vector3.Cross(cameraUp,cameraDirection) * gamePadState.ThumbSticks.Left.X;
+                    int test = (int)((gamePadState.ThumbSticks.Left.X * 3));
+                    cameraPosition += new Vector3(1, 0, 0) * test;
                 }
 
                 timer -= gameTime.ElapsedGameTime;

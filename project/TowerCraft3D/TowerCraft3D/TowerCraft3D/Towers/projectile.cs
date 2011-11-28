@@ -30,8 +30,15 @@ namespace TowerCraft3D
             direction = newDirection;
             projectileDistanceTime = TimeSpan.FromSeconds(4);
             projectileTimer = projectileDistanceTime;
+            box = UpdateBoundingBox(this.getModel(), this.getWorld());
 
         }
+
+        protected virtual Model getActualModel()
+        {
+            return currentModel;
+        }
+
         public void setSpeed(float move)
         {
             moveBalloons = move;
@@ -39,6 +46,11 @@ namespace TowerCraft3D
         private int RandomNumber(int min, int max)
         {
             return random.Next(min, max);
+        }
+
+        public Vector3 getPosition()
+        {
+            return new Vector3((float)world.M41, (float)world.M42, (float)world.M43);
         }
 
         public override void Update()
