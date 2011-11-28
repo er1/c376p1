@@ -14,16 +14,16 @@ namespace TowerCraft3D
     class ParticleExplosionSettings
     {
         // Life of particles
-        public int minLife = 200;
-        public int maxLife = 400;
+        public int minLife = 350;
+        public int maxLife = 700;
 
         // Particles per round
-        public int minParticlesPerRound = 10;
+        public int minParticlesPerRound = 16;
         public int maxParticlesPerRound = 50;
 
         // Round time
-        public int minRoundTime = 10;
-        public int maxRoundTime = 40;
+        public int minRoundTime = 20;
+        public int maxRoundTime = 60;
 
         // Number of particles
         public int minParticles = 50;

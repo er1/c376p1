@@ -140,20 +140,20 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
+            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            //wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
+            //wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
             wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
             
             #endregion
@@ -206,10 +206,6 @@ namespace TowerCraft3D
 
             #region Update Drawing the Map
             //update Map
-            for (int i = 0; i < tiles.Count - 1; i++)
-            {
-                tiles[i].Update();
-            }
             map.Update();
             mainBase.Update();
             //Selected tile
@@ -226,7 +222,7 @@ namespace TowerCraft3D
 
 
             if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
-                gamePadState.Buttons.A == ButtonState.Pressed)
+                ((gamePadState.Buttons.A == ButtonState.Pressed) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar))
             {
                 SpaceBar = true;
                 map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
@@ -252,7 +248,7 @@ namespace TowerCraft3D
                 }
                 
             }
-            if ((Keyboard.GetState().IsKeyUp(Keys.Space)))
+            if ((Keyboard.GetState().IsKeyUp(Keys.Space)) && (gamePadState.Buttons.A == ButtonState.Released))
             {
                 SpaceBar = false;
             }
@@ -267,15 +263,15 @@ namespace TowerCraft3D
                 {
                     percentage = 100;
                 }
-                else if ((monsters[i].life / 100) * 100 >= 75 && (monsters[i].life / 100) * 100 <= 99)
+                else if ((monsters[i].life / 100) * 100 > 75 && (monsters[i].life / 100) * 100 <= 99)
                 {
                     percentage = 100;
                 }
-                else if ((monsters[i].life / 100) * 100 >= 50 && (monsters[i].life / 100) * 100 <= 74)
+                else if ((monsters[i].life / 100) * 100 > 50 && (monsters[i].life / 100) * 100 <= 75)
                 {
                     percentage = 75;
                 }
-                else if ((monsters[i].life / 100) * 100 >= 25 && (monsters[i].life / 100) * 100 <= 49)
+                else if ((monsters[i].life / 100) * 100 >= 25 && (monsters[i].life / 100) * 100 <= 50)
                 {
                     percentage = 50;
                 }
@@ -311,7 +307,7 @@ namespace TowerCraft3D
                     if (towers[i].shooting)
                     {
                         towers[i].shooting = false;
-                        towers[i].timer = TimeSpan.FromSeconds(1.0);
+                        towers[i].timer = TimeSpan.FromSeconds(3.0);
                         addProject(towers[i].getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0));
                     }
                 }
@@ -336,15 +332,39 @@ namespace TowerCraft3D
             }
             #endregion
 
+            #region Collision detection
             //CheckBoxCollision();
             foreach (KeyValuePair<TileCoord, Tile> pair in map.getDictionary())
             {
 
                 if ((pair.Value.anyMonsters()) && (pair.Value.anyProjectile()))
                 {
-                    CheckTileCollision(pair.Value.getEntities());
+                    List<model> test = pair.Value.getEntities();
+                    for (int i = 0; i < test.Count(); i++)
+                    {
+                        if (test[i] is monster)
+                        {
+                            ((monster)test[i]).life -= 25;
+                        }
+                    }
+                    for (int i = 0; i < test.Count(); i++)
+                    {
+                        if (test[i] is projectile)
+                        {
+                            for (int z = 0; z < projectiles.Count; z++)
+                            {
+                                if (projectiles[z].getID() == test[i].getID())
+                                {
+                                    projectiles.RemoveAt(z);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    //CheckTileCollision(pair.Value.getEntities());
                 }
             }
+            #endregion
 
             base.Update(gameTime);
         }

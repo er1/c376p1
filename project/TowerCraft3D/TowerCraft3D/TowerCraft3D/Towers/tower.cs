@@ -72,11 +72,11 @@ namespace TowerCraft3D
                 //Reset Timer
                 
                 shooting = true;
-                return true;
+                return shooting;
             }
             else
                 shooting = false;
-            return false;
+            return shooting;
         }
         public void Shoot()
         {
