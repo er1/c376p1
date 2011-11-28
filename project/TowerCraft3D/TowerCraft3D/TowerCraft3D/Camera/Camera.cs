@@ -105,36 +105,6 @@ namespace TowerCraft3D
         {
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
 
-            if (gamePadState.IsConnected)
-            {
-
-                if ((gamePadState.DPad.Up == ButtonState.Pressed) && (currentTC.y > -4) && moveable)
-                {
-                    currentTC.y--;
-                    moveable = false;
-                }
-                if ((gamePadState.DPad.Down == ButtonState.Pressed) && (currentTC.y < 3) && moveable)
-                {
-                    currentTC.y++;
-                    moveable = false;
-
-                }
-                if ((gamePadState.DPad.Right == ButtonState.Pressed) && (currentTC.x < 0) && moveable)
-                {
-                    currentTC.x++;
-                    moveable = false;
-
-                }
-                if ((gamePadState.DPad.Left == ButtonState.Pressed) && (currentTC.x > -19) && moveable)
-                {
-                    currentTC.x--;
-                    moveable = false;
-
-                }
-
-               
-            }
-
             if (moveAllowed)
             {
                 // TODO: Add your update code here
@@ -153,6 +123,7 @@ namespace TowerCraft3D
                     {
                         cameraPosition += Vector3.Cross(cameraUp, cameraDirection) * move;
                     }
+                    cameraPosition += Vector3.Cross(cameraUp,cameraDirection) * gamePadState.ThumbSticks.Left.X;
                 }
                 if (cameraPosition.X <= 350)
                 {
@@ -160,6 +131,7 @@ namespace TowerCraft3D
                     {
                         cameraPosition -= Vector3.Cross(cameraUp, cameraDirection) * move;
                     }
+                    cameraPosition -= Vector3.Cross(cameraUp,cameraDirection) * gamePadState.ThumbSticks.Left.X;
                 }
 
                 timer -= gameTime.ElapsedGameTime;
@@ -170,24 +142,24 @@ namespace TowerCraft3D
                     moveable = true;
                 }
 
-                if ((Keyboard.GetState().IsKeyDown(Keys.W)) && (currentTC.y > -4) && moveable)
+                if (((Keyboard.GetState().IsKeyDown(Keys.W))||(gamePadState.DPad.Up == ButtonState.Pressed)) && (currentTC.y > -4) && moveable)
                 {
                     currentTC.y--;
                     moveable = false;
                 }
-                if ((Keyboard.GetState().IsKeyDown(Keys.S)) && (currentTC.y < 3) && moveable)
+                if (((Keyboard.GetState().IsKeyDown(Keys.S))||(gamePadState.DPad.Down == ButtonState.Pressed)) && (currentTC.y < 3) && moveable)
                 {
                     currentTC.y++;
                     moveable = false;
 
                 }
-                if ((Keyboard.GetState().IsKeyDown(Keys.D)) && (currentTC.x < 0) && moveable)
+                if (((Keyboard.GetState().IsKeyDown(Keys.D))||(gamePadState.DPad.Right == ButtonState.Pressed)) && (currentTC.x < 0) && moveable)
                 {
                     currentTC.x++;
                     moveable = false;
 
                 }
-                if ((Keyboard.GetState().IsKeyDown(Keys.A)) && (currentTC.x > -19) && moveable)
+                if (((Keyboard.GetState().IsKeyDown(Keys.A))||(gamePadState.DPad.Left == ButtonState.Pressed)) && (currentTC.x > -19) && moveable)
                 {
                     currentTC.x--;
                     moveable = false;

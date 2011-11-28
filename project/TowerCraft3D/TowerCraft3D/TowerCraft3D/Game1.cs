@@ -22,8 +22,8 @@ namespace TowerCraft3D
         public Camera cameraMain { get; protected set; }
         public Viewport MainScreen;
        
-        private int worldWidth;
-        private int worldHeight;
+        public int worldWidth;
+        public int worldHeight;
         public int worldSize{get;protected set;}
         public int LIFE {get;set;}
 
@@ -32,6 +32,8 @@ namespace TowerCraft3D
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
+            this.graphics.PreferredBackBufferWidth = 1280;
+            this.graphics.PreferredBackBufferHeight = 720;
         }
 
         
@@ -57,7 +59,7 @@ namespace TowerCraft3D
             Components.Remove(modelManager);
             Components.Remove(spriteManager);
 
-            cameraMain = new Camera(this, new Vector3(0, 140, 95), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
+            cameraMain = new Camera(this, new Vector3(0, 200, 225), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
             modelManager = new ModelManager(this);
             spriteManager = new SpriteManager(this);
 

@@ -26,7 +26,16 @@ namespace TowerCraft3D
         Texture2D life75;
         Texture2D life50;
         Texture2D life25;
+        
+        Texture2D HUDL;
+        Texture2D HUDM1;
+        Texture2D HUDM2;
+        Texture2D HUDR;
+        
         SpriteFont font;
+
+        int worldHeight;
+        int worldWidth;
 
         public SpriteManager(Game game)
             : base(game)
@@ -37,7 +46,8 @@ namespace TowerCraft3D
 
         public override void Initialize()
         {
-           
+            worldHeight = ((Game1)Game).worldHeight;
+                worldWidth = ((Game1)Game).worldWidth;
             batch = new SpriteBatch(Game.GraphicsDevice);
             base.Initialize();
         }
@@ -47,6 +57,10 @@ namespace TowerCraft3D
             life75 = Game.Content.Load<Texture2D>(@"Textures\\life\life75");
             life50 = Game.Content.Load<Texture2D>(@"Textures\\life\life50");
             life25 = Game.Content.Load<Texture2D>(@"Textures\\life\life25");
+            HUDL = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft1");
+            HUDM1 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft2");
+            HUDM2 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft3");
+            HUDR = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft4");
             font = Game.Content.Load<SpriteFont>(@"Font\\GameFont");
             base.LoadContent();
         }
@@ -61,7 +75,11 @@ namespace TowerCraft3D
         public override void Draw(GameTime gameTime)
         {
             batch.Begin();
-
+            base.Draw(gameTime);
+            batch.Draw(HUDL, new Vector2(0, worldHeight/3*(1.40f)), null, Color.White, 0f, new Vector2(0,0), 0.75f, SpriteEffects.None, 0);
+            batch.Draw(HUDM1, new Vector2(worldWidth / 4, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+            batch.Draw(HUDM2, new Vector2(worldWidth/4*2f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+            batch.Draw(HUDR, new Vector2(worldWidth / 4 * 3f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
             batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(0,0), Color.Black);
             
             for (int i = 0; i < monstersLife.Count; i++)
@@ -70,7 +88,7 @@ namespace TowerCraft3D
             }
 
             batch.End();
-            base.Draw(gameTime);
+            
         }
 
         #region Lifebar stuff for Monsters
