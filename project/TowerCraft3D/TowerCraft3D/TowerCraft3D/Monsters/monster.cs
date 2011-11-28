@@ -40,7 +40,7 @@ namespace TowerCraft3D
             return random.Next(min, max);
         }
 
-        public override void Update()
+        public  void Update()
         {
             if (world.M41 >= 0)
             { 

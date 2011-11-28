@@ -23,10 +23,7 @@ namespace TowerCraft3D
             lives = 100;
         }
 
-        public override void Update()
-        {
-            
-        }
+ 
 
         public Vector3 getPosition()
         {

@@ -92,15 +92,15 @@ namespace TowerCraft3D
             return modelID;
         }
         
-        public virtual Matrix getWorld()
+        public  Matrix getWorld()
         {
             return world;
         }
-        protected virtual Model getModel()
+        protected  Model getModel()
         {
             return currentModel;
         }
-        protected virtual BoundingBox getCollisionBox()
+        protected  BoundingBox getCollisionBox()
         {
             return box;
         }

@@ -120,11 +120,11 @@ namespace TowerCraft3D
             world = Matrix.CreateTranslation(location);
         }
         //GETTER for world
-        public override Matrix getWorld()
-        {
-            //Important lesson learned! Matrix multiplication order matters.
-            return Matrix.CreateFromQuaternion(rotation) * world;
-        }
+        //public override Matrix getWorld()
+        //{
+        //    //Important lesson learned! Matrix multiplication order matters.
+        //    return Matrix.CreateFromQuaternion(rotation) * world;
+        //}
 
 
     }
