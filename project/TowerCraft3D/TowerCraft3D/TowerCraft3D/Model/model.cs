@@ -137,8 +137,8 @@ namespace TowerCraft3D
             // Create and return bounding box
             return new BoundingBox(min, max);
         }
-        public virtual void Update()
-        { }
+        //public virtual void Update()
+        //{ }
         public void DrawModel(Camera cam)
         {
 

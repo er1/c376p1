@@ -39,7 +39,7 @@ namespace TowerCraft3D
             //timer = TimeSpan.FromSeconds(2.0);
         }
 
-        public  override void  Update()
+        public   void  Update()
         {
             if (life <= 0)
             {
