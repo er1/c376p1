@@ -209,34 +209,10 @@ namespace TowerCraft3D
             //Has some key input here
             #region Tower Adding
             //Temporary way to add towers.
-            if (gamePadState.IsConnected)
-            {
-                if (gamePadState.Buttons.A == ButtonState.Pressed)
-                {
-                    map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
 
-                    int resourceValue = map.GetTile(chosenTile).towerConstruction();
 
-                    if (resourceValue == 0)
-                    {
-
-                    }
-                    else if ((resourceValue >= 3) && (resourceValue <= 5))
-                    {
-                        towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                        map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                    }
-                    else if ((resourceValue >= 3) && (resourceValue <= 5))
-                    {
-
-                    }
-                    else if ((resourceValue >= 3) && (resourceValue <= 5))
-                    {
-
-                    }
-                }
-            }
-            if ((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar)
+            if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
+                gamePadState.Buttons.A == ButtonState.Pressed)
             {
                 SpaceBar = true;
                 map.GetTile(chosenTile).addEntity(new resource(ref bullet, 0));
@@ -318,7 +294,11 @@ namespace TowerCraft3D
                 //Shoots a projectile based on a Timer from tower
                 if ((towers[i].iWantToShoot(gameTime)) && (towers[i].lookForTarget(map)))
                 {
-                    addProject(towers[i].getPosition()+ new Vector3(0,25,0), new Vector3(-1, 0, 0));
+                    if (towers[i].shooting)
+                    {
+                        towers[i].shooting = false;
+                        addProject(towers[i].getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0));
+                    }
                 }
             }
             //updates projectile list
@@ -481,23 +461,23 @@ namespace TowerCraft3D
             {
                 if (monsters[j].isDead)
                 {
-                    explosions.Add(new ParticleExplosion(GraphicsDevice,
-                               monsters[j].getWorld().Translation,
-                               random.Next(
-                                   particleExplosionSettings.minLife,
-                                   particleExplosionSettings.maxLife),
-                               random.Next(
-                                   particleExplosionSettings.minRoundTime,
-                                   particleExplosionSettings.maxRoundTime),
-                               random.Next(
-                                   particleExplosionSettings.minParticlesPerRound,
-                                   particleExplosionSettings.maxParticlesPerRound),
-                               random.Next(
-                                   particleExplosionSettings.minParticles,
-                                   particleExplosionSettings.maxParticles),
-                               explosionColorsTexture, particleSettings,
-                               explosionEffect));
-                    monsters.RemoveAt(j);
+                    //explosions.Add(new ParticleExplosion(GraphicsDevice,
+                    //           monsters[j].getWorld().Translation,
+                    //           random.Next(
+                    //               particleExplosionSettings.minLife,
+                    //               particleExplosionSettings.maxLife),
+                    //           random.Next(
+                    //               particleExplosionSettings.minRoundTime,
+                    //               particleExplosionSettings.maxRoundTime),
+                    //           random.Next(
+                    //               particleExplosionSettings.minParticlesPerRound,
+                    //               particleExplosionSettings.maxParticlesPerRound),
+                    //           random.Next(
+                    //               particleExplosionSettings.minParticles,
+                    //               particleExplosionSettings.maxParticles),
+                    //           explosionColorsTexture, particleSettings,
+                    //           explosionEffect));
+                    //monsters.RemoveAt(j);
                     ((Game1)Game).spriteManager.removeLifeBarsMonsters(j);
                     if (j != 0)
                         j--;

@@ -24,6 +24,7 @@ namespace TowerCraft3D
         public int life { get; set; }
         public bool isDead {get; protected set;}
         protected int towerDmg { get; set; }
+        public bool shooting { get; set; }
 
         public tower(ref Model temp, Vector3 location, TileCoord currentTC)
             : base(temp)
@@ -68,11 +69,13 @@ namespace TowerCraft3D
             timer -= gameTime.ElapsedGameTime;
             if (timer <= TimeSpan.Zero)
             {
-                 //Reset Timer
+                //Reset Timer
                 timer = TimeSpan.FromSeconds(2.0);
+                shooting = true;
                 return true;
             }
             else
+                shooting = false;
                 return false;
         }
 
