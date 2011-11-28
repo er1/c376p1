@@ -197,6 +197,7 @@ namespace TowerCraft3D
                    
                 {
                     //Game.Exit();
+                    System.GC.Collect();
                     currentWave++;
                 }
                 //If Level isn't done then check the Timer to add monsters at invervals
@@ -214,7 +215,7 @@ namespace TowerCraft3D
             #region Update Drawing the Map
             //update Map
             map.Update();
-            mainBase.Update();
+            //mainBase.Update();
             //Selected tile
             chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
             tiles[tiles.Count - 1].Update();
@@ -606,6 +607,7 @@ namespace TowerCraft3D
                                explosionColorsTexture, particleSettings,
                                explosionEffect));
                     monsters.RemoveAt(j);
+                    
                     ((Game1)Game).spriteManager.removeLifeBarsMonsters(j);
                     if (j != 0)
                         j--;

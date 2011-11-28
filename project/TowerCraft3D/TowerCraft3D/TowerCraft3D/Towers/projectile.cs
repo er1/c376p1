@@ -34,7 +34,7 @@ namespace TowerCraft3D
 
         }
 
-        protected virtual Model getActualModel()
+        protected  Model getActualModel()
         {
             return currentModel;
         }
@@ -53,7 +53,7 @@ namespace TowerCraft3D
             return new Vector3((float)world.M41, (float)world.M42, (float)world.M43);
         }
 
-        public override void Update()
+        public  void Update()
         {
             //World wrapping
             //X coordinates
