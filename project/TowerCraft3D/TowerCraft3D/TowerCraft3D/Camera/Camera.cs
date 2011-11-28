@@ -40,6 +40,8 @@ namespace TowerCraft3D
         bool moveable;
 
 
+        public BoundingFrustum Frustum;
+
         public Camera(Game game, Vector3 newPosition, Vector3 direction, Vector3 up, Viewport NewViewport, bool move, int WorldSize)
             : base(game)
         {
@@ -52,7 +54,7 @@ namespace TowerCraft3D
             cameraUp = up;
             CreateLootAt();
             viewport = NewViewport;
-            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)viewport.Width / (float)viewport.Height, 1, 2000);
+            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)viewport.Width / (float)viewport.Height, 1, 800);
             moveAllowed = move;
             timer = TimeSpan.FromSeconds(0.3);
             moveable = true;
@@ -117,7 +119,7 @@ namespace TowerCraft3D
                 {
                     cameraPosition -= cameraDirection * move;
                 }
-                if (cameraPosition.X >= -350)
+                if (cameraPosition.X >= -200)
                 {
                     if (Keyboard.GetState().IsKeyDown(Keys.Left))
                     {
@@ -125,7 +127,7 @@ namespace TowerCraft3D
                     }
                     cameraPosition += Vector3.Cross(cameraUp,cameraDirection) * gamePadState.ThumbSticks.Left.X;
                 }
-                if (cameraPosition.X <= 350)
+                if (cameraPosition.X <= 200)
                 {
                     if (Keyboard.GetState().IsKeyDown(Keys.Right))
                     {
@@ -201,6 +203,7 @@ namespace TowerCraft3D
                 }
 
                 CreateLootAt();
+                Frustum = new BoundingFrustum(view * projection);
             }
             base.Update(gameTime);
         }

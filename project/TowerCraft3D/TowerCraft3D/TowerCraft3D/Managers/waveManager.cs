@@ -21,6 +21,8 @@ namespace TowerCraft3D
         public int level{ get; protected set; }
         //Bool to check if timer is at zero and can Spawn a monster
         public bool canSpawn { get;  set; }
+        public bool levelDone { get; protected set; }
+
 
         //Constructor
         public waveManager(int currentLevel,int numSpawn, TimeSpan levelTime, TimeSpan monsterTime)
@@ -30,6 +32,7 @@ namespace TowerCraft3D
             levelTimer = levelTime;
             monsterTimer = monsterTime;
             managerTimer = monsterTimer;
+            levelDone = false;
         }
 
         //Update function (for Timers)
@@ -39,6 +42,8 @@ namespace TowerCraft3D
             if (levelTimer <= TimeSpan.Zero)
             {
                 //Level is done
+                levelTimer = TimeSpan.Zero;
+                levelDone = true;
             }
             else
             {

@@ -17,6 +17,16 @@ Content\Models\Towers\GunTower\BulletText.xnb
 Content\Models\Map\ColonyText.xnb
 Content\Textures\background\back512.xnb
 Content\Models\BoundingBoxText.xnb
+Content\Textures\life\life100.xnb
+Content\Textures\life\life25.xnb
+Content\Textures\life\life50.xnb
+Content\Textures\life\life75.xnb
+Content\Effect\Particle.xnb
+Content\Effect\ParticleColors.xnb
+Content\Textures\SCHUD\Starcraft1.xnb
+Content\Textures\SCHUD\Starcraft3.xnb
+Content\Textures\SCHUD\Starcraft4.xnb
+Content\Textures\SCHUD\Starcraft2.xnb
 Content\Models\Char\Char.xnb
 Content\Models\Monster1\monster1.xnb
 Content\Models\Bullet\bullet.xnb
@@ -25,6 +35,8 @@ Content\Models\Towers\GunTower\GunTower.xnb
 Content\Models\Towers\GunTower\Bullet.xnb
 Content\Models\Map\Colony.xnb
 Content\Models\BoundingBox.xnb
+Content\Font\GameFont.xnb
+Content\Effect\Particlefx.xnb
 Content\Models\Char\Head_0.xnb
 Content\Models\Char\Arm2_0.xnb
 Content\Models\Char\Leg2_0.xnb
@@ -43,11 +55,3 @@ Content\Models\Towers\GunTower\GunTowerText_0.xnb
 Content\Models\Towers\GunTower\BulletText_0.xnb
 Content\Models\Map\ColonyText_0.xnb
 Content\Models\BoundingBoxText_0.xnb
-Content\Textures\life\life100.xnb
-Content\Textures\life\life25.xnb
-Content\Textures\life\life50.xnb
-Content\Textures\life\life75.xnb
-Content\Font\GameFont.xnb
-Content\Effect\Particle.xnb
-Content\Effect\ParticleColors.xnb
-Content\Effect\Particlefx.xnb
