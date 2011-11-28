@@ -140,17 +140,17 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0),TimeSpan.FromSeconds(3.0)));
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
-            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
             wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
             wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
             wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
