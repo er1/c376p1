@@ -80,7 +80,7 @@ namespace TowerCraft3D
             batch.Draw(HUDM1, new Vector2(worldWidth / 4, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
             batch.Draw(HUDM2, new Vector2(worldWidth/4*2f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
             batch.Draw(HUDR, new Vector2(worldWidth / 4 * 3f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
-            batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(0,0), Color.Black);
+            batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(worldWidth/4*2f, worldHeight / 3 *2.40f), Color.Green);
             
             for (int i = 0; i < monstersLife.Count; i++)
             {
@@ -101,7 +101,7 @@ namespace TowerCraft3D
         public void updateLifeBarsMonsters(int i,int percentage, Vector3 position, Camera cam, Viewport viewport)
         {
             Vector3 posi = viewport.Project(position, cam.projection, cam.view, Matrix.Identity);
-            Vector2 pos = new Vector2(posi.X, posi.Y);
+            Vector2 pos = new Vector2(posi.X, posi.Y) + new Vector2(-20,-20);
             //pos = new Vector2(0, 0);
             if (percentage == 100)
                 monstersLife[i].Update(ref life100, pos);
