@@ -113,25 +113,38 @@ namespace TowerCraft3D
         { }
         public void DrawModel(Camera cam)
         {
-            Matrix[] transforms = new Matrix[currentModel.Bones.Count];
-            currentModel.CopyAbsoluteBoneTransformsTo(transforms);
 
-            foreach (ModelMesh mesh in this.currentModel.Meshes)
+            //Inside your draw method
+            ContainmentType currentContainmentType = ContainmentType.Disjoint;
+
+            //For each gameobject
+            //(If you have more than one mesh in the model, this wont work. Use BoundingSphere.CreateMerged() to add them together)
+            BoundingSphere meshBoundingSphere = currentModel.Meshes[0].BoundingSphere;
+            currentContainmentType = cam.Frustum.Contains(meshBoundingSphere);
+            if (currentContainmentType != ContainmentType.Disjoint)
             {
-                foreach (BasicEffect effect in mesh.Effects)
-                {
-                    effect.EnableDefaultLighting();
-                    //effect.LightingEnabled = true;
-                    //effect.DirectionalLight1.DiffuseColor = new Vector3(1f, 1f, 1f);
-                    //effect.DirectionalLight1.Direction = new Vector3(0, 1, 0);
-                    //effect.DirectionalLight1.SpecularColor = new Vector3(1, 1, 1);
-                    //effect.AmbientLightColor = new Vector3(0.4f, 0.4f, 0.4f);
-                    effect.World = getWorld() * mesh.ParentBone.Transform;
-                    effect.View = cam.view;
-                    effect.Projection = cam.projection;
-                }
+                //Draw gameobject
 
-                mesh.Draw();
+                Matrix[] transforms = new Matrix[currentModel.Bones.Count];
+                currentModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+                foreach (ModelMesh mesh in this.currentModel.Meshes)
+                {
+                    foreach (BasicEffect effect in mesh.Effects)
+                    {
+                        effect.EnableDefaultLighting();
+                        //effect.LightingEnabled = true;
+                        //effect.DirectionalLight1.DiffuseColor = new Vector3(1f, 1f, 1f);
+                        //effect.DirectionalLight1.Direction = new Vector3(0, 1, 0);
+                        //effect.DirectionalLight1.SpecularColor = new Vector3(1, 1, 1);
+                        //effect.AmbientLightColor = new Vector3(0.4f, 0.4f, 0.4f);
+                        effect.World = getWorld() * mesh.ParentBone.Transform;
+                        effect.View = cam.view;
+                        effect.Projection = cam.projection;
+                    }
+
+                    mesh.Draw();
+                }
             }
         }
     }
