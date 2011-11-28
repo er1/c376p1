@@ -68,7 +68,7 @@ namespace TowerCraft3D
             Components.Add(modelManager);        
             Components.Add(spriteManager);
 
-            this.IsFixedTimeStep = false;
+            //this.IsFixedTimeStep = false;
             base.Initialize();
 
         }
