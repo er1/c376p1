@@ -37,6 +37,9 @@ namespace TowerCraft3D
         int worldHeight;
         int worldWidth;
 
+        int currentDay;
+        TimeSpan timer;
+        
         public SpriteManager(Game game)
             : base(game)
         {
@@ -69,7 +72,7 @@ namespace TowerCraft3D
         public override void Update(GameTime gameTime)
         {
            
-            base.Update(gameTime);
+            //base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
@@ -80,7 +83,9 @@ namespace TowerCraft3D
             batch.Draw(HUDM1, new Vector2(worldWidth / 4, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
             batch.Draw(HUDM2, new Vector2(worldWidth/4*2f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
             batch.Draw(HUDR, new Vector2(worldWidth / 4 * 3f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
-            batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(worldWidth/4*2f, worldHeight / 3 *2.40f), Color.Green);
+            batch.DrawString(font, "Day " + currentDay, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.40f), Color.Green);
+            batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(worldWidth/4*1.75f, worldHeight / 3 *2.50f), Color.Green);
+            batch.DrawString(font, "Time " + timer.Minutes.ToString() +" m "+timer.Seconds.ToString() + " s", new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.60f), Color.Green);
             
             for (int i = 0; i < monstersLife.Count; i++)
             {
@@ -116,6 +121,14 @@ namespace TowerCraft3D
         public void removeLifeBarsMonsters(int i)
         {
             monstersLife.RemoveAt(i);
+        }
+        #endregion
+
+        #region UPDATE HUD STUFF
+        public void drawHUD(TimeSpan time, int day)
+        {
+            timer = time;
+            currentDay = day;
         }
         #endregion
     }
