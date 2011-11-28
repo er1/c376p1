@@ -57,3 +57,7 @@ C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\obj
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\obj\x86\Debug\TowerCraft3D.exe
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\obj\x86\Debug\TowerCraft3D.pdb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\SCHUD\Starcraft1.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\SCHUD\Starcraft3.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\SCHUD\Starcraft4.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Textures\SCHUD\Starcraft2.xnb
