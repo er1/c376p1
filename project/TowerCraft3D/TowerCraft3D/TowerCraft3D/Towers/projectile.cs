@@ -12,6 +12,7 @@ namespace TowerCraft3D
     class projectile : model
     {
         float worldSize = 100f;
+        protected float angle;
         protected Matrix rotation = Matrix.Identity;
         //protected Vector3 location = new Vector3(0, 0, 0);
         protected Vector3 direction;
@@ -25,8 +26,9 @@ namespace TowerCraft3D
         public projectile(ref Model temp, ref Model colModel, Vector3 location, Vector3 newDirection)
             : base(temp)
         {
+            angle = 0;
             collisionModel = colModel;
-            world = Matrix.CreateTranslation(location);
+            world = Matrix.CreateScale(5) * Matrix.CreateTranslation(location);
             direction = newDirection;
             projectileDistanceTime = TimeSpan.FromSeconds(4);
             projectileTimer = projectileDistanceTime;
@@ -53,7 +55,7 @@ namespace TowerCraft3D
             return new Vector3((float)world.M41, (float)world.M42, (float)world.M43);
         }
 
-        public  void Update()
+        public void Update()
         {
             //World wrapping
             //X coordinates
@@ -72,7 +74,7 @@ namespace TowerCraft3D
             //{ world = Matrix.CreateTranslation(new Vector3(world.M41, world.M42, -worldSize + 1)); }
             //if (world.M43 <= -worldSize)
             //{ world = Matrix.CreateTranslation(new Vector3(world.M41, world.M42, worldSize - 1)); }
-
+            angle += 0.1F;
             world *= Matrix.CreateTranslation(direction);
             //rotation *= Matrix.CreateRotationY(MathHelper.PiOver4 / 60);
         }

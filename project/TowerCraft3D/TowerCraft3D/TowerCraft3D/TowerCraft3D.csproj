@@ -118,11 +118,14 @@
     <Compile Include="Model\player.cs" />
     <Compile Include="ParticleEffect\ParticleExplosion.cs" />
     <Compile Include="ParticleEffect\ParticleSettings.cs" />
+    <Compile Include="Towers\Bullet.cs" />
     <Compile Include="Towers\CanonTower.cs" />
     <Compile Include="Towers\ChickenTower.cs" />
+    <Compile Include="Towers\Egg.cs" />
     <Compile Include="Towers\ElectricTower.cs" />
     <Compile Include="Towers\FireTower.cs" />
     <Compile Include="Towers\GunTower.cs" />
+    <Compile Include="Towers\Missile.cs" />
     <Compile Include="Towers\MissileTower.cs" />
     <Compile Include="Towers\projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

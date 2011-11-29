@@ -29,7 +29,7 @@ namespace TowerCraft3D
         Model boundingBox;
         Model MinecraftLikeModel;
         Model Monster1;
-        Model bullet;
+        Model bullet, missile, egg;
         Model tile;
         Model colony;
         Model gunTower, cannonTower, missileTower, fireTower, electricTower, chickenTower;
@@ -118,6 +118,8 @@ namespace TowerCraft3D
             tile = Game.Content.Load<Model>(@"Models\\Map\\Tile");
             colony = Game.Content.Load<Model>(@"Models\\Map\\Colony");
             bullet = Game.Content.Load<Model>(@"Models\\Bullet\\Bullet");
+            egg = Game.Content.Load<Model>(@"Models\\Bullet\\Egg");
+            missile = Game.Content.Load<Model>(@"Models\\Bullet\\Missile");
             gunTower = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             cannonTower = Game.Content.Load<Model>(@"Models\\Towers\\CannonTower\\CannonTower");
             missileTower = Game.Content.Load<Model>(@"Models\\Towers\\MissileTower\\MissileTower");
@@ -147,20 +149,20 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
-            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
-            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
-            //wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
-            //wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
             wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
             
             #endregion
@@ -264,7 +266,7 @@ namespace TowerCraft3D
                 }
                 else if ((resourceValue >= 6) && (resourceValue <= 9))
                 {
-                    towers.Add(new GunTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
+                    towers.Add(new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
                 else if ((resourceValue >= 10) && (resourceValue <= 14))
@@ -274,17 +276,17 @@ namespace TowerCraft3D
                 }
                 else if ((resourceValue >= 15) && (resourceValue <= 19))
                 {
-                    towers.Add(new GunTower(ref fireTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
+                    towers.Add(new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
                 else if ((resourceValue >= 20) && (resourceValue <= 23))
                 {
-                    towers.Add(new GunTower(ref electricTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
+                    towers.Add(new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
                 else if ((resourceValue >= 24) && (resourceValue <= 27))
                 {
-                    towers.Add(new GunTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
+                    towers.Add(new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
                 
@@ -492,7 +494,10 @@ namespace TowerCraft3D
         public void addProject(Vector3 position, Vector3 direction)
         {
             //Remember to change Model for diff bullets
-            projectiles.Add(new projectile(ref bullet, ref boundingBox, position, direction));
+            //projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction));
+            //projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction));
+            projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction));
+
         }
         #endregion
 
