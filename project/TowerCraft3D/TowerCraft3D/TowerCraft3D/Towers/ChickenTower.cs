@@ -14,10 +14,17 @@ namespace TowerCraft3D
         public ChickenTower(ref Model missileModel, Vector3 pos, TileCoord tc)
             : base(ref missileModel, pos, tc)
         {
+            world *= Matrix.CreateRotationY(MathHelper.ToRadians(180));
+            world *= Matrix.CreateTranslation(pos);
             life = 50;
             towerDmg = 10;
             timer = TimeSpan.FromSeconds(15.0);
         }
 
+        public override void Shoot()
+        {
+            timer = TimeSpan.FromSeconds(0.5);
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-2, 0, 0));
+        }
     }
 }
