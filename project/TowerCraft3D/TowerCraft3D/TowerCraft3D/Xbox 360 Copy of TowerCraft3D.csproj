@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{53556990-814a-43e1-98b9-2fb8e74ab550}</ProjectGuid>
+    <ProjectGuid>{53556990-814A-43E1-98B9-2FB8E74AB550}</ProjectGuid>
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">Xbox 360</Platform>
@@ -75,11 +75,14 @@
     <Compile Include="Model\player.cs" />
     <Compile Include="ParticleEffect\ParticleExplosion.cs" />
     <Compile Include="ParticleEffect\ParticleSettings.cs" />
+    <Compile Include="Towers\Bullet.cs" />
     <Compile Include="Towers\CanonTower.cs" />
     <Compile Include="Towers\ChickenTower.cs" />
+    <Compile Include="Towers\Egg.cs" />
     <Compile Include="Towers\ElectricTower.cs" />
     <Compile Include="Towers\FireTower.cs" />
     <Compile Include="Towers\GunTower.cs" />
+    <Compile Include="Towers\Missile.cs" />
     <Compile Include="Towers\MissileTower.cs" />
     <Compile Include="Towers\projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

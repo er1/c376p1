@@ -29,7 +29,7 @@ namespace TowerCraft3D
         Model boundingBox;
         Model MinecraftLikeModel;
         Model Monster1;
-        Model bullet;
+        Model bullet, missile, egg;
         Model tile;
         Model colony;
         Model gunTower, cannonTower, missileTower, fireTower, electricTower, chickenTower;
@@ -118,6 +118,8 @@ namespace TowerCraft3D
             tile = Game.Content.Load<Model>(@"Models\\Map\\Tile");
             colony = Game.Content.Load<Model>(@"Models\\Map\\Colony");
             bullet = Game.Content.Load<Model>(@"Models\\Bullet\\Bullet");
+            egg = Game.Content.Load<Model>(@"Models\\Bullet\\Egg");
+            missile = Game.Content.Load<Model>(@"Models\\Bullet\\Missile");
             gunTower = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             cannonTower = Game.Content.Load<Model>(@"Models\\Towers\\CannonTower\\CannonTower");
             missileTower = Game.Content.Load<Model>(@"Models\\Towers\\MissileTower\\MissileTower");
@@ -492,7 +494,10 @@ namespace TowerCraft3D
         public void addProject(Vector3 position, Vector3 direction)
         {
             //Remember to change Model for diff bullets
-            projectiles.Add(new projectile(ref bullet, ref boundingBox, position, direction));
+            //projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction));
+            //projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction));
+            projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction));
+
         }
         #endregion
 

@@ -10,7 +10,6 @@ C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv.xnb
-C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\bulletTex.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Map\TileText.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Towers\GunTower\GunTowerText.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Towers\GunTower\BulletText.xnb
@@ -45,7 +44,6 @@ C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb
-C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\bulletTex_0.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Map\TileText_0.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Towers\GunTower\GunTowerText_0.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Towers\GunTower\BulletText_0.xnb
@@ -154,6 +152,7 @@ C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\Tower
 C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTowerText_0.xnb
 C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Towers\FireTower\FireTowerText_0.xnb
 C:\Users\kylechan\Desktop\comp376\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTowerText_0.xnb
+<<<<<<< HEAD
 C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm1.xnb
 C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Arm2.xnb
 C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Char\Head.xnb
@@ -232,3 +231,21 @@ C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCr
 C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\obj\x86\Debug\TowerCraft3D.exe
 C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\obj\x86\Debug\TowerCraft3D.pdb
+=======
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\BulletText.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\EggText.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\MissileText.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\Egg.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\Missile.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb
+>>>>>>> 37ec1939b964c53c284fd2d5da86c5c26c6bee16
+C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\BulletText.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\MissileText.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\EggText.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\Missile.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\Egg.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb
