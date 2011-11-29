@@ -27,12 +27,14 @@ namespace TowerCraft3D
         public int worldSize{get;protected set;}
         public int LIFE {get;set;}
 
+        int gameState = 0;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
-            ////this.graphics.IsFullScreen = true;
+            //this.graphics.IsFullScreen = true;
             this.graphics.PreferredBackBufferWidth = 1280;
             this.graphics.PreferredBackBufferHeight = 720;
         }
@@ -90,6 +92,19 @@ namespace TowerCraft3D
         
         protected override void Update(GameTime gameTime)
         {
+            //menu
+            if (gameState == 0)
+            {
+            }
+                // game
+            else if (gameState == 1)
+            {
+            }
+                //pause
+            else if (gameState == 2)
+            {
+            }
+            
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();

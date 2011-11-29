@@ -25,9 +25,17 @@ namespace TowerCraft3D
         public override void Shoot()
         {
             timer = TimeSpan.FromSeconds(0.5);
-            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-20, 25, 0), new Vector3(0, 0, 0), 4);
-            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-20, 25, 20), new Vector3(0, 0, 0), 4);
-            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-20, 25, -20), new Vector3(0, 0, 0), 4);
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-20, 25, 0), new Vector3(0, 0, 0), 3);
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-40, 25, 0), new Vector3(0, 0, 0), 3);
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-60, 25, 0), new Vector3(0, 0, 0), 3);
+
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-20, 25, 20), new Vector3(0, 0, 0), 3);
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-40, 25, 40), new Vector3(0, 0, 0), 3);
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-60, 25, 60), new Vector3(0, 0, 0), 3);
+
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-20, 25, -20), new Vector3(0, 0, 0), 3);
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-40, 25, -40), new Vector3(0, 0, 0), 3);
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(-60, 25, -60), new Vector3(0, 0, 0), 3);
         }
     }
 }

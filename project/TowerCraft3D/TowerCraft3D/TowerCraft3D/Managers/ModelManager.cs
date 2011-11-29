@@ -183,8 +183,7 @@ namespace TowerCraft3D
 
             base.LoadContent();
         }
-        
-        
+             
         public override void Update(GameTime gameTime)
         {
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
@@ -237,7 +236,7 @@ namespace TowerCraft3D
                     SpaceBar = true;
                 }
             }
-            if (curResource < 3)
+            if (curResource < 5)
             {
                 if (((Keyboard.GetState().IsKeyDown(Keys.E)) && !SpaceBar))//(gamePadState.Triggers.Right == 1) || 
                 {
@@ -252,41 +251,41 @@ namespace TowerCraft3D
                 ((gamePadState.Buttons.A == ButtonState.Pressed) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar))
             {
                 SpaceBar = true;
-                map.GetTile(chosenTile).addEntity(new resource(ref bullet, curResource));
+                //map.GetTile(chosenTile).addEntity(new resource(ref bullet, curResource));
 
                 int resourceValue = map.GetTile(chosenTile).towerConstruction();
-
+                resourceValue = 1;
                 if (resourceValue == 0)
                 {
 
                 }
-                else if ((resourceValue >= 3) && (resourceValue <= 5))
+                else if (((resourceValue >= 3) && (resourceValue <= 5)) || (curResource == 0))
                 {
                     towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
-                else if ((resourceValue >= 6) && (resourceValue <= 9))
+                else if (((resourceValue >= 6) && (resourceValue <= 9)) || (curResource == 1))
                 {
                     towers.Add(new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
-                else if ((resourceValue >= 10) && (resourceValue <= 14))
+                else if (((resourceValue >= 10) && (resourceValue <= 14)) || (curResource == 2)) 
                 {
                     towers.Add(new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
-                else if ((resourceValue >= 15) && (resourceValue <= 19))
+                else if (((resourceValue >= 15) && (resourceValue <= 19)) || (curResource == 3))
                 {
                     towers.Add(new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
-                else if ((resourceValue >= 20) && (resourceValue <= 23))
+                else if (((resourceValue >= 20) && (resourceValue <= 23)) || (curResource == 4))
                 {
                     towers.Add(new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
-                else if ((resourceValue >= 24) && (resourceValue <= 27))
-                {
+                else if (((resourceValue >= 24) && (resourceValue <= 27)) || (curResource == 5))
+                { 
                     towers.Add(new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
@@ -528,32 +527,7 @@ namespace TowerCraft3D
                                    particleExplosionSettings.maxParticles),
                                explosionColorsTexture, particleSettings,
                                explosionEffect));
-                    break;
-                    //electric!
-                case 4:
-                    explosions.Add(new ParticleExplosion(GraphicsDevice,
-                               position,
-                               random.Next(
-                                   particleExplosionSettings.minLife,
-                                   particleExplosionSettings.maxLife),
-                               random.Next(
-                                   particleExplosionSettings.minRoundTime,
-                                   particleExplosionSettings.maxRoundTime),
-                               random.Next(
-                                   particleExplosionSettings.minParticlesPerRound,
-                                   particleExplosionSettings.maxParticlesPerRound),
-                               random.Next(
-                                   particleExplosionSettings.minParticles,
-                                   particleExplosionSettings.maxParticles),
-                               explosionColorsTexture, particleSettings,
-                               explosionEffect));
-                    break;
-
-
-                    //Remember to change Model for diff bullets
-                    //
-                    //
-                    
+                    break;                    
 
             }
 
