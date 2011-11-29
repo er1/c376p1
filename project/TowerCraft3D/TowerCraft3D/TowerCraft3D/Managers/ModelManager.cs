@@ -269,7 +269,7 @@ namespace TowerCraft3D
                 }
                 else if ((resourceValue >= 10) && (resourceValue <= 14))
                 {
-                    towers.Add(new GunTower(ref missileTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
+                    towers.Add(new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                     map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
                 }
                 else if ((resourceValue >= 15) && (resourceValue <= 19))
@@ -342,14 +342,16 @@ namespace TowerCraft3D
             for (int i = 0; i < towers.Count; i++)
             {
                 towers[i].Update();
+                towers[i].game = this.Game;
                 //Shoots a projectile based on a Timer from tower
                 if ((towers[i].iWantToShoot(gameTime)) && (towers[i].lookForTarget(map)))
                 {
                     if (towers[i].shooting)
                     {
                         towers[i].shooting = false;
-                        towers[i].timer = TimeSpan.FromSeconds(3.0);
-                        addProject(towers[i].getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0));
+                        //towers[i].timer = TimeSpan.FromSeconds(3.0);
+                        towers[i].Shoot();
+                        //addProject(towers[i].getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0));
                     }
                 }
             }
