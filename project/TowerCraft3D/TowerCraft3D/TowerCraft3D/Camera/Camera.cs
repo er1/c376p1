@@ -57,6 +57,8 @@ namespace TowerCraft3D
             moveAllowed = move;
             timer = TimeSpan.FromSeconds(0.3);
             moveable = true;
+            Frustum = new BoundingFrustum(view * projection);
+
 
         }
         // Create look at function

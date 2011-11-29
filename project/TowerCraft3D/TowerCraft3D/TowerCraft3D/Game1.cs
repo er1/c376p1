@@ -27,6 +27,7 @@ namespace TowerCraft3D
         public int worldSize{get;protected set;}
         public int LIFE {get;set;}
 
+        bool started = false;
         int gameState = 0;
 
         public Game1()
@@ -67,7 +68,7 @@ namespace TowerCraft3D
             spriteManager = new SpriteManager(this);
 
             Components.Add(cameraMain);
-            Components.Add(modelManager);        
+            Components.Add(modelManager);
             Components.Add(spriteManager);
 
             this.IsFixedTimeStep = false;
@@ -95,25 +96,59 @@ namespace TowerCraft3D
             //menu
             if (gameState == 0)
             {
+                if (!started)
+                {
+                    Components.Remove(cameraMain);
+                    Components.Remove(modelManager);
+                    Components.Remove(spriteManager);
+
+                    cameraMain = new Camera(this, new Vector3(0, 200, 199), new Vector3(0, -5, 1), Vector3.Up, MainScreen, true, worldSize);
+                    modelManager = new ModelManager(this);
+                    spriteManager = new SpriteManager(this);
+
+                    Components.Add(cameraMain);
+                    Components.Add(modelManager);
+                    Components.Add(spriteManager);
+                    started = true;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.U))
+                {
+                    gameState = 1;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                {
+                    this.Exit();
+                }
             }
                 // game
             else if (gameState == 1)
             {
+                base.Update(gameTime);
+
+                if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                {
+                    gameState = 2;
+                }
             }
                 //pause
             else if (gameState == 2)
             {
+                if (Keyboard.GetState().IsKeyDown(Keys.Y))
+                {
+                    gameState = 0;
+                    started = false;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.I))
+                {
+                    gameState = 1;
+                }
             }
             
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-            {
-                this.Exit();
-            }
 
-            base.Update(gameTime);
+            
         }
 
         
@@ -121,9 +156,18 @@ namespace TowerCraft3D
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            
-
-            base.Draw(gameTime);
+            if (gameState == 0)
+            {
+                GraphicsDevice.Clear(Color.Black);
+            }
+            else if (gameState == 2)
+            {
+                GraphicsDevice.Clear(Color.Green);
+            }
+            else
+            {
+                base.Draw(gameTime);
+            }
         }
 
     }
