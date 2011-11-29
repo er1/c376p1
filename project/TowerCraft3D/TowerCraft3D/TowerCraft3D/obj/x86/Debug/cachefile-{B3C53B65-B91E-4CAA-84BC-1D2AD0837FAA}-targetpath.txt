@@ -10,7 +10,6 @@ Content\Models\Monster1\cube2_copy3_auv.xnb
 Content\Models\Monster1\cube2_copy4_auv.xnb
 Content\Models\Monster1\cube2_copy5_auv.xnb
 Content\Models\Monster1\cube2_copy6_auv.xnb
-Content\Models\Bullet\bulletTex.xnb
 Content\Models\Map\TileText.xnb
 Content\Models\Towers\GunTower\GunTowerText.xnb
 Content\Models\Towers\GunTower\BulletText.xnb
@@ -45,7 +44,6 @@ Content\Models\Monster1\cube2_copy4_auv_0.xnb
 Content\Models\Monster1\cube2_copy3_auv_0.xnb
 Content\Models\Monster1\cube2_auv_0.xnb
 Content\Models\Monster1\cube1_auv_0.xnb
-Content\Models\Bullet\bulletTex_0.xnb
 Content\Models\Map\TileText_0.xnb
 Content\Models\Towers\GunTower\GunTowerText_0.xnb
 Content\Models\Towers\GunTower\BulletText_0.xnb
@@ -70,3 +68,11 @@ Content\Models\Towers\ChickenTower\ChickenTowerText_0.xnb
 Content\Models\Towers\Electric\ElectricTowerText_0.xnb
 Content\Models\Towers\FireTower\FireTowerText_0.xnb
 Content\Models\Towers\MissileTower\MissileTowerText_0.xnb
+Content\Models\Bullet\BulletText.xnb
+Content\Models\Bullet\EggText.xnb
+Content\Models\Bullet\MissileText.xnb
+Content\Models\Bullet\Egg.xnb
+Content\Models\Bullet\Missile.xnb
+Content\Models\Bullet\BulletText_0.xnb
+Content\Models\Bullet\EggText_0.xnb
+Content\Models\Bullet\MissileText_0.xnb
