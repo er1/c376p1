@@ -16,7 +16,9 @@ namespace TowerCraft3D
         private Vector3 position;
         private TileCoord tc;
         private int upgradeLevel;
-        private float range;
+        protected float range;
+        protected TileCoord currentTargetTC;
+
         private monster target;
         public TimeSpan timer { get; set; }
         public Map map;
@@ -59,6 +61,7 @@ namespace TowerCraft3D
                 test.x -= i;
                 if (map.GetTile(test).anyMonsters())
                 {
+                    currentTargetTC = test;
                      return true;
                 }
             }
