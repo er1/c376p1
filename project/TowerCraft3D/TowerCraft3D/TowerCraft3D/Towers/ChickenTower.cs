@@ -18,13 +18,13 @@ namespace TowerCraft3D
             world *= Matrix.CreateTranslation(pos);
             life = 50;
             towerDmg = 10;
-            timer = TimeSpan.FromSeconds(15.0);
+            timer = TimeSpan.FromSeconds(1.0);
         }
 
         public override void Shoot()
         {
             timer = TimeSpan.FromSeconds(0.5);
-            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-2, 0, 0));
+            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-2, 0, 0), 2);
         }
     }
 }

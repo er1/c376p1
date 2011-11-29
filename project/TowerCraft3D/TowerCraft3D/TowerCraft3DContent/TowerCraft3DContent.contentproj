@@ -355,6 +355,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Bullet\ExplosionText.jpg">
+      <Name>ExplosionText</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Bullet\Explosion.X">
+      <Name>Explosion</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Models\Bullet\EggText.jpg">
       <Name>EggText</Name>
       <Importer>TextureImporter</Importer>

@@ -80,6 +80,7 @@
     <Compile Include="Towers\ChickenTower.cs" />
     <Compile Include="Towers\Egg.cs" />
     <Compile Include="Towers\ElectricTower.cs" />
+    <Compile Include="Towers\Explosion.cs" />
     <Compile Include="Towers\FireTower.cs" />
     <Compile Include="Towers\GunTower.cs" />
     <Compile Include="Towers\Missile.cs" />
@@ -98,7 +99,6 @@
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>

@@ -160,3 +160,6 @@ C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb
 C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\Explosion.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\ExplosionText.xnb
+C:\Users\Skald\Git\TOWERCRAFT\project\TowerCraft3D\TowerCraft3D\TowerCraft3D\bin\x86\Debug\Content\Models\Bullet\ExplosionText_0.xnb

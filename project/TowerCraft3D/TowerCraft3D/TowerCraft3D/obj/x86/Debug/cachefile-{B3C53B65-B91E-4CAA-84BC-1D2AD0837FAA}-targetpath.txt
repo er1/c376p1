@@ -76,3 +76,6 @@ Content\Models\Bullet\Missile.xnb
 Content\Models\Bullet\BulletText_0.xnb
 Content\Models\Bullet\EggText_0.xnb
 Content\Models\Bullet\MissileText_0.xnb
+Content\Models\Bullet\Explosion.xnb
+Content\Models\Bullet\ExplosionText.xnb
+Content\Models\Bullet\ExplosionText_0.xnb

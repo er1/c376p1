@@ -13,7 +13,7 @@ namespace TowerCraft3D
         public Bullet(ref Model temp, ref Model colModel, Vector3 location, Vector3 newDirection)
             : base(ref temp, ref colModel, location, newDirection)
         {
-            world = Matrix.CreateRotationZ((float)Math.PI/2) * Matrix.CreateScale(1) * Matrix.CreateTranslation(location);
+            world = Matrix.CreateRotationX(angle) * Matrix.CreateRotationZ((float)Math.PI / 2) * Matrix.CreateScale(10) * Matrix.CreateTranslation(location);
         }
     }
 }

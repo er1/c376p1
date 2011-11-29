@@ -29,7 +29,7 @@ namespace TowerCraft3D
         Model boundingBox;
         Model MinecraftLikeModel;
         Model Monster1;
-        Model bullet, missile, egg;
+        Model bullet, missile, egg, explosion;
         Model tile;
         Model colony;
         Model gunTower, cannonTower, missileTower, fireTower, electricTower, chickenTower;
@@ -120,6 +120,7 @@ namespace TowerCraft3D
             bullet = Game.Content.Load<Model>(@"Models\\Bullet\\Bullet");
             egg = Game.Content.Load<Model>(@"Models\\Bullet\\Egg");
             missile = Game.Content.Load<Model>(@"Models\\Bullet\\Missile");
+            explosion = Game.Content.Load<Model>(@"Models\\Bullet\\Explosion");
             gunTower = Game.Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
             cannonTower = Game.Content.Load<Model>(@"Models\\Towers\\CannonTower\\CannonTower");
             missileTower = Game.Content.Load<Model>(@"Models\\Towers\\MissileTower\\MissileTower");
@@ -491,12 +492,70 @@ namespace TowerCraft3D
 
         #region function to shoot
         //Add projectiles to the List(to update - check collision - draw)
-        public void addProject(Vector3 position, Vector3 direction)
+        public void addProject(Vector3 position, Vector3 direction, int type)
         {
-            //Remember to change Model for diff bullets
-            //projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction));
-            //projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction));
-            projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction));
+
+            switch (type)
+            {
+                    //guntower
+                case 0:
+                    projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction));
+                    break;
+                    //missile tower
+                case 1:
+                    projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction));
+                    break;
+                    //chicken tower
+                case 2:
+                    projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction));
+                    break;
+                    //explosions!
+                case 3:
+                    projectiles.Add(new Explosion(ref explosion, ref boundingBox, position, direction));
+                    explosions.Add(new ParticleExplosion(GraphicsDevice,
+                               position,
+                               random.Next(
+                                   particleExplosionSettings.minLife,
+                                   particleExplosionSettings.maxLife),
+                               random.Next(
+                                   particleExplosionSettings.minRoundTime,
+                                   particleExplosionSettings.maxRoundTime),
+                               random.Next(
+                                   particleExplosionSettings.minParticlesPerRound,
+                                   particleExplosionSettings.maxParticlesPerRound),
+                               random.Next(
+                                   particleExplosionSettings.minParticles,
+                                   particleExplosionSettings.maxParticles),
+                               explosionColorsTexture, particleSettings,
+                               explosionEffect));
+                    break;
+                    //electric!
+                case 4:
+                    explosions.Add(new ParticleExplosion(GraphicsDevice,
+                               position,
+                               random.Next(
+                                   particleExplosionSettings.minLife,
+                                   particleExplosionSettings.maxLife),
+                               random.Next(
+                                   particleExplosionSettings.minRoundTime,
+                                   particleExplosionSettings.maxRoundTime),
+                               random.Next(
+                                   particleExplosionSettings.minParticlesPerRound,
+                                   particleExplosionSettings.maxParticlesPerRound),
+                               random.Next(
+                                   particleExplosionSettings.minParticles,
+                                   particleExplosionSettings.maxParticles),
+                               explosionColorsTexture, particleSettings,
+                               explosionEffect));
+                    break;
+
+
+                    //Remember to change Model for diff bullets
+                    //
+                    //
+                    
+
+            }
 
         }
         #endregion
