@@ -25,6 +25,7 @@ namespace TowerCraft3D
         public bool isDead {get; protected set;}
         protected int towerDmg { get; set; }
         public bool shooting { get; set; }
+        public Game game {get; set;}
 
         public tower(ref Model temp, Vector3 location, TileCoord currentTC)
             : base(temp)

@@ -16,7 +16,7 @@ namespace TowerCraft3D
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        ModelManager modelManager;
+        public ModelManager modelManager;
 
         public SpriteManager spriteManager { get; protected set; }
         public Camera cameraMain { get; protected set; }
