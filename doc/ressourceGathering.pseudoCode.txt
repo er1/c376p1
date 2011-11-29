@@ -1,0 +1,101 @@
+GatherZone:
+	RessourceManager manager;
+	Gatherer gatherers[];
+	Minerals minerals[];
+
+	void update() {
+		foreach (Gatherer g in gatherers) {
+			g.update();
+		}
+		//foreach (Mineral m in minerals) {
+		//	m.update();
+		//}
+	}
+
+	Gatherer[] getNearbyGatherers(double radius) {
+
+	}
+
+	Mineral[] getNearbyMinerals(double radius) {
+
+	}
+
+Gatherer:
+	position = Vector3.ZERO;
+	direction = Vector3.UnitX;
+
+	bool mining = false;
+	Mineral targetMineral = null;
+	Vector3 targetPosition = null;
+
+	Gatherer(Vector3 _position, Vector3 _target) {
+		position = _position;
+		target = _target;
+	}
+
+	update() {
+
+		if (mining) {
+			targetMineral.life--
+			
+			if (targetMineral.life <= 0)
+				RessourceManager.gather(targetMineral);
+				targetMineral.remove();
+
+		} else {
+			if (targetMineral == null) {
+				//... go toward targetPosition ...
+				direction = targetPosition - position;
+				direction.normalize();
+				position += direction * 0.2;
+
+				Mineral[] nearby = gatherzone.getNearbyMinerals;
+				if (nearby.size > 0) {
+					targetMineral = nearby[0];
+					targetMineral.addFollower(this);
+				}
+
+			} else {
+				// if (... close enough to targetMineral ...)
+				if ((targetMineral.position - position).length() < 2.0)
+					mining = true;
+					if (targetMineral.myGatherer == null) {
+						targetMineral.myGatherer = this;
+					} else {
+						targetMineral = null
+					}
+				} else {
+					//... go toward targetMineral ...
+					direction = targetMineral.position - position;
+					direction.normalize();
+					position += direction * 0.2;
+				}
+			}
+		}
+
+	}
+
+
+Mineral:
+	GatherZone gatherzone;
+	Vector3 position;
+	double life;
+
+	Gatherer followers[];
+
+	void addFollower(Gatherer g) {
+		followers.add(g)
+	}
+
+	void remove() {
+		foreach (Gatherer g in followers) {
+			g.targetMineral = null;
+		}
+	}
+
+
+
+RessourceManager:
+	void add(Mineral) {
+		... add based on mineral type ...
+	}
