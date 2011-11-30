@@ -24,7 +24,7 @@ namespace TowerCraft3D
         public override void Shoot()
         {
             timer = TimeSpan.FromSeconds(0.5);
-            ((Game1)game).modelManager.addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-2, 0, 0), 1);
+            ((Game1)game).addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-2, 0, 0), 1);
         }
 
     }
