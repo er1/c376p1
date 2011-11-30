@@ -92,11 +92,12 @@ namespace TowerCraft3D
         Effect explosionEffect;
 
         #endregion
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            this.IsMouseVisible = true;
+            this.IsMouseVisible = false;
             //this.graphics.IsFullScreen = true;
             this.graphics.PreferredBackBufferWidth = 1280;
             this.graphics.PreferredBackBufferHeight = 720;
@@ -130,7 +131,7 @@ namespace TowerCraft3D
 
             chosenTile = cameraMain.getCurrentTC();
             this.IsFixedTimeStep = false;
-            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 1);  
+            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 10);  
 
             base.Initialize();
 
@@ -191,9 +192,9 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(0, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(1, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(2, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(0, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.5)));
+            wavesLevel.Add(1, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.5)));
+            wavesLevel.Add(2, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(3, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(4, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(5, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
@@ -227,7 +228,7 @@ namespace TowerCraft3D
         }     
         protected override void Update(GameTime gameTime)
         {
-
+            
             #region Menu (GAMESTATES)
             //menu
             if (gameState == 0)
@@ -277,7 +278,6 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-
 
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
@@ -337,7 +337,7 @@ namespace TowerCraft3D
             SelectionTile.Update();
 
             #endregion
-
+            
             RemoveDeadEntities();
             UpdateExplosions(gameTime);
             //Has some key input here
@@ -359,9 +359,9 @@ namespace TowerCraft3D
                 }
             }
 
-
+            
             #region Update Monster, Tower, bullets + a little logic
-
+            
             #region monster
             foreach(KeyValuePair<monster, bool> pair in monsters)
             {
@@ -391,11 +391,11 @@ namespace TowerCraft3D
 
                pair.Key.Update();
                //spriteManager.updateLifeBarsMonsters(0, percentage, pair.Key.getPosition(), cameraMain, MainScreen);
-                TileCoord monsterLocation
-                    =
-                    new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
+                //TileCoord monsterLocation
+                //    =
+                //    new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
 
-                map.GetTile(monsterLocation).addEntity(pair.Key);
+                //map.GetTile(monsterLocation).addEntity(pair.Key);
                 // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
                 if (pair.Key.hitColony)
                 {
@@ -405,7 +405,7 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-
+            
             #region towers
             //Draws Tower list
             foreach (KeyValuePair<tower, bool> pair in towers)
@@ -432,7 +432,7 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-
+            
             #region projectiles
             //updates projectile list
             foreach (KeyValuePair<projectile, bool> pair in projectiles)
@@ -453,9 +453,9 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-
+            
             #endregion
-
+            
             #region Collision detection
             //CheckBoxCollision();
             foreach (KeyValuePair<TileCoord, Tile> pair in map.getDictionary())
@@ -509,7 +509,7 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-
+            
             #region Tower Adding
             //Temporary way to add towers.
             if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
@@ -668,20 +668,20 @@ namespace TowerCraft3D
             switch (type)
             {
                 //guntower
-                case 0:
-                    projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction), true);
+                case 0:                    
+                    projectiles.Add(new projectile(ref bullet, ref boundingBox, position, direction), true);
                     break;
                 //missile tower
                 case 1:
-                    projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction), true);
+                    projectiles.Add(new projectile(ref missile, ref boundingBox, position, direction), true);
                     break;
                 //chicken tower
                 case 2:
-                    projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction), true);
+                    projectiles.Add(new projectile(ref egg, ref boundingBox, position, direction), true);
                     break;
                 //explosions!
                 case 3:
-                    projectiles.Add(new Explosion(ref explosion, ref boundingBox, position, direction), true);
+                    projectiles.Add(new projectile(ref explosion, ref boundingBox, position, direction), true);
                     explosions.Add(new ParticleExplosion(GraphicsDevice,
                                position,
                                random.Next(

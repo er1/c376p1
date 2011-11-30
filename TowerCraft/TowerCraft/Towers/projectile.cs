@@ -21,6 +21,7 @@ namespace TowerCraft3D
         protected TimeSpan projectileDistanceTime;
         public TimeSpan projectileTimer { get; set; }
         public Model collisionModel { get; set; }
+        public TileCoord tc { get; set; }
 
 
         public projectile(ref Model temp, ref Model colModel, Vector3 location, Vector3 newDirection)

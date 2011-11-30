@@ -19,6 +19,7 @@ namespace TowerCraft3D
         public int life;
         public bool isDead {get; protected set;}
         public int type;
+        public TileCoord tc { get; set; }
 
         public monster(ref Model temp, Vector3 location, Vector3 newDirection)
             : base(temp)
