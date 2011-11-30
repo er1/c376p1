@@ -35,11 +35,27 @@ namespace TowerCraft.Resource
             gatherersDeleteQueue = new List<Gatherer>();
             mineralsDeleteQueue = new List<Mineral>();
 
+            Random rand = new Random();
+
+            for (int i = 0; i < 40; ++i)
+            {
+                Vector3 p = new Vector3(250, 0, 0);
+                p += new Vector3((float)rand.NextDouble(), (float)rand.NextDouble(), (float)rand.NextDouble()) * 50f - Vector3.One * 25f;
+
+                Mineral m = new Mineral(this, p);
+
+                add(m);
+            }
+
             for (int i = 0; i < 20; ++i)
             {
-                add(new Mineral(this, new Vector3(100, 8, -64 + 2 * i)));
-                add(new Gatherer(this, new Vector3(120, 8, -64 + 2 * i)));
+                Gatherer g = new Gatherer(this, new Vector3(100, 8, -64 + 2 * i));
+
+                g.targetPosition = new Vector3(250, 0, 0);
+
+                add(g);
             }
+
             updateLists();
         }
 
@@ -54,7 +70,6 @@ namespace TowerCraft.Resource
 
         public void draw(Camera cam)
         {
-            int i = 5;
 
             foreach (Gatherer g in gatherers)
                 g.draw(cam);

@@ -50,8 +50,6 @@ namespace TowerCraft.Resource
 
         public void draw(Camera cam)
         {
-            int x = 1;
-
             foreach (ModelMesh mesh in model.Meshes)
             {
                 foreach (BasicEffect effect in mesh.Effects)
