@@ -17,12 +17,14 @@ namespace TowerCraft3D
             world *= Matrix.CreateTranslation(pos);
             //life = 50;
             towerDmg = 10;
-            timer =  TimeSpan.FromSeconds(0.5);
+            timer =  TimeSpan.FromSeconds(1.5);
         }
         public override void Shoot()
         {
-            timer = TimeSpan.FromSeconds(0.5);
-            ((Game1)game).addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0), 0);            
+            timer = TimeSpan.FromSeconds(1.5);
+            //((Game1)game).addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0), 0);            
+            ((Game1)game).addProject(new Vector3(currentTargetTC.x * 20, 0, currentTargetTC.y * 20) + new Vector3(0, 25, 0), new Vector3(0, 0, 0), 3);
+
         }
 
       

@@ -137,8 +137,8 @@ namespace TowerCraft3D
             #endregion
 
             chosenTile = cameraMain.getCurrentTC();
-            this.IsFixedTimeStep = false;
-            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 1);  
+            this.IsFixedTimeStep = true;
+            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 50);  
 
             base.Initialize();
 
@@ -204,9 +204,9 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(0, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.5)));
-            wavesLevel.Add(1, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.5)));
-            wavesLevel.Add(2, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(0, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(1, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(2, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(3, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(4, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(5, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
@@ -699,23 +699,23 @@ namespace TowerCraft3D
                     break;
                 //explosions!
                 case 3:
-                    projectiles.Add(new projectile(ref explosion, ref boundingBox, position, direction), true);
-                    explosions.Add(new ParticleExplosion(GraphicsDevice,
-                               position,
-                               random.Next(
-                                   particleExplosionSettings.minLife,
-                                   particleExplosionSettings.maxLife),
-                               random.Next(
-                                   particleExplosionSettings.minRoundTime,
-                                   particleExplosionSettings.maxRoundTime),
-                               random.Next(
-                                   particleExplosionSettings.minParticlesPerRound,
-                                   particleExplosionSettings.maxParticlesPerRound),
-                               random.Next(
-                                   particleExplosionSettings.minParticles,
-                                   particleExplosionSettings.maxParticles),
-                               explosionColorsTexture, particleSettings,
-                               explosionEffect), true);
+                    projectiles.Add(new Explosion(ref explosion, ref boundingBox, position, direction), true);
+                    //explosions.Add(new ParticleExplosion(GraphicsDevice,
+                    //           position,
+                    //           random.Next(
+                    //               particleExplosionSettings.minLife,
+                    //               particleExplosionSettings.maxLife),
+                    //           random.Next(
+                    //               particleExplosionSettings.minRoundTime,
+                    //               particleExplosionSettings.maxRoundTime),
+                    //           random.Next(
+                    //               particleExplosionSettings.minParticlesPerRound,
+                    //               particleExplosionSettings.maxParticlesPerRound),
+                    //           random.Next(
+                    //               particleExplosionSettings.minParticles,
+                    //               particleExplosionSettings.maxParticles),
+                    //           explosionColorsTexture, particleSettings,
+                    //           explosionEffect), true);
                     break;
 
             }
