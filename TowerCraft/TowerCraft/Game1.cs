@@ -389,7 +389,7 @@ namespace TowerCraft3D
 
 
                 monsters[i].Update();
-               spriteManager.updateLifeBarsMonsters(i, percentage, monsters[i].getPosition(), cameraMain, viewport);
+               spriteManager.updateLifeBarsMonsters(i, percentage, monsters[i].getPosition(), cameraMain, MainScreen);
                 TileCoord monsterLocation
                     =
                     new TileCoord((int)Math.Floor((monsters[i].getPosition().X + 10) / 20.0), (int)Math.Floor((monsters[i].getPosition().Z + 10) / 20.0));
