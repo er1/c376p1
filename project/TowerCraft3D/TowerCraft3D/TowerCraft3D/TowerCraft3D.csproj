@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera\Camera.cs" />
+    <Compile Include="FrameRateCounter.cs" />
     <Compile Include="Managers\SpriteManager.cs" />
     <Compile Include="Map\Colony.cs" />
     <Compile Include="Map\Map.cs" />

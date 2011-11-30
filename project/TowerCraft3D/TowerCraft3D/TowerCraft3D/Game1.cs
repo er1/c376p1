@@ -30,6 +30,7 @@ namespace TowerCraft3D
         bool started = false;
         int gameState = 1;
 
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -39,8 +40,6 @@ namespace TowerCraft3D
             this.graphics.PreferredBackBufferWidth = 1280;
             this.graphics.PreferredBackBufferHeight = 720;
         }
-
-        
         protected override void Initialize()
         {
            
@@ -66,7 +65,6 @@ namespace TowerCraft3D
             cameraMain = new Camera(this, new Vector3(0, 200, 199), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
             modelManager = new ModelManager(this);
             spriteManager = new SpriteManager(this);
-
             Components.Add(cameraMain);
             Components.Add(modelManager);
             Components.Add(spriteManager);
@@ -75,24 +73,20 @@ namespace TowerCraft3D
             this.TargetElapsedTime = new TimeSpan(0, 0, 0, 1);  
             base.Initialize();
 
-        }
-
-        
+        }     
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-        }
-
-        
+        }      
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
-        }
-
-        
+        }     
         protected override void Update(GameTime gameTime)
         {
+             
+
             //menu
             if (gameState == 0)
             {
@@ -155,6 +149,7 @@ namespace TowerCraft3D
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
 
             if (gameState == 0)
             {
