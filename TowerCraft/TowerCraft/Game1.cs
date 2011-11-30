@@ -165,8 +165,8 @@ namespace TowerCraft3D
 
             #region Load Models
             boundingBox = Content.Load<Model>(@"Models\\BoundingBox");
-            MinecraftLikeModel =Content.Load<Model>(@"Models\\Char\\Char");
-            Monster1 =Content.Load<Model>(@"Models\\Monster1");
+            MinecraftLikeModel = Content.Load<Model>(@"Models\\Char\\Char");
+            Monster1 = Content.Load<Model>(@"Models\\Monster1");
             Monster2 = Content.Load<Model>(@"Models\\Monster2");
             Monster3 = Content.Load<Model>(@"Models\\Monster3");
             Monster4 = Content.Load<Model>(@"Models\\Monster4");
@@ -371,7 +371,6 @@ namespace TowerCraft3D
                 }
             }
 
-            
             #region Update Monster, Tower, bullets + a little logic
             
             #region monster
@@ -403,11 +402,11 @@ namespace TowerCraft3D
 
                pair.Key.Update();
                //spriteManager.updateLifeBarsMonsters(0, percentage, pair.Key.getPosition(), cameraMain, MainScreen);
-                //TileCoord monsterLocation
-                //    =
-                //    new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
+               TileCoord monsterLocation
+                   =
+                   new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
 
-                //map.GetTile(monsterLocation).addEntity(pair.Key);
+               map.GetTile(monsterLocation).addEntity(pair.Key);
                 // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
                 if (pair.Key.hitColony)
                 {
@@ -688,15 +687,15 @@ namespace TowerCraft3D
             {
                 //guntower
                 case 0:                    
-                    projectiles.Add(new projectile(ref bullet, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction), true);
                     break;
                 //missile tower
                 case 1:
-                    projectiles.Add(new projectile(ref missile, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction), true);
                     break;
                 //chicken tower
                 case 2:
-                    projectiles.Add(new projectile(ref egg, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction), true);
                     break;
                 //explosions!
                 case 3:
