@@ -25,8 +25,6 @@ namespace TowerCraft3D
             ((Game1)game).addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0), 0);            
         }
 
-       
-
-
+      
     }
 }

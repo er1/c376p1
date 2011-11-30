@@ -113,7 +113,6 @@
     <Compile Include="Map\Colony.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Model\model.cs" />
-    <Compile Include="Managers\ModelManager.cs" />
     <Compile Include="Model\Sprite.cs" />
     <Compile Include="Monsters\monster.cs" />
     <Compile Include="Model\player.cs" />

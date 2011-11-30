@@ -576,7 +576,7 @@ namespace TowerCraft3D
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            GraphicsDevice.Viewport = MainScreen;
 
             if (gameState == 0)
             {
@@ -593,7 +593,7 @@ namespace TowerCraft3D
 
 
 
-            GraphicsDevice.Viewport = MainScreen;
+           
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
