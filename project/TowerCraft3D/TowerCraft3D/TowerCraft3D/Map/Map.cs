@@ -46,7 +46,7 @@ namespace TowerCraft3D
         {
             foreach (KeyValuePair<TileCoord, Tile> pair in map)
             {
-                pair.Value.removeAllMonstersAndProjectiles();
+                pair.Value.removeAll();
             }
         }
 

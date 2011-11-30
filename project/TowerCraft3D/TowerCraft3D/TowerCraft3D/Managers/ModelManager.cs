@@ -245,58 +245,7 @@ namespace TowerCraft3D
                 }
             }
 
-            #region Tower Adding
-            //Temporary way to add towers.
-            if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
-                ((gamePadState.Buttons.A == ButtonState.Pressed) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar))
-            {
-                SpaceBar = true;
-                //map.GetTile(chosenTile).addEntity(new resource(ref bullet, curResource));
-
-                int resourceValue = map.GetTile(chosenTile).towerConstruction();
-                resourceValue = 1;
-                if (resourceValue == 0)
-                {
-
-                }
-                else if (((resourceValue >= 3) && (resourceValue <= 5)) || (curResource == 0))
-                {
-                    towers.Add(new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                }
-                else if (((resourceValue >= 6) && (resourceValue <= 9)) || (curResource == 1))
-                {
-                    towers.Add(new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                }
-                else if (((resourceValue >= 10) && (resourceValue <= 14)) || (curResource == 2)) 
-                {
-                    towers.Add(new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                }
-                else if (((resourceValue >= 15) && (resourceValue <= 19)) || (curResource == 3))
-                {
-                    towers.Add(new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                }
-                else if (((resourceValue >= 20) && (resourceValue <= 23)) || (curResource == 4))
-                {
-                    towers.Add(new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                }
-                else if (((resourceValue >= 24) && (resourceValue <= 27)) || (curResource == 5))
-                { 
-                    towers.Add(new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                    map.GetTile(chosenTile).addEntity(new tower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile));
-                }
-                
-            }
-            if ((Keyboard.GetState().IsKeyUp(Keys.Space)) && (Keyboard.GetState().IsKeyUp(Keys.Q)) && (Keyboard.GetState().IsKeyUp(Keys.E)) && (gamePadState.Buttons.A == ButtonState.Released))
-            {
-                SpaceBar = false;
-            }
-            #endregion
-
+            
             #region Update Monster, Tower, bullets + a little logic
             for (int i = 0; i < monsters.Count; i++)
             {
@@ -345,6 +294,13 @@ namespace TowerCraft3D
             {
                 towers[i].Update();
                 towers[i].game = this.Game;
+
+                TileCoord towerLocation
+                    =
+                    new TileCoord((int)Math.Floor((towers[i].getPosition().X + 10) / 20.0), (int)Math.Floor((towers[i].getPosition().Z + 10) / 20.0));
+
+                 map.GetTile(towerLocation).addEntity(towers[i]);
+
                 //Shoots a projectile based on a Timer from tower
                 if ((towers[i].iWantToShoot(gameTime)) && (towers[i].lookForTarget(map)))
                 {
@@ -381,8 +337,31 @@ namespace TowerCraft3D
             //CheckBoxCollision();
             foreach (KeyValuePair<TileCoord, Tile> pair in map.getDictionary())
             {
-
-                if ((pair.Value.anyMonsters()) && (pair.Value.anyProjectile()))
+                if ((pair.Value.anyMonster()) && (pair.Value.anyTower()))
+                {
+                    List<model> test = pair.Value.getEntities();
+                    for (int i = 0; i < test.Count(); i++)
+                    {
+                        if (test[i] is tower)
+                        {
+                            for (int z = 0; z < towers.Count; z++)
+                            {
+                                if (towers[z].getID() == test[i].getID())
+                                {
+                                    ((tower)towers[z]).life -= 25;
+                                    break;
+                                }
+                            }
+                        }
+                        if (test[i] is monster)
+                        {
+                            ((monster)test[i]).life -= 1000;
+                        }
+                        
+                    }
+                }
+                
+                if ((pair.Value.anyMonster()) && (pair.Value.anyProjectile()))
                 {
                     List<model> test = pair.Value.getEntities();
                     for (int i = 0; i < test.Count(); i++)
@@ -391,9 +370,6 @@ namespace TowerCraft3D
                         {
                             ((monster)test[i]).life -= 25;
                         }
-                    }
-                    for (int i = 0; i < test.Count(); i++)
-                    {
                         if (test[i] is projectile)
                         {
                             for (int z = 0; z < projectiles.Count; z++)
@@ -408,6 +384,66 @@ namespace TowerCraft3D
                     }
                     //CheckTileCollision(pair.Value.getEntities());
                 }
+            }
+            #endregion
+
+            #region Tower Adding
+            //Temporary way to add towers.
+            if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
+                ((gamePadState.Buttons.A == ButtonState.Pressed) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar))
+            {
+                SpaceBar = true;
+                //map.GetTile(chosenTile).addEntity(new resource(ref bullet, curResource));
+
+                int resourceValue = map.GetTile(chosenTile).towerConstruction();
+                resourceValue = 1;
+
+                tower towerToAdd;
+                if (resourceValue == 0)
+                {
+
+                }
+                else if (((resourceValue >= 3) && (resourceValue <= 5)) || (curResource == 0))
+                {
+                    towerToAdd = new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile);
+                    towers.Add(towerToAdd);
+                    map.GetTile(chosenTile).addEntity(towerToAdd);
+                }
+                else if (((resourceValue >= 6) && (resourceValue <= 9)) || (curResource == 1))
+                {
+                    towerToAdd = new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile);
+                    towers.Add(towerToAdd);
+                    map.GetTile(chosenTile).addEntity(towerToAdd);
+                }
+                else if (((resourceValue >= 10) && (resourceValue <= 14)) || (curResource == 2))
+                {
+                    towerToAdd = new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile);
+                    towers.Add(towerToAdd);
+                    map.GetTile(chosenTile).addEntity(towerToAdd);
+                }
+                else if (((resourceValue >= 15) && (resourceValue <= 19)) || (curResource == 3))
+                {
+                    towerToAdd = new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile);
+                    towers.Add(towerToAdd);
+                    map.GetTile(chosenTile).addEntity(towerToAdd);
+                }
+                else if (((resourceValue >= 20) && (resourceValue <= 23)) || (curResource == 4))
+                {
+                    towerToAdd = new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile);
+                    towers.Add(towerToAdd);
+                    map.GetTile(chosenTile).addEntity(towerToAdd);
+                }
+                else if (((resourceValue >= 24) && (resourceValue <= 27)) || (curResource == 5))
+                {
+                    towerToAdd = new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 0, chosenTile.y * 20)), chosenTile);
+                    towers.Add(towerToAdd);
+                    map.GetTile(chosenTile).addEntity(towerToAdd);
+                }
+
+            }
+            if ((Keyboard.GetState().IsKeyUp(Keys.Space)) && (Keyboard.GetState().IsKeyUp(Keys.Q)) && (Keyboard.GetState().IsKeyUp(Keys.E)) && (gamePadState.Buttons.A == ButtonState.Released))
+            {
+                SpaceBar = false;
             }
             #endregion
 
@@ -654,6 +690,31 @@ namespace TowerCraft3D
                 }
             }
 
+            for (int j = 0; j < towers.Count; j++)
+            {
+                if (towers[j].isDead)
+                {
+                    explosions.Add(new ParticleExplosion(GraphicsDevice,
+                               towers[j].getWorld().Translation,
+                               random.Next(
+                                   particleExplosionSettings.minLife,
+                                   particleExplosionSettings.maxLife),
+                               random.Next(
+                                   particleExplosionSettings.minRoundTime,
+                                   particleExplosionSettings.maxRoundTime),
+                               random.Next(
+                                   particleExplosionSettings.minParticlesPerRound,
+                                   particleExplosionSettings.maxParticlesPerRound),
+                               random.Next(
+                                   particleExplosionSettings.minParticles,
+                                   particleExplosionSettings.maxParticles),
+                               explosionColorsTexture, particleSettings,
+                               explosionEffect));
+                    towers.RemoveAt(j);
+                    if (j != 0)
+                        j--;
+                }
+            }
         }
 
 

@@ -43,22 +43,34 @@ namespace TowerCraft3D
             entities.Remove(model);
         }
 
-        public void removeAllMonstersAndProjectiles()
+        public void removeAll()
         {
-            for (int i = 0; i < entities.Count(); i++)
-            {
-                if ((entities[i] is monster) || (entities[i] is projectile))
-                {
-                    entities.RemoveAt(i);
-                    i--;
-                }
-            }
+            entities.Clear();
+            //for (int i = 0; i < entities.Count(); i++)
+            //{
+            //    if ((entities[i] is monster) || (entities[i] is projectile))
+            //    {
+            //        entities.RemoveAt(i);
+            //        i--;
+            //    }
+            //}
         }
         public bool anyProjectile()
         {
             for (int i = 0; i < entities.Count(); i++)
             {
                 if (entities[i] is projectile)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool anyTower()
+        {
+            for (int i = 0; i < entities.Count(); i++)
+            {
+                if (entities[i] is tower)
                 {
                     return true;
                 }
@@ -77,34 +89,10 @@ namespace TowerCraft3D
             return false;
         }
 
-        public bool anyMonsters()
-        {
-            for (int i = 0; i < entities.Count(); i++)
-            {
-                if (entities[i] is monster)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool anyTower()
-        {
-            for (int i = 0; i < entities.Count(); i++)
-            {
-                if (entities[i] is tower)
-                    return true;
-            }
-
-            return false;
-        }
-
         public int getResourceCount()
         {
             return resourceCount;
         }
-
         public int towerConstruction()
         {
             if (resourceCount == 3)

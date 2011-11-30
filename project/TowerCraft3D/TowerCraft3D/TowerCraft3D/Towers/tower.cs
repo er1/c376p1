@@ -38,6 +38,7 @@ namespace TowerCraft3D
             upgradeLevel = 0;
             isDead = false;
             range = 10;
+            life = 20;
             //usually set a different timer depending on different types of tower
             //timer = TimeSpan.FromSeconds(2.0);
         }
@@ -59,7 +60,7 @@ namespace TowerCraft3D
             {
                 TileCoord test = tc;
                 test.x -= i;
-                if (map.GetTile(test).anyMonsters())
+                if (map.GetTile(test).anyMonster())
                 {
                     currentTargetTC = test;
                      return true;
