@@ -96,7 +96,6 @@ namespace TowerCraft3D
             base.Initialize();
         }
 
-
         protected override void  LoadContent()
         {
             
