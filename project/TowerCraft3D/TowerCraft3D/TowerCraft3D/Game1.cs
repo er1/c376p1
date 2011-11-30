@@ -411,7 +411,7 @@ namespace TowerCraft3D
             for (int i = 0; i < towers.Count; i++)
             {
                 towers[i].Update();
-                //towers[i].game = game;
+                towers[i].game = this;
 
                 TileCoord towerLocation
                     =
