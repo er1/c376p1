@@ -250,7 +250,7 @@ namespace TowerCraft3D
             //Selecting Resources
             if (curResource > 0)
             {
-                if (((Keyboard.GetState().IsKeyDown(Keys.Q)) && !SpaceBar))//(gamePadState.Triggers.Left == 1) || 
+                if (((gamePadState.Triggers.Left == 1) || (Keyboard.GetState().IsKeyDown(Keys.Q))) && !SpaceBar)// 
                 {
                     curResource--;
                     SpaceBar = true;
@@ -258,7 +258,7 @@ namespace TowerCraft3D
             }
             if (curResource < 5)
             {
-                if (((Keyboard.GetState().IsKeyDown(Keys.E)) && !SpaceBar))//(gamePadState.Triggers.Right == 1) || 
+                if (((gamePadState.Triggers.Right == 1) || (Keyboard.GetState().IsKeyDown(Keys.E))) && !SpaceBar)// 
                 {
                     curResource++;
                     SpaceBar = true;

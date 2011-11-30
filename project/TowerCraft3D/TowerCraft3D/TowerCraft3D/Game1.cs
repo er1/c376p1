@@ -28,7 +28,7 @@ namespace TowerCraft3D
         public int LIFE {get;set;}
 
         bool started = false;
-        int gameState = 0;
+        int gameState = 1;
 
         public Game1()
         {
