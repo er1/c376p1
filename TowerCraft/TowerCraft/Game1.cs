@@ -35,7 +35,6 @@ namespace TowerCraft3D
         int gameState = 1;
 
         //Game variables
-        Viewport viewport;
         Map map;
 
         TileCoord chosenTile;
@@ -100,6 +99,29 @@ namespace TowerCraft3D
 
         #endregion
 
+        #region spritemanager stuff
+        List<Sprite> monstersLife = new List<Sprite>();
+        List<Sprite> towersLife = new List<Sprite>();
+
+        Texture2D life100;
+        Texture2D life75;
+        Texture2D life50;
+        Texture2D life25;
+
+        Texture2D HUDL;
+        Texture2D HUDM1;
+        Texture2D HUDM2;
+        Texture2D HUDR;
+
+        public SpriteFont font;
+
+        int currentResource;
+        int currentDay;
+        TimeSpan timer;
+
+
+        #endregion
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -135,7 +157,7 @@ namespace TowerCraft3D
             Components.Add(cameraMain);
             Components.Add(spriteManager);
             #endregion
-
+            Components.Add(new FrameRateCounter(this, new Vector2(100, 100), Color.White, Color.White));
             chosenTile = cameraMain.getCurrentTC();
             this.IsFixedTimeStep = false;
             this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 1);  
@@ -147,6 +169,7 @@ namespace TowerCraft3D
 
             resourcemanager = new ResourceManager();
             gatherzone = new GatherZone(resourcemanager);
+            
         }     
         protected override void LoadContent()
         {
@@ -233,6 +256,20 @@ namespace TowerCraft3D
             explosionEffect.Parameters["theTexture"].SetValue(explosionTexture);
 
             #endregion
+            
+
+            #region Load textures
+            life100 = Content.Load<Texture2D>(@"Textures\\life\life100");
+            life75 = Content.Load<Texture2D>(@"Textures\\life\life75");
+            life50 = Content.Load<Texture2D>(@"Textures\\life\life50");
+            life25 = Content.Load<Texture2D>(@"Textures\\life\life25");
+            HUDL = Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft1");
+            HUDM1 = Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft2");
+            HUDM2 = Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft3");
+            HUDR = Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft4");
+            font = Content.Load<SpriteFont>(@"Font\\GameFont");
+
+            #endregion
         }      
         protected override void UnloadContent()
         {
@@ -301,7 +338,7 @@ namespace TowerCraft3D
             if (currentWave < wavesLevel.Count)
             {
                 wavesLevel[currentWave].UpdateWave(gameTime);
-               spriteManager.drawHUD(wavesLevel[currentWave].levelTimer, wavesLevel[currentWave].level, curResource);
+               drawHUD(wavesLevel[currentWave].levelTimer, wavesLevel[currentWave].level, curResource);
                 //Check if this Waves Timer is done or monsters are all dead (so wave is done)
                 if ((wavesLevel[currentWave].levelDone && wavesLevel[currentWave].spawn <= 1))
                 {
@@ -320,22 +357,22 @@ namespace TowerCraft3D
                     if (chance == 1)
                     {
                         monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
-                       spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                       addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 2)
                     {
                         monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
-                        spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                        addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 3)
                     {
                         monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
-                        spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                        addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance >= 4)
                     {
                         monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
-                        spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                        addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                 }
             }
@@ -402,7 +439,7 @@ namespace TowerCraft3D
 
 
                pair.Key.Update();
-               //spriteManager.updateLifeBarsMonsters(0, percentage, pair.Key.getPosition(), cameraMain, MainScreen);
+               //updateLifeBarsMonsters(0, percentage, pair.Key.getPosition(), cameraMain, MainScreen);
                 //TileCoord monsterLocation
                 //    =
                 //    new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
@@ -412,7 +449,7 @@ namespace TowerCraft3D
                 if (pair.Key.hitColony)
                 {
                     pair.Key.life -= 100;
-                    //spriteManager.removeLifeBarsMonsters(i);
+                    //removeLifeBarsMonsters(i);
                     LIFE -= 10;
                 }
             }
@@ -603,7 +640,7 @@ namespace TowerCraft3D
             }
             else
             {
-                base.Draw(gameTime);
+                //base.Draw(gameTime);
             }
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
@@ -674,7 +711,37 @@ namespace TowerCraft3D
                 temp.Key.Draw(cameraMain);
             }
 
+
+            spriteBatch.Begin();
+
+
+            spriteBatch.Draw(HUDL, new Vector2(0, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+            spriteBatch.Draw(HUDM1, new Vector2(worldWidth / 4, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+            spriteBatch.Draw(HUDM2, new Vector2(worldWidth / 4 * 2f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+            spriteBatch.Draw(HUDR, new Vector2(worldWidth / 4 * 3f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+            spriteBatch.DrawString(font, "Day " + currentDay, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.40f), Color.Green);
+            spriteBatch.DrawString(font, "Life: " + LIFE, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.50f), Color.Green);
+            spriteBatch.DrawString(font, "Time " + timer.Minutes.ToString() + " m " + timer.Seconds.ToString() + " s", new Vector2(worldWidth / 4 * 1.75f,
+                worldHeight / 3 * 2.60f), Color.Green);
+            spriteBatch.DrawString(font, "Resoure selected " + currentResource, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.80f), Color.Green);
+
+            for (int i = 0; i < monstersLife.Count; i++)
+            {
+                monstersLife[i].Draw(spriteBatch);
+            }
+
+            spriteBatch.End();
+
+
+
+
+
+
+
             gatherzone.draw(cameraMain);
+
+
+
 
             base.Draw(gameTime);
         }
@@ -841,7 +908,7 @@ namespace TowerCraft3D
                                explosionEffect), true);
                     monsters.Remove(pair.Key);
                     break;
-                    //spriteManager.removeLifeBarsMonsters(j);
+                    //removeLifeBarsMonsters(j);
                 }
             }
 
@@ -916,6 +983,41 @@ namespace TowerCraft3D
 
         #region Draw Ressource
         #endregion
+        #region Lifebar stuff for Monsters
+        //Add a life bar to the monster life var list
+        public void addLifeBarsMonsters(Vector2 pos)
+        {
+            monstersLife.Add(new Sprite(ref life100, pos));
+        }
+        //Updates the life bar texture
+        public void updateLifeBarsMonsters(int i, int percentage, Vector3 position, Camera cam, Viewport viewport)
+        {
+            Vector3 posi = viewport.Project(position, cam.projection, cam.view, Matrix.Identity);
+            Vector2 pos = new Vector2(posi.X, posi.Y) + new Vector2(-20, -20);
+            //pos = new Vector2(0, 0);
+            if (percentage == 100)
+                monstersLife[i].Update(ref life100, pos);
+            if (percentage == 75)
+                monstersLife[i].Update(ref life75, pos);
+            if (percentage == 50)
+                monstersLife[i].Update(ref life50, pos);
+            if (percentage == 25)
+                monstersLife[i].Update(ref life25, pos);
+        }
+        //Removes the life bar sprite from the list when the monster died
+        public void removeLifeBarsMonsters(int i)
+        {
+            monstersLife.RemoveAt(i);
+        }
+        #endregion
 
+        #region UPDATE HUD STUFF
+        public void drawHUD(TimeSpan time, int day, int resourceNum)
+        {
+            timer = time;
+            currentDay = day;
+            currentResource = resourceNum;
+        }
+        #endregion
     }
 }
