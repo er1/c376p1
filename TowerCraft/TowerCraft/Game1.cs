@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using TowerCraft.Resource;
 
 namespace TowerCraft3D
 {
@@ -21,6 +22,10 @@ namespace TowerCraft3D
         public Camera cameraMain { get; protected set; }
         public Viewport MainScreen;
        
+        // gather code
+        public GatherZone gatherzone;
+        public ResourceManager resourcemanager;
+
         public int worldWidth;
         public int worldHeight;
         public int worldSize{get;protected set;}
@@ -47,6 +52,8 @@ namespace TowerCraft3D
         Model tile;
         Model colony;
         Model gunTower, cannonTower, missileTower, fireTower, electricTower, chickenTower;
+
+        Model cube;
         #endregion
 
         #region Cube World Variables
@@ -132,6 +139,11 @@ namespace TowerCraft3D
 
             base.Initialize();
 
+            Gatherer.model = cube;
+            Mineral.model = cube;
+
+            resourcemanager = new ResourceManager();
+            gatherzone = new GatherZone(resourcemanager);
         }     
         protected override void LoadContent()
         {
@@ -168,7 +180,7 @@ namespace TowerCraft3D
             fireTower = Content.Load<Model>(@"Models\\Towers\\FireTower\\FireTower");
             chickenTower = Content.Load<Model>(@"Models\\Towers\\ChickenTower\\ChickenTower");
 
-
+            cube = Content.Load<Model>(@"cube");
             #endregion
 
             #region Load Game Map
@@ -569,7 +581,11 @@ namespace TowerCraft3D
                 SpaceBar = false;
             }
             #endregion
-            
+
+            #region Update Ressource Manager
+            gatherzone.update();
+            #endregion
+
         }
 
         
@@ -662,6 +678,8 @@ namespace TowerCraft3D
             {
                 temp.Draw(cameraMain);
             }
+
+            gatherzone.draw(cameraMain);
 
             base.Draw(gameTime);
         }
@@ -900,6 +918,8 @@ namespace TowerCraft3D
         //}
         #endregion
 
+        #region Draw Ressource
+        #endregion
 
     }
 }
