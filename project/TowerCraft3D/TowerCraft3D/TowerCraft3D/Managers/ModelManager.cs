@@ -57,6 +57,7 @@ namespace TowerCraft3D
         int percentage;
         int currentWave;
         int worldSize;
+        int chance;
         static Random random = new Random();
         bool collisionFlag = false;
         int curResource = 0;
@@ -149,9 +150,9 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
             wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
-            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
             wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
             wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
             wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(2.0)));
@@ -198,7 +199,7 @@ namespace TowerCraft3D
                    
                 {
                     //Game.Exit();
-                    System.GC.Collect();
+                    //System.GC.Collect();
                     currentWave++;
                 }
                 //If Level isn't done then check the Timer to add monsters at invervals
@@ -207,8 +208,28 @@ namespace TowerCraft3D
                     int z = RandomNumber(-80, 60);
                     wavesLevel[currentWave].spawn--;
                     wavesLevel[currentWave].canSpawn = false;
-                    monsters.Add(new monster(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
-                    ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                    chance = RandomNumber(1, wavesLevel[currentWave].level);
+
+                    if (chance == 1)
+                    {
+                        monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                        ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                    }
+                    if (chance == 2)
+                    {
+                        monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                        ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                    }
+                    if (chance == 3)
+                    {
+                        monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                        ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                    }
+                    if (chance >= 4)
+                    {
+                        monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                        ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                    }
                 }
             }
             #endregion
@@ -262,7 +283,7 @@ namespace TowerCraft3D
                 {
                     percentage = 75;
                 }
-                else if ((monsters[i].life / 100) * 100 >= 25 && (monsters[i].life / 100) * 100 <= 50)
+                else if ((monsters[i].life / 100) * 100 > 25 && (monsters[i].life / 100) * 100 <= 50)
                 {
                     percentage = 50;
                 }
@@ -739,7 +760,7 @@ namespace TowerCraft3D
 
         #region XNA Wiki Random Function
         //XNA WIKI Random stuff
-        private  int RandomNumber(int min, int max)
+        private static int RandomNumber(int min, int max)
         {
              
             return random.Next(min, max);

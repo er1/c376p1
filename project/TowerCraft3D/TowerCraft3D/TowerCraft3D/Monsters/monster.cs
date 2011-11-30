@@ -11,27 +11,23 @@ namespace TowerCraft3D
 {
     class monster : model
     {
-        float worldSize = 100f;
-        protected Matrix rotation = Matrix.Identity;
-        //protected Vector3 location = new Vector3(0, 0, 0);
-        protected Vector3 direction;
-        public Vector3 initialDirection { get; set; }
-        static Random random = new Random(); //random number (used with function)
-        public double minMove { get; set; }
-        public double maxMove { get; set; }
+        protected Vector3 direction { get; set; }
+        protected Vector3 initialDirection { get; set; }
+        static Random random = new Random(); 
         protected float move = 0.5f;
-        public bool hitColony {get;set;}
-        public int life { get; set; }
+        public bool hitColony;
+        public int life;
         public bool isDead {get; protected set;}
+        public int type;
 
         public monster(ref Model temp, Vector3 location, Vector3 newDirection)
             : base(temp)
         {
             world = Matrix.CreateTranslation(location);
             direction = newDirection*move;
-            //initialDirection = newDirection;
+            initialDirection = newDirection;
             hitColony = false;
-            life = 100;
+            //life = 100;
 
         }
         //Random Function

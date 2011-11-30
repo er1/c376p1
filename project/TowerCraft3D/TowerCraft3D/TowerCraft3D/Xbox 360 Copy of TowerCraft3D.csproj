@@ -73,6 +73,10 @@
     <Compile Include="Model\Sprite.cs" />
     <Compile Include="Monsters\monster.cs" />
     <Compile Include="Model\player.cs" />
+    <Compile Include="Monsters\monster1.cs" />
+    <Compile Include="Monsters\monster2.cs" />
+    <Compile Include="Monsters\monster3.cs" />
+    <Compile Include="Monsters\monster4.cs" />
     <Compile Include="ParticleEffect\ParticleExplosion.cs" />
     <Compile Include="ParticleEffect\ParticleSettings.cs" />
     <Compile Include="Towers\Bullet.cs" />
