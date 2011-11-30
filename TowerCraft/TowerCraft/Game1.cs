@@ -131,7 +131,7 @@ namespace TowerCraft3D
 
             chosenTile = cameraMain.getCurrentTC();
             this.IsFixedTimeStep = false;
-            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 10);  
+            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 1);  
 
             base.Initialize();
 
