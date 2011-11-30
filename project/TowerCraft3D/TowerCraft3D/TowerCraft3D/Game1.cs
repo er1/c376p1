@@ -70,7 +70,7 @@ namespace TowerCraft3D
             Components.Add(spriteManager);
 
             this.IsFixedTimeStep = false;
-            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 1);  
+            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 1);  
             base.Initialize();
 
         }     

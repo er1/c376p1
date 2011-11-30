@@ -218,22 +218,22 @@ namespace TowerCraft3D
 
                     if (chance == 1)
                     {
-                        monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 20, z), new Vector3(1, 0, 0)));
                         ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 2)
                     {
-                        monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 20, z), new Vector3(1, 0, 0)));
                         ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 3)
                     {
-                        monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 20, z), new Vector3(1, 0, 0)));
                         ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance >= 4)
                     {
-                        monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 0, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 20, z), new Vector3(1, 0, 0)));
                         ((Game1)Game).spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                 }
@@ -318,7 +318,7 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-            /*
+            
             #region towers
             //Draws Tower list
             for (int i = 0; i < towers.Count; i++)
@@ -345,7 +345,7 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-             * */
+            
             #region projectiles
             //updates projectile list
             for (int i = 0; i < projectiles.Count; i++)
@@ -489,11 +489,12 @@ namespace TowerCraft3D
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Viewport = viewport;
+            
             Game.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
             #region Draw Game Map
             //Draw the Texture world around the game.
-            
+
             #region Draw Cube World
             // Set the vertex buffer on the GraphicsDevice
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
@@ -557,7 +558,7 @@ namespace TowerCraft3D
             {
                 temp.Draw(((Game1)Game).cameraMain);
             }
-
+            
             base.Draw(gameTime);
         }
 
