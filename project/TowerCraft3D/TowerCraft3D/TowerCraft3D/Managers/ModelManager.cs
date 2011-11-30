@@ -87,7 +87,6 @@ namespace TowerCraft3D
             
         }
 
-
         public override void Initialize()
         {
             #region Initialize viewport, cam, worldsize, tile, map
@@ -185,7 +184,6 @@ namespace TowerCraft3D
             explosionEffect.Parameters["theTexture"].SetValue(explosionTexture);
 
             #endregion
-
 
             base.LoadContent();
         }
@@ -581,22 +579,22 @@ namespace TowerCraft3D
                     //explosions!
                 case 3:
                     projectiles.Add(new Explosion(ref explosion, ref boundingBox, position, direction));
-                    explosions.Add(new ParticleExplosion(GraphicsDevice,
-                               position,
-                               random.Next(
-                                   particleExplosionSettings.minLife,
-                                   particleExplosionSettings.maxLife),
-                               random.Next(
-                                   particleExplosionSettings.minRoundTime,
-                                   particleExplosionSettings.maxRoundTime),
-                               random.Next(
-                                   particleExplosionSettings.minParticlesPerRound,
-                                   particleExplosionSettings.maxParticlesPerRound),
-                               random.Next(
-                                   particleExplosionSettings.minParticles,
-                                   particleExplosionSettings.maxParticles),
-                               explosionColorsTexture, particleSettings,
-                               explosionEffect));
+                    //explosions.Add(new ParticleExplosion(GraphicsDevice,
+                    //           position,
+                    //           random.Next(
+                    //               particleExplosionSettings.minLife,
+                    //               particleExplosionSettings.maxLife),
+                    //           random.Next(
+                    //               particleExplosionSettings.minRoundTime,
+                    //               particleExplosionSettings.maxRoundTime),
+                    //           random.Next(
+                    //               particleExplosionSettings.minParticlesPerRound,
+                    //               particleExplosionSettings.maxParticlesPerRound),
+                    //           random.Next(
+                    //               particleExplosionSettings.minParticles,
+                    //               particleExplosionSettings.maxParticles),
+                    //           explosionColorsTexture, particleSettings,
+                    //           explosionEffect));
                     break;                    
 
             }
