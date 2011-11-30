@@ -153,8 +153,6 @@ namespace TowerCraft3D
             if (currentContainmentType != ContainmentType.Disjoint)
             {
                 //Draw gameobject
-
-                
                 currentModel.CopyAbsoluteBoneTransformsTo(transforms);
 
                 foreach (ModelMesh mesh in this.currentModel.Meshes)
