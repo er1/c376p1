@@ -67,11 +67,13 @@ namespace TowerCraft3D
         #endregion
 
         #region List of entities
-        List<monster> monsters = new List<monster>();
-        List<monster> tiles = new List<monster>();
-        List<projectile> projectiles = new List<projectile>();
-        List<waveManager> wavesLevel = new List<waveManager>();
-        List<tower> towers = new List<tower>();
+        Dictionary<monster, bool> monsters = new Dictionary<monster, bool>();
+        Dictionary<projectile, bool> projectiles = new Dictionary<projectile, bool>();
+        Dictionary<int, waveManager> wavesLevel = new Dictionary<int, waveManager>();
+        Dictionary<tower, bool> towers = new Dictionary<tower, bool>();
+
+        Dictionary<monster, bool> tiles = new Dictionary<monster, bool>();
+        monster SelectionTile;
         #endregion
 
         #region Variables...
@@ -89,7 +91,7 @@ namespace TowerCraft3D
         #endregion
 
         #region Particle effect stuff
-        List<ParticleExplosion> explosions = new List<ParticleExplosion>();
+        Dictionary<ParticleExplosion, bool> explosions = new Dictionary<ParticleExplosion, bool>();
         ParticleExplosionSettings particleExplosionSettings = new ParticleExplosionSettings();
         ParticleSettings particleSettings = new ParticleSettings();
         Texture2D explosionTexture;
@@ -97,11 +99,12 @@ namespace TowerCraft3D
         Effect explosionEffect;
 
         #endregion
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            this.IsMouseVisible = true;
+            this.IsMouseVisible = false;
             //this.graphics.IsFullScreen = true;
             this.graphics.PreferredBackBufferWidth = 1280;
             this.graphics.PreferredBackBufferHeight = 720;
@@ -135,7 +138,7 @@ namespace TowerCraft3D
 
             chosenTile = cameraMain.getCurrentTC();
             this.IsFixedTimeStep = false;
-            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 1);  
+            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 10);  
 
             base.Initialize();
 
@@ -192,30 +195,30 @@ namespace TowerCraft3D
             {
                 for (int j = -4; j < 4; j++)
                 {
-                    tiles.Add(new monster(ref tile, new Vector3(i * -20, 0, j * 20), new Vector3(0, 0, 0)));
+                    tiles.Add(new monster(ref tile, new Vector3(i * -20, 0, j * 20), new Vector3(0, 0, 0)), true);
                 }
             }
-            tiles.Add(new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0)));
+            SelectionTile = new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0));
             #endregion
 
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(0, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.5)));
+            wavesLevel.Add(1, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.5)));
+            wavesLevel.Add(2, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(3, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(4, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(5, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(6, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(7, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(8, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(9, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(10, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(11, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(12, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(13, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(14, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
 
             #endregion
 
@@ -237,7 +240,7 @@ namespace TowerCraft3D
         }     
         protected override void Update(GameTime gameTime)
         {
-
+            
             #region Menu (GAMESTATES)
             //menu
             if (gameState == 0)
@@ -288,12 +291,11 @@ namespace TowerCraft3D
             }
             #endregion
 
-
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
+            
             #region Update Level
             //Level 1
             if (currentWave < wavesLevel.Count)
@@ -317,38 +319,37 @@ namespace TowerCraft3D
 
                     if (chance == 1)
                     {
-                        monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
                        spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 2)
                     {
-                        monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
                         spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 3)
                     {
-                        monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
                         spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance >= 4)
                     {
-                        monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
                         spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                 }
             }
             #endregion
-
+            
             #region Update Drawing the Map
             //update Map
             map.Update();
-            //mainBase.Update();
             //Selected tile
             chosenTile = cameraMain.getCurrentTC();
-            tiles[tiles.Count - 1].Update();
+            SelectionTile.Update();
 
             #endregion
-
+            
             RemoveDeadEntities();
             UpdateExplosions(gameTime);
             //Has some key input here
@@ -370,104 +371,103 @@ namespace TowerCraft3D
                 }
             }
 
-
+            
             #region Update Monster, Tower, bullets + a little logic
-
+            
             #region monster
-            for (int i = 0; i < monsters.Count; i++)
+            foreach(KeyValuePair<monster, bool> pair in monsters)
             {
                 percentage = 0;
 
-                if ((monsters[i].life / 100) * 100 == 100)
+                if ((pair.Key.life / 100) * 100 == 100)
                 {
                     percentage = 100;
                 }
-                else if ((monsters[i].life / 100) * 100 > 75 && (monsters[i].life / 100) * 100 <= 99)
+                else if ((pair.Key.life / 100) * 100 > 75 && (pair.Key.life / 100) * 100 <= 99)
                 {
                     percentage = 100;
                 }
-                else if ((monsters[i].life / 100) * 100 > 50 && (monsters[i].life / 100) * 100 <= 75)
+                else if ((pair.Key.life / 100) * 100 > 50 && (pair.Key.life / 100) * 100 <= 75)
                 {
                     percentage = 75;
                 }
-                else if ((monsters[i].life / 100) * 100 > 25 && (monsters[i].life / 100) * 100 <= 50)
+                else if ((pair.Key.life / 100) * 100 > 25 && (pair.Key.life / 100) * 100 <= 50)
                 {
                     percentage = 50;
                 }
-                else if ((monsters[i].life / 100) * 100 <= 25)
+                else if ((pair.Key.life / 100) * 100 <= 25)
                 {
                     percentage = 25;
                 }
 
 
-                monsters[i].Update();
-               spriteManager.updateLifeBarsMonsters(i, percentage, monsters[i].getPosition(), cameraMain, MainScreen);
-                TileCoord monsterLocation
-                    =
-                    new TileCoord((int)Math.Floor((monsters[i].getPosition().X + 10) / 20.0), (int)Math.Floor((monsters[i].getPosition().Z + 10) / 20.0));
+               pair.Key.Update();
+               //spriteManager.updateLifeBarsMonsters(0, percentage, pair.Key.getPosition(), cameraMain, MainScreen);
+                //TileCoord monsterLocation
+                //    =
+                //    new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
 
-                map.GetTile(monsterLocation).addEntity(monsters[i]);
+                //map.GetTile(monsterLocation).addEntity(pair.Key);
                 // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
-                if (monsters[i].hitColony)
+                if (pair.Key.hitColony)
                 {
-                    monsters.RemoveAt(i);
-                   spriteManager.removeLifeBarsMonsters(i);
-                    i--;
+                    pair.Key.life -= 100;
+                    //spriteManager.removeLifeBarsMonsters(i);
                     LIFE -= 10;
                 }
             }
             #endregion
-
+            
             #region towers
             //Draws Tower list
-            for (int i = 0; i < towers.Count; i++)
+            foreach (KeyValuePair<tower, bool> pair in towers)
             {
-                towers[i].Update();
-                towers[i].game = this;
+                pair.Key.Update();
+                pair.Key.game = this;
 
                 TileCoord towerLocation
                     =
-                    new TileCoord((int)Math.Floor((towers[i].getPosition().X + 10) / 20.0), (int)Math.Floor((towers[i].getPosition().Z + 10) / 20.0));
+                    new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
 
-                map.GetTile(towerLocation).addEntity(towers[i]);
+                map.GetTile(towerLocation).addEntity(pair.Key);
 
                 //Shoots a projectile based on a Timer from tower
-                if ((towers[i].iWantToShoot(gameTime)) && (towers[i].lookForTarget(map)))
+                if ((pair.Key.iWantToShoot(gameTime)) && (pair.Key.lookForTarget(map)))
                 {
-                    if (towers[i].shooting)
+                    if (pair.Key.shooting)
                     {
-                        towers[i].shooting = false;
+                        pair.Key.shooting = false;
                         //towers[i].timer = TimeSpan.FromSeconds(3.0);
-                        towers[i].Shoot();
+                        pair.Key.Shoot();
                         //addProject(towers[i].getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0));
                     }
                 }
             }
             #endregion
-
+            
             #region projectiles
             //updates projectile list
-            for (int i = 0; i < projectiles.Count; i++)
+            foreach (KeyValuePair<projectile, bool> pair in projectiles)
             {
-                projectiles[i].Update();
+                pair.Key.Update();
 
                 TileCoord projectileLocation
                     =
-                    new TileCoord((int)Math.Floor((projectiles[i].getPosition().X + 10) / 20.0), (int)Math.Floor((projectiles[i].getPosition().Z + 10) / 20.0));
+                    new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
 
-                map.GetTile(projectileLocation).addEntity(projectiles[i]);
+                map.GetTile(projectileLocation).addEntity(pair.Key);
 
                 //Check if projectile Timer is at zero to remove
-                if (projectiles[i].removeProject(gameTime))
+                if (pair.Key.removeProject(gameTime))
                 {
-                    projectiles.RemoveAt(i);
-                    i--;
+                    projectiles.Remove(pair.Key);
+                    break;
                 }
             }
             #endregion
-
+            
             #endregion
-
+            
             #region Collision detection
             //CheckBoxCollision();
             foreach (KeyValuePair<TileCoord, Tile> pair in map.getDictionary())
@@ -479,11 +479,11 @@ namespace TowerCraft3D
                     {
                         if (test[i] is tower)
                         {
-                            for (int z = 0; z < towers.Count; z++)
+                            foreach(KeyValuePair<tower, bool> pairA in towers)
                             {
-                                if (towers[z].getID() == test[i].getID())
+                                if (pairA.Key.getID() == test[i].getID())
                                 {
-                                    ((tower)towers[z]).life -= 25;
+                                    ((tower)pairA.Key).life -= 25;
                                     break;
                                 }
                             }
@@ -507,11 +507,11 @@ namespace TowerCraft3D
                         }
                         if (test[i] is projectile)
                         {
-                            for (int z = 0; z < projectiles.Count; z++)
+                            foreach (KeyValuePair<projectile, bool> pairA in projectiles)
                             {
-                                if (projectiles[z].getID() == test[i].getID())
+                                if (pairA.Key.getID() == test[i].getID())
                                 {
-                                    projectiles.RemoveAt(z);
+                                    projectiles.Remove(pairA.Key);
                                     break;
                                 }
                             }
@@ -521,7 +521,7 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-
+            
             #region Tower Adding
             //Temporary way to add towers.
             if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
@@ -541,37 +541,37 @@ namespace TowerCraft3D
                 else if (((resourceValue >= 3) && (resourceValue <= 5)) || (curResource == 0))
                 {
                     towerToAdd = new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
-                    towers.Add(towerToAdd);
+                    towers.Add(towerToAdd, true);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 6) && (resourceValue <= 9)) || (curResource == 1))
                 {
                     towerToAdd = new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
-                    towers.Add(towerToAdd);
+                    towers.Add(towerToAdd, true);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 10) && (resourceValue <= 14)) || (curResource == 2))
                 {
                     towerToAdd = new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
-                    towers.Add(towerToAdd);
+                    towers.Add(towerToAdd, true);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 15) && (resourceValue <= 19)) || (curResource == 3))
                 {
                     towerToAdd = new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
-                    towers.Add(towerToAdd);
+                    towers.Add(towerToAdd, true);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 20) && (resourceValue <= 23)) || (curResource == 4))
                 {
                     towerToAdd = new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
-                    towers.Add(towerToAdd);
+                    towers.Add(towerToAdd, true);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 24) && (resourceValue <= 27)) || (curResource == 5))
                 {
                     towerToAdd = new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
-                    towers.Add(towerToAdd);
+                    towers.Add(towerToAdd, true);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
 
@@ -588,7 +588,6 @@ namespace TowerCraft3D
 
         }
 
-        
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -606,10 +605,6 @@ namespace TowerCraft3D
             {
                 base.Draw(gameTime);
             }
-
-
-
-           
 
             GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
@@ -642,15 +637,15 @@ namespace TowerCraft3D
 
 
             //Draw Map
-            for (int i = 0; i < tiles.Count; i++)
+            foreach(KeyValuePair<monster, bool> pair in tiles)
             {
-                tiles[i].DrawModel(cameraMain);
+                pair.Key.DrawModel(cameraMain);
             }
             //Draw the left base
             mainBase.DrawModel(cameraMain);
             //Selected tile
             chosenTile = cameraMain.getCurrentTC();
-            tiles[tiles.Count - 1].setPosition(new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20));
+            SelectionTile.setPosition(new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20));
 
             #endregion
 
@@ -658,25 +653,25 @@ namespace TowerCraft3D
 
 
             //Draw Monsters
-            for (int i = 0; i < monsters.Count; i++)
+            foreach(KeyValuePair<monster, bool> pair in monsters)
             {
-                monsters[i].DrawModel(cameraMain);
+                pair.Key.DrawModel(cameraMain);
             }
             //Draws projectiles list
-            for (int i = 0; i < projectiles.Count; i++)
+            foreach (KeyValuePair<projectile, bool> pair in projectiles)
             {
-                projectiles[i].DrawModel(cameraMain);
+                pair.Key.DrawModel(cameraMain);
             }
             //Draws Tower list
-            for (int i = 0; i < towers.Count; i++)
+            foreach (KeyValuePair<tower, bool> pair in towers)
             {
-                towers[i].DrawModel(cameraMain);
+                pair.Key.DrawModel(cameraMain);
             }
             #endregion
 
-            foreach (ParticleExplosion temp in explosions)
+            foreach (KeyValuePair<ParticleExplosion, bool> temp in explosions)
             {
-                temp.Draw(cameraMain);
+                temp.Key.Draw(cameraMain);
             }
 
             gatherzone.draw(cameraMain);
@@ -692,20 +687,20 @@ namespace TowerCraft3D
             switch (type)
             {
                 //guntower
-                case 0:
-                    projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction));
+                case 0:                    
+                    projectiles.Add(new projectile(ref bullet, ref boundingBox, position, direction), true);
                     break;
                 //missile tower
                 case 1:
-                    projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction));
+                    projectiles.Add(new projectile(ref missile, ref boundingBox, position, direction), true);
                     break;
                 //chicken tower
                 case 2:
-                    projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction));
+                    projectiles.Add(new projectile(ref egg, ref boundingBox, position, direction), true);
                     break;
                 //explosions!
                 case 3:
-                    projectiles.Add(new Explosion(ref explosion, ref boundingBox, position, direction));
+                    projectiles.Add(new projectile(ref explosion, ref boundingBox, position, direction), true);
                     explosions.Add(new ParticleExplosion(GraphicsDevice,
                                position,
                                random.Next(
@@ -721,7 +716,7 @@ namespace TowerCraft3D
                                    particleExplosionSettings.minParticles,
                                    particleExplosionSettings.maxParticles),
                                explosionColorsTexture, particleSettings,
-                               explosionEffect));
+                               explosionEffect), true);
                     break;
 
             }
@@ -731,6 +726,7 @@ namespace TowerCraft3D
 
         #region function to check collision
         //Checks for collision between projectile list and monster list
+        /*
         public void CheckCollision()
         {
             for (int i = 0; i < projectiles.Count; i++)
@@ -754,7 +750,6 @@ namespace TowerCraft3D
                 collisionFlag = false;
             }
         }
-
         public void CheckBoxCollision()
         {
             for (int i = 0; i < projectiles.Count; i++)
@@ -780,7 +775,7 @@ namespace TowerCraft3D
                 collisionFlag = false;
             }
         }
-
+        */
         private void CheckTileCollision(List<model> listOnTile)
         {
             for (int i = 0; i < listOnTile.Count; i++)
@@ -792,21 +787,24 @@ namespace TowerCraft3D
                         if (listOnTile[i].IsCollisionBox(listOnTile[j]))
                         {
                             //projectiles.RemoveAt(i);
-                            for (int z = 0; z < projectiles.Count; z++)
+                            foreach(KeyValuePair<projectile, bool> pair in projectiles)
                             {
-                                if (projectiles[z].getID() == listOnTile[i].getID())
+                                if (pair.Key.getID() == listOnTile[i].getID())
                                 {
-                                    projectiles.RemoveAt(z);
+                                    projectiles.Remove(pair.Key);
                                     break;
                                 }
                             }
 
-                            monsters[j].life -= 25;
+                            foreach (KeyValuePair<monster, bool> pair in monsters)
+                            {
+                                if (pair.Key.getID() == listOnTile[j].getID())
+                                {
+                                    pair.Key.life -= 25;
+                                    break;
+                                }
+                            }
                             //monsters.RemoveAt(j);
-                            //if (i != 0)
-                            //    i--;
-                            //if (j != 0)
-                            //    j--;
                             collisionFlag = true;
                             break;
                         }
@@ -821,12 +819,12 @@ namespace TowerCraft3D
         #region function to remove object when dead (no life) + particle effect call
         public void RemoveDeadEntities()
         {
-            for (int j = 0; j < monsters.Count; j++)
+            foreach(KeyValuePair<monster, bool> pair in monsters)
             {
-                if (monsters[j].isDead)
+                if (pair.Key.isDead)
                 {
                     explosions.Add(new ParticleExplosion(GraphicsDevice,
-                               monsters[j].getWorld().Translation,
+                               pair.Key.getWorld().Translation,
                                random.Next(
                                    particleExplosionSettings.minLife,
                                    particleExplosionSettings.maxLife),
@@ -840,21 +838,19 @@ namespace TowerCraft3D
                                    particleExplosionSettings.minParticles,
                                    particleExplosionSettings.maxParticles),
                                explosionColorsTexture, particleSettings,
-                               explosionEffect));
-                    monsters.RemoveAt(j);
-
-                    spriteManager.removeLifeBarsMonsters(j);
-                    if (j != 0)
-                        j--;
+                               explosionEffect), true);
+                    monsters.Remove(pair.Key);
+                    break;
+                    //spriteManager.removeLifeBarsMonsters(j);
                 }
             }
 
-            for (int j = 0; j < towers.Count; j++)
+            foreach(KeyValuePair<tower, bool> pair in towers)
             {
-                if (towers[j].isDead)
+                if (pair.Key.isDead)
                 {
                     explosions.Add(new ParticleExplosion(GraphicsDevice,
-                               towers[j].getWorld().Translation,
+                               pair.Key.getWorld().Translation,
                                random.Next(
                                    particleExplosionSettings.minLife,
                                    particleExplosionSettings.maxLife),
@@ -868,11 +864,11 @@ namespace TowerCraft3D
                                    particleExplosionSettings.minParticles,
                                    particleExplosionSettings.maxParticles),
                                explosionColorsTexture, particleSettings,
-                               explosionEffect));
-                    towers.RemoveAt(j);
-                    if (j != 0)
-                        j--;
+                               explosionEffect), true);
+                    towers.Remove(pair.Key);
+                    break;
                 }
+                
             }
         }
 
@@ -883,14 +879,14 @@ namespace TowerCraft3D
         protected void UpdateExplosions(GameTime gameTime)
         {
             // Loop through and update explosions
-            for (int i = 0; i < explosions.Count; ++i)
+            foreach(KeyValuePair<ParticleExplosion, bool> pair in explosions)
             {
-                explosions[i].Update(gameTime);
+                pair.Key.Update(gameTime);
                 // If explosion is finished, remove it
-                if (explosions[i].IsDead)
+                if (pair.Key.IsDead)
                 {
-                    explosions.RemoveAt(i);
-                    --i;
+                    explosions.Remove(pair.Key);
+                    break;
                 }
             }
         }

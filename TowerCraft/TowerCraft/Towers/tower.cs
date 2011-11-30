@@ -14,7 +14,7 @@ namespace TowerCraft3D
 
         public int towerType { get; set; }
         private Vector3 position;
-        private TileCoord tc;
+        public TileCoord tc { get; set; }
         private int upgradeLevel;
         protected float range;
         protected TileCoord currentTargetTC;
@@ -32,7 +32,7 @@ namespace TowerCraft3D
         public tower(ref Model temp, Vector3 location, TileCoord currentTC)
             : base(temp)
         {
-            
+
             position = location;
             tc = currentTC;
             upgradeLevel = 0;
@@ -85,7 +85,8 @@ namespace TowerCraft3D
         }
         public virtual void Shoot()
         {
-
+            timer = TimeSpan.FromSeconds(0.5);
+            ((Game1)game).addProject(this.getPosition() + new Vector3(0, 25, 0), new Vector3(-1, 0, 0), 0);
         }
 
         public Vector3 getPosition()
