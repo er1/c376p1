@@ -18,7 +18,7 @@ namespace TowerCraft3D
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public SpriteManager spriteManager { get; protected set; }
+        //public SpriteManager spriteManager { get; protected set; }
         public Camera cameraMain { get; protected set; }
         public Viewport MainScreen;
        
@@ -151,15 +151,15 @@ namespace TowerCraft3D
 
             #region init Game components
             Components.Remove(cameraMain);
-            Components.Remove(spriteManager);
+            //Components.Remove(spriteManager);
             cameraMain = new Camera(this, new Vector3(0, 200, 199), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
-            spriteManager = new SpriteManager(this);
+            //spriteManager = new SpriteManager(this);
             Components.Add(cameraMain);
-            Components.Add(spriteManager);
+            //Components.Add(spriteManager);
             #endregion
             Components.Add(new FrameRateCounter(this, new Vector2(100, 100), Color.White, Color.White));
             chosenTile = cameraMain.getCurrentTC();
-            this.IsFixedTimeStep = true;
+            this.IsFixedTimeStep = false;
             this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 50);  
 
             base.Initialize();
@@ -285,13 +285,13 @@ namespace TowerCraft3D
                 if (!started)
                 {
                     Components.Remove(cameraMain);
-                    Components.Remove(spriteManager);
+                    //Components.Remove(spriteManager);
 
                     cameraMain = new Camera(this, new Vector3(0, 200, 199), new Vector3(0, -5, 1), Vector3.Up, MainScreen, true, worldSize);
-                    spriteManager = new SpriteManager(this);
+                    //spriteManager = new SpriteManager(this);
 
                     Components.Add(cameraMain);
-                    Components.Add(spriteManager);
+                    //Components.Add(spriteManager);
                     started = true;
                 }
                 if (Keyboard.GetState().IsKeyDown(Keys.U))
@@ -361,17 +361,17 @@ namespace TowerCraft3D
                     }
                     if (chance == 2)
                     {
-                        monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
+                        monsters.Add(new monster2(ref Monster2, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
                         addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 3)
                     {
-                        monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
+                        monsters.Add(new monster3(ref Monster3, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
                         addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance >= 4)
                     {
-                        monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
+                        monsters.Add(new monster4(ref Monster4, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
                         addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                 }
@@ -623,7 +623,6 @@ namespace TowerCraft3D
             #endregion
 
         }
-
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
