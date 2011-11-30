@@ -189,21 +189,21 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.75)));
-            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(0.0), TimeSpan.FromSeconds(0.75)));
-            //wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(0.0), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
 
             #endregion
 
@@ -305,22 +305,22 @@ namespace TowerCraft3D
 
                     if (chance == 1)
                     {
-                        monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 20, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)));
                        spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 2)
                     {
-                        monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 20, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster2(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)));
                         spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 3)
                     {
-                        monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 20, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster3(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)));
                         spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance >= 4)
                     {
-                        monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 20, z), new Vector3(1, 0, 0)));
+                        monsters.Add(new monster4(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)));
                         spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                 }
@@ -528,37 +528,37 @@ namespace TowerCraft3D
                 }
                 else if (((resourceValue >= 3) && (resourceValue <= 5)) || (curResource == 0))
                 {
-                    towerToAdd = new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 10, chosenTile.y * 20)), chosenTile);
+                    towerToAdd = new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                     towers.Add(towerToAdd);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 6) && (resourceValue <= 9)) || (curResource == 1))
                 {
-                    towerToAdd = new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 10, chosenTile.y * 20)), chosenTile);
+                    towerToAdd = new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                     towers.Add(towerToAdd);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 10) && (resourceValue <= 14)) || (curResource == 2))
                 {
-                    towerToAdd = new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 10, chosenTile.y * 20)), chosenTile);
+                    towerToAdd = new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                     towers.Add(towerToAdd);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 15) && (resourceValue <= 19)) || (curResource == 3))
                 {
-                    towerToAdd = new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 10, chosenTile.y * 20)), chosenTile);
+                    towerToAdd = new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                     towers.Add(towerToAdd);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 20) && (resourceValue <= 23)) || (curResource == 4))
                 {
-                    towerToAdd = new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 10, chosenTile.y * 20)), chosenTile);
+                    towerToAdd = new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                     towers.Add(towerToAdd);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
                 else if (((resourceValue >= 24) && (resourceValue <= 27)) || (curResource == 5))
                 {
-                    towerToAdd = new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 10, chosenTile.y * 20)), chosenTile);
+                    towerToAdd = new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                     towers.Add(towerToAdd);
                     map.GetTile(chosenTile).addEntity(towerToAdd);
                 }
