@@ -21,7 +21,7 @@ namespace TowerCraft3D
 
         private static int totalID = 0;
         private int modelID;
-
+        Matrix[] transforms;
         public model(Model newModel)
         {
             this.currentModel = newModel;
@@ -30,6 +30,7 @@ namespace TowerCraft3D
             totalID++;
             //this.location = newLocation;
             box = UpdateBoundingBox(this.getModel(), this.getWorld());
+            transforms = new Matrix[currentModel.Bones.Count];
         }
 
         public bool IsCollision(model model2)
@@ -152,8 +153,6 @@ namespace TowerCraft3D
             if (currentContainmentType != ContainmentType.Disjoint)
             {
                 //Draw gameobject
-
-                Matrix[] transforms = new Matrix[currentModel.Bones.Count];
                 currentModel.CopyAbsoluteBoneTransformsTo(transforms);
 
                 foreach (ModelMesh mesh in this.currentModel.Meshes)
