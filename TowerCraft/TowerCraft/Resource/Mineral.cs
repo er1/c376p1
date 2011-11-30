@@ -19,18 +19,19 @@ namespace TowerCraft.Resource
         GatherZone gatherzone;
 
 	    public Vector3 position;
-	    public double life = 100;
+	    public double life = 10;
         public Gatherer myGatherer = null;
 
         public Mineral(GatherZone _gatherzone, Vector3 _position) {
             gatherzone = _gatherzone;
             position = _position;
+            followers = new List<Gatherer>();
         }
 
-	    public Dictionary<Gatherer, bool> followers;
+	    public List<Gatherer> followers;
 
 	    public void addFollower(Gatherer g) {
-            followers.Add(g, true);
+            followers.Add(g);
 	    }
 
         public void removeFollower(Gatherer g)
@@ -39,9 +40,10 @@ namespace TowerCraft.Resource
         }
 
 	    public void remove() {
-		    foreach (Gatherer g in followers.Keys) {
+		    foreach (Gatherer g in followers) {
 			    g.targetMineral = null;
 		    }
+            gatherzone.remove(this);
 	    }
 
         public void update() {

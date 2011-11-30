@@ -16,9 +16,9 @@ namespace TowerCraft.Resource
     {
         public static Model model;
 
-        public const float speed = 0.2f;
-        public const float size = 2.0f;
-        public const float viewRadius = 5.0f;
+        public const float speed = 1f;
+        public const float size = 8.0f;
+        public const float viewRadius = 10.0f;
 
         public GatherZone gatherzone;
         public Vector3 position = Vector3.Zero;
@@ -37,33 +37,56 @@ namespace TowerCraft.Resource
 	    public void update() {
 
 		    if (mining) {
-			    targetMineral.life--;
-			
-			    if (targetMineral.life <= 0)
-				    gatherzone.manager.gather(targetMineral);
-				    targetMineral.remove();
+                if (targetMineral != null)
+                {
+                    targetMineral.life--;
+
+                    if (targetMineral.life <= 0)
+                        gatherzone.manager.gather(targetMineral);
+                    targetMineral.remove();
+                }
+                else
+                {
+                    mining = false;
+                }
 
 		    } else {
 			    if (targetMineral == null) {
 				    //... go toward targetPosition ...
-				    direction = targetPosition - position;
-				    direction.Normalize();
-				    position += direction * speed;
 
-				    List<Mineral> nearby = gatherzone.getNearbyMinerals(viewRadius);
-				    if (nearby.Count > 0) {
-					    targetMineral = nearby[0];
-					    targetMineral.addFollower(this);
-				    }
+                    if ((targetPosition - position).Length() < size)
+                    {
+                        if (gatherzone.minerals.Count > 0)
+                        {
+                            Random rand = new Random();
+                            targetPosition = gatherzone.minerals[rand.Next(gatherzone.minerals.Count)].position;
+                        }
+                    }
+                    else
+                    {
+                        direction = targetPosition - position;
+                        direction.Normalize();
+                        position += direction * speed;
+
+                        List<Mineral> nearby = gatherzone.getNearbyMinerals(viewRadius);
+                        if (nearby.Count > 0)
+                        {
+                            targetMineral = nearby[0];
+                            targetMineral.addFollower(this);
+                        }
+                    }
+
 
 			    } else {
 				    // if (... close enough to targetMineral ...)
 				    if ((targetMineral.position - position).Length() < size) {
-					    mining = true;
 					    if (targetMineral.myGatherer == null) {
 						    targetMineral.myGatherer = this;
+                            targetMineral.addFollower(this);
+                            mining = true;
 					    } else {
 						    targetMineral = null;
+                            mining = false;
 					    }
 				    } else {
 					    //... go toward targetMineral ...

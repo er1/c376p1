@@ -17,6 +17,7 @@ namespace TowerCraft.Resource
         public ResourceManager manager;
         public List<Gatherer> gatherers;
         public List<Mineral> minerals;
+        protected Random rand = new Random();
 
         protected List<Gatherer> gatherersAddQueue;
         protected List<Mineral> mineralsAddQueue;
@@ -35,12 +36,12 @@ namespace TowerCraft.Resource
             gatherersDeleteQueue = new List<Gatherer>();
             mineralsDeleteQueue = new List<Mineral>();
 
-            Random rand = new Random();
+            
 
-            for (int i = 0; i < 40; ++i)
+            for (int i = 0; i < 400; ++i)
             {
-                Vector3 p = new Vector3(250, 0, 0);
-                p += new Vector3((float)rand.NextDouble(), (float)rand.NextDouble(), (float)rand.NextDouble()) * 50f - Vector3.One * 25f;
+                Vector3 p = new Vector3(250, 8, 0);
+                p += new Vector3((float)rand.NextDouble(), 0.5f, (float)rand.NextDouble()) * 160f - Vector3.One * 80f;
 
                 Mineral m = new Mineral(this, p);
 
@@ -51,7 +52,7 @@ namespace TowerCraft.Resource
             {
                 Gatherer g = new Gatherer(this, new Vector3(100, 8, -64 + 2 * i));
 
-                g.targetPosition = new Vector3(250, 0, 0);
+                g.targetPosition = new Vector3(250, 8, 0);
 
                 add(g);
             }
@@ -61,11 +62,37 @@ namespace TowerCraft.Resource
 
         public void update()
         {
+             if (rand.NextDouble() < 0.01) {
+                Vector3 p = new Vector3(250, 8, 0);
+                p += new Vector3((float)rand.NextDouble(), 0.5f, (float)rand.NextDouble()) * 160f - Vector3.One * 80f;
+
+                Mineral m = new Mineral(this, p);
+
+                add(m);
+            }
+
+
+            if ((rand.NextDouble() < 0.05) && (minerals.Count < gatherers.Count * 2))
+            {
+                for (int i = 0; i < 200; ++i)
+                {
+                    Vector3 p = new Vector3(250, 8, 0);
+                    p += new Vector3((float)rand.NextDouble(), 0.5f, (float)rand.NextDouble()) * 160f - Vector3.One * 80f;
+
+                    Mineral m = new Mineral(this, p);
+
+                    add(m);
+                }
+            }
+
+
             foreach (Gatherer g in gatherers)
                 g.update();
             foreach (Mineral m in minerals)
                 m.update();
             updateLists();
+
+
         }
 
         public void draw(Camera cam)
@@ -106,22 +133,29 @@ namespace TowerCraft.Resource
 
         public void remove(Gatherer g)
         {
-            gatherersDeleteQueue.Remove(g);
+            gatherersDeleteQueue.Add(g);
         }
 
         public void remove(Mineral m)
         {
-            mineralsDeleteQueue.Remove(m);
+            mineralsDeleteQueue.Add(m);
         }
 
-        public List<Gatherer> getNearbyGatherers(double radius)
-        {
-            return new List<Gatherer>();
-        }
+        //public List<Gatherer> getNearbyGatherers(double radius)
+        //{
+        //    return new List<Gatherer>();
+        //}
 
         public List<Mineral> getNearbyMinerals(double radius)
         {
-            return new List<Mineral>();
+            List<Mineral> r = new List<Mineral>();
+
+            if (minerals.Count > 0)
+            {
+                r.Add(minerals[rand.Next(minerals.Count)]);
+            }
+
+            return r;
         }
     }
 }
