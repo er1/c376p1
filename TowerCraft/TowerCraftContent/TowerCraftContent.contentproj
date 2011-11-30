@@ -164,6 +164,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="cube.fbx">
+      <Name>cube</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+    </Compile>
     <None Include="Models\BoundingBoxText.jpg">
       <Name>BoundingBoxText</Name>
       <Importer>TextureImporter</Importer>

@@ -127,6 +127,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Resource\Gatherer.cs" />
+    <Compile Include="Resource\GatherZone.cs" />
+    <Compile Include="Resource\Mineral.cs" />
+    <Compile Include="Resource\ResourceManager.cs" />
     <Compile Include="Towers\Bullet.cs" />
     <Compile Include="Towers\CanonTower.cs" />
     <Compile Include="Towers\ChickenTower.cs" />
