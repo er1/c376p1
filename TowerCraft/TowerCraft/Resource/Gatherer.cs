@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using TowerCraft3D;
 
-namespace TowerCraft.Resource
+namespace TowerCraft
 {
     public class Gatherer
     {
