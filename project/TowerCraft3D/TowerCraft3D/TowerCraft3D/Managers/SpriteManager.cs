@@ -86,9 +86,9 @@ namespace TowerCraft3D
             batch.Draw(HUDR, new Vector2(worldWidth / 4 * 3f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
             batch.DrawString(font, "Day " + currentDay, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.40f), Color.Green);
             batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(worldWidth/4*1.75f, worldHeight / 3 *2.50f), Color.Green);
-            //batch.DrawString(font, "Time " + timer.Minutes.ToString() +" m "+timer.Seconds.ToString() + " s", new Vector2(worldWidth / 4 * 1.75f, 
-            //    worldHeight / 3 * 2.60f), Color.Green);
-            batch.DrawString(font, "Resoure selected " + currentResource, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.60f), Color.Green);
+            batch.DrawString(font, "Time " + timer.Minutes.ToString() +" m "+timer.Seconds.ToString() + " s", new Vector2(worldWidth / 4 * 1.75f, 
+                worldHeight / 3 * 2.60f), Color.Green);
+            batch.DrawString(font, "Resoure selected " + currentResource, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.80f), Color.Green);
             
             for (int i = 0; i < monstersLife.Count; i++)
             {
