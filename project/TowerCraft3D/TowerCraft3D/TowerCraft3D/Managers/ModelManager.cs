@@ -247,30 +247,10 @@ namespace TowerCraft3D
             //Selected tile
             chosenTile = ((Game1)Game).cameraMain.getCurrentTC();
             tiles[tiles.Count - 1].Update();
-
             #endregion
 
             RemoveDeadEntities();
             UpdateExplosions(gameTime);
-            //Has some key input here
-            //Selecting Resources
-            if (curResource > 0)
-            {
-                if (((gamePadState.Triggers.Left == 1) || (Keyboard.GetState().IsKeyDown(Keys.Q))) && !SpaceBar)// 
-                {
-                    curResource--;
-                    SpaceBar = true;
-                }
-            }
-            if (curResource < 5)
-            {
-                if (((gamePadState.Triggers.Right == 1) || (Keyboard.GetState().IsKeyDown(Keys.E))) && !SpaceBar)// 
-                {
-                    curResource++;
-                    SpaceBar = true;
-                }
-            }
-
             
             #region Update Monster, Tower, bullets + a little logic
             
@@ -318,7 +298,6 @@ namespace TowerCraft3D
                 }
             }
             #endregion
-            
             #region towers
             //Draws Tower list
             for (int i = 0; i < towers.Count; i++)
@@ -344,8 +323,7 @@ namespace TowerCraft3D
                     }
                 }
             }
-            #endregion
-            
+            #endregion         
             #region projectiles
             //updates projectile list
             for (int i = 0; i < projectiles.Count; i++)
@@ -356,7 +334,7 @@ namespace TowerCraft3D
                     =
                     new TileCoord((int)Math.Floor((projectiles[i].getPosition().X + 10) / 20.0), (int)Math.Floor((projectiles[i].getPosition().Z + 10) / 20.0));
 
-                 map.GetTile(projectileLocation).addEntity(projectiles[i]);
+                map.GetTile(projectileLocation).addEntity(projectiles[i]);
 
                 //Check if projectile Timer is at zero to remove
                 if (projectiles[i].removeProject(gameTime))
@@ -424,6 +402,25 @@ namespace TowerCraft3D
             #endregion
 
             #region Tower Adding
+            //Has some key input here
+            //Selecting Resources
+            if (curResource > 0)
+            {
+                if (((gamePadState.Triggers.Left == 1) || (Keyboard.GetState().IsKeyDown(Keys.Q))) && !SpaceBar)// 
+                {
+                    curResource--;
+                    SpaceBar = true;
+                }
+            }
+            if (curResource < 5)
+            {
+                if (((gamePadState.Triggers.Right == 1) || (Keyboard.GetState().IsKeyDown(Keys.E))) && !SpaceBar)// 
+                {
+                    curResource++;
+                    SpaceBar = true;
+                }
+            }
+
             //Temporary way to add towers.
             if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
                 ((gamePadState.Buttons.A == ButtonState.Pressed) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar))
