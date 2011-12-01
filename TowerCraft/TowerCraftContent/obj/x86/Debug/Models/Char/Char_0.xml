@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
+  <Asset Type="Graphics:NodeContent">
+    <Identity>
+      <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Char\Char.x</SourceFilename>
+      <SourceTool>XImporter</SourceTool>
+    </Identity>
+    <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+    <Children>
+      <Child>
+        <Name>cube4_copy11</Name>
+        <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+        <Children>
+          <Child Type="Graphics:MeshContent">
+            <Name></Name>
+            <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+            <Positions>-0.4195056 2.49824333 -0.275971681 -0.4195056 3.15579987 -0.275971681 -0.4195056 3.15579987 0.565593362 -0.4195056 2.49824333 0.565593362 0.4195056 2.49824333 -0.275971681 0.4195056 3.15579987 -0.275971681 0.4195056 2.49824333 0.565593362 0.4195056 3.15579987 0.565593362</Positions>
+            <Geometry>
+              <Batch>
+                <Material>#Resource1</Material>
+                <Indices>0 1 2 0 2 3 4 5 6 4 6 7 8 9 10 8 10 11 12 13 14 12 14 15 16 17 18 16 18 19 20 21 22 20 22 23</Indices>
+                <Vertices>
+                  <PositionIndices>0 1 2 3 0 4 5 1 0 3 6 4 1 5 7 2 5 4 6 7 3 2 7 6</PositionIndices>
+                  <Channels>
+                    <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259</VertexChannel>
+                    <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.7804271 1 0.7804271 0.695106745 0.390213549 0.695106745 0.390213549 1 0 0.304893225 0.389029384 0.304893225 0.389029384 0 0 0 0.389029384 1 0.389029384 0.609786451 2.77555756E-17 0.609786451 0 1 0.390213549 0.695106745 0.779242933 0.695106745 0.779242933 0.304893225 0.390213549 0.304893225 0 0.304893225 0 0.609786451 0.390213549 0.609786451 0.390213549 0.304893225 0.778058767 0.304893225 0.778058767 0 0.389029384 0 0.389029384 0.304893225</VertexChannel>
+                  </Channels>
+                </Vertices>
+              </Batch>
+            </Geometry>
+          </Child>
+        </Children>
+      </Child>
+      <Child>
+        <Name>cube4_copy10</Name>
+        <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+        <Children>
+          <Child Type="Graphics:MeshContent">
+            <Name></Name>
+            <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+            <Positions>0.4508008 1.21093893 -0.06271672 0.4508008 2.48812437 -0.06271672 0.4508008 2.48812437 0.362555265 0.4508008 1.21093893 0.362555265 0.8760728 1.21093893 -0.06271672 0.8760728 2.48812437 -0.06271672 0.8760728 1.21093893 0.362555265 0.8760728 2.48812437 0.362555265</Positions>
+            <Geometry>
+              <Batch>
+                <Material>#Resource2</Material>
+                <Indices>0 1 2 0 2 3 4 5 6 4 6 7 8 9 10 8 10 11 7 6 12 7 12 13 6 5 14 6 14 15 16 17 18 16 18 19</Indices>
+                <Vertices>
+                  <PositionIndices>0 1 2 3 0 4 5 1 0 3 6 4 7 2 6 7 3 2 7 6</PositionIndices>
+                  <Channels>
+                    <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259</VertexChannel>
+                    <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.999195635 1 0.999195635 0.249798909 0.749396741 0.249798909 0.749396741 1 0.249798909 1 0.499597818 1 0.499597818 0.249798909 0.249798909 0.249798909 0.249798909 0.249798909 0.249798909 1.110223E-16 -1.38777878E-17 1.110223E-16 -1.38777878E-17 0.249798909 0.499597818 1.110223E-16 0.249798909 1.110223E-16 0.749396741 1 0.749396741 0.249798909 0.249798909 1 0.249798909 0.249798909 1.38777878E-16 0.249798909 1.38777878E-17 1</VertexChannel>
+                  </Channels>
+                </Vertices>
+              </Batch>
+            </Geometry>
+          </Child>
+        </Children>
+      </Child>
+      <Child>
+        <Name>cube4_copy9</Name>
+        <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+        <Children>
+          <Child Type="Graphics:MeshContent">
+            <Name></Name>
+            <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+            <Positions>-0.4126441 -0.021584468 -0.0672811642 -0.4126441 1.18330741 -0.0672811642 -0.4126441 1.18330741 0.33391884 -0.4126441 -0.021584468 0.33391884 -0.011444103 -0.021584468 -0.0672811642 -0.011444103 1.18330741 -0.0672811642 -0.011444103 -0.021584468 0.33391884 -0.011444103 1.18330741 0.33391884</Positions>
+            <Geometry>
+              <Batch>
+                <Material>#Resource3</Material>
+                <Indices>0 1 2 0 2 3 4 5 6 4 6 7 8 9 10 8 10 11 7 6 12 7 12 13 6 5 14 6 14 15 16 17 18 16 18 19</Indices>
+                <Vertices>
+                  <PositionIndices>0 1 2 3 0 4 5 1 0 3 6 4 7 2 6 7 3 2 7 6</PositionIndices>
+                  <Channels>
+                    <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259</VertexChannel>
+                    <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.999195635 1 0.999195635 0.249798909 0.749396741 0.249798909 0.749396741 1 0.249798909 1 0.499597818 1 0.499597818 0.249798909 0.249798909 0.249798909 0.249798909 0.249798909 0.249798909 0 1.38777878E-17 0 0 0.249798909 0.499597818 0 0.249798909 0 0.749396741 1 0.749396741 0.249798909 0.249798909 1 0.249798909 0.249798909 8.326673E-17 0.249798909 0 1</VertexChannel>
+                  </Channels>
+                </Vertices>
+              </Batch>
+            </Geometry>
+          </Child>
+        </Children>
+      </Child>
+      <Child>
+        <Name>cube4_copy8</Name>
+        <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+        <Children>
+          <Child Type="Graphics:MeshContent">
+            <Name></Name>
+            <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+            <Positions>-0.859909236 1.21093893 -0.06271672 -0.859909236 2.48812437 -0.06271672 -0.859909236 2.48812437 0.362555265 -0.859909236 1.21093893 0.362555265 -0.434637219 1.21093893 -0.06271672 -0.434637219 2.48812437 -0.06271672 -0.434637219 1.21093893 0.362555265 -0.434637219 2.48812437 0.362555265</Positions>
+            <Geometry>
+              <Batch>
+                <Material>#Resource4</Material>
+                <Indices>0 1 2 0 2 3 4 5 6 4 6 7 8 9 10 8 10 11 7 6 12 7 12 13 6 5 14 6 14 15 16 17 18 16 18 19</Indices>
+                <Vertices>
+                  <PositionIndices>0 1 2 3 0 4 5 1 0 3 6 4 7 2 6 7 3 2 7 6</PositionIndices>
+                  <Channels>
+                    <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259</VertexChannel>
+                    <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.999195635 1 0.999195635 0.249798909 0.749396741 0.249798909 0.749396741 1 0.249798909 1 0.499597818 1 0.499597818 0.249798909 0.249798909 0.249798909 0.249798909 0.249798909 0.249798909 1.110223E-16 0 1.110223E-16 -2.77555756E-17 0.249798909 0.499597818 1.110223E-16 0.249798909 1.110223E-16 0.749396741 1 0.749396741 0.249798909 0.249798909 1 0.249798909 0.249798909 4.16333634E-17 0.249798909 -2.77555756E-17 1</VertexChannel>
+                  </Channels>
+                </Vertices>
+              </Batch>
+            </Geometry>
+          </Child>
+        </Children>
+      </Child>
+      <Child>
+        <Name>cube4_copy6</Name>
+        <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+        <Children>
+          <Child Type="Graphics:MeshContent">
+            <Name></Name>
+            <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+            <Positions>0.0291874539 -0.021584468 -0.0672811642 0.0291874539 1.18330741 -0.0672811642 0.0291874539 1.18330741 0.33391884 0.0291874539 -0.021584468 0.33391884 0.430387467 -0.021584468 -0.0672811642 0.430387467 1.18330741 -0.0672811642 0.430387467 -0.021584468 0.33391884 0.430387467 1.18330741 0.33391884</Positions>
+            <Geometry>
+              <Batch>
+                <Material>#Resource5</Material>
+                <Indices>0 1 2 0 2 3 4 5 6 4 6 7 8 9 10 8 10 11 7 6 12 7 12 13 6 5 14 6 14 15 16 17 18 16 18 19</Indices>
+                <Vertices>
+                  <PositionIndices>0 1 2 3 0 4 5 1 0 3 6 4 7 2 6 7 3 2 7 6</PositionIndices>
+                  <Channels>
+                    <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259</VertexChannel>
+                    <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.999195635 1 0.999195635 0.249798909 0.749396741 0.249798909 0.749396741 1 0.249798909 1 0.499597818 1 0.499597818 0.249798909 0.249798909 0.249798909 0.249798909 0.249798909 0.249798909 0 4.16333634E-17 0 0 0.249798909 0.499597818 0 0.249798909 0 0.749396741 1 0.749396741 0.249798909 0.249798909 1 0.249798909 0.249798909 9.71445147E-17 0.249798909 0 1</VertexChannel>
+                  </Channels>
+                </Vertices>
+              </Batch>
+            </Geometry>
+          </Child>
+        </Children>
+      </Child>
+      <Child>
+        <Name>cube4</Name>
+        <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+        <Children>
+          <Child Type="Graphics:MeshContent">
+            <Name></Name>
+            <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
+            <Positions>-0.4195056 1.16152489 -0.1294418 -0.4195056 2.476638 -0.1294418 -0.4195056 2.476638 0.419063449 -0.4195056 1.16152489 0.419063449 0.4195056 1.16152489 -0.1294418 0.4195056 2.476638 -0.1294418 0.4195056 1.16152489 0.419063449 0.4195056 2.476638 0.419063449</Positions>
+            <Geometry>
+              <Batch>
+                <Material>#Resource6</Material>
+                <Indices>0 1 2 0 2 3 4 5 6 4 6 7 8 9 10 8 10 11 12 13 14 12 14 15 6 5 16 6 16 17 18 19 20 18 20 21</Indices>
+                <Vertices>
+                  <PositionIndices>0 1 2 3 0 4 5 1 0 3 6 4 1 5 7 2 6 7 3 2 7 6</PositionIndices>
+                  <Channels>
+                    <VertexChannel Name="Normal0" ElementType="Framework:Vector3">-0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 -0.577350259 0.577350259 -0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 0.577350259 -0.577350259 0.577350259</VertexChannel>
+                    <VertexChannel Name="TextureCoordinate0" ElementType="Framework:Vector2">0.208539188 0.5 0.208539188 0 0 0 0 0.5 0.318988234 1 0.637976468 1 0.637976468 0.5 0.318988234 0.5 0.5275274 0.5 0.5275274 0.2914608 0.208539188 0.2914608 0.208539188 0.5 0.5275274 0.5 0.846515656 0.5 0.846515656 0.2914608 0.5275274 0.2914608 0.846515656 1 0.846515656 0.5 0.637976468 1 0.637976468 0 1.110223E-16 0 0 1</VertexChannel>
+                  </Channels>
+                </Vertices>
+              </Batch>
+            </Geometry>
+          </Child>
+        </Children>
+      </Child>
+    </Children>
+  </Asset>
+  <Resources>
+    <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
+      <Identity>
+        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Char\Char.x</SourceFilename>
+        <SourceTool>XImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularPower" Type="float">1</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External1</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+    <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
+      <Identity>
+        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Char\Char.x</SourceFilename>
+        <SourceTool>XImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularPower" Type="float">1</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External2</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+    <Resource ID="#Resource3" Type="Graphics:BasicMaterialContent">
+      <Identity>
+        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Char\Char.x</SourceFilename>
+        <SourceTool>XImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularPower" Type="float">1</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External3</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+    <Resource ID="#Resource4" Type="Graphics:BasicMaterialContent">
+      <Identity>
+        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Char\Char.x</SourceFilename>
+        <SourceTool>XImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularPower" Type="float">1</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External4</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+    <Resource ID="#Resource5" Type="Graphics:BasicMaterialContent">
+      <Identity>
+        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Char\Char.x</SourceFilename>
+        <SourceTool>XImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularPower" Type="float">1</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External5</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+    <Resource ID="#Resource6" Type="Graphics:BasicMaterialContent">
+      <Identity>
+        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Char\Char.x</SourceFilename>
+        <SourceTool>XImporter</SourceTool>
+      </Identity>
+      <OpaqueData>
+        <Data Key="DiffuseColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="SpecularColor" Type="Framework:Vector3">1 1 1</Data>
+        <Data Key="EmissiveColor" Type="Framework:Vector3">0 0 0</Data>
+        <Data Key="Alpha" Type="float">1</Data>
+        <Data Key="SpecularPower" Type="float">1</Data>
+      </OpaqueData>
+      <Textures>
+        <Texture Key="Texture">
+          <Reference>#External6</Reference>
+        </Texture>
+      </Textures>
+    </Resource>
+  </Resources>
+  <ExternalReferences>
+    <ExternalReference ID="#External1" TargetType="Graphics:TextureContent">..\..\..\..\..\Models\Char\Head.bmp</ExternalReference>
+    <ExternalReference ID="#External2" TargetType="Graphics:TextureContent">..\..\..\..\..\Models\Char\Arm2.bmp</ExternalReference>
+    <ExternalReference ID="#External3" TargetType="Graphics:TextureContent">..\..\..\..\..\Models\Char\Leg2.bmp</ExternalReference>
+    <ExternalReference ID="#External4" TargetType="Graphics:TextureContent">..\..\..\..\..\Models\Char\Arm1.bmp</ExternalReference>
+    <ExternalReference ID="#External5" TargetType="Graphics:TextureContent">..\..\..\..\..\Models\Char\Leg1.bmp</ExternalReference>
+    <ExternalReference ID="#External6" TargetType="Graphics:TextureContent">..\..\..\..\..\Models\Char\torso.bmp</ExternalReference>
+  </ExternalReferences>
+</XnaContent>

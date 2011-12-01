@@ -1,0 +1,1224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Effect\Particlefx.fx</Source>
+      <Name>Effect\Particlefx</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\Particlefx.xnb</Output>
+      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Font\GameFont.spritefont</Source>
+      <Name>Font\GameFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Font\GameFont.xnb</Output>
+      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\BoundingBox.X</Source>
+      <Name>Models\BoundingBox</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBox.xnb</Output>
+      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\BoundingBox_0.xml</Key>
+        <Value>2011-11-30T14:32:57.8144-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBoxText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\bullet.x</Source>
+      <Name>Models\Bullet\bullet</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\bullet.xnb</Output>
+      <Time>2011-11-30T14:32:18.857-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Bullet\bullet_0.xml</Key>
+        <Value>2011-11-30T14:32:58.7192-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\Egg.X</Source>
+      <Name>Models\Bullet\Egg</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Egg.xnb</Output>
+      <Time>2011-11-30T14:32:18.701-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Bullet\Egg_0.xml</Key>
+        <Value>2011-11-30T14:32:59.3588-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\Explosion.X</Source>
+      <Name>Models\Bullet\Explosion</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Explosion.xnb</Output>
+      <Time>2011-11-30T14:32:18.7478-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Bullet\Explosion_0.xml</Key>
+        <Value>2011-11-30T14:33:00.0608-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\ExplosionText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\Missile.X</Source>
+      <Name>Models\Bullet\Missile</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Missile.xnb</Output>
+      <Time>2011-11-30T14:32:18.8414-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Bullet\Missile_0.xml</Key>
+        <Value>2011-11-30T14:33:00.9032-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Char\Char.x</Source>
+      <Name>Models\Char\Char</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Char.xnb</Output>
+      <Time>2011-11-30T14:32:18.8726-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Char\Char_0.xml</Key>
+        <Value>2011-11-30T14:33:01.6364-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Map\Colony.X</Source>
+      <Name>Models\Map\Colony</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\Colony.xnb</Output>
+      <Time>2011-11-30T14:32:18.9194-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Map\Colony_0.xml</Key>
+        <Value>2011-11-30T14:33:03.3056-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\ColonyText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Map\Tile.X</Source>
+      <Name>Models\Map\Tile</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\Tile.xnb</Output>
+      <Time>2011-11-30T14:32:19.013-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Map\Tile_0.xml</Key>
+        <Value>2011-11-30T14:33:04.1636-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\TileText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\monster1.X</Source>
+      <Name>Models\monster1</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster1.xnb</Output>
+      <Time>2011-11-30T14:32:19.4342-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\monster1_0.xml</Key>
+        <Value>2011-11-30T14:33:04.7876-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1Text_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Monster1\monster1.x</Source>
+      <Name>Models\Monster1\monster1</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\monster1.xnb</Output>
+      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Monster1\monster1_0.xml</Key>
+        <Value>2011-11-30T14:33:05.3804-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Request>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\monster2.X</Source>
+      <Name>Models\monster2</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster2.xnb</Output>
+      <Time>2011-11-30T14:32:19.4498-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\monster2_0.xml</Key>
+        <Value>2011-11-30T14:33:06.9092-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster2Text_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\monster3.X</Source>
+      <Name>Models\monster3</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster3.xnb</Output>
+      <Time>2011-11-30T14:32:19.4654-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\monster3_0.xml</Key>
+        <Value>2011-11-30T14:33:07.6268-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster3Text_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\monster4.X</Source>
+      <Name>Models\monster4</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster4.xnb</Output>
+      <Time>2011-11-30T14:32:19.4966-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\monster4_0.xml</Key>
+        <Value>2011-11-30T14:33:08.3756-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster4Text_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Towers\CannonTower\CannonTower.X</Source>
+      <Name>Models\Towers\CannonTower\CannonTower</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTower.xnb</Output>
+      <Time>2011-11-30T14:32:19.1222-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Towers\CannonTower\CannonTower_0.xml</Key>
+        <Value>2011-11-30T14:33:08.9528-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTowerText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Towers\ChickenTower\ChickenTower.X</Source>
+      <Name>Models\Towers\ChickenTower\ChickenTower</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTower.xnb</Output>
+      <Time>2011-11-30T14:32:19.169-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Towers\ChickenTower\ChickenTower_0.xml</Key>
+        <Value>2011-11-30T14:33:09.7172-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTowerText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Towers\Electric\ElectricTower.X</Source>
+      <Name>Models\Towers\Electric\ElectricTower</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTower.xnb</Output>
+      <Time>2011-11-30T14:32:19.2314-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Towers\Electric\ElectricTower_0.xml</Key>
+        <Value>2011-11-30T14:33:10.5908-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTowerText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Towers\FireTower\FireTower.x</Source>
+      <Name>Models\Towers\FireTower\FireTower</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTower.xnb</Output>
+      <Time>2011-11-30T14:32:19.2782-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Towers\FireTower\FireTower_0.xml</Key>
+        <Value>2011-11-30T14:33:11.2304-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTowerText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Towers\GunTower\Bullet.X</Source>
+      <Name>Models\Towers\GunTower\Bullet</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\Bullet.xnb</Output>
+      <Time>2011-11-30T14:32:19.3094-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Towers\GunTower\Bullet_0.xml</Key>
+        <Value>2011-11-30T14:33:11.948-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\BulletText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Towers\GunTower\GunTower.X</Source>
+      <Name>Models\Towers\GunTower\GunTower</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTower.xnb</Output>
+      <Time>2011-11-30T14:32:19.325-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Towers\GunTower\GunTower_0.xml</Key>
+        <Value>2011-11-30T14:33:12.6812-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTowerText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Towers\MissileTower\MissileTower.X</Source>
+      <Name>Models\Towers\MissileTower\MissileTower</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTower.xnb</Output>
+      <Time>2011-11-30T14:32:19.3718-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Towers\MissileTower\MissileTower_0.xml</Key>
+        <Value>2011-11-30T14:33:13.586-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTowerText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Effect\Particle.png</Source>
+      <Name>Effect\Particle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\Particle.xnb</Output>
+      <Time>2011-11-30T14:32:18.6542-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Effect\ParticleColors.png</Source>
+      <Name>Effect\ParticleColors</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\ParticleColors.xnb</Output>
+      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\background\back512.png</Source>
+      <Name>Textures\background\back512</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\background\back512.xnb</Output>
+      <Time>2011-11-30T14:32:19.6214-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\life\life100.png</Source>
+      <Name>Textures\life\life100</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life100.xnb</Output>
+      <Time>2011-11-30T14:32:19.637-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\life\life25.png</Source>
+      <Name>Textures\life\life25</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life25.xnb</Output>
+      <Time>2011-11-30T14:32:19.638-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\life\life50.png</Source>
+      <Name>Textures\life\life50</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life50.xnb</Output>
+      <Time>2011-11-30T14:32:19.649-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\life\life75.png</Source>
+      <Name>Textures\life\life75</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life75.xnb</Output>
+      <Time>2011-11-30T14:32:19.655-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\SCHUD\Starcraft1.png</Source>
+      <Name>Textures\SCHUD\Starcraft1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft1.xnb</Output>
+      <Time>2011-11-30T14:32:19.5278-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\SCHUD\Starcraft2.png</Source>
+      <Name>Textures\SCHUD\Starcraft2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft2.xnb</Output>
+      <Time>2011-11-30T14:32:19.5278-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\SCHUD\Starcraft3.png</Source>
+      <Name>Textures\SCHUD\Starcraft3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft3.xnb</Output>
+      <Time>2011-11-30T14:32:19.559-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\SCHUD\Starcraft4.png</Source>
+      <Name>Textures\SCHUD\Starcraft4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft4.xnb</Output>
+      <Time>2011-11-30T14:32:19.5746-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\BoundingBox.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\BoundingBox_0.xml</Output>
+      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\BoundingBoxText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBoxText_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\bullet.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Bullet\bullet_0.xml</Output>
+      <Time>2011-11-30T14:32:18.857-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\BulletText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.701-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\Egg.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Bullet\Egg_0.xml</Output>
+      <Time>2011-11-30T14:32:18.701-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\EggText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.7478-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\Explosion.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Bullet\Explosion_0.xml</Output>
+      <Time>2011-11-30T14:32:18.7478-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\ExplosionText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\ExplosionText_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.8258-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\Missile.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Bullet\Missile_0.xml</Output>
+      <Time>2011-11-30T14:32:18.8414-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Bullet\MissileText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.8414-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Char.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Char\Char_0.xml</Output>
+      <Time>2011-11-30T14:32:18.8726-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Head.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.8882-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Arm2.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.8726-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Leg2.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.9038-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Arm1.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.8726-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\Leg1.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.8882-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Char\torso.bmp</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Output>
+      <Time>2011-11-30T14:32:18.9038-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Map\Colony.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Map\Colony_0.xml</Output>
+      <Time>2011-11-30T14:32:18.9194-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Map\ColonyText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\ColonyText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.013-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Map\Tile.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Map\Tile_0.xml</Output>
+      <Time>2011-11-30T14:32:19.013-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Map\TileText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\TileText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0286-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\monster1.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\monster1_0.xml</Output>
+      <Time>2011-11-30T14:32:19.4342-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster1Text.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1Text_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0754-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster1\monster1.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Monster1\monster1_0.xml</Output>
+      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster1\cube2_copy6_auv.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster1\cube2_copy5_auv.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster1\cube2_copy4_auv.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster1\cube2_copy3_auv.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0286-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster1\cube2_auv.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0286-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster1\cube1_auv.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0286-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\monster2.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\monster2_0.xml</Output>
+      <Time>2011-11-30T14:32:19.4498-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster2Text.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster2Text_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.0754-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\monster3.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\monster3_0.xml</Output>
+      <Time>2011-11-30T14:32:19.4654-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster3Text.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster3Text_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.091-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\monster4.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\monster4_0.xml</Output>
+      <Time>2011-11-30T14:32:19.4966-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Monster4Text.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster4Text_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.1222-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\CannonTower\CannonTower.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Towers\CannonTower\CannonTower_0.xml</Output>
+      <Time>2011-11-30T14:32:19.1222-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\CannonTower\CannonTowerText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTowerText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.169-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\ChickenTower\ChickenTower.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Towers\ChickenTower\ChickenTower_0.xml</Output>
+      <Time>2011-11-30T14:32:19.169-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\ChickenTower\ChickenTowerText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTowerText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.2314-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\Electric\ElectricTower.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Towers\Electric\ElectricTower_0.xml</Output>
+      <Time>2011-11-30T14:32:19.2314-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\Electric\ElectricTowerText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTowerText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.2782-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\FireTower\FireTower.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Towers\FireTower\FireTower_0.xml</Output>
+      <Time>2011-11-30T14:32:19.2782-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\FireTower\FireTowerText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTowerText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.3094-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\GunTower\Bullet.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Towers\GunTower\Bullet_0.xml</Output>
+      <Time>2011-11-30T14:32:19.3094-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\GunTower\BulletText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\BulletText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.325-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\GunTower\GunTower.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Towers\GunTower\GunTower_0.xml</Output>
+      <Time>2011-11-30T14:32:19.325-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\GunTower\GunTowerText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTowerText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.3406-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\MissileTower\MissileTower.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Towers\MissileTower\MissileTower_0.xml</Output>
+      <Time>2011-11-30T14:32:19.3718-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Towers\MissileTower\MissileTowerText.jpg</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTowerText_0.xnb</Output>
+      <Time>2011-11-30T14:32:19.403-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cube.fbx</Source>
+      <Name>cube</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\cube.xnb</Output>
+      <Time>2011-11-30T17:24:52.0359-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\cube_0.xml</Key>
+        <Value>2011-11-30T17:28:16.0465-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>cube.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\cube_0.xml</Output>
+      <Time>2011-11-30T17:24:52.0359-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\background\MenuScreen.png</Source>
+      <Name>Textures\background\MenuScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\background\MenuScreen.xnb</Output>
+      <Time>2011-11-30T20:43:23.8176-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Mineral.X</Source>
+      <Name>Models\Mineral</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Mineral.xnb</Output>
+      <Time>2011-11-30T22:31:55.7368-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Mineral_0.xml</Key>
+        <Value>2011-11-30T22:45:32.376-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\MineralText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Workers.x</Source>
+      <Name>Models\Workers</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Workers.xnb</Output>
+      <Time>2011-11-30T22:31:55.7418-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Workers_0.xml</Key>
+        <Value>2011-11-30T22:45:33.522-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\WorkersText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\MineralText.png</Source>
+      <Name>Models\MineralText</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\MineralText.xnb</Output>
+      <Time>2011-11-30T22:31:55.7398-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\WorkersText.png</Source>
+      <Name>Models\WorkersText</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\WorkersText.xnb</Output>
+      <Time>2011-11-30T22:31:55.7438-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Mineral.X</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Mineral_0.xml</Output>
+      <Time>2011-11-30T22:31:55.7368-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\MineralText.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\MineralText_0.xnb</Output>
+      <Time>2011-11-30T22:31:55.7398-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\Workers.x</Source>
+      <Importer>XImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\Models\Workers_0.xml</Output>
+      <Time>2011-11-30T22:31:55.7418-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\WorkersText.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\WorkersText_0.xnb</Output>
+      <Time>2011-11-30T22:31:55.7438-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Lament.mp3</Source>
+      <Name>Music\Lament</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Lament.xnb</Output>
+      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Lament.wma</Extra>
+      <Time>2011-12-01T01:42:40.107-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Robots_FTW.mp3</Source>
+      <Name>Music\Robots_FTW</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Robots_FTW.xnb</Output>
+      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Robots_FTW.wma</Extra>
+      <Time>2011-12-01T01:42:40.395-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Science_is_Fun.mp3</Source>
+      <Name>Music\Science_is_Fun</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Science_is_Fun.xnb</Output>
+      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Science_is_Fun.wma</Extra>
+      <Time>2011-12-01T01:42:40.586-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-09-21T13:38:03.7425-04:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
