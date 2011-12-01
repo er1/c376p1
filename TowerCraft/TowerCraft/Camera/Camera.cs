@@ -137,7 +137,11 @@ namespace TowerCraft3D
                     int test = (int)((gamePadState.ThumbSticks.Left.X * 3));
                     cameraPosition += new Vector3(1, 0, 0) * test;
                 }
-
+                cameraPosition = Vector3.Clamp(cameraPosition,
+                    new Vector3(-200f, -1000000f, -1000000f),
+                    new Vector3(200f, 1000000f, 1000000f)
+                );
+                
                 timer -= gameTime.ElapsedGameTime;
                 if ((timer <= TimeSpan.Zero) && (!moveable))
                 {

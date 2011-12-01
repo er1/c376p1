@@ -415,7 +415,17 @@ namespace TowerCraft3D
                     wavesLevel.Clear();
 
                     aButton = true;
+                    LIFE = 1000;
                     gameState = 0;
+                    wavesLevel.Clear();
+                    towers.Clear();
+                    projectiles.Clear();
+                    monsters.Clear();
+                    resourcemanager = new ResourceManager();
+                    gatherzone = new GatherZone(resourcemanager);
+                    chosenTile = new TileCoord(0, 0);
+                    started = false;
+                    base.Initialize();
                 }
 #if XBOX360
                 if (gamePadState.Buttons.A == ButtonState.Released)
@@ -504,6 +514,7 @@ namespace TowerCraft3D
                     }
                     if (pauseState == 1)
                     {
+                        LIFE = 1000;
                         gameState = 0;
                         wavesLevel.Clear();
                         towers.Clear();
