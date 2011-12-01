@@ -8,12 +8,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TowerCraft3D
 {
-    class CanonTower : tower
+     class CanonTower : tower
     {
 
-        public CanonTower(ref Model canonModel, Vector3 pos, TileCoord tc)
-            : base(ref canonModel, pos, tc)
-        {
+
+         public CanonTower(ref Model canonModel, Vector3 pos, TileCoord tc)
+             : base(ref canonModel, pos, tc)
+         {
             world *= Matrix.CreateRotationY(MathHelper.ToRadians(180));
             world *= Matrix.CreateTranslation(pos);
             life = 75;

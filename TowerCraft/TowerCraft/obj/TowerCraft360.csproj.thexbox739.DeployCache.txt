@@ -6,7 +6,7 @@ C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\GameThumbnail.png
 2011-11-30T19:32:18.6230000Z
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\TowerCraft.exe
-2011-12-01T05:22:15.4560000Z
+2011-12-01T10:53:33.8760000Z
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\cube.xnb
 2011-12-01T04:25:58.3310000Z
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Effect\Particle.xnb
@@ -129,6 +129,18 @@ C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\
 2011-11-30T19:54:25.2764000Z
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Models\Towers\MissileTower\MissileTowerText_0.xnb
 2011-11-30T19:54:26.1834000Z
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Lament.wma
+2011-12-01T08:47:40.2520000Z
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Lament.xnb
+2011-12-01T08:47:40.2940000Z
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Robots_FTW.wma
+2011-12-01T08:47:45.0040000Z
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Robots_FTW.xnb
+2011-12-01T08:47:45.0370000Z
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Science_is_Fun.wma
+2011-12-01T08:47:49.3690000Z
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Science_is_Fun.xnb
+2011-12-01T08:47:49.4020000Z
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Textures\background\back512.xnb
 2011-11-30T19:54:27.3754000Z
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Textures\background\MenuScreen.xnb

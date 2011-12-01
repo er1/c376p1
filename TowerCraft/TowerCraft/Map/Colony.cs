@@ -15,7 +15,7 @@ namespace TowerCraft3D
         int lives;
 
         public Colony(ref Model temp, Vector3 location)
-            : base(ref temp)
+            : base(temp)
         {
             //
             world = Matrix.CreateTranslation(location) * Matrix.CreateRotationY((float)-Math.PI / 2) * Matrix.CreateRotationZ((float)Math.PI / 2); 

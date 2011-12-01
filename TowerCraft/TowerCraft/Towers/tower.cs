@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace TowerCraft3D
 {
 
-    class tower : model
+     class tower : model
     {
 
         public int towerType { get; set; }
@@ -30,7 +30,7 @@ namespace TowerCraft3D
         public Game game {get; set;}
 
         public tower(ref Model temp, Vector3 location, TileCoord currentTC)
-            : base(ref temp)
+            : base(temp)
         {
 
             position = location;

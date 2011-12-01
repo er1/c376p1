@@ -29,8 +29,8 @@ namespace TowerCraft3D
         //protected float moveBalloons = 0.5f;
         static Random random = new Random(); //random number (used with function)
         #endregion
-        public player(ref Model temp, Vector3 location, int WorldSize)
-            : base(ref temp)
+        public player(ref Model temp,Vector3 location, int WorldSize)
+            : base(temp)
         {
             position = location;
             worldSize = WorldSize;

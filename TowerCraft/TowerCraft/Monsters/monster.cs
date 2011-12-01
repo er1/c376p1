@@ -9,24 +9,27 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TowerCraft3D
 {
-    class monster : model
+     class monster : model
     {
         protected Vector3 direction { get; set; }
         protected Vector3 initialDirection { get; set; }
         static Random random = new Random(); 
-        protected float move = 0.25f;
+        protected float move = 0.00002f;
         public bool hitColony;
         public int life;
         public bool isDead {get; protected set;}
         public int type;
         public TileCoord tc { get; set; }
+        double distance = 0.02f;
 
         public monster(ref Model temp, Vector3 location, Vector3 newDirection)
-            : base(ref temp)
+            : base(temp)
         {
-            world = Matrix.CreateRotationY((float)Math.PI/2) * Matrix.CreateTranslation(location);
-            direction = newDirection*move;
+            direction = newDirection;
             initialDirection = newDirection;
+            world = Matrix.CreateRotationY((float)Math.PI/2) * Matrix.CreateTranslation(location);
+            //world = Matrix.CreateTranslation(direction);
+            
             hitColony = false;
             //life = 100;
 
@@ -37,7 +40,7 @@ namespace TowerCraft3D
             return random.Next(min, max);
         }
 
-        public  void Update()
+        public  void Update(GameTime time)
         {
             if (world.M41 >= 0)
             { 
@@ -48,7 +51,8 @@ namespace TowerCraft3D
             {
                 isDead = true;
             }
-
+            double elapsedTime = time.ElapsedGameTime.TotalMilliseconds;
+            direction += initialDirection* (move*(float) elapsedTime);
             world *= Matrix.CreateTranslation(direction);
         }
         public Vector3 getDirection()

@@ -13,8 +13,8 @@ namespace TowerCraft3D
         private int type;
         private int value;
 
-        public resource(ref Model temp, int typeOfResource)
-            : base(ref temp)
+        public resource( Model temp,int typeOfResource)
+            : base(temp)
         {
             type = typeOfResource;
             if (type == 0)

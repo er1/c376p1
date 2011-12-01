@@ -19,29 +19,29 @@ namespace TowerCraft3D
         NoInstancingOrStateBatching
     }
 
-    class model
+     class model
     {
+        
+
         // Instanced model rendering.
         InstancingTechnique instancingTechnique = InstancingTechnique.HardwareInstancing;
 
         const int InitialInstanceCount = 1000;
 
-        Matrix[] instanceTransforms;
-        Model instancedModel;
-        Matrix[] instancedModelBones;
         DynamicVertexBuffer instanceVertexBuffer;
+        Matrix[] transforms;
 
         //Old stuff
-        protected Model currentModel;
+        public  Model currentModel;
         //Vector3 location;
         protected Matrix world = Matrix.Identity;
         protected BoundingBox box;
 
         private static int totalID = 0;
         private int modelID;
-        Matrix[] transforms;
+        
         //Matrix[] instancedModelBones;
-        public model(ref Model newModel)
+        public model(Model newModel)
         {
             this.currentModel = newModel;
 
@@ -162,14 +162,16 @@ namespace TowerCraft3D
             return new BoundingBox(min, max);
         }
         
+
         public void DrawModel(Camera cam)
         {
 
-            foreach (ModelMesh mesh in this.currentModel.Meshes)
+            foreach (ModelMesh mesh in currentModel.Meshes)
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    //effect.EnableDefaultLighting();
+                    effect.EnableDefaultLighting();
+                    
                     //effect.LightingEnabled = true;
                     //effect.DirectionalLight1.DiffuseColor = new Vector3(1f, 1f, 1f);
                     //effect.DirectionalLight1.Direction = new Vector3(0, 1, 0);
@@ -178,68 +180,13 @@ namespace TowerCraft3D
                     effect.World = getWorld() * mesh.ParentBone.Transform;
                     effect.View = cam.view;
                     effect.Projection = cam.projection;
+                    effect.CurrentTechnique.Passes[0].Apply();
                 }
                 
                 mesh.Draw();
             }
             
         }
-        
-        /*
-        void DrawModelHardwareInstancing(Model model, Matrix[] modelBones,
-                                         Matrix[] instances, Matrix view, Matrix projection)
-        {
-            if (instances.Length == 0)
-                return;
-
-            // If we have more instances than room in our vertex buffer, grow it to the neccessary size.
-            if ((instanceVertexBuffer == null) ||
-                (instances.Length > instanceVertexBuffer.VertexCount))
-            {
-                if (instanceVertexBuffer != null)
-                    instanceVertexBuffer.Dispose();
-                
-                instanceVertexBuffer = new DynamicVertexBuffer(((Game1)game).GraphicsDevice, model.Meshes.ve,
-                                                               instances.Length, BufferUsage.WriteOnly);
-            }
-
-            // Transfer the latest instance transform matrices into the instanceVertexBuffer.
-            instanceVertexBuffer.SetData(instances, 0, instances.Length, SetDataOptions.Discard);
-
-            foreach (ModelMesh mesh in model.Meshes)
-            {
-                foreach (ModelMeshPart meshPart in mesh.MeshParts)
-                {
-                    // Tell the GPU to read from both the model vertex buffer plus our instanceVertexBuffer.
-                    GraphicsDevice.SetVertexBuffers(
-                        new VertexBufferBinding(meshPart.VertexBuffer, meshPart.VertexOffset, 0),
-                        new VertexBufferBinding(instanceVertexBuffer, 0, 1)
-                    );
-
-                    GraphicsDevice.Indices = meshPart.IndexBuffer;
-
-                    // Set up the instance rendering effect.
-                    Effect effect = meshPart.Effect;
-
-                    effect.CurrentTechnique = effect.Techniques["HardwareInstancing"];
-
-                    effect.Parameters["World"].SetValue(modelBones[mesh.ParentBone.Index]);
-                    effect.Parameters["View"].SetValue(view);
-                    effect.Parameters["Projection"].SetValue(projection);
-
-                    // Draw all the instance copies in a single call.
-                    foreach (EffectPass pass in effect.CurrentTechnique.Passes)
-                    {
-                        pass.Apply();
-
-                        GraphicsDevice.DrawInstancedPrimitives(PrimitiveType.TriangleList, 0, 0,
-                                                               meshPart.NumVertices, meshPart.StartIndex,
-                                                               meshPart.PrimitiveCount, instances.Length);
-                    }
-                }
-            }
-        }
-        */
         
     }
 }

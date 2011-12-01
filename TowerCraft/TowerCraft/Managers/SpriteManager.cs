@@ -87,8 +87,9 @@ namespace TowerCraft3D
 
         public override void Draw(GameTime gameTime)
         {
-            batch.Begin();
             base.Draw(gameTime);
+            batch.Begin();
+            
 
             #region Draw Main Menu
             if (((Game1)Game).gameState == 0)
@@ -210,7 +211,7 @@ namespace TowerCraft3D
         public void updateLifeBarsMonsters(int i,int percentage, Vector3 position, Camera cam, Viewport viewport)
         {
             Vector3 posi = viewport.Project(position, cam.projection, cam.view, Matrix.Identity);
-            Vector2 pos = new Vector2(posi.X, posi.Y) + new Vector2(-20,-20);
+            Vector2 pos = new Vector2(posi.X, posi.Y) + new Vector2(-40 ,-40);
             //pos = new Vector2(0, 0);
             if (percentage == 100)
                 monstersLife[i].Update(ref life100, pos);

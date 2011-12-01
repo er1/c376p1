@@ -15,8 +15,10 @@ namespace TowerCraft3D
     
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+
+
         #region Game1 Variables
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
         public SpriteManager spriteManager { get; protected set; }
@@ -81,6 +83,7 @@ namespace TowerCraft3D
 
         Dictionary<monster, bool> tiles = new Dictionary<monster, bool>();
         monster SelectionTile;
+
         #endregion
 
         #region Variables...
@@ -122,8 +125,8 @@ namespace TowerCraft3D
             Content.RootDirectory = "Content";
             this.IsMouseVisible = false;
             //this.graphics.IsFullScreen = true;
-            this.graphics.PreferredBackBufferWidth = 1280;
-            this.graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
         }
         protected override void Initialize()
         {
@@ -155,7 +158,7 @@ namespace TowerCraft3D
 
             chosenTile = cameraMain.getCurrentTC();
             this.IsFixedTimeStep = false;
-            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 1);  
+            //this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 80);  
 
             // resource management
             resourcemanager = new ResourceManager();
@@ -225,21 +228,21 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(0, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(1, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(2, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(3, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(4, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(5, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(6, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(7, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(8, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(9, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(10, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(11, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(12, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(13, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(14, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(0, new waveManager(1, 10, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(1, new waveManager(1, 10, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(2, new waveManager(1, 10, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(3, new waveManager(2, 20, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(4, new waveManager(2, 20, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(5, new waveManager(2, 20, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(6, new waveManager(3, 30, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(7, new waveManager(3, 30, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(8, new waveManager(3, 30, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(9, new waveManager(4, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(10, new waveManager(4, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(11, new waveManager(4, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(12, new waveManager(5, 50, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(13, new waveManager(5, 50, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(14, new waveManager(5, 50, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
 
             #endregion
 
@@ -578,7 +581,7 @@ namespace TowerCraft3D
                 map.Update();
                 //Selected tile
                 chosenTile = cameraMain.getCurrentTC();
-                SelectionTile.Update();
+                SelectionTile.Update(gameTime);
 
                 #endregion
 
@@ -618,11 +621,11 @@ namespace TowerCraft3D
                     {
                         percentage = 100;
                     }
-                    else if ((pair.Key.life / 100) * 100 > 50 && (pair.Key.life / 100) * 100 <= 75)
+                    else if ((pair.Key.life / 100) * 100 > 51 && (pair.Key.life / 100) * 100 <= 75)
                     {
                         percentage = 75;
                     }
-                    else if ((pair.Key.life / 100) * 100 > 25 && (pair.Key.life / 100) * 100 <= 50)
+                    else if ((pair.Key.life / 100) * 100 > 25 && (pair.Key.life / 100) * 100 <= 51)
                     {
                         percentage = 50;
                     }
@@ -632,7 +635,7 @@ namespace TowerCraft3D
                     }
 
 
-                    pair.Key.Update();
+                    pair.Key.Update(gameTime);
                     //spriteManager.updateLifeBarsMonsters(0, percentage, pair.Key.getPosition(), cameraMain, MainScreen);
                     TileCoord monsterLocation
                         =
@@ -643,7 +646,7 @@ namespace TowerCraft3D
                     if (pair.Key.hitColony)
                     {
                         pair.Key.life -= 100;
-                        //spriteManager.removeLifeBarsMonsters(i);
+                        //spriteManager.removeLifeBarsMonsters(pair.Key);
                         LIFE -= 10;
                     }
                 }
@@ -806,10 +809,17 @@ namespace TowerCraft3D
                     }
 
                 }
+                #if !XBOX360
                 if ((Keyboard.GetState().IsKeyUp(Keys.Space)) && (Keyboard.GetState().IsKeyUp(Keys.Q)) && (Keyboard.GetState().IsKeyUp(Keys.E)) && (gamePadState.Buttons.A == ButtonState.Released))
                 {
                     SpaceBar = false;
                 }
+                #endif
+                #if XBOX360
+                 if(gamePadState.Triggers.Left == 0&&gamePadState.Triggers.Right == 0)
+                    SpaceBar = false;           
+                #endif
+
                 #endregion
 
                 #endregion
@@ -840,7 +850,7 @@ namespace TowerCraft3D
 
                 #region Draw Game Map
                 //Draw the Texture world around the game.
-
+               
                 #region Draw Cube World
                 // Set the vertex buffer on the GraphicsDevice
                 GraphicsDevice.SetVertexBuffer(vertexBuffer);
@@ -863,11 +873,11 @@ namespace TowerCraft3D
                 }
                 #endregion
 
-
                 //Draw Map
                 foreach (KeyValuePair<monster, bool> pair in tiles)
                 {
                     pair.Key.DrawModel(cameraMain);
+                    
                 }
                 //Draw the left base
                 mainBase.DrawModel(cameraMain);
@@ -881,10 +891,11 @@ namespace TowerCraft3D
 
                 //gatherzone.draw(cameraMain);
 
+
                 //Draw Monsters
                 foreach (KeyValuePair<monster, bool> pair in monsters)
                 {
-                    pair.Key.DrawModel(cameraMain);
+                   pair.Key.DrawModel(cameraMain);
                 }
                 //Draws projectiles list
                 foreach (KeyValuePair<projectile, bool> pair in projectiles)
@@ -904,12 +915,6 @@ namespace TowerCraft3D
                 }
 
                 gatherzone.draw(cameraMain);
-            }
-            else if (gameState == 3)
-            {
-            }
-            else if (gameState == 4)
-            {
             }
 
 

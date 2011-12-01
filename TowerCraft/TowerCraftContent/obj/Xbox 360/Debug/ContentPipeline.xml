@@ -1149,6 +1149,36 @@
       <Output>obj\Xbox 360\Debug\cube_0.xml</Output>
       <Time>2011-11-30T17:24:52.0359-05:00</Time>
     </Item>
+    <Item>
+      <Source>Music\Lament.mp3</Source>
+      <Name>Music\Lament</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Lament.xnb</Output>
+      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Lament.wma</Extra>
+      <Time>2011-12-01T01:42:40.107-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Robots_FTW.mp3</Source>
+      <Name>Music\Robots_FTW</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Robots_FTW.xnb</Output>
+      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Robots_FTW.wma</Extra>
+      <Time>2011-12-01T01:42:40.395-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Science_is_Fun.mp3</Source>
+      <Name>Music\Science_is_Fun</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Science_is_Fun.xnb</Output>
+      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Science_is_Fun.wma</Extra>
+      <Time>2011-12-01T01:42:40.586-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Xbox360</TargetPlatform>

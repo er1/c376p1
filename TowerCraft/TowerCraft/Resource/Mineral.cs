@@ -60,6 +60,7 @@ namespace TowerCraft
                     effect.World = Matrix.CreateTranslation(position);
                     effect.View = cam.view;
                     effect.Projection = cam.projection;
+                    effect.CurrentTechnique.Passes[0].Apply();
                 }
                 mesh.Draw();
             }

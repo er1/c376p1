@@ -171,7 +171,6 @@ namespace TowerCraft3D
                     particleEffect.Parameters["WorldViewProjection"].SetValue(
                         camera.view * camera.projection);
                     particleEffect.Parameters["particleColor"].SetValue(vertexColorArray[i].ToVector4());
-
                     // Draw particles
                     foreach (EffectPass pass in particleEffect.CurrentTechnique.Passes)
                     {

@@ -11,7 +11,8 @@ namespace TowerCraft3D
     class GunTower : tower
     {
 
-        public GunTower(ref Model gunModel, Vector3 pos, TileCoord tc) : base(ref gunModel,pos, tc)
+        public GunTower(ref Model gunModel, Vector3 pos, TileCoord tc)
+            : base(ref gunModel, pos, tc)
         {
             world *= Matrix.CreateRotationY(MathHelper.ToRadians(180));
             world *= Matrix.CreateTranslation(pos);

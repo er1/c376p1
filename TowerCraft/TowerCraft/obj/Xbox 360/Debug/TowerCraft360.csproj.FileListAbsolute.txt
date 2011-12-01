@@ -75,3 +75,9 @@ C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\cube.xnb
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Models\MineralText_0.xnb
 C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Models\WorkersText_0.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Lament.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Robots_FTW.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Science_is_Fun.xnb
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Lament.wma
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Robots_FTW.wma
+C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\Xbox 360\Debug\Content\Music\Science_is_Fun.wma
