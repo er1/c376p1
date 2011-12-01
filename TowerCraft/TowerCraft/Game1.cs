@@ -110,13 +110,14 @@ namespace TowerCraft3D
 
         #endregion
 
-        #region
+        #region Music
         Song menuMusic;
-
+        Song creditsMusic;
         Song gameMusic;
 
         bool menuMusik = false;
         bool gameMusik = false;
+        bool creditsMusik = false;
         #endregion
 
         public Game1()
@@ -158,7 +159,7 @@ namespace TowerCraft3D
 
             chosenTile = cameraMain.getCurrentTC();
             this.IsFixedTimeStep = false;
-            //this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 80);  
+            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 20);  
 
             // resource management
             resourcemanager = new ResourceManager();
@@ -261,7 +262,7 @@ namespace TowerCraft3D
             #region Load music
             menuMusic = Content.Load<Song>(@"Music\\Lament");
             gameMusic = Content.Load<Song>(@"Music\\Science_is_Fun");
-
+            creditsMusic = Content.Load<Song>(@"Music\\Robots_FTW");
 
             #endregion
         }      
@@ -279,11 +280,41 @@ namespace TowerCraft3D
             #region Menus (GAMESTATES)
 
             #region Main Menu
+            //Credits
+            if (gameState == -1)
+            {
+                if (!creditsMusik)
+                {
+                    MediaPlayer.Stop();
+                    menuMusik = false;
+                    MediaPlayer.Play(creditsMusic);
+                    creditsMusik = true;
+                }
+                if ((Keyboard.GetState().IsKeyDown(Keys.Enter) || gamePadState.Buttons.B == ButtonState.Pressed) && !aButton)
+                {
+                    aButton = true;
+                    gameState = 0;
+                    
+                }
+#if XBOX360
+                if (gamePadState.Buttons.B == ButtonState.Released)
+                {
+                    aButton = false;
+                }
+#endif
+#if !XBOX360
+                if (Keyboard.GetState().IsKeyUp(Keys.Enter))
+                {
+                    aButton = false;
+                }
+#endif
+            }
             if (gameState == 0)
             {
                 if (!menuMusik)
                 {
                     MediaPlayer.Stop();
+                    creditsMusik = false;
                     gameMusik = false;
                     MediaPlayer.Play(menuMusic);
                     menuMusik = true;
@@ -325,6 +356,10 @@ namespace TowerCraft3D
                     if (menuState == 0)
                     {
                         gameState = 1;
+                    }
+                    if (menuState == 1)
+                    {
+                        gameState = -1;
                     }
                     if (menuState == 2)
                     {
@@ -528,10 +563,10 @@ namespace TowerCraft3D
                     wavesLevel[currentWave].UpdateWave(gameTime);
                     spriteManager.drawHUD(wavesLevel[currentWave].levelTimer, wavesLevel[currentWave].level, curResource);
                     //Check if this Waves Timer is done or monsters are all dead (so wave is done)
-                    if ((wavesLevel[currentWave].levelDone && wavesLevel[currentWave].spawn <= 1))
+                    if ((wavesLevel[currentWave].levelDone && wavesLevel[currentWave].spawn <= 1&& monsters.Count<1 ))
                     {
                         //Game.Exit();
-                        //System.GC.Collect();
+                        System.GC.Collect();
                         currentWave++;
                     }
                     //If Level isn't done then check the Timer to add monsters at invervals
@@ -835,16 +870,7 @@ namespace TowerCraft3D
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             GraphicsDevice.Viewport = MainScreen;
-
-            if (gameState == 0)
-            {
-                //GraphicsDevice.Clear(Color.Black);
-            }
-            else if (gameState == 2)
-            {
-                //GraphicsDevice.Clear(Color.Green);
-            }
-            else if (gameState == 1)
+            if (gameState == 1)
             {
                 GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
@@ -930,19 +956,19 @@ namespace TowerCraft3D
             {
                 //guntower
                 case 0:                    
-                    projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Bullet(ref bullet, ref boundingBox, position+new Vector3(0,-10,0), direction), true);
                     break;
                 //missile tower
                 case 1:
-                    projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Missile(ref missile, ref boundingBox, position + new Vector3(0, -10, 0), direction), true);
                     break;
                 //chicken tower
                 case 2:
-                    projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Egg(ref egg, ref boundingBox, position + new Vector3(0, -10, 0), direction), true);
                     break;
                 //explosions!
                 case 3:
-                    projectiles.Add(new Explosion(ref explosion, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Explosion(ref explosion, ref boundingBox, position + new Vector3(0, -10, 0), direction), true);
                     break;
 
             }

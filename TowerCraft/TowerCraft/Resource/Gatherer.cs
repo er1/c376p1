@@ -108,7 +108,7 @@ namespace TowerCraft
                 foreach (BasicEffect effect in mesh.Effects)
                 {
                     effect.EnableDefaultLighting();
-                    effect.World = Matrix.CreateTranslation(position);
+                    effect.World = Matrix.CreateFromAxisAngle(Vector3.UnitY, (float)Math.Atan2(direction.X, direction.Z)) * Matrix.CreateTranslation(position);
                     effect.View = cam.view;
                     effect.Projection = cam.projection;
                     effect.CurrentTechnique.Passes[0].Apply();

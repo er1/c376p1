@@ -28,7 +28,7 @@ namespace TowerCraft3D
 
         const int InitialInstanceCount = 1000;
 
-        DynamicVertexBuffer instanceVertexBuffer;
+
         Matrix[] transforms;
 
         //Old stuff
@@ -171,7 +171,6 @@ namespace TowerCraft3D
                 foreach (BasicEffect effect in mesh.Effects)
                 {
                     effect.EnableDefaultLighting();
-                    
                     //effect.LightingEnabled = true;
                     //effect.DirectionalLight1.DiffuseColor = new Vector3(1f, 1f, 1f);
                     //effect.DirectionalLight1.Direction = new Vector3(0, 1, 0);
@@ -180,7 +179,7 @@ namespace TowerCraft3D
                     effect.World = getWorld() * mesh.ParentBone.Transform;
                     effect.View = cam.view;
                     effect.Projection = cam.projection;
-                    effect.CurrentTechnique.Passes[0].Apply();
+                    //effect.CurrentTechnique.Passes[0].Apply();
                 }
                 
                 mesh.Draw();

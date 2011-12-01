@@ -50,7 +50,7 @@ namespace TowerCraft
             //gatherers
             for (int i = 0; i < 10; ++i)
             {
-                Gatherer g = new Gatherer(this, new Vector3(100, 8, -64 + 2 * i));
+                Gatherer g = new Gatherer(this, new Vector3(100, 8, -40 + 8 * i));
 
                 g.targetPosition = new Vector3(250, 8, 0);
 

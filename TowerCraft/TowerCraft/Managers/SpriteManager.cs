@@ -35,11 +35,10 @@ namespace TowerCraft3D
         Texture2D menu;
 
         public SpriteFont font;
-
         int currentResource;
         int worldHeight;
         int worldWidth;
-
+        float xPos = (1280/2) * 0.75f;
         int currentDay;
         TimeSpan timer;
 
@@ -59,10 +58,12 @@ namespace TowerCraft3D
             batch = new SpriteBatch(Game.GraphicsDevice);
             frames = new FrameRateCounter(Game, new Vector2(100, 100f), Color.Green, Color.Green);
             ((Game1)Game).Components.Add(frames);
+            
             base.Initialize();
         }
         protected override void LoadContent()
         {
+            
             #region load 2d textures and font
             life100 = Game.Content.Load<Texture2D>(@"Textures\\life\life100");
             life75 = Game.Content.Load<Texture2D>(@"Textures\\life\life75");
@@ -82,7 +83,15 @@ namespace TowerCraft3D
 
         public override void Update(GameTime gameTime)
         {
-             
+            if (((Game1)Game).gameState == -1)
+            {
+                xPos += 20f;
+                if (xPos > worldWidth)
+                    xPos = 0;
+                
+
+            }
+            base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
@@ -149,6 +158,16 @@ namespace TowerCraft3D
                     batch.DrawString(font, "END", new Vector2(worldWidth / 2 * .91f, worldHeight / 2 * 1.10f), Color.White);
                 }
 
+            }
+            //Credits
+            if (((Game1)Game).gameState == -1)
+            {
+                batch.Draw(menu, new Vector2(0, 0), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0);
+                batch.DrawString(font, "COMP 376 Project - Fall 2011", new Vector2(xPos, worldHeight / 2), Color.Red);
+                batch.DrawString(font, "by", new Vector2(xPos, worldHeight / 2 * 1.10f), Color.Red);
+                batch.DrawString(font, "Eric Chan", new Vector2(xPos, worldHeight / 2 * 1.20f), Color.Red);
+                batch.DrawString(font, "Kyle Chan Thim", new Vector2(xPos, worldHeight / 2 * 1.30f), Color.Red);
+                batch.DrawString(font, "Sevan Gurunlu", new Vector2(xPos, worldHeight / 2 * 1.40f), Color.Red);
             }
             #endregion
 
