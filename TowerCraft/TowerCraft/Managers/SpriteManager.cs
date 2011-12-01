@@ -43,7 +43,7 @@ namespace TowerCraft3D
         int currentDay;
         TimeSpan timer;
 
-        
+        public FrameRateCounter frames;
         public SpriteManager(Game game)
             : base(game)
         {
@@ -53,10 +53,12 @@ namespace TowerCraft3D
 
         public override void Initialize()
         {
+
             worldHeight = ((Game1)Game).worldHeight;
                 worldWidth = ((Game1)Game).worldWidth;
             batch = new SpriteBatch(Game.GraphicsDevice);
-            ((Game1)Game).Components.Add(new FrameRateCounter(Game, new Vector2(100, 100f), Color.Green, Color.Green));
+            frames = new FrameRateCounter(Game, new Vector2(100, 100f), Color.Green, Color.Green);
+            ((Game1)Game).Components.Add(frames);
             base.Initialize();
         }
         protected override void LoadContent()

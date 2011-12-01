@@ -252,6 +252,7 @@ namespace TowerCraft3D
                 {
                     Components.Remove(cameraMain);
                     Components.Remove(spriteManager);
+                    Components.Remove(spriteManager.frames);
 
                     cameraMain = new Camera(this, new Vector3(0, 200, 199), new Vector3(0, -5, 1), Vector3.Up, MainScreen, true, worldSize);
                     spriteManager = new SpriteManager(this);
