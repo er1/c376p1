@@ -28,7 +28,7 @@ namespace TowerCraft3D
         //Construct Cube
         public void setCubeVertices(int worldSize)
         {
-            cubeSize = new Vector3(worldSize, worldSize, worldSize);
+            cubeSize = new Vector3(390, 390, 390);
             cubeVertices = new VertexPositionTexture[26];
 
             //Texture Mappting

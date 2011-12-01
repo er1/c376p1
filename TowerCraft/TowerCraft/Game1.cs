@@ -302,7 +302,6 @@ namespace TowerCraft3D
             if (gameState == 1)
             {
                 
-
                 #region Update Level
                 //Level 1
                 if (currentWave < wavesLevel.Count)
