@@ -330,6 +330,48 @@ namespace TowerCraft3D
             #endregion
             // game
 
+            #region Win/Lose
+            else if ((gameState == 3) || (gameState == 4))
+            {               
+                if ((Keyboard.GetState().IsKeyDown(Keys.Enter) || gamePadState.Buttons.A == ButtonState.Pressed) && !aButton)
+                {
+                    wavesLevel.Clear();
+
+                    aButton = true;
+                    gameState = 0;
+                }
+#if XBOX360
+                if (gamePadState.Buttons.A == ButtonState.Released)
+                {
+                    aButton = false;
+                }
+                if (gamePadState.DPad.Up == ButtonState.Released)
+                {
+                    dPadUp = false;
+                }
+                if (gamePadState.DPad.Down == ButtonState.Released)
+                {
+                    dPadDown = false;
+                }
+#endif
+#if !XBOX360
+                if ((Keyboard.GetState().IsKeyUp(Keys.Up)))
+                {
+                    dPadUp = false;
+                }
+                if ((Keyboard.GetState().IsKeyUp(Keys.Down)))
+                {
+                    dPadDown = false;
+                }
+                if (Keyboard.GetState().IsKeyUp(Keys.Enter))
+                {
+                    aButton = false;
+                }
+#endif
+
+            }
+            #endregion
+
             #region Main Game
             else if (gameState == 1)
             {
@@ -343,7 +385,7 @@ namespace TowerCraft3D
                 {
                     gameState = 2;
                 }
-                
+
             }
             #endregion
 
@@ -378,10 +420,19 @@ namespace TowerCraft3D
                     if (pauseState == 1)
                     {
                         gameState = 0;
+                        wavesLevel.Clear();
+                        towers.Clear();
+                        projectiles.Clear();
+                        monsters.Clear();
+                        resourcemanager = new ResourceManager();
+                        gatherzone = new GatherZone(resourcemanager);
+                        chosenTile = new TileCoord(0, 0);
+                        started = false;
+                        base.Initialize();
                     }
 
                 }
-  
+
 #if XBOX360
                 if (gamePadState.Buttons.A == ButtonState.Released)
                 {
@@ -412,13 +463,14 @@ namespace TowerCraft3D
 #endif
             }
 #endregion
+
             #endregion
 
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            //GAMESTATE 1 = playing
+            #region GAMESTATE 1 = playing
             if (gameState == 1)
             {
                 if (gamePadState.Buttons.Start == ButtonState.Pressed)
@@ -466,6 +518,15 @@ namespace TowerCraft3D
                             spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                         }
                     }
+                }
+                else
+                {
+                    gameState = 3;
+                }
+
+                if (LIFE <= 0)
+                {
+                    gameState = 4;
                 }
                 #endregion
 
@@ -714,6 +775,7 @@ namespace TowerCraft3D
                 gatherzone.update();
                 #endregion
             }
+            #endregion
 
         }
         protected override void Draw(GameTime gameTime)
@@ -799,6 +861,12 @@ namespace TowerCraft3D
                 }
 
                 gatherzone.draw(cameraMain);
+            }
+            else if (gameState == 3)
+            {
+            }
+            else if (gameState == 4)
+            {
             }
 
 

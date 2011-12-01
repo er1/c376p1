@@ -14,7 +14,7 @@ namespace TowerCraft
 {
     public class ResourceManager
     {
-        public int resourceA = 40;
+        public int resourceA = 1000;
         public int resourceB = 0;
         public int resourceC = 0;
         public int resourceD = 0;

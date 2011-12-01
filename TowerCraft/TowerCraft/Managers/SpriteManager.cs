@@ -148,6 +148,24 @@ namespace TowerCraft3D
             }
             #endregion
 
+            #region Draw Win
+            if (((Game1)Game).gameState == 3)
+            {
+                batch.Draw(menu, new Vector2(0, 0), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0);
+                batch.DrawString(font, "You Win!", new Vector2(worldWidth / 2 * .91f, worldHeight / 2 * 1.10f), Color.White);
+                batch.DrawString(font, "Press A to continue!", new Vector2(worldWidth / 2 * .91f, worldHeight / 2 * 1.20f), Color.White);
+            }
+            #endregion
+
+            #region Draw Lose
+            if (((Game1)Game).gameState == 4)
+            {
+                batch.Draw(menu, new Vector2(0, 0), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0);
+                batch.DrawString(font, "You Lose!", new Vector2(worldWidth / 2 * .91f, worldHeight / 2 * 1.10f), Color.White);
+                batch.DrawString(font, "Press A to continue!", new Vector2(worldWidth / 2 * .91f, worldHeight / 2 * 1.20f), Color.White);
+            }
+            #endregion
+
             #region DrawMain Game
             if (((Game1)Game).gameState == 1)
             {
