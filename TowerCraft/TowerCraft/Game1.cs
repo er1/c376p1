@@ -151,88 +151,91 @@ namespace TowerCraft3D
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-                #region world stuff
-                worldBox = new world();
-                boxTexture = Content.Load<Texture2D>(@"Textures\\background\\back512");
+            #region world stuff
+            worldBox = new world();
+            boxTexture = Content.Load<Texture2D>(@"Textures\\background\\back512");
                 
-                worldBox.setCubeVertices(worldSize);
-                // Set vertex data in VertexBuffer
-                vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionTexture), worldBox.getCubeVertices().Length, BufferUsage.None);
-                vertexBuffer.SetData(worldBox.getCubeVertices());
-                // Initialize the BasicEffect
-                effect = new BasicEffect(GraphicsDevice);
-                #endregion
+            worldBox.setCubeVertices(worldSize);
+            // Set vertex data in VertexBuffer
+            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionTexture), worldBox.getCubeVertices().Length, BufferUsage.None);
+            vertexBuffer.SetData(worldBox.getCubeVertices());
+            // Initialize the BasicEffect
+            effect = new BasicEffect(GraphicsDevice);
+            #endregion
 
-                #region Load Models
-                boundingBox = Content.Load<Model>(@"Models\\BoundingBox");
-                MinecraftLikeModel = Content.Load<Model>(@"Models\\Char\\Char");
-                Monster1 = Content.Load<Model>(@"Models\\Monster1");
-                Monster2 = Content.Load<Model>(@"Models\\Monster2");
-                Monster3 = Content.Load<Model>(@"Models\\Monster3");
-                Monster4 = Content.Load<Model>(@"Models\\Monster4");
-                tile = Content.Load<Model>(@"Models\\Map\\Tile");
-                colony = Content.Load<Model>(@"Models\\Map\\Colony");
-                bullet = Content.Load<Model>(@"Models\\Bullet\\Bullet");
-                egg = Content.Load<Model>(@"Models\\Bullet\\Egg");
-                missile = Content.Load<Model>(@"Models\\Bullet\\Missile");
-                explosion = Content.Load<Model>(@"Models\\Bullet\\Explosion");
-                gunTower = Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
-                cannonTower = Content.Load<Model>(@"Models\\Towers\\CannonTower\\CannonTower");
-                missileTower = Content.Load<Model>(@"Models\\Towers\\MissileTower\\MissileTower");
-                electricTower = Content.Load<Model>(@"Models\\Towers\\Electric\\ElectricTower");
-                fireTower = Content.Load<Model>(@"Models\\Towers\\FireTower\\FireTower");
-                chickenTower = Content.Load<Model>(@"Models\\Towers\\ChickenTower\\ChickenTower");
+            #region Load Models
+            boundingBox = Content.Load<Model>(@"Models\\BoundingBox");
+            MinecraftLikeModel = Content.Load<Model>(@"Models\\Char\\Char");
+            Monster1 = Content.Load<Model>(@"Models\\Monster1");
+            Monster2 = Content.Load<Model>(@"Models\\Monster2");
+            Monster3 = Content.Load<Model>(@"Models\\Monster3");
+            Monster4 = Content.Load<Model>(@"Models\\Monster4");
+            tile = Content.Load<Model>(@"Models\\Map\\Tile");
+            colony = Content.Load<Model>(@"Models\\Map\\Colony");
+            bullet = Content.Load<Model>(@"Models\\Bullet\\Bullet");
+            egg = Content.Load<Model>(@"Models\\Bullet\\Egg");
+            missile = Content.Load<Model>(@"Models\\Bullet\\Missile");
+            explosion = Content.Load<Model>(@"Models\\Bullet\\Explosion");
+            gunTower = Content.Load<Model>(@"Models\\Towers\\GunTower\\GunTower");
+            cannonTower = Content.Load<Model>(@"Models\\Towers\\CannonTower\\CannonTower");
+            missileTower = Content.Load<Model>(@"Models\\Towers\\MissileTower\\MissileTower");
+            electricTower = Content.Load<Model>(@"Models\\Towers\\Electric\\ElectricTower");
+            fireTower = Content.Load<Model>(@"Models\\Towers\\FireTower\\FireTower");
+            chickenTower = Content.Load<Model>(@"Models\\Towers\\ChickenTower\\ChickenTower");
 
+            Mineral.model = Content.Load<Model>(@"Models\\Mineral");
+            Gatherer.model = Content.Load<Model>(@"Models\\Workers");
 
-                #endregion
-
-                #region Load Game Map
-
-                mainBase = new Colony(ref colony, new Vector3(-10, -30, -12));
-
-                //Draw Map
-                for (int i = 0; i < 20; i++)
-                {
-                    for (int j = -4; j < 4; j++)
-                    {
-                        tiles.Add(new monster(ref tile, new Vector3(i * -20, 0, j * 20), new Vector3(0, 0, 0)), true);
-                    }
-                }
-                SelectionTile = new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0));
-                #endregion
-
-                #region Load incoming waves
-                //LOAD WAVE information for Level1
-                //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-                wavesLevel.Add(0, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(1, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(2, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(3, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(4, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(5, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(6, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(7, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(8, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-                wavesLevel.Add(9, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-                wavesLevel.Add(10, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-                wavesLevel.Add(11, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-                wavesLevel.Add(12, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-                wavesLevel.Add(13, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-                wavesLevel.Add(14, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-
-                #endregion
-
-                #region Load particle effect stuff
-                // Load explosion textures and effect
-                explosionTexture = Content.Load<Texture2D>(@"Effect\\Particle");
-                explosionColorsTexture = Content.Load<Texture2D>(@"Effect\\ParticleColors");
-                explosionEffect = Content.Load<Effect>(@"Effect\\particlefx");
-
-                // Set effect parameters that don't change per particle
-                explosionEffect.CurrentTechnique = explosionEffect.Techniques["Technique1"];
-                explosionEffect.Parameters["theTexture"].SetValue(explosionTexture);
 
             #endregion
+
+            #region Load Game Map
+
+            mainBase = new Colony(ref colony, new Vector3(-10, -30, -12));
+
+            //Draw Map
+            for (int i = 0; i < 20; i++)
+            {
+                for (int j = -4; j < 4; j++)
+                {
+                    tiles.Add(new monster(ref tile, new Vector3(i * -20, 0, j * 20), new Vector3(0, 0, 0)), true);
+                }
+            }
+            SelectionTile = new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0));
+            #endregion
+
+            #region Load incoming waves
+            //LOAD WAVE information for Level1
+            //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
+            wavesLevel.Add(0, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(1, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(2, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(3, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(4, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(5, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(6, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(7, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(8, new waveManager(3, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(9, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(10, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(11, new waveManager(4, 50, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(12, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(13, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(14, new waveManager(5, 60, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+
+            #endregion
+
+            #region Load particle effect stuff
+            // Load explosion textures and effect
+            explosionTexture = Content.Load<Texture2D>(@"Effect\\Particle");
+            explosionColorsTexture = Content.Load<Texture2D>(@"Effect\\ParticleColors");
+            explosionEffect = Content.Load<Effect>(@"Effect\\particlefx");
+
+            // Set effect parameters that don't change per particle
+            explosionEffect.CurrentTechnique = explosionEffect.Techniques["Technique1"];
+            explosionEffect.Parameters["theTexture"].SetValue(explosionTexture);
+
+        #endregion
         }      
         protected override void UnloadContent()
         {
@@ -345,7 +348,6 @@ namespace TowerCraft3D
                     }
                 }
                 #endregion
-
 
                 #region Update Drawing the Map
                 //update Map
@@ -534,7 +536,7 @@ namespace TowerCraft3D
                     SpaceBar = true;
                     
                     tower towerToAdd;
-                    if ((curResource == 0) && (resourceA >= 5))
+                    if ((curResource == 0) && (resourcemanager.resourceA >= 5))
                     {
                         resourceA -= 5;
                         towerToAdd = new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
@@ -581,8 +583,8 @@ namespace TowerCraft3D
 
                 #endregion
 
-                #region Update Ressource Manager
-                //gatherzone.update();
+                #region Update Resource Manager
+                gatherzone.update();
                 #endregion
             }
 
@@ -602,8 +604,6 @@ namespace TowerCraft3D
             }
             else if (gameState == 1)
             {
-
-
                 GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
                 #region Draw Game Map
@@ -670,7 +670,10 @@ namespace TowerCraft3D
                 {
                     temp.Key.Draw(cameraMain);
                 }
+
+                gatherzone.draw(cameraMain);
             }
+
 
             base.Draw(gameTime);
         }
