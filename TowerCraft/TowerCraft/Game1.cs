@@ -299,7 +299,6 @@ namespace TowerCraft3D
             if (gameState == 1)
             {
                 
-
                 #region Update Level
                 //Level 1
                 if (currentWave < wavesLevel.Count)
@@ -345,7 +344,6 @@ namespace TowerCraft3D
                     }
                 }
                 #endregion
-
 
                 #region Update Drawing the Map
                 //update Map

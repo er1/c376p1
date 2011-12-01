@@ -52,7 +52,7 @@ namespace TowerCraft3D
             cameraUp = up;
             CreateLootAt();
             viewport = NewViewport;
-            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)viewport.Width / (float)viewport.Height, 1, 800);
+            projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)viewport.Width / (float)viewport.Height, 1, 1500);
             timer = TimeSpan.FromSeconds(0.3);
             moveable = true;
             
