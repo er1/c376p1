@@ -104,6 +104,34 @@ namespace TowerCraft3D
             if (((Game1)Game).gameState == 0)
             {
                 batch.Draw(menu, new Vector2(0, 0), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0);
+                //Start
+                if (((Game1)Game).menuState == 0)
+                {
+                    batch.DrawString(font,"START" , new Vector2(worldWidth / 2 *.95f, worldHeight / 2), Color.Red);
+                }
+                else
+                {
+                    batch.DrawString(font, "START", new Vector2(worldWidth / 2*.95f, worldHeight / 2), Color.White);
+                }
+                //Credits
+                if (((Game1)Game).menuState == 1)
+                {
+                    batch.DrawString(font, "CREDITS", new Vector2(worldWidth / 2*.90f, worldHeight / 2 * 1.10f), Color.Red);
+                }
+                else
+                {
+                    batch.DrawString(font,"CREDITS"  , new Vector2(worldWidth / 2*.90f, worldHeight / 2 * 1.10f), Color.White);
+                }
+                //Exit
+                if (((Game1)Game).menuState == 2)
+                {
+                    batch.DrawString(font, "EXIT", new Vector2(worldWidth / 2 * .95f, worldHeight / 2 * 1.20f), Color.Red);
+                }
+                else
+                {
+                    batch.DrawString(font, "EXIT", new Vector2(worldWidth / 2 * .95f, worldHeight / 2 * 1.20f), Color.White);
+                }
+                
             }
 
             if (((Game1)Game).gameState == 1)

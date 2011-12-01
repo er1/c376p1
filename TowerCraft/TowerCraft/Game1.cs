@@ -32,7 +32,7 @@ namespace TowerCraft3D
 
         bool started = false;
         public int gameState = 0;
-
+        public int menuState = 0;
         Map map;
         TileCoord chosenTile;
         Colony mainBase; 
