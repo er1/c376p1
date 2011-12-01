@@ -43,9 +43,6 @@ namespace TowerCraft3D
         int currentDay;
         TimeSpan timer;
 
-        int numOfFrames = 0;
-        double FPS = 0;
-        float _elapsed_time;
         
         public SpriteManager(Game game)
             : base(game)
@@ -59,21 +56,21 @@ namespace TowerCraft3D
             worldHeight = ((Game1)Game).worldHeight;
                 worldWidth = ((Game1)Game).worldWidth;
             batch = new SpriteBatch(Game.GraphicsDevice);
-            ((Game1)Game).Components.Add(new FrameRateCounter(Game, new Vector2(100, 100), Color.White, Color.White));
+            ((Game1)Game).Components.Add(new FrameRateCounter(Game, new Vector2(100, 100f), Color.Green, Color.Green));
             base.Initialize();
         }
         protected override void LoadContent()
         {
 
-                life100 = Game.Content.Load<Texture2D>(@"Textures\\life\life100");
-                life75 = Game.Content.Load<Texture2D>(@"Textures\\life\life75");
-                life50 = Game.Content.Load<Texture2D>(@"Textures\\life\life50");
-                life25 = Game.Content.Load<Texture2D>(@"Textures\\life\life25");
-                HUDL = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft1");
-                HUDM1 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft2");
-                HUDM2 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft3");
-                HUDR = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft4");
-                font = Game.Content.Load<SpriteFont>(@"Font\\GameFont");
+            life100 = Game.Content.Load<Texture2D>(@"Textures\\life\life100");
+            life75 = Game.Content.Load<Texture2D>(@"Textures\\life\life75");
+            life50 = Game.Content.Load<Texture2D>(@"Textures\\life\life50");
+            life25 = Game.Content.Load<Texture2D>(@"Textures\\life\life25");
+            HUDL = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft1");
+            HUDM1 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft2");
+            HUDM2 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft3");
+            HUDR = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft4");
+            font = Game.Content.Load<SpriteFont>(@"Font\\GameFont");
 
             menu = Game.Content.Load<Texture2D>(@"Textures\\background\\MenuScreen");
             base.LoadContent();
@@ -82,17 +79,7 @@ namespace TowerCraft3D
 
         public override void Update(GameTime gameTime)
         {
-             // Update
-            _elapsed_time += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
- 
-            // 1 Second has passed
-            if (_elapsed_time >= 1000.0f)
-            {
-                FPS = numOfFrames;
-                numOfFrames = 0;
-                _elapsed_time = 0;
-            }
-            //base.Update(gameTime);
+             
         }
 
         public override void Draw(GameTime gameTime)
@@ -100,27 +87,27 @@ namespace TowerCraft3D
             batch.Begin();
             base.Draw(gameTime);
 
-            numOfFrames++;
+            #region Draw Main Menu
             if (((Game1)Game).gameState == 0)
             {
                 batch.Draw(menu, new Vector2(0, 0), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0);
                 //Start
                 if (((Game1)Game).menuState == 0)
                 {
-                    batch.DrawString(font,"START" , new Vector2(worldWidth / 2 *.95f, worldHeight / 2), Color.Red);
+                    batch.DrawString(font,"START" , new Vector2(worldWidth / 2 *.93f, worldHeight / 2), Color.Red);
                 }
                 else
                 {
-                    batch.DrawString(font, "START", new Vector2(worldWidth / 2*.95f, worldHeight / 2), Color.White);
+                    batch.DrawString(font, "START", new Vector2(worldWidth / 2*.93f, worldHeight / 2), Color.White);
                 }
                 //Credits
                 if (((Game1)Game).menuState == 1)
                 {
-                    batch.DrawString(font, "CREDITS", new Vector2(worldWidth / 2*.90f, worldHeight / 2 * 1.10f), Color.Red);
+                    batch.DrawString(font, "CREDITS", new Vector2(worldWidth / 2*.91f, worldHeight / 2 * 1.10f), Color.Red);
                 }
                 else
                 {
-                    batch.DrawString(font,"CREDITS"  , new Vector2(worldWidth / 2*.90f, worldHeight / 2 * 1.10f), Color.White);
+                    batch.DrawString(font,"CREDITS"  , new Vector2(worldWidth / 2*.91f, worldHeight / 2 * 1.10f), Color.White);
                 }
                 //Exit
                 if (((Game1)Game).menuState == 2)
@@ -131,12 +118,40 @@ namespace TowerCraft3D
                 {
                     batch.DrawString(font, "EXIT", new Vector2(worldWidth / 2 * .95f, worldHeight / 2 * 1.20f), Color.White);
                 }
-                
-            }
 
+            }
+            #endregion
+
+            #region Draw Pause Menu
+            if (((Game1)Game).gameState == 2)
+            {
+                batch.Draw(menu, new Vector2(0, 0), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0);
+                //Continue
+                if (((Game1)Game).pauseState == 0)
+                {
+                    batch.DrawString(font, "CONTINUE", new Vector2(worldWidth / 2 * .85f, worldHeight / 2), Color.Red);
+                }
+                else
+                {
+                    batch.DrawString(font, "CONTINUE", new Vector2(worldWidth / 2 * .85f, worldHeight / 2), Color.White);
+                }
+                //End
+                if (((Game1)Game).pauseState == 1)
+                {
+                    batch.DrawString(font, "END", new Vector2(worldWidth / 2 * .91f, worldHeight / 2 * 1.10f), Color.Red);
+                }
+                else
+                {
+                    batch.DrawString(font, "END", new Vector2(worldWidth / 2 * .91f, worldHeight / 2 * 1.10f), Color.White);
+                }
+
+            }
+            #endregion
+
+            #region DrawMain Game
             if (((Game1)Game).gameState == 1)
             {
-                batch.DrawString(font, FPS.ToString(), new Vector2(50, 50), Color.White);
+             
 
                 batch.Draw(HUDL, new Vector2(0, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
                 batch.Draw(HUDM1, new Vector2(worldWidth / 4, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
@@ -159,6 +174,7 @@ namespace TowerCraft3D
                     monstersLife[i].Draw(batch);
                 }
             }
+            #endregion
             batch.End();
             
         }

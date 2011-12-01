@@ -36,6 +36,7 @@ namespace TowerCraft3D
         bool started = false;
         public int gameState = 0;
         public int menuState = 0;
+        public int pauseState = 0;
         Map map;
         TileCoord chosenTile;
         Colony mainBase; 
@@ -133,8 +134,8 @@ namespace TowerCraft3D
             #endregion
 
             chosenTile = cameraMain.getCurrentTC();
-            this.IsFixedTimeStep = true;
-            //this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 60);  
+            this.IsFixedTimeStep = false;
+            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 1);  
 
             // resource management
             resourcemanager = new ResourceManager();
@@ -241,8 +242,9 @@ namespace TowerCraft3D
         protected override void Update(GameTime gameTime)
         {
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-            #region Menu (GAMESTATES)
-            //menu
+            #region Menus (GAMESTATES)
+
+            #region Main Menu
             if (gameState == 0)
             {
                
@@ -296,18 +298,39 @@ namespace TowerCraft3D
                         this.Exit();
                     }
                 }
-
+                #if XBOX360
                 if (gamePadState.Buttons.A == ButtonState.Released)
                 {
                     aButton = false;
                 }
+                if (gamePadState.DPad.Up == ButtonState.Released)
+                {
+                    dPadUp = false;
+                }
+                if (gamePadState.DPad.Down == ButtonState.Released)
+                {
+                    dPadDown = false;
+                }
+                #endif
+                #if !XBOX360
                 if ((Keyboard.GetState().IsKeyUp(Keys.Up)))
                 {
                     dPadUp = false;
                 }
-
+                if ((Keyboard.GetState().IsKeyUp(Keys.Down)))
+                {
+                    dPadDown = false;
+                }
+                if (Keyboard.GetState().IsKeyUp(Keys.Enter))
+                {
+                    aButton = false;
+                }
+                #endif
             }
-                // game
+            #endregion
+            // game
+
+            #region Main Game
             else if (gameState == 1)
             {
                 base.Update(gameTime);
@@ -316,20 +339,79 @@ namespace TowerCraft3D
                 {
                     gameState = 2;
                 }
+                if (gamePadState.Buttons.Start == ButtonState.Pressed)
+                {
+                    gameState = 2;
+                }
+                
             }
-                //pause
+            #endregion
+
+            #region Pause Menu
+            //pause
             else if (gameState == 2)
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                if ((Keyboard.GetState().IsKeyDown(Keys.Up) || gamePadState.DPad.Up == ButtonState.Pressed) && !dPadUp)
                 {
-                    gameState = 0;
-                    started = false;
+                    dPadUp = true;
+                    pauseState--;
+                    if (pauseState < 0)
+                        pauseState = 1;
+
                 }
-                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                if ((Keyboard.GetState().IsKeyDown(Keys.Down) || gamePadState.DPad.Down == ButtonState.Pressed) && !dPadDown)
                 {
-                    gameState = 1;
+                    dPadDown = true;
+                    pauseState++;
+
+                    if (pauseState > 1)
+                        pauseState = 0;
+
                 }
+                if ((Keyboard.GetState().IsKeyDown(Keys.Enter) || gamePadState.Buttons.A == ButtonState.Pressed) && !aButton)
+                {
+                    aButton = true;
+                    if (pauseState == 0)
+                    {
+                        gameState = 1;
+                    }
+                    if (pauseState == 1)
+                    {
+                        gameState = 0;
+                    }
+
+                }
+  
+#if XBOX360
+                if (gamePadState.Buttons.A == ButtonState.Released)
+                {
+                    aButton = false;
+                }
+                if (gamePadState.DPad.Up == ButtonState.Released)
+                {
+                    dPadUp = false;
+                }
+                if (gamePadState.DPad.Down == ButtonState.Released)
+                {
+                    dPadDown = false;
+                }
+#endif
+#if !XBOX360
+                if ((Keyboard.GetState().IsKeyUp(Keys.Up)))
+                {
+                    dPadUp = false;
+                }
+                if ((Keyboard.GetState().IsKeyUp(Keys.Down)))
+                {
+                    dPadDown = false;
+                }
+                if (Keyboard.GetState().IsKeyUp(Keys.Enter))
+                {
+                    aButton = false;
+                }
+#endif
             }
+#endregion
             #endregion
 
             // Allows the game to exit
@@ -339,6 +421,8 @@ namespace TowerCraft3D
             //GAMESTATE 1 = playing
             if (gameState == 1)
             {
+                if (gamePadState.Buttons.Start == ButtonState.Pressed)
+                    gameState = 2;
                 #region Update Level
                 //Level 1
                 if (currentWave < wavesLevel.Count)
@@ -639,11 +723,11 @@ namespace TowerCraft3D
 
             if (gameState == 0)
             {
-                GraphicsDevice.Clear(Color.Black);
+                //GraphicsDevice.Clear(Color.Black);
             }
             else if (gameState == 2)
             {
-                GraphicsDevice.Clear(Color.Green);
+                //GraphicsDevice.Clear(Color.Green);
             }
             else if (gameState == 1)
             {

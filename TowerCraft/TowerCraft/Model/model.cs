@@ -169,7 +169,7 @@ namespace TowerCraft3D
             {
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    effect.EnableDefaultLighting();
+                    //effect.EnableDefaultLighting();
                     //effect.LightingEnabled = true;
                     //effect.DirectionalLight1.DiffuseColor = new Vector3(1f, 1f, 1f);
                     //effect.DirectionalLight1.Direction = new Vector3(0, 1, 0);
