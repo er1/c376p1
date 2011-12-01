@@ -42,8 +42,10 @@ namespace TowerCraft
                     targetMineral.life--;
 
                     if (targetMineral.life <= 0)
+                    {
                         gatherzone.manager.gather(targetMineral);
-                    targetMineral.remove();
+                        targetMineral.remove();
+                    }
                 }
                 else
                 {

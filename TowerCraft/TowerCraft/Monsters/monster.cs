@@ -14,7 +14,7 @@ namespace TowerCraft3D
         protected Vector3 direction { get; set; }
         protected Vector3 initialDirection { get; set; }
         static Random random = new Random(); 
-        protected float move = 0.5f;
+        protected float move = 0.25f;
         public bool hitColony;
         public int life;
         public bool isDead {get; protected set;}
@@ -24,7 +24,7 @@ namespace TowerCraft3D
         public monster(ref Model temp, Vector3 location, Vector3 newDirection)
             : base(ref temp)
         {
-            world = Matrix.CreateTranslation(location);
+            world = Matrix.CreateRotationY((float)Math.PI/2) * Matrix.CreateTranslation(location);
             direction = newDirection*move;
             initialDirection = newDirection;
             hitColony = false;

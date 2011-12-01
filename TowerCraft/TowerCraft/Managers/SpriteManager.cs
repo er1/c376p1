@@ -119,10 +119,10 @@ namespace TowerCraft3D
                 batch.DrawString(font, "Time " + timer.Minutes.ToString() + " m " + timer.Seconds.ToString() + " s", new Vector2(worldWidth / 4 * 1.75f,
                     worldHeight / 3 * 2.60f), Color.Green);
                 batch.DrawString(font, "Tower selected " + currentResource, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.80f), Color.Green);
-                batch.DrawString(font, "Metal: " + ((Game1)Game).resourceA, new Vector2(worldWidth / 4 * 3.20f, worldHeight / 3 * 2.20f), Color.Green);
-                batch.DrawString(font, "Gunpowder: " + ((Game1)Game).resourceB, new Vector2(worldWidth / 4 * 3.20f, worldHeight / 3 * 2.40f), Color.Green);
-                batch.DrawString(font, "Fuel: " + ((Game1)Game).resourceC, new Vector2(worldWidth / 4 * 3.20f, worldHeight / 3 * 2.60f), Color.Green);
-                batch.DrawString(font, "Crystals: " + ((Game1)Game).resourceD, new Vector2(worldWidth / 4 * 3.20f, worldHeight / 3 * 2.80f), Color.Green);
+                batch.DrawString(font, "Metal: " + ((Game1)Game).resourcemanager.resourceA, new Vector2(worldWidth / 4 * 3.20f, worldHeight / 3 * 2.20f), Color.Green);
+                batch.DrawString(font, "Gunpowder: " + ((Game1)Game).resourcemanager.resourceB, new Vector2(worldWidth / 4 * 3.20f, worldHeight / 3 * 2.40f), Color.Green);
+                batch.DrawString(font, "Fuel: " + ((Game1)Game).resourcemanager.resourceC, new Vector2(worldWidth / 4 * 3.20f, worldHeight / 3 * 2.60f), Color.Green);
+                batch.DrawString(font, "Crystals: " + ((Game1)Game).resourcemanager.resourceD, new Vector2(worldWidth / 4 * 3.20f, worldHeight / 3 * 2.80f), Color.Green);
 
 
 

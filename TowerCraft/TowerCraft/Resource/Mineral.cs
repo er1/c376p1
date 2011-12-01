@@ -19,7 +19,7 @@ namespace TowerCraft
         GatherZone gatherzone;
 
 	    public Vector3 position;
-	    public double life = 10;
+	    public double life = 200;
         public Gatherer myGatherer = null;
 
         public Mineral(GatherZone _gatherzone, Vector3 _position) {

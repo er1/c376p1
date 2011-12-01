@@ -30,12 +30,6 @@ namespace TowerCraft3D
         public int worldSize{get;protected set;}
         public int LIFE {get;set;}
 
-        //resource counters
-        public int resourceA = 40;
-        public int resourceB = 0;
-        public int resourceC = 0;
-        public int resourceD = 0;
-
         bool started = false;
         public int gameState = 0;
 
@@ -301,7 +295,6 @@ namespace TowerCraft3D
             //GAMESTATE 1 = playing
             if (gameState == 1)
             {
-                
                 #region Update Level
                 //Level 1
                 if (currentWave < wavesLevel.Count)
@@ -377,7 +370,6 @@ namespace TowerCraft3D
                         SpaceBar = true;
                     }
                 }
-
 
                 #region Update Monster, Tower, bullets + a little logic
 
@@ -537,37 +529,45 @@ namespace TowerCraft3D
                     tower towerToAdd;
                     if ((curResource == 0) && (resourcemanager.resourceA >= 5))
                     {
-                        resourceA -= 5;
+                        resourcemanager.resourceA -= 5;
                         towerToAdd = new GunTower(ref gunTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 1) && (resourceA >= 3) && (resourceB >= 2))
+                    else if ((curResource == 1) && (resourcemanager.resourceA >= 3) && (resourcemanager.resourceB >= 2))
                     {
+                        resourcemanager.resourceA -= 3;
+                        resourcemanager.resourceB -= 2;
                         towerToAdd = new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 2) && (resourceB >= 3) && (resourceC >= 2))
+                    else if ((curResource == 2) && (resourcemanager.resourceB >= 3) && (resourcemanager.resourceC >= 2))
                     {
+                        resourcemanager.resourceB -= 3;
+                        resourcemanager.resourceC -= 2;
                         towerToAdd = new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 3) && (resourceC >= 3) && (resourceD >= 2))
+                    else if ((curResource == 3) && (resourcemanager.resourceC >= 3) && (resourcemanager.resourceD >= 2))
                     {
+                        resourcemanager.resourceC -= 3;
+                        resourcemanager.resourceD -= 2;
                         towerToAdd = new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 4) && (resourceD >= 5))
+                    else if ((curResource == 4) && (resourcemanager.resourceC >= 5))
                     {
+                        resourcemanager.resourceC -= 5;
                         towerToAdd = new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 5) && (resourceD >= 5))
+                    else if ((curResource == 5) && (resourcemanager.resourceD >= 5))
                     {
+                        resourcemanager.resourceD -= 5;
                         towerToAdd = new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);

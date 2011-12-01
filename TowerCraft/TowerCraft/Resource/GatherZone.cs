@@ -37,18 +37,18 @@ namespace TowerCraft
             mineralsDeleteQueue = new List<Mineral>();
 
             
-
+            //minerals
             for (int i = 0; i < 400; ++i)
             {
                 Vector3 p = new Vector3(250, 8, 0);
-                p += new Vector3((float)rand.NextDouble(), 0.5f, (float)rand.NextDouble()) * 160f - Vector3.One * 80f;
+                p += new Vector3((float)rand.NextDouble(), 0.5f, (float)rand.NextDouble()) * 200f - Vector3.One * 80f;
 
                 Mineral m = new Mineral(this, p);
 
                 add(m);
             }
-
-            for (int i = 0; i < 20; ++i)
+            //gatherers
+            for (int i = 0; i < 10; ++i)
             {
                 Gatherer g = new Gatherer(this, new Vector3(100, 8, -64 + 2 * i));
 
