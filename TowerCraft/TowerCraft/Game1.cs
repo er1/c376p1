@@ -31,10 +31,10 @@ namespace TowerCraft3D
         public int LIFE {get;set;}
 
         //resource counters
-        int resourceA = 40;
-        int resourceB = 0;
-        int resourceC = 0;
-        int resourceD = 0;
+        public int resourceA = 40;
+        public int resourceB = 0;
+        public int resourceC = 0;
+        public int resourceD = 0;
 
         bool started = false;
         public int gameState = 0;
