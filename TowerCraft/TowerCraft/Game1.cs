@@ -30,6 +30,9 @@ namespace TowerCraft3D
         public int worldSize{get;protected set;}
         public int LIFE {get;set;}
 
+        bool aButton = false;
+        bool dPadUp = false;
+        bool dPadDown = false;
         bool started = false;
         public int gameState = 0;
         public int menuState = 0;
@@ -242,6 +245,7 @@ namespace TowerCraft3D
             //menu
             if (gameState == 0)
             {
+               
                 if (!started)
                 {
                     Components.Remove(cameraMain);
@@ -254,14 +258,54 @@ namespace TowerCraft3D
                     Components.Add(spriteManager);
                     started = true;
                 }
-                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                if((Keyboard.GetState().IsKeyDown(Keys.Up)||gamePadState.DPad.Up== ButtonState.Pressed) && !dPadUp)
                 {
-                    gameState = 1;
+                    dPadUp = true;
+                    menuState--;
+                    if (menuState < 0)
+                        menuState = 2;
+                    
                 }
-                if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                if ((Keyboard.GetState().IsKeyDown(Keys.Down)||gamePadState.DPad.Down == ButtonState.Pressed) && !dPadDown)
                 {
-                    this.Exit();
+                    dPadDown = true;
+                    menuState++;
+                    
+                    if (menuState > 2)
+                        menuState = 0;
+                    
                 }
+                if ((Keyboard.GetState().IsKeyDown(Keys.Enter) || gamePadState.Buttons.A == ButtonState.Pressed) && !aButton)
+                {
+                    aButton = true;
+                    if (menuState == 0)
+                    {
+                        gameState = 1;
+                    }
+                    if (menuState == 2)
+                    {
+                        this.Exit();
+                    }
+               
+                }
+                if ((Keyboard.GetState().IsKeyDown(Keys.Escape)|| gamePadState.Buttons.A == ButtonState.Pressed) && !aButton )
+                {
+                    aButton = true;
+                    if (menuState == 2)
+                    {
+                        this.Exit();
+                    }
+                }
+
+                if (gamePadState.Buttons.A == ButtonState.Released)
+                {
+                    aButton = false;
+                }
+                if ((Keyboard.GetState().IsKeyUp(Keys.Up)))
+                {
+                    dPadUp = false;
+                }
+
             }
                 // game
             else if (gameState == 1)
@@ -595,7 +639,7 @@ namespace TowerCraft3D
 
             if (gameState == 0)
             {
-                //GraphicsDevice.Clear(Color.Black);
+                GraphicsDevice.Clear(Color.Black);
             }
             else if (gameState == 2)
             {
