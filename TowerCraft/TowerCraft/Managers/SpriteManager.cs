@@ -31,7 +31,9 @@ namespace TowerCraft3D
         Texture2D HUDM1;
         Texture2D HUDM2;
         Texture2D HUDR;
-        
+
+        Texture2D menu;
+
         public SpriteFont font;
 
         int currentResource;
@@ -62,15 +64,18 @@ namespace TowerCraft3D
         }
         protected override void LoadContent()
         {
-            life100 = Game.Content.Load<Texture2D>(@"Textures\\life\life100");
-            life75 = Game.Content.Load<Texture2D>(@"Textures\\life\life75");
-            life50 = Game.Content.Load<Texture2D>(@"Textures\\life\life50");
-            life25 = Game.Content.Load<Texture2D>(@"Textures\\life\life25");
-            HUDL = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft1");
-            HUDM1 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft2");
-            HUDM2 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft3");
-            HUDR = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft4");
-            font = Game.Content.Load<SpriteFont>(@"Font\\GameFont");
+
+                life100 = Game.Content.Load<Texture2D>(@"Textures\\life\life100");
+                life75 = Game.Content.Load<Texture2D>(@"Textures\\life\life75");
+                life50 = Game.Content.Load<Texture2D>(@"Textures\\life\life50");
+                life25 = Game.Content.Load<Texture2D>(@"Textures\\life\life25");
+                HUDL = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft1");
+                HUDM1 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft2");
+                HUDM2 = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft3");
+                HUDR = Game.Content.Load<Texture2D>(@"Textures\\SCHUD\\Starcraft4");
+                font = Game.Content.Load<SpriteFont>(@"Font\\GameFont");
+
+            menu = Game.Content.Load<Texture2D>(@"Textures\\background\\MenuScreen");
             base.LoadContent();
         }
 
@@ -96,23 +101,32 @@ namespace TowerCraft3D
             base.Draw(gameTime);
 
             numOfFrames++;
-            batch.DrawString(font, FPS.ToString(), new Vector2(50, 50), Color.White);
-
-            batch.Draw(HUDL, new Vector2(0, worldHeight/3*(1.40f)), null, Color.White, 0f, new Vector2(0,0), 0.75f, SpriteEffects.None, 0);
-            batch.Draw(HUDM1, new Vector2(worldWidth / 4, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
-            batch.Draw(HUDM2, new Vector2(worldWidth/4*2f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
-            batch.Draw(HUDR, new Vector2(worldWidth / 4 * 3f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
-            batch.DrawString(font, "Day " + currentDay, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.40f), Color.Green);
-            batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(worldWidth/4*1.75f, worldHeight / 3 *2.50f), Color.Green);
-            batch.DrawString(font, "Time " + timer.Minutes.ToString() +" m "+timer.Seconds.ToString() + " s", new Vector2(worldWidth / 4 * 1.75f, 
-                worldHeight / 3 * 2.60f), Color.Green);
-            batch.DrawString(font, "Resoure selected " + currentResource, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.80f), Color.Green);
-            
-            for (int i = 0; i < monstersLife.Count; i++)
+            if (((Game1)Game).gameState == 0)
             {
-                monstersLife[i].Draw(batch);
+                batch.Draw(menu, new Vector2(0, 0), null, Color.White, 0f, new Vector2(0, 0), 1, SpriteEffects.None, 0);
             }
 
+            if (((Game1)Game).gameState == 1)
+            {
+                batch.DrawString(font, FPS.ToString(), new Vector2(50, 50), Color.White);
+
+                batch.Draw(HUDL, new Vector2(0, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+                batch.Draw(HUDM1, new Vector2(worldWidth / 4, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+                batch.Draw(HUDM2, new Vector2(worldWidth / 4 * 2f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+                batch.Draw(HUDR, new Vector2(worldWidth / 4 * 3f, worldHeight / 3 * (1.40f)), null, Color.White, 0f, new Vector2(0, 0), 0.75f, SpriteEffects.None, 0);
+                batch.DrawString(font, "Day " + currentDay, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.40f), Color.Green);
+                batch.DrawString(font, "Life: " + ((Game1)Game).LIFE, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.50f), Color.Green);
+                batch.DrawString(font, "Time " + timer.Minutes.ToString() + " m " + timer.Seconds.ToString() + " s", new Vector2(worldWidth / 4 * 1.75f,
+                    worldHeight / 3 * 2.60f), Color.Green);
+                batch.DrawString(font, "Resoure selected " + currentResource, new Vector2(worldWidth / 4 * 1.75f, worldHeight / 3 * 2.80f), Color.Green);
+
+
+
+                for (int i = 0; i < monstersLife.Count; i++)
+                {
+                    monstersLife[i].Draw(batch);
+                }
+            }
             batch.End();
             
         }
