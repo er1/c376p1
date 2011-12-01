@@ -63,7 +63,7 @@ namespace TowerCraft3D
         }
         protected override void LoadContent()
         {
-
+            #region load 2d textures and font
             life100 = Game.Content.Load<Texture2D>(@"Textures\\life\life100");
             life75 = Game.Content.Load<Texture2D>(@"Textures\\life\life75");
             life50 = Game.Content.Load<Texture2D>(@"Textures\\life\life50");
@@ -75,6 +75,7 @@ namespace TowerCraft3D
             font = Game.Content.Load<SpriteFont>(@"Font\\GameFont");
 
             menu = Game.Content.Load<Texture2D>(@"Textures\\background\\MenuScreen");
+            #endregion
             base.LoadContent();
         }
 

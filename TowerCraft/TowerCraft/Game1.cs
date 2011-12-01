@@ -15,6 +15,7 @@ namespace TowerCraft3D
     
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        #region Game1 Variables
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -29,17 +30,21 @@ namespace TowerCraft3D
         public int worldHeight;
         public int worldSize{get;protected set;}
         public int LIFE {get;set;}
+        #endregion
 
+        #region Key input release bools
         bool aButton = false;
         bool dPadUp = false;
         bool dPadDown = false;
         bool started = false;
+        #endregion
+
+        #region States variables
         public int gameState = 0;
         public int menuState = 0;
         public int pauseState = 0;
-        Map map;
-        TileCoord chosenTile;
-        Colony mainBase; 
+        #endregion
+
 
         #region Model Declaration
         Model boundingBox;
@@ -54,7 +59,7 @@ namespace TowerCraft3D
         Model gunTower, cannonTower, missileTower, fireTower, electricTower, chickenTower;
         #endregion
 
-        #region Cube World Variables
+        #region  World Variables
         BasicEffect effect;
         protected VertexBuffer vertexBuffer;
         Matrix world = Matrix.Identity;
@@ -62,6 +67,10 @@ namespace TowerCraft3D
         Matrix worldRotation = Matrix.Identity;
         world worldBox;
         Texture2D boxTexture;
+
+        Map map;
+        TileCoord chosenTile;
+        Colony mainBase; 
         #endregion
 
         #region List of entities
@@ -98,6 +107,15 @@ namespace TowerCraft3D
 
         #endregion
 
+        #region
+        Song menuMusic;
+
+        Song gameMusic;
+
+        bool menuMusik = false;
+        bool gameMusik = false;
+        #endregion
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -109,6 +127,8 @@ namespace TowerCraft3D
         }
         protected override void Initialize()
         {
+
+
             LIFE = 1000;
             
             worldHeight = graphics.PreferredBackBufferHeight;
@@ -233,7 +253,14 @@ namespace TowerCraft3D
             explosionEffect.CurrentTechnique = explosionEffect.Techniques["Technique1"];
             explosionEffect.Parameters["theTexture"].SetValue(explosionTexture);
 
-        #endregion
+            #endregion
+            MediaPlayer.IsRepeating = true;
+            #region Load music
+            menuMusic = Content.Load<Song>(@"Music\\Lament");
+            gameMusic = Content.Load<Song>(@"Music\\Science_is_Fun");
+
+
+            #endregion
         }      
         protected override void UnloadContent()
         {
@@ -241,12 +268,23 @@ namespace TowerCraft3D
         }     
         protected override void Update(GameTime gameTime)
         {
+            
+            // Allows the game to exit
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                this.Exit();
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
             #region Menus (GAMESTATES)
 
             #region Main Menu
             if (gameState == 0)
             {
+                if (!menuMusik)
+                {
+                    MediaPlayer.Stop();
+                    gameMusik = false;
+                    MediaPlayer.Play(menuMusic);
+                    menuMusik = true;
+                }
                
                 if (!started)
                 {
@@ -376,6 +414,14 @@ namespace TowerCraft3D
             #region Main Game
             else if (gameState == 1)
             {
+                
+                if (!gameMusik)
+                {
+                    MediaPlayer.Stop();
+                    menuMusik = false;
+                    MediaPlayer.Play(gameMusic);
+                    gameMusik = true;
+                }
                 base.Update(gameTime);
 
                 if (Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -466,10 +512,6 @@ namespace TowerCraft3D
 #endregion
 
             #endregion
-
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
 
             #region GAMESTATE 1 = playing
             if (gameState == 1)
