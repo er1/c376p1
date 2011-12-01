@@ -25,7 +25,7 @@ namespace TowerCraft3D
 
 
         public projectile(ref Model temp, ref Model colModel, Vector3 location, Vector3 newDirection)
-            : base(temp)
+            : base(ref temp)
         {
             angle = 0;
             collisionModel = colModel;
@@ -56,7 +56,7 @@ namespace TowerCraft3D
             return new Vector3((float)world.M41, (float)world.M42, (float)world.M43);
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             //World wrapping
             //X coordinates

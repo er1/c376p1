@@ -104,7 +104,7 @@ namespace TowerCraft3D
         }
         protected override void Initialize()
         {
-           
+            
             LIFE = 1000;
             
             worldHeight = graphics.PreferredBackBufferHeight;
@@ -122,16 +122,16 @@ namespace TowerCraft3D
 
             #region init Game components
             Components.Remove(cameraMain);
-            //Components.Remove(spriteManager);
+            Components.Remove(spriteManager);
             cameraMain = new Camera(this, new Vector3(0, 200, 199), new Vector3(0,-5,1), Vector3.Up, MainScreen, true,worldSize);
-            //spriteManager = new SpriteManager(this);
+            spriteManager = new SpriteManager(this);
             Components.Add(cameraMain);
-            //Components.Add(spriteManager);
+            Components.Add(spriteManager);
             #endregion
 
             chosenTile = cameraMain.getCurrentTC();
-            this.IsFixedTimeStep = false;
-            this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 50);  
+            this.IsFixedTimeStep = true;
+            //this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 60);  
 
             base.Initialize();
 
@@ -192,9 +192,9 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(0, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.5)));
-            wavesLevel.Add(1, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.5)));
-            wavesLevel.Add(2, new waveManager(1, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(0, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(1, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(2, new waveManager(1, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(3, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(4, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(5, new waveManager(2, 30, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(1.0)));
@@ -236,13 +236,13 @@ namespace TowerCraft3D
                 if (!started)
                 {
                     Components.Remove(cameraMain);
-                    //Components.Remove(spriteManager);
+                    Components.Remove(spriteManager);
 
                     cameraMain = new Camera(this, new Vector3(0, 200, 199), new Vector3(0, -5, 1), Vector3.Up, MainScreen, true, worldSize);
-                    //spriteManager = new SpriteManager(this);
+                    spriteManager = new SpriteManager(this);
 
                     Components.Add(cameraMain);
-                    //Components.Add(spriteManager);
+                    Components.Add(spriteManager);
                     started = true;
                 }
                 if (Keyboard.GetState().IsKeyDown(Keys.U))
@@ -391,11 +391,11 @@ namespace TowerCraft3D
 
                pair.Key.Update();
                //spriteManager.updateLifeBarsMonsters(0, percentage, pair.Key.getPosition(), cameraMain, MainScreen);
-                //TileCoord monsterLocation
-                //    =
-                //    new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
+               TileCoord monsterLocation
+                   =
+                   new TileCoord((int)Math.Floor((pair.Key.getPosition().X + 10) / 20.0), (int)Math.Floor((pair.Key.getPosition().Z + 10) / 20.0));
 
-                //map.GetTile(monsterLocation).addEntity(pair.Key);
+               map.GetTile(monsterLocation).addEntity(pair.Key);
                 // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
                 if (pair.Key.hitColony)
                 {
@@ -437,7 +437,7 @@ namespace TowerCraft3D
             //updates projectile list
             foreach (KeyValuePair<projectile, bool> pair in projectiles)
             {
-                pair.Key.Update();
+                pair.Key.Update(gameTime);
 
                 TileCoord projectileLocation
                     =
@@ -632,7 +632,7 @@ namespace TowerCraft3D
             //Selected tile
             chosenTile = cameraMain.getCurrentTC();
             SelectionTile.setPosition(new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20));
-
+            SelectionTile.DrawModel(cameraMain);
             #endregion
 
             #region Draw Monsters, towers, bullets
@@ -672,35 +672,19 @@ namespace TowerCraft3D
             {
                 //guntower
                 case 0:                    
-                    projectiles.Add(new projectile(ref bullet, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Bullet(ref bullet, ref boundingBox, position, direction), true);
                     break;
                 //missile tower
                 case 1:
-                    projectiles.Add(new projectile(ref missile, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Missile(ref missile, ref boundingBox, position, direction), true);
                     break;
                 //chicken tower
                 case 2:
-                    projectiles.Add(new projectile(ref egg, ref boundingBox, position, direction), true);
+                    projectiles.Add(new Egg(ref egg, ref boundingBox, position, direction), true);
                     break;
                 //explosions!
                 case 3:
-                    projectiles.Add(new projectile(ref explosion, ref boundingBox, position, direction), true);
-                    explosions.Add(new ParticleExplosion(GraphicsDevice,
-                               position,
-                               random.Next(
-                                   particleExplosionSettings.minLife,
-                                   particleExplosionSettings.maxLife),
-                               random.Next(
-                                   particleExplosionSettings.minRoundTime,
-                                   particleExplosionSettings.maxRoundTime),
-                               random.Next(
-                                   particleExplosionSettings.minParticlesPerRound,
-                                   particleExplosionSettings.maxParticlesPerRound),
-                               random.Next(
-                                   particleExplosionSettings.minParticles,
-                                   particleExplosionSettings.maxParticles),
-                               explosionColorsTexture, particleSettings,
-                               explosionEffect), true);
+                    projectiles.Add(new Explosion(ref explosion, ref boundingBox, position, direction), true);
                     break;
 
             }

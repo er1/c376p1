@@ -30,7 +30,7 @@ namespace TowerCraft3D
         public Game game {get; set;}
 
         public tower(ref Model temp, Vector3 location, TileCoord currentTC)
-            : base(temp)
+            : base(ref temp)
         {
 
             position = location;

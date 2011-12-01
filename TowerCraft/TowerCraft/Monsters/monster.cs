@@ -22,7 +22,7 @@ namespace TowerCraft3D
         public TileCoord tc { get; set; }
 
         public monster(ref Model temp, Vector3 location, Vector3 newDirection)
-            : base(temp)
+            : base(ref temp)
         {
             world = Matrix.CreateTranslation(location);
             direction = newDirection*move;

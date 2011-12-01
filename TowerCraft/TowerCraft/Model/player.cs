@@ -30,7 +30,7 @@ namespace TowerCraft3D
         static Random random = new Random(); //random number (used with function)
         #endregion
         public player(ref Model temp, Vector3 location, int WorldSize)
-            : base(temp)
+            : base(ref temp)
         {
             position = location;
             worldSize = WorldSize;
