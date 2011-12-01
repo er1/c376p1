@@ -142,7 +142,7 @@ namespace TowerCraft3D
             // resource management
             resourcemanager = new ResourceManager();
             gatherzone = new GatherZone(resourcemanager);
-            worldBox = new world();
+            
             base.Initialize();
 
         }     
@@ -152,6 +152,7 @@ namespace TowerCraft3D
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
                 #region world stuff
+                worldBox = new world();
                 boxTexture = Content.Load<Texture2D>(@"Textures\\background\\back512");
                 
                 worldBox.setCubeVertices(worldSize);
@@ -620,8 +621,6 @@ namespace TowerCraft3D
                 //effect.VertexColorEnabled = true;
                 effect.Texture = boxTexture;
                 effect.TextureEnabled = true;
-
-
 
                 // Begin effect and draw for each pass
                 foreach (EffectPass pass in effect.CurrentTechnique.Passes)
