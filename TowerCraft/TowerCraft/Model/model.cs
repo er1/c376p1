@@ -40,6 +40,7 @@ namespace TowerCraft3D
         private static int totalID = 0;
         private int modelID;
         Matrix[] transforms;
+        //Matrix[] instancedModelBones;
         public model(ref Model newModel)
         {
             this.currentModel = newModel;
@@ -49,6 +50,10 @@ namespace TowerCraft3D
             //this.location = newLocation;
             box = UpdateBoundingBox(this.getModel(), this.getWorld());
             transforms = new Matrix[currentModel.Bones.Count];
+
+            currentModel.CopyAbsoluteBoneTransformsTo(transforms);
+            //instancedModelBones = new Matrix[instancedModel.Bones.Count];
+
         }
 
         public bool IsCollision(model model2)

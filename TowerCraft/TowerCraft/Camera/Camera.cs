@@ -31,7 +31,6 @@ namespace TowerCraft3D
         private float move = 5.0f;
         private float movePitchYaw = 8.0f;
         Viewport viewport;
-        bool moveAllowed = false;
         float maxPitch = MathHelper.PiOver2; //90 degree
         float currentPitch = 0;
         TileCoord currentTC;
@@ -54,10 +53,9 @@ namespace TowerCraft3D
             CreateLootAt();
             viewport = NewViewport;
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)viewport.Width / (float)viewport.Height, 1, 800);
-            moveAllowed = move;
             timer = TimeSpan.FromSeconds(0.3);
             moveable = true;
-            Frustum = new BoundingFrustum(view * projection);
+            
 
 
         }
@@ -107,109 +105,109 @@ namespace TowerCraft3D
         public override void Update(GameTime gameTime)
         {
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
+            
 
-            if (moveAllowed)
-            {
                 // TODO: Add your update code here
-                
 
-                //Translation and Strafing
-                if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                if (((Game1)Game).gameState == 1)
                 {
-                    cameraPosition += cameraDirection * move;
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                {
-                    cameraPosition -= cameraDirection * move;
-                }
-                if (cameraPosition.X >= -200)
-                {
-                    if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                    //Translation and Strafing
+                    if (Keyboard.GetState().IsKeyDown(Keys.Up))
                     {
-                        cameraPosition += Vector3.Cross(cameraUp, cameraDirection) * move;
+                        cameraPosition += cameraDirection * move;
                     }
-                    int test = (int)((gamePadState.ThumbSticks.Left.X * 3));
-                    cameraPosition += new Vector3(1,0,0)* test;
-                }
-                if (cameraPosition.X <= 200)
-                {
-                    if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                    if (Keyboard.GetState().IsKeyDown(Keys.Down))
                     {
-                        cameraPosition -= Vector3.Cross(cameraUp, cameraDirection) * move;
+                        cameraPosition -= cameraDirection * move;
                     }
-                    int test = (int)((gamePadState.ThumbSticks.Left.X * 3));
-                    cameraPosition += new Vector3(1, 0, 0) * test;
-                }
-
-                timer -= gameTime.ElapsedGameTime;
-                if ((timer <= TimeSpan.Zero) && (!moveable))
-                {
-                    //Reset Timer
-                    timer = TimeSpan.FromSeconds(0.3);
-                    moveable = true;
-                }
-
-                if (((Keyboard.GetState().IsKeyDown(Keys.W))||(gamePadState.DPad.Up == ButtonState.Pressed)) && (currentTC.y > -4) && moveable)
-                {
-                    currentTC.y--;
-                    moveable = false;
-                }
-                if (((Keyboard.GetState().IsKeyDown(Keys.S))||(gamePadState.DPad.Down == ButtonState.Pressed)) && (currentTC.y < 3) && moveable)
-                {
-                    currentTC.y++;
-                    moveable = false;
-
-                }
-                if (((Keyboard.GetState().IsKeyDown(Keys.D))||(gamePadState.DPad.Right == ButtonState.Pressed)) && (currentTC.x < 0) && moveable)
-                {
-                    currentTC.x++;
-                    moveable = false;
-
-                }
-                if (((Keyboard.GetState().IsKeyDown(Keys.A))||(gamePadState.DPad.Left == ButtonState.Pressed)) && (currentTC.x > -19) && moveable)
-                {
-                    currentTC.x--;
-                    moveable = false;
-
-                }
-
-
-                // Yaw rotation
-                if (Keyboard.GetState().IsKeyDown(Keys.J))
-                {
-                    cameraDirection = Vector3.Transform(cameraDirection,
-                    Matrix.CreateFromAxisAngle(cameraUp, (-MathHelper.PiOver4 / 150) * -movePitchYaw));
-
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.L))
-                {
-                    cameraDirection = Vector3.Transform(cameraDirection,
-                    Matrix.CreateFromAxisAngle(cameraUp, (-MathHelper.PiOver4 / 150) * movePitchYaw));
-
-                }
-                //Pitch rotation
-                if (Keyboard.GetState().IsKeyDown(Keys.K))
-                {
-                    float pitchRotation = (MathHelper.PiOver4 / 180) * movePitchYaw;
-                    if (Math.Abs(currentPitch + pitchRotation) < maxPitch)
+                    if (cameraPosition.X >= -200)
                     {
-                        cameraDirection = Vector3.Transform(cameraDirection, Matrix.CreateFromAxisAngle(Vector3.Cross(cameraUp, cameraDirection), pitchRotation));
-                        currentPitch += pitchRotation;
+                        if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                        {
+                            cameraPosition += Vector3.Cross(cameraUp, cameraDirection) * move;
+                        }
+                        int test = (int)((gamePadState.ThumbSticks.Left.X * 3));
+                        cameraPosition += new Vector3(1, 0, 0) * test;
                     }
-                }
-                if (Keyboard.GetState().IsKeyDown(Keys.I))
-                {
-                    float pitchRotation = (MathHelper.PiOver4 / 180) * -movePitchYaw;
-                    if (Math.Abs(currentPitch + pitchRotation) < maxPitch)
+                    if (cameraPosition.X <= 200)
                     {
-                        cameraDirection = Vector3.Transform(cameraDirection, Matrix.CreateFromAxisAngle(Vector3.Cross(cameraUp, cameraDirection), pitchRotation));
-                        currentPitch += pitchRotation;
+                        if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                        {
+                            cameraPosition -= Vector3.Cross(cameraUp, cameraDirection) * move;
+                        }
+                        int test = (int)((gamePadState.ThumbSticks.Left.X * 3));
+                        cameraPosition += new Vector3(1, 0, 0) * test;
                     }
-                }
 
-                CreateLootAt();
-                Frustum = new BoundingFrustum(view * projection);
-            }
+                    timer -= gameTime.ElapsedGameTime;
+                    if ((timer <= TimeSpan.Zero) && (!moveable))
+                    {
+                        //Reset Timer
+                        timer = TimeSpan.FromSeconds(0.3);
+                        moveable = true;
+                    }
+
+                    if (((Keyboard.GetState().IsKeyDown(Keys.W)) || (gamePadState.DPad.Up == ButtonState.Pressed)) && (currentTC.y > -4) && moveable)
+                    {
+                        currentTC.y--;
+                        moveable = false;
+                    }
+                    if (((Keyboard.GetState().IsKeyDown(Keys.S)) || (gamePadState.DPad.Down == ButtonState.Pressed)) && (currentTC.y < 3) && moveable)
+                    {
+                        currentTC.y++;
+                        moveable = false;
+
+                    }
+                    if (((Keyboard.GetState().IsKeyDown(Keys.D)) || (gamePadState.DPad.Right == ButtonState.Pressed)) && (currentTC.x < 0) && moveable)
+                    {
+                        currentTC.x++;
+                        moveable = false;
+
+                    }
+                    if (((Keyboard.GetState().IsKeyDown(Keys.A)) || (gamePadState.DPad.Left == ButtonState.Pressed)) && (currentTC.x > -19) && moveable)
+                    {
+                        currentTC.x--;
+                        moveable = false;
+
+                    }
+
+
+                    // Yaw rotation
+                    if (Keyboard.GetState().IsKeyDown(Keys.J))
+                    {
+                        cameraDirection = Vector3.Transform(cameraDirection,
+                        Matrix.CreateFromAxisAngle(cameraUp, (-MathHelper.PiOver4 / 150) * -movePitchYaw));
+
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.L))
+                    {
+                        cameraDirection = Vector3.Transform(cameraDirection,
+                        Matrix.CreateFromAxisAngle(cameraUp, (-MathHelper.PiOver4 / 150) * movePitchYaw));
+
+                    }
+                    //Pitch rotation
+                    if (Keyboard.GetState().IsKeyDown(Keys.K))
+                    {
+                        float pitchRotation = (MathHelper.PiOver4 / 180) * movePitchYaw;
+                        if (Math.Abs(currentPitch + pitchRotation) < maxPitch)
+                        {
+                            cameraDirection = Vector3.Transform(cameraDirection, Matrix.CreateFromAxisAngle(Vector3.Cross(cameraUp, cameraDirection), pitchRotation));
+                            currentPitch += pitchRotation;
+                        }
+                    }
+                    if (Keyboard.GetState().IsKeyDown(Keys.I))
+                    {
+                        float pitchRotation = (MathHelper.PiOver4 / 180) * -movePitchYaw;
+                        if (Math.Abs(currentPitch + pitchRotation) < maxPitch)
+                        {
+                            cameraDirection = Vector3.Transform(cameraDirection, Matrix.CreateFromAxisAngle(Vector3.Cross(cameraUp, cameraDirection), pitchRotation));
+                            currentPitch += pitchRotation;
+                        }
+                    }
+
+                    CreateLootAt();
+                }
+            
             base.Update(gameTime);
         }
     }
