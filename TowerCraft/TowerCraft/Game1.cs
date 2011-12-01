@@ -39,10 +39,7 @@ namespace TowerCraft3D
         bool started = false;
         public int gameState = 0;
 
-        //Game variables
-        //Viewport viewport;
         Map map;
-
         TileCoord chosenTile;
         Colony mainBase; 
 
@@ -145,7 +142,7 @@ namespace TowerCraft3D
             // resource management
             resourcemanager = new ResourceManager();
             gatherzone = new GatherZone(resourcemanager);
-
+            worldBox = new world();
             base.Initialize();
 
         }     
@@ -156,7 +153,7 @@ namespace TowerCraft3D
 
                 #region world stuff
                 boxTexture = Content.Load<Texture2D>(@"Textures\\background\\back512");
-                worldBox = new world();
+                
                 worldBox.setCubeVertices(worldSize);
                 // Set vertex data in VertexBuffer
                 vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionTexture), worldBox.getCubeVertices().Length, BufferUsage.None);
