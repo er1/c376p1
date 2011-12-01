@@ -49,8 +49,6 @@ namespace TowerCraft3D
             //this.location = newLocation;
             box = UpdateBoundingBox(this.getModel(), this.getWorld());
             transforms = new Matrix[currentModel.Bones.Count];
-            currentModel.CopyAbsoluteBoneTransformsTo(transforms);
-            instancedModelBones = new Matrix[instancedModel.Bones.Count];
         }
 
         public bool IsCollision(model model2)
@@ -176,7 +174,7 @@ namespace TowerCraft3D
                     effect.View = cam.view;
                     effect.Projection = cam.projection;
                 }
-
+                
                 mesh.Draw();
             }
             

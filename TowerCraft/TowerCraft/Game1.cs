@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using TowerCraft;
 
 namespace TowerCraft3D
 {
@@ -21,6 +22,9 @@ namespace TowerCraft3D
         public Camera cameraMain { get; protected set; }
         public Viewport MainScreen;
        
+        public ResourceManager resourcemanager;
+        public GatherZone gatherzone;
+
         public int worldWidth;
         public int worldHeight;
         public int worldSize{get;protected set;}
@@ -132,6 +136,10 @@ namespace TowerCraft3D
             chosenTile = cameraMain.getCurrentTC();
             this.IsFixedTimeStep = true;
             //this.TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 60);  
+
+            // resource management
+            resourcemanager = new ResourceManager();
+            gatherzone = new GatherZone(resourcemanager);
 
             base.Initialize();
 
@@ -285,11 +293,17 @@ namespace TowerCraft3D
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
             
             #region Update Level
-            //Level 1
+            //Levels stuff
+            if (LIFE <= 0)
+            {
+                //YOU LOSE
+                gameState = 0;
+            }
+
             if (currentWave < wavesLevel.Count)
             {
                 wavesLevel[currentWave].UpdateWave(gameTime);
-               spriteManager.drawHUD(wavesLevel[currentWave].levelTimer, wavesLevel[currentWave].level, curResource);
+                spriteManager.drawHUD(wavesLevel[currentWave].levelTimer, wavesLevel[currentWave].level, curResource);
                 //Check if this Waves Timer is done or monsters are all dead (so wave is done)
                 if ((wavesLevel[currentWave].levelDone && wavesLevel[currentWave].spawn <= 1))
                 {
@@ -308,7 +322,7 @@ namespace TowerCraft3D
                     if (chance == 1)
                     {
                         monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
-                       spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
+                        spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                     if (chance == 2)
                     {
@@ -326,6 +340,11 @@ namespace TowerCraft3D
                         spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                     }
                 }
+            }
+            else
+            {
+                // YOU WIN
+                gameState = 0;
             }
             #endregion
             
@@ -571,7 +590,7 @@ namespace TowerCraft3D
             #endregion
 
             #region Update Ressource Manager
-            //gatherzone.update();
+            gatherzone.update();
             #endregion
         }
         protected override void Draw(GameTime gameTime)
@@ -659,6 +678,8 @@ namespace TowerCraft3D
             {
                 temp.Key.Draw(cameraMain);
             }
+
+            gatherzone.draw(cameraMain);
 
             base.Draw(gameTime);
         }
