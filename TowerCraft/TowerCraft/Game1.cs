@@ -237,7 +237,7 @@ namespace TowerCraft3D
         }     
         protected override void Update(GameTime gameTime)
         {
-            
+            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
             #region Menu (GAMESTATES)
             //menu
             if (gameState == 0)
@@ -295,7 +295,7 @@ namespace TowerCraft3D
             //GAMESTATE 1 = playing
             if (gameState == 1)
             {
-                GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
+                
 
                 #region Update Level
                 //Level 1
@@ -313,26 +313,7 @@ namespace TowerCraft3D
                     //If Level isn't done then check the Timer to add monsters at invervals
                     else if (wavesLevel[currentWave].canSpawn && wavesLevel[currentWave].spawn > 0)
                     {
-/*
-                        monsters.Add(new monster4(ref Monster4, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
-                        spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
-                    }
-                }
-            }
-            else
-            {
-                // YOU WIN
-                gameState = 0;
-            }
-            #endregion
-            
-            #region Update Drawing the Map
-            //update Map
-            map.Update();
-            //Selected tile
-            chosenTile = cameraMain.getCurrentTC();
-            SelectionTile.Update();
-*/
+
                         int z = RandomNumber(-80, 60);
                         wavesLevel[currentWave].spawn--;
                         wavesLevel[currentWave].canSpawn = false;
@@ -361,7 +342,7 @@ namespace TowerCraft3D
                     }
                 }
                 #endregion
-//
+
 
                 #region Update Drawing the Map
                 //update Map
@@ -488,8 +469,6 @@ namespace TowerCraft3D
                 }
                 #endregion
 
-                #endregion
-
                 #region Collision detection
                 //CheckBoxCollision();
                 foreach (KeyValuePair<TileCoord, Tile> pair in map.getDictionary())
@@ -604,20 +583,13 @@ namespace TowerCraft3D
                 }
                 #endregion
 
+                #endregion
+
                 #region Update Ressource Manager
                 //gatherzone.update();
                 #endregion
             }
 
-            if ((Keyboard.GetState().IsKeyUp(Keys.Space)) && (Keyboard.GetState().IsKeyUp(Keys.Q)) && (Keyboard.GetState().IsKeyUp(Keys.E)) && (gamePadState.Buttons.A == ButtonState.Released))
-            {
-                SpaceBar = false;
-            }
-            #endregion
-
-            #region Update Ressource Manager
-            gatherzone.update();
-            #endregion
         }
         protected override void Draw(GameTime gameTime)
         {
@@ -681,7 +653,7 @@ namespace TowerCraft3D
 
                 #region Draw Monsters, towers, bullets
 
-                gatherzone.draw(cameraMain);
+                //gatherzone.draw(cameraMain);
 
                 //Draw Monsters
                 foreach (KeyValuePair<monster, bool> pair in monsters)
@@ -705,7 +677,7 @@ namespace TowerCraft3D
                     temp.Key.Draw(cameraMain);
                 }
             }
->>>>>>> d44e2d3f26f4791c423e0f7b2474a095103e7b4c
+
             base.Draw(gameTime);
         }
 
