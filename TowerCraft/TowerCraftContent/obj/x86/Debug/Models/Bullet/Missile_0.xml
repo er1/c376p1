@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Cylinder01</Name>
     <Identity>
-      <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Missile.X</SourceFilename>
+      <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Missile.X</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 -2.98023224E-08 -1.1920929E-07 0 1.192093E-07 7.549791E-08 1.00000012 0 -2.98023171E-08 -1.00000012 7.54979155E-08 0 0 0 -1.28840792 1</Transform>
@@ -33,7 +33,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Missile.X</SourceFilename>
+        <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Missile.X</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

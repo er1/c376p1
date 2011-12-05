@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\Particlefx.xnb</Output>
-      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\Particlefx.xnb</Output>
+      <Time>2011-12-05T14:55:46.401985-05:00</Time>
     </Item>
     <Item>
       <Source>Font\GameFont.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Font\GameFont.xnb</Output>
-      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Font\GameFont.xnb</Output>
+      <Time>2011-12-05T14:55:46.407983-05:00</Time>
     </Item>
     <Item>
       <Source>Models\BoundingBox.X</Source>
@@ -25,13 +25,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBox.xnb</Output>
-      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBox.xnb</Output>
+      <Time>2011-12-05T14:55:46.413974-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\BoundingBox_0.xml</Key>
-        <Value>2011-11-30T14:32:57.8144-05:00</Value>
+        <Value>2011-12-05T15:08:56.2694291-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBoxText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBoxText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Bullet\bullet.x</Source>
@@ -39,13 +39,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\bullet.xnb</Output>
-      <Time>2011-11-30T14:32:18.857-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\bullet.xnb</Output>
+      <Time>2011-12-05T14:55:46.524998-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Bullet\bullet_0.xml</Key>
-        <Value>2011-11-30T14:32:58.7192-05:00</Value>
+        <Value>2011-12-05T15:08:56.8622025-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Bullet\Egg.X</Source>
@@ -53,13 +53,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Egg.xnb</Output>
-      <Time>2011-11-30T14:32:18.701-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Egg.xnb</Output>
+      <Time>2011-12-05T14:55:46.431983-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Bullet\Egg_0.xml</Key>
-        <Value>2011-11-30T14:32:59.3588-05:00</Value>
+        <Value>2011-12-05T15:08:57.3925787-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Bullet\Explosion.X</Source>
@@ -67,13 +67,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Explosion.xnb</Output>
-      <Time>2011-11-30T14:32:18.7478-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Explosion.xnb</Output>
+      <Time>2011-12-05T14:55:46.464978-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Bullet\Explosion_0.xml</Key>
-        <Value>2011-11-30T14:33:00.0608-05:00</Value>
+        <Value>2011-12-05T15:08:57.9229549-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\ExplosionText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\ExplosionText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Bullet\Missile.X</Source>
@@ -81,13 +81,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Missile.xnb</Output>
-      <Time>2011-11-30T14:32:18.8414-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\Missile.xnb</Output>
+      <Time>2011-12-05T14:55:46.510992-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Bullet\Missile_0.xml</Key>
-        <Value>2011-11-30T14:33:00.9032-05:00</Value>
+        <Value>2011-12-05T15:08:58.5625262-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Char\Char.x</Source>
@@ -95,18 +95,18 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Char.xnb</Output>
-      <Time>2011-11-30T14:32:18.8726-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Char.xnb</Output>
+      <Time>2011-12-05T14:55:46.698001-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Char\Char_0.xml</Key>
-        <Value>2011-11-30T14:33:01.6364-05:00</Value>
+        <Value>2011-12-05T15:08:59.1085017-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Map\Colony.X</Source>
@@ -114,13 +114,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\Colony.xnb</Output>
-      <Time>2011-11-30T14:32:18.9194-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\Colony.xnb</Output>
+      <Time>2011-12-05T14:55:47.010023-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Map\Colony_0.xml</Key>
-        <Value>2011-11-30T14:33:03.3056-05:00</Value>
+        <Value>2011-12-05T15:09:00.2004527-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\ColonyText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\ColonyText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Map\Tile.X</Source>
@@ -128,13 +128,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\Tile.xnb</Output>
-      <Time>2011-11-30T14:32:19.013-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\Tile.xnb</Output>
+      <Time>2011-12-05T14:55:47.054036-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Map\Tile_0.xml</Key>
-        <Value>2011-11-30T14:33:04.1636-05:00</Value>
+        <Value>2011-12-05T15:09:00.8088254-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\TileText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\TileText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\monster1.X</Source>
@@ -142,13 +142,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster1.xnb</Output>
-      <Time>2011-11-30T14:32:19.4342-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster1.xnb</Output>
+      <Time>2011-12-05T14:55:47.439078-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\monster1_0.xml</Key>
-        <Value>2011-11-30T14:33:04.7876-05:00</Value>
+        <Value>2011-12-05T15:09:01.308003-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1Text_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1Text_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Monster1\monster1.x</Source>
@@ -156,18 +156,18 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\monster1.xnb</Output>
-      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\monster1.xnb</Output>
+      <Time>2011-12-05T14:55:47.146055-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Monster1\monster1_0.xml</Key>
-        <Value>2011-11-30T14:33:05.3804-05:00</Value>
+        <Value>2011-12-05T15:09:01.775982-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Request>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\monster2.X</Source>
@@ -175,13 +175,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster2.xnb</Output>
-      <Time>2011-11-30T14:32:19.4498-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster2.xnb</Output>
+      <Time>2011-12-05T14:55:47.460071-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\monster2_0.xml</Key>
-        <Value>2011-11-30T14:33:06.9092-05:00</Value>
+        <Value>2011-12-05T15:09:02.9303302-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster2Text_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster2Text_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\monster3.X</Source>
@@ -189,13 +189,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster3.xnb</Output>
-      <Time>2011-11-30T14:32:19.4654-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster3.xnb</Output>
+      <Time>2011-12-05T14:55:47.464075-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\monster3_0.xml</Key>
-        <Value>2011-11-30T14:33:07.6268-05:00</Value>
+        <Value>2011-12-05T15:09:03.4607064-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster3Text_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster3Text_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\monster4.X</Source>
@@ -203,13 +203,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster4.xnb</Output>
-      <Time>2011-11-30T14:32:19.4966-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\monster4.xnb</Output>
+      <Time>2011-12-05T14:55:47.472073-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\monster4_0.xml</Key>
-        <Value>2011-11-30T14:33:08.3756-05:00</Value>
+        <Value>2011-12-05T15:09:03.9910826-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster4Text_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster4Text_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Towers\CannonTower\CannonTower.X</Source>
@@ -217,13 +217,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTower.xnb</Output>
-      <Time>2011-11-30T14:32:19.1222-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTower.xnb</Output>
+      <Time>2011-12-05T14:55:47.192048-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Towers\CannonTower\CannonTower_0.xml</Key>
-        <Value>2011-11-30T14:33:08.9528-05:00</Value>
+        <Value>2011-12-05T15:09:04.4746609-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTowerText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTowerText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Towers\ChickenTower\ChickenTower.X</Source>
@@ -231,13 +231,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTower.xnb</Output>
-      <Time>2011-11-30T14:32:19.169-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTower.xnb</Output>
+      <Time>2011-12-05T14:55:47.22605-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Towers\ChickenTower\ChickenTower_0.xml</Key>
-        <Value>2011-11-30T14:33:09.7172-05:00</Value>
+        <Value>2011-12-05T15:09:05.0674343-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTowerText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTowerText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Towers\Electric\ElectricTower.X</Source>
@@ -245,13 +245,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTower.xnb</Output>
-      <Time>2011-11-30T14:32:19.2314-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTower.xnb</Output>
+      <Time>2011-12-05T14:55:47.271044-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Towers\Electric\ElectricTower_0.xml</Key>
-        <Value>2011-11-30T14:33:10.5908-05:00</Value>
+        <Value>2011-12-05T15:09:05.6446084-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTowerText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTowerText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Towers\FireTower\FireTower.x</Source>
@@ -259,13 +259,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTower.xnb</Output>
-      <Time>2011-11-30T14:32:19.2782-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTower.xnb</Output>
+      <Time>2011-12-05T14:55:47.311049-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Towers\FireTower\FireTower_0.xml</Key>
-        <Value>2011-11-30T14:33:11.2304-05:00</Value>
+        <Value>2011-12-05T15:09:06.1593853-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTowerText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTowerText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Towers\GunTower\Bullet.X</Source>
@@ -273,13 +273,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\Bullet.xnb</Output>
-      <Time>2011-11-30T14:32:19.3094-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\Bullet.xnb</Output>
+      <Time>2011-12-05T14:55:47.336059-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Towers\GunTower\Bullet_0.xml</Key>
-        <Value>2011-11-30T14:33:11.948-05:00</Value>
+        <Value>2011-12-05T15:09:06.7209601-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\BulletText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\BulletText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Towers\GunTower\GunTower.X</Source>
@@ -287,13 +287,13 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTower.xnb</Output>
-      <Time>2011-11-30T14:32:19.325-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTower.xnb</Output>
+      <Time>2011-12-05T14:55:47.355064-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Towers\GunTower\GunTower_0.xml</Key>
-        <Value>2011-11-30T14:33:12.6812-05:00</Value>
+        <Value>2011-12-05T15:09:07.2045384-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTowerText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTowerText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\Towers\MissileTower\MissileTower.X</Source>
@@ -301,13 +301,41 @@
       <Importer>XImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTower.xnb</Output>
-      <Time>2011-11-30T14:32:19.3718-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTower.xnb</Output>
+      <Time>2011-12-05T14:55:47.40306-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\Towers\MissileTower\MissileTower_0.xml</Key>
-        <Value>2011-11-30T14:33:13.586-05:00</Value>
+        <Value>2011-12-05T15:09:07.8129111-05:00</Value>
       </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTowerText_0.xnb</Request>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTowerText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Mineral.X</Source>
+      <Name>Models\Mineral</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Mineral.xnb</Output>
+      <Time>2011-12-05T14:56:10.27507-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Mineral_0.xml</Key>
+        <Value>2011-12-05T15:09:08.3900852-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\MineralText_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Models\Workers.x</Source>
+      <Name>Models\Workers</Name>
+      <Importer>XImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Workers.xnb</Output>
+      <Time>2011-12-05T14:56:10.287074-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\Models\Workers_0.xml</Key>
+        <Value>2011-12-05T15:09:08.8580642-05:00</Value>
+      </Dependency>
+      <Request>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\WorkersText_0.xnb</Request>
     </Item>
     <Item>
       <Source>Effect\Particle.png</Source>
@@ -315,8 +343,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\Particle.xnb</Output>
-      <Time>2011-11-30T14:32:18.6542-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\Particle.xnb</Output>
+      <Time>2011-12-05T14:55:46.383968-05:00</Time>
     </Item>
     <Item>
       <Source>Effect\ParticleColors.png</Source>
@@ -324,8 +352,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\ParticleColors.xnb</Output>
-      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Effect\ParticleColors.xnb</Output>
+      <Time>2011-12-05T14:55:46.396971-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\background\back512.png</Source>
@@ -333,8 +361,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\background\back512.xnb</Output>
-      <Time>2011-11-30T14:32:19.6214-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\background\back512.xnb</Output>
+      <Time>2011-12-05T14:55:47.600083-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\life\life100.png</Source>
@@ -342,8 +370,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life100.xnb</Output>
-      <Time>2011-11-30T14:32:19.637-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life100.xnb</Output>
+      <Time>2011-12-05T14:55:47.606083-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\life\life25.png</Source>
@@ -351,8 +379,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life25.xnb</Output>
-      <Time>2011-11-30T14:32:19.638-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life25.xnb</Output>
+      <Time>2011-12-05T14:55:47.610079-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\life\life50.png</Source>
@@ -360,8 +388,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life50.xnb</Output>
-      <Time>2011-11-30T14:32:19.649-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life50.xnb</Output>
+      <Time>2011-12-05T14:55:47.613085-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\life\life75.png</Source>
@@ -369,8 +397,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life75.xnb</Output>
-      <Time>2011-11-30T14:32:19.655-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\life\life75.xnb</Output>
+      <Time>2011-12-05T14:55:47.623083-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\SCHUD\Starcraft1.png</Source>
@@ -378,8 +406,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft1.xnb</Output>
-      <Time>2011-11-30T14:32:19.5278-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft1.xnb</Output>
+      <Time>2011-12-05T14:55:47.51407-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\SCHUD\Starcraft2.png</Source>
@@ -387,8 +415,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft2.xnb</Output>
-      <Time>2011-11-30T14:32:19.5278-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft2.xnb</Output>
+      <Time>2011-12-05T14:55:47.521081-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\SCHUD\Starcraft3.png</Source>
@@ -396,8 +424,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft3.xnb</Output>
-      <Time>2011-11-30T14:32:19.559-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft3.xnb</Output>
+      <Time>2011-12-05T14:55:47.530067-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\SCHUD\Starcraft4.png</Source>
@@ -405,15 +433,67 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft4.xnb</Output>
-      <Time>2011-11-30T14:32:19.5746-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\SCHUD\Starcraft4.xnb</Output>
+      <Time>2011-12-05T14:55:47.54308-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\background\MenuScreen.png</Source>
+      <Name>Textures\background\MenuScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\background\MenuScreen.xnb</Output>
+      <Time>2011-12-05T14:56:12.519283-05:00</Time>
+    </Item>
+    <Item>
+      <Source>cube.fbx</Source>
+      <Name>cube</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\cube.xnb</Output>
+      <Time>2011-12-05T14:55:47.640076-05:00</Time>
+      <Dependency>
+        <Key>obj\x86\Debug\cube_0.xml</Key>
+        <Value>2011-12-05T15:09:10.4803914-05:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>Music\Lament.mp3</Source>
+      <Name>Music\Lament</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Lament.xnb</Output>
+      <Extra>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Lament.wma</Extra>
+      <Time>2011-12-05T14:56:10.809123-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Robots_FTW.mp3</Source>
+      <Name>Music\Robots_FTW</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Robots_FTW.xnb</Output>
+      <Extra>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Robots_FTW.wma</Extra>
+      <Time>2011-12-05T14:56:11.770218-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\Science_is_Fun.mp3</Source>
+      <Name>Music\Science_is_Fun</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Science_is_Fun.xnb</Output>
+      <Extra>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Science_is_Fun.wma</Extra>
+      <Time>2011-12-05T14:56:12.441276-05:00</Time>
     </Item>
     <Item>
       <Source>Models\BoundingBox.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\BoundingBox_0.xml</Output>
-      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+      <Time>2011-12-05T14:55:46.413974-05:00</Time>
     </Item>
     <Item>
       <Source>Models\BoundingBoxText.jpg</Source>
@@ -428,15 +508,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBoxText_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.6854-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\BoundingBoxText_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.41997-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Bullet\bullet.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Bullet\bullet_0.xml</Output>
-      <Time>2011-11-30T14:32:18.857-05:00</Time>
+      <Time>2011-12-05T14:55:46.524998-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Bullet\BulletText.jpg</Source>
@@ -451,15 +531,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.701-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\BulletText_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.427975-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Bullet\Egg.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Bullet\Egg_0.xml</Output>
-      <Time>2011-11-30T14:32:18.701-05:00</Time>
+      <Time>2011-12-05T14:55:46.431983-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Bullet\EggText.jpg</Source>
@@ -474,15 +554,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.7478-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\EggText_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.454976-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Bullet\Explosion.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Bullet\Explosion_0.xml</Output>
-      <Time>2011-11-30T14:32:18.7478-05:00</Time>
+      <Time>2011-12-05T14:55:46.464978-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Bullet\ExplosionText.jpg</Source>
@@ -497,15 +577,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\ExplosionText_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.8258-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\ExplosionText_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.506983-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Bullet\Missile.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Bullet\Missile_0.xml</Output>
-      <Time>2011-11-30T14:32:18.8414-05:00</Time>
+      <Time>2011-12-05T14:55:46.510992-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Bullet\MissileText.jpg</Source>
@@ -520,15 +600,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.8414-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Bullet\MissileText_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.515981-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Char.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Char\Char_0.xml</Output>
-      <Time>2011-11-30T14:32:18.8726-05:00</Time>
+      <Time>2011-12-05T14:55:46.698001-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Head.bmp</Source>
@@ -543,8 +623,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.8882-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Head_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.771007-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Arm2.bmp</Source>
@@ -559,8 +639,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.8726-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm2_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.689999-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Leg2.bmp</Source>
@@ -575,8 +655,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.9038-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg2_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.922017-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Arm1.bmp</Source>
@@ -591,8 +671,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.8726-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Arm1_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.616989-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\Leg1.bmp</Source>
@@ -607,8 +687,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.8882-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\Leg1_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.848016-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Char\torso.bmp</Source>
@@ -623,15 +703,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Output>
-      <Time>2011-11-30T14:32:18.9038-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Char\torso_0.xnb</Output>
+      <Time>2011-12-05T14:55:46.996031-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Map\Colony.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Map\Colony_0.xml</Output>
-      <Time>2011-11-30T14:32:18.9194-05:00</Time>
+      <Time>2011-12-05T14:55:47.010023-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Map\ColonyText.jpg</Source>
@@ -646,15 +726,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\ColonyText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.013-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\ColonyText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.05104-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Map\Tile.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Map\Tile_0.xml</Output>
-      <Time>2011-11-30T14:32:19.013-05:00</Time>
+      <Time>2011-12-05T14:55:47.054036-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Map\TileText.jpg</Source>
@@ -669,15 +749,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\TileText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0286-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Map\TileText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.073037-05:00</Time>
     </Item>
     <Item>
       <Source>Models\monster1.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\monster1_0.xml</Output>
-      <Time>2011-11-30T14:32:19.4342-05:00</Time>
+      <Time>2011-12-05T14:55:47.439078-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1Text.jpg</Source>
@@ -692,15 +772,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1Text_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0754-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1Text_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.159046-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\monster1.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Monster1\monster1_0.xml</Output>
-      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+      <Time>2011-12-05T14:55:47.146055-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy6_auv.jpg</Source>
@@ -715,8 +795,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy6_auv_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.139045-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy5_auv.jpg</Source>
@@ -731,8 +811,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy5_auv_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.130037-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy4_auv.jpg</Source>
@@ -747,8 +827,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0442-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy4_auv_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.121034-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_copy3_auv.jpg</Source>
@@ -763,8 +843,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0286-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_copy3_auv_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.11204-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube2_auv.jpg</Source>
@@ -779,8 +859,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0286-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube2_auv_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.094034-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster1\cube1_auv.jpg</Source>
@@ -795,15 +875,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0286-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster1\cube1_auv_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.084048-05:00</Time>
     </Item>
     <Item>
       <Source>Models\monster2.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\monster2_0.xml</Output>
-      <Time>2011-11-30T14:32:19.4498-05:00</Time>
+      <Time>2011-12-05T14:55:47.460071-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster2Text.jpg</Source>
@@ -818,15 +898,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster2Text_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.0754-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster2Text_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.165041-05:00</Time>
     </Item>
     <Item>
       <Source>Models\monster3.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\monster3_0.xml</Output>
-      <Time>2011-11-30T14:32:19.4654-05:00</Time>
+      <Time>2011-12-05T14:55:47.464075-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster3Text.jpg</Source>
@@ -841,15 +921,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster3Text_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.091-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster3Text_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.172046-05:00</Time>
     </Item>
     <Item>
       <Source>Models\monster4.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\monster4_0.xml</Output>
-      <Time>2011-11-30T14:32:19.4966-05:00</Time>
+      <Time>2011-12-05T14:55:47.472073-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Monster4Text.png</Source>
@@ -864,15 +944,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster4Text_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.1222-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Monster4Text_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.180041-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\CannonTower\CannonTower.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Towers\CannonTower\CannonTower_0.xml</Output>
-      <Time>2011-11-30T14:32:19.1222-05:00</Time>
+      <Time>2011-12-05T14:55:47.192048-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\CannonTower\CannonTowerText.jpg</Source>
@@ -887,15 +967,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTowerText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.169-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\CannonTower\CannonTowerText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.211045-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\ChickenTower\ChickenTower.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Towers\ChickenTower\ChickenTower_0.xml</Output>
-      <Time>2011-11-30T14:32:19.169-05:00</Time>
+      <Time>2011-12-05T14:55:47.22605-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\ChickenTower\ChickenTowerText.jpg</Source>
@@ -910,15 +990,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTowerText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.2314-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\ChickenTower\ChickenTowerText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.263046-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\Electric\ElectricTower.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Towers\Electric\ElectricTower_0.xml</Output>
-      <Time>2011-11-30T14:32:19.2314-05:00</Time>
+      <Time>2011-12-05T14:55:47.271044-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\Electric\ElectricTowerText.jpg</Source>
@@ -933,15 +1013,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTowerText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.2782-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\Electric\ElectricTowerText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.288052-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\FireTower\FireTower.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Towers\FireTower\FireTower_0.xml</Output>
-      <Time>2011-11-30T14:32:19.2782-05:00</Time>
+      <Time>2011-12-05T14:55:47.311049-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\FireTower\FireTowerText.jpg</Source>
@@ -956,15 +1036,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTowerText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.3094-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\FireTower\FireTowerText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.330053-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\GunTower\Bullet.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Towers\GunTower\Bullet_0.xml</Output>
-      <Time>2011-11-30T14:32:19.3094-05:00</Time>
+      <Time>2011-12-05T14:55:47.336059-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\GunTower\BulletText.jpg</Source>
@@ -979,15 +1059,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\BulletText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.325-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\BulletText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.347067-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\GunTower\GunTower.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Towers\GunTower\GunTower_0.xml</Output>
-      <Time>2011-11-30T14:32:19.325-05:00</Time>
+      <Time>2011-12-05T14:55:47.355064-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\GunTower\GunTowerText.jpg</Source>
@@ -1002,15 +1082,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTowerText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.3406-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\GunTower\GunTowerText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.370058-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\MissileTower\MissileTower.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Towers\MissileTower\MissileTower_0.xml</Output>
-      <Time>2011-11-30T14:32:19.3718-05:00</Time>
+      <Time>2011-12-05T14:55:47.40306-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Towers\MissileTower\MissileTowerText.jpg</Source>
@@ -1025,90 +1105,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTowerText_0.xnb</Output>
-      <Time>2011-11-30T14:32:19.403-05:00</Time>
-    </Item>
-    <Item>
-      <Source>cube.fbx</Source>
-      <Name>cube</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\cube.xnb</Output>
-      <Time>2011-11-30T17:24:52.0359-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\cube_0.xml</Key>
-        <Value>2011-11-30T17:28:16.0465-05:00</Value>
-      </Dependency>
-    </Item>
-    <Item>
-      <Source>cube.fbx</Source>
-      <Importer>FbxImporter</Importer>
-      <Options>IntermediateFile, DontCacheImportedData</Options>
-      <Output>obj\x86\Debug\cube_0.xml</Output>
-      <Time>2011-11-30T17:24:52.0359-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Textures\background\MenuScreen.png</Source>
-      <Name>Textures\background\MenuScreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Textures\background\MenuScreen.xnb</Output>
-      <Time>2011-11-30T20:43:23.8176-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\Mineral.X</Source>
-      <Name>Models\Mineral</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Mineral.xnb</Output>
-      <Time>2011-11-30T22:31:55.7368-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Mineral_0.xml</Key>
-        <Value>2011-11-30T22:45:32.376-05:00</Value>
-      </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\MineralText_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\Workers.x</Source>
-      <Name>Models\Workers</Name>
-      <Importer>XImporter</Importer>
-      <Processor>ModelProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Workers.xnb</Output>
-      <Time>2011-11-30T22:31:55.7418-05:00</Time>
-      <Dependency>
-        <Key>obj\x86\Debug\Models\Workers_0.xml</Key>
-        <Value>2011-11-30T22:45:33.522-05:00</Value>
-      </Dependency>
-      <Request>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\WorkersText_0.xnb</Request>
-    </Item>
-    <Item>
-      <Source>Models\MineralText.png</Source>
-      <Name>Models\MineralText</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\MineralText.xnb</Output>
-      <Time>2011-11-30T22:31:55.7398-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Models\WorkersText.png</Source>
-      <Name>Models\WorkersText</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\WorkersText.xnb</Output>
-      <Time>2011-11-30T22:31:55.7438-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\Towers\MissileTower\MissileTowerText_0.xnb</Output>
+      <Time>2011-12-05T14:55:47.420073-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Mineral.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Mineral_0.xml</Output>
-      <Time>2011-11-30T22:31:55.7368-05:00</Time>
+      <Time>2011-12-05T14:56:10.27507-05:00</Time>
     </Item>
     <Item>
       <Source>Models\MineralText.png</Source>
@@ -1123,15 +1128,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\MineralText_0.xnb</Output>
-      <Time>2011-11-30T22:31:55.7398-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\MineralText_0.xnb</Output>
+      <Time>2011-12-05T14:56:10.281081-05:00</Time>
     </Item>
     <Item>
       <Source>Models\Workers.x</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\Workers_0.xml</Output>
-      <Time>2011-11-30T22:31:55.7418-05:00</Time>
+      <Time>2011-12-05T14:56:10.287074-05:00</Time>
     </Item>
     <Item>
       <Source>Models\WorkersText.png</Source>
@@ -1146,38 +1151,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\WorkersText_0.xnb</Output>
-      <Time>2011-11-30T22:31:55.7438-05:00</Time>
+      <Output>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Models\WorkersText_0.xnb</Output>
+      <Time>2011-12-05T14:56:10.291074-05:00</Time>
     </Item>
     <Item>
-      <Source>Music\Lament.mp3</Source>
-      <Name>Music\Lament</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Lament.xnb</Output>
-      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Lament.wma</Extra>
-      <Time>2011-12-01T01:42:40.107-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Music\Robots_FTW.mp3</Source>
-      <Name>Music\Robots_FTW</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Robots_FTW.xnb</Output>
-      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Robots_FTW.wma</Extra>
-      <Time>2011-12-01T01:42:40.395-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Music\Science_is_Fun.mp3</Source>
-      <Name>Music\Science_is_Fun</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Science_is_Fun.xnb</Output>
-      <Extra>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\Music\Science_is_Fun.wma</Extra>
-      <Time>2011-12-01T01:42:40.586-05:00</Time>
+      <Source>cube.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\x86\Debug\cube_0.xml</Output>
+      <Time>2011-12-05T14:55:47.640076-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -1185,39 +1167,39 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraft\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-09-21T13:38:03.7425-04:00</Value>
+        <Value>2010-12-02T15:13:24.6585231-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

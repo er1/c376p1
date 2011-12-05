@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Box01</Name>
     <Identity>
-      <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Towers\FireTower\FireTower.x</SourceFilename>
+      <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Towers\FireTower\FireTower.x</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 0.60753274 0 0 0 0 1 0 0.03418808 0 0.03418808 1</Transform>
@@ -33,7 +33,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Towers\FireTower\FireTower.x</SourceFilename>
+        <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Towers\FireTower\FireTower.x</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

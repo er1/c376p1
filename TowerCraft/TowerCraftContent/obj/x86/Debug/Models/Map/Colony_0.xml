@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Tube01</Name>
     <Identity>
-      <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Map\Colony.X</SourceFilename>
+      <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Map\Colony.X</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 -9.26104846E-08 0.568439066 0 0 -1 -1.62920685E-07 0 0.582718968 0 79.67094 1</Transform>
@@ -33,7 +33,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Map\Colony.X</SourceFilename>
+        <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Map\Colony.X</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

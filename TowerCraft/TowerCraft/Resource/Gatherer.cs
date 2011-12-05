@@ -41,7 +41,8 @@ namespace TowerCraft
 		    if (mining) {
                 if (targetMineral != null)
                 {
-                    targetMineral.life--;
+                    // this is the speed at which minerals are mined
+                    targetMineral.life-=2;
 
                     if (targetMineral.life <= 0)
                     {

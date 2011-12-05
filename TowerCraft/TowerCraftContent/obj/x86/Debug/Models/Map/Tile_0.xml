@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>Box01</Name>
     <Identity>
-      <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Map\Tile.X</SourceFilename>
+      <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Map\Tile.X</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 -0.0293045044 0 -0.236225128 1</Transform>
@@ -33,7 +33,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Map\Tile.X</SourceFilename>
+        <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Map\Tile.X</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

@@ -2,7 +2,7 @@
 <XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
   <Asset Type="Graphics:NodeContent">
     <Identity>
-      <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Explosion.X</SourceFilename>
+      <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Explosion.X</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -64,7 +64,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Explosion.X</SourceFilename>
+        <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Explosion.X</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>
@@ -77,7 +77,7 @@
     </Resource>
     <Resource ID="#Resource2" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\kylechan\Desktop\Tower\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Explosion.X</SourceFilename>
+        <SourceFilename>C:\Users\er_cha\Desktop\c376p1\TowerCraft\TowerCraftContent\Models\Bullet\Explosion.X</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

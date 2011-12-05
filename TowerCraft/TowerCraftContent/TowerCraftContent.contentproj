@@ -383,16 +383,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\MineralText.png">
+    <None Include="Models\MineralText.png">
       <Name>MineralText</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Models\WorkersText.png">
+    </None>
+    <None Include="Models\WorkersText.png">
       <Name>WorkersText</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-    </Compile>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Music\Lament.mp3">

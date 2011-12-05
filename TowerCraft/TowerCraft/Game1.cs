@@ -36,6 +36,7 @@ namespace TowerCraft3D
 
         #region Key input release bools
         bool aButton = false;
+        bool bButton = false;
         bool dPadUp = false;
         bool dPadDown = false;
         bool started = false;
@@ -229,21 +230,21 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(0, new waveManager(1, 10, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(3.0)));
-            wavesLevel.Add(1, new waveManager(1, 10, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(3.0)));
-            wavesLevel.Add(2, new waveManager(1, 10, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(2.0)));
-            wavesLevel.Add(3, new waveManager(2, 20, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(2.0)));
-            wavesLevel.Add(4, new waveManager(2, 20, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(2.0)));
-            wavesLevel.Add(5, new waveManager(2, 20, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(6, new waveManager(3, 30, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(7, new waveManager(3, 30, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(8, new waveManager(3, 30, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(9, new waveManager(4, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(10, new waveManager(4, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(11, new waveManager(4, 40, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(12, new waveManager(5, 50, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(13, new waveManager(5, 50, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
-            wavesLevel.Add(14, new waveManager(5, 50, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(0, new waveManager(1, 10, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(1, new waveManager(1, 15, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(2.0)));
+            wavesLevel.Add(2, new waveManager(1, 15, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.5)));
+            wavesLevel.Add(3, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.5)));
+            wavesLevel.Add(4, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.5)));
+            wavesLevel.Add(5, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(6, new waveManager(3, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(7, new waveManager(3, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(8, new waveManager(3, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(9, new waveManager(4, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(10, new waveManager(4, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(11, new waveManager(4, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(12, new waveManager(5, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(13, new waveManager(5, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(14, new waveManager(5, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.50)));
 
             #endregion
 
@@ -296,18 +297,12 @@ namespace TowerCraft3D
                     gameState = 0;
                     
                 }
-#if XBOX360
-                if (gamePadState.Buttons.B == ButtonState.Released)
+
+                if ((gamePadState.Buttons.B == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Enter)))
                 {
                     aButton = false;
                 }
-#endif
-#if !XBOX360
-                if (Keyboard.GetState().IsKeyUp(Keys.Enter))
-                {
-                    aButton = false;
-                }
-#endif
+
             }
             if (gameState == 0)
             {
@@ -375,34 +370,25 @@ namespace TowerCraft3D
                         this.Exit();
                     }
                 }
-                #if XBOX360
-                if (gamePadState.Buttons.A == ButtonState.Released)
+
+                if ((gamePadState.Buttons.B == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Z)))
+                {
+                    bButton = false;
+                }
+                if ((gamePadState.Buttons.A == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Enter)))
                 {
                     aButton = false;
                 }
-                if (gamePadState.DPad.Up == ButtonState.Released)
+                if ((gamePadState.DPad.Up == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Up)))
                 {
                     dPadUp = false;
                 }
-                if (gamePadState.DPad.Down == ButtonState.Released)
+                if ((gamePadState.DPad.Down == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Down)))
                 {
                     dPadDown = false;
                 }
-                #endif
-                #if !XBOX360
-                if ((Keyboard.GetState().IsKeyUp(Keys.Up)))
-                {
-                    dPadUp = false;
-                }
-                if ((Keyboard.GetState().IsKeyUp(Keys.Down)))
-                {
-                    dPadDown = false;
-                }
-                if (Keyboard.GetState().IsKeyUp(Keys.Enter))
-                {
-                    aButton = false;
-                }
-                #endif
+
+
             }
             #endregion
             // game
@@ -803,6 +789,24 @@ namespace TowerCraft3D
                 #endregion
 
                 #region Tower Adding
+
+                if ((Keyboard.GetState().IsKeyDown(Keys.Z)) || (gamePadState.Buttons.B == ButtonState.Pressed)) {
+                    if (bButton == false) {
+                        if (resourcemanager.resourceA >= 6) {
+                            Gatherer g = new Gatherer(gatherzone, new Vector3(100, 8, 0));
+                            g.targetPosition = new Vector3(250, 8, 0);
+                            gatherzone.add(g);
+                            resourcemanager.resourceA -= 10;
+                        }
+                    }
+                    bButton = true;
+                }
+
+                if ((Keyboard.GetState().IsKeyUp(Keys.Z)) && (gamePadState.Buttons.B == ButtonState.Released)) {
+                    bButton = false;
+                }
+
+
                 //Temporary way to add towers.
                 if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
                     ((gamePadState.Buttons.A == ButtonState.Pressed) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar))
