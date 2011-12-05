@@ -229,7 +229,7 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(0, new waveManager(1, 10, TimeSpan.FromMinutes(1.0), TimeSpan.FromSeconds(3.0)));
+            wavesLevel.Add(0, new waveManager(1, 10, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(3.0)));
             wavesLevel.Add(1, new waveManager(1, 10, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(3.0)));
             wavesLevel.Add(2, new waveManager(1, 10, TimeSpan.FromMinutes(1.5), TimeSpan.FromSeconds(2.0)));
             wavesLevel.Add(3, new waveManager(2, 20, TimeSpan.FromMinutes(2.0), TimeSpan.FromSeconds(2.0)));
@@ -574,10 +574,10 @@ namespace TowerCraft3D
                     wavesLevel[currentWave].UpdateWave(gameTime);
                     spriteManager.drawHUD(wavesLevel[currentWave].levelTimer, wavesLevel[currentWave].level, curResource);
                     //Check if this Waves Timer is done or monsters are all dead (so wave is done)
-                    if ((wavesLevel[currentWave].levelDone && wavesLevel[currentWave].spawn <= 1&& monsters.Count<1 ))
+                    if (((wavesLevel[currentWave].levelDone && wavesLevel[currentWave].spawn <= 1) && monsters.Count<1 ))
                     {
                         //Game.Exit();
-                        System.GC.Collect();
+                        //System.GC.Collect();
                         currentWave++;
                     }
                     //If Level isn't done then check the Timer to add monsters at invervals
@@ -692,9 +692,10 @@ namespace TowerCraft3D
                     // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
                     //if (pair.Key.hitColony)
                     //{
-                    //    pair.Key.life -= 100;
+                        
+                    //    //pair.Key.life -= 100;
                     //    //spriteManager.removeLifeBarsMonsters(pair.Key);
-                    //    LIFE -= 10;
+                    //    //LIFE -= 10;
                     //}
                 }
                 #endregion
