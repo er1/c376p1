@@ -12,8 +12,8 @@ namespace TowerCraft3D
     {
 
 
-        public monster2(ref Model temp, Vector3 location, Vector3 newDirection)
-            : base(ref temp, location, newDirection)
+        public monster2(ref Model temp, Vector3 location, Vector3 newDirection, Game1 _game)
+            : base(ref temp, location, newDirection, _game)
         {
             type = 2;
             life = 200;

@@ -13,7 +13,7 @@ namespace TowerCraft3D
         //  Sprite texture 
         public Texture2D texture { get; set; } //  sprite texture, read-only property
         public Vector2 position; //position vector
-        public Vector2 size;    //  sprite size in pixels
+        //public Vector2 size;    //  sprite size in pixels
         public Vector2 velocity { get; set; }  //  sprite velocity
         private Vector2 screenSize { get; set; } //  screen size
 

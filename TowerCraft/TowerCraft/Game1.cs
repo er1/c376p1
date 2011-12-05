@@ -87,7 +87,7 @@ namespace TowerCraft3D
         #endregion
 
         #region Variables...
-        int percentage;
+        //int percentage;
         int currentWave;
         int chance;
         static Random random = new Random();
@@ -163,7 +163,7 @@ namespace TowerCraft3D
 
             // resource management
             resourcemanager = new ResourceManager();
-            gatherzone = new GatherZone(resourcemanager);
+            gatherzone = new GatherZone(resourcemanager, this);
             
             base.Initialize();
 
@@ -220,10 +220,10 @@ namespace TowerCraft3D
             {
                 for (int j = -4; j < 4; j++)
                 {
-                    tiles.Add(new monster(ref tile, new Vector3(i * -20, 0, j * 20), new Vector3(0, 0, 0)), true);
+                    tiles.Add(new monster(ref tile, new Vector3(i * -20, 0, j * 20), new Vector3(0, 0, 0), this), true);
                 }
             }
-            SelectionTile = new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0));
+            SelectionTile = new monster(ref tile, new Vector3(chosenTile.x * 20, 2, chosenTile.y * 20), new Vector3(0, 0, 0), this);
             #endregion
 
             #region Load incoming waves
@@ -422,7 +422,7 @@ namespace TowerCraft3D
                     projectiles.Clear();
                     monsters.Clear();
                     resourcemanager = new ResourceManager();
-                    gatherzone = new GatherZone(resourcemanager);
+                    gatherzone = new GatherZone(resourcemanager, this);
                     chosenTile = new TileCoord(0, 0);
                     started = false;
                     base.Initialize();
@@ -521,7 +521,7 @@ namespace TowerCraft3D
                         projectiles.Clear();
                         monsters.Clear();
                         resourcemanager = new ResourceManager();
-                        gatherzone = new GatherZone(resourcemanager);
+                        gatherzone = new GatherZone(resourcemanager, this);
                         chosenTile = new TileCoord(0, 0);
                         started = false;
                         base.Initialize();
@@ -591,22 +591,22 @@ namespace TowerCraft3D
 
                         if (chance == 1)
                         {
-                            monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
+                            monsters.Add(new monster1(ref Monster1, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0), this), true);
                             spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                         }
                         if (chance == 2)
                         {
-                            monsters.Add(new monster2(ref Monster2, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
+                            monsters.Add(new monster2(ref Monster2, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0), this), true);
                             spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                         }
                         if (chance == 3)
                         {
-                            monsters.Add(new monster3(ref Monster3, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
+                            monsters.Add(new monster3(ref Monster3, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0), this), true);
                             spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                         }
                         if (chance >= 4)
                         {
-                            monsters.Add(new monster4(ref Monster4, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0)), true);
+                            monsters.Add(new monster4(ref Monster4, new Vector3(-390 + 1, 5, z), new Vector3(1, 0, 0), this), true);
                             spriteManager.addLifeBarsMonsters(new Vector2(-390 + 1, z));
                         }
                     }
@@ -657,6 +657,7 @@ namespace TowerCraft3D
                 #region monster
                 foreach (KeyValuePair<monster, bool> pair in monsters)
                 {
+                    /*
                     percentage = 0;
 
                     if ((pair.Key.life / 100) * 100 == 100)
@@ -679,7 +680,7 @@ namespace TowerCraft3D
                     {
                         percentage = 25;
                     }
-
+                    */
 
                     pair.Key.Update(gameTime);
                     //spriteManager.updateLifeBarsMonsters(0, percentage, pair.Key.getPosition(), cameraMain, MainScreen);
@@ -689,12 +690,12 @@ namespace TowerCraft3D
 
                     map.GetTile(monsterLocation).addEntity(pair.Key);
                     // HIT THE COLONY NOT FINISHED ( REMOVE LIFE AND BLAH BLAH)
-                    if (pair.Key.hitColony)
-                    {
-                        pair.Key.life -= 100;
-                        //spriteManager.removeLifeBarsMonsters(pair.Key);
-                        LIFE -= 10;
-                    }
+                    //if (pair.Key.hitColony)
+                    //{
+                    //    pair.Key.life -= 100;
+                    //    //spriteManager.removeLifeBarsMonsters(pair.Key);
+                    //    LIFE -= 10;
+                    //}
                 }
                 #endregion
 

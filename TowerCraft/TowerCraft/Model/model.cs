@@ -24,7 +24,7 @@ namespace TowerCraft3D
         
 
         // Instanced model rendering.
-        InstancingTechnique instancingTechnique = InstancingTechnique.HardwareInstancing;
+        //InstancingTechnique instancingTechnique = InstancingTechnique.HardwareInstancing;
 
         const int InitialInstanceCount = 1000;
 

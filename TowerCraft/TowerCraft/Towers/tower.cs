@@ -15,11 +15,11 @@ namespace TowerCraft3D
         public int towerType { get; set; }
         private Vector3 position;
         public TileCoord tc { get; set; }
-        private int upgradeLevel;
+        //private int upgradeLevel;
         protected float range;
         protected TileCoord currentTargetTC;
 
-        private monster target;
+        //private monster target;
         public TimeSpan timer { get; set; }
         public Map map;
         private const float TILESIZE = 10;
@@ -35,7 +35,7 @@ namespace TowerCraft3D
 
             position = location;
             tc = currentTC;
-            upgradeLevel = 0;
+            //upgradeLevel = 0;
             isDead = false;
             range = 10;
             life = 20;

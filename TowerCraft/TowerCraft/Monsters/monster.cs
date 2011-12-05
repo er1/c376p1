@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
+using TowerCraft;
 
 namespace TowerCraft3D
 {
@@ -20,11 +20,17 @@ namespace TowerCraft3D
         public bool isDead {get; protected set;}
         public int type;
         public TileCoord tc { get; set; }
-        double distance = 0.02f;
+        //double distance = 0.02f;
 
-        public monster(ref Model temp, Vector3 location, Vector3 newDirection)
+        public Game1 game;
+
+        public virtual float Size { get { return 20; } }
+
+        public monster(ref Model temp, Vector3 location, Vector3 newDirection, Game1 _game)
             : base(temp)
         {
+            game = _game;
+
             direction = newDirection;
             initialDirection = newDirection;
             world = Matrix.CreateRotationY((float)Math.PI/2) * Matrix.CreateTranslation(location);
@@ -42,7 +48,7 @@ namespace TowerCraft3D
 
         public  void Update(GameTime time)
         {
-            if (world.M41 >= 0)
+            if (world.M41 >= 400)
             { 
                 hitColony = true;
             }
@@ -54,6 +60,21 @@ namespace TowerCraft3D
             double elapsedTime = time.ElapsedGameTime.TotalMilliseconds;
             direction += initialDirection* (move*(float) elapsedTime);
             world *= Matrix.CreateTranslation(direction);
+
+            List<Gatherer> gatherers = game.gatherzone.gatherers;
+            List<Gatherer> killList = new List<Gatherer>();
+            
+            foreach (Gatherer g in gatherers) {
+                if ((g.Size + this.Size) >= (g.position - getPosition()).Length()) {
+                    isDead = true;
+                    killList.Add(g);
+                }
+            }
+
+            foreach (Gatherer g in killList) {
+                gatherers.Remove(g);
+            }
+
         }
         public Vector3 getDirection()
         {

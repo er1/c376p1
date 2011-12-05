@@ -29,6 +29,8 @@ namespace TowerCraft
         public bool targetSet = false;
 	    public Vector3 targetPosition = Vector3.Zero;
 
+        public float Size { get { return 20; } }
+
 	    public Gatherer(GatherZone _gatherzone, Vector3 _position) {
             gatherzone = _gatherzone;
 		    position = _position;

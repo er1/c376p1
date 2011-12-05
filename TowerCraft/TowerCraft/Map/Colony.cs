@@ -10,9 +10,9 @@ namespace TowerCraft3D
 {
     class Colony : model
     {
-        float worldSize = 100f;
+        //float worldSize = 100f;
         protected Matrix rotation = Matrix.Identity;
-        int lives;
+        //int lives;
 
         public Colony(ref Model temp, Vector3 location)
             : base(temp)
@@ -20,7 +20,7 @@ namespace TowerCraft3D
             //
             world = Matrix.CreateTranslation(location) * Matrix.CreateRotationY((float)-Math.PI / 2) * Matrix.CreateRotationZ((float)Math.PI / 2); 
             //initialDirection = newDirection;
-            lives = 100;
+            //lives = 100;
         }
 
  

@@ -24,7 +24,7 @@ namespace TowerCraft3D
         protected float maxPitch = MathHelper.PiOver4 / 2;
         protected float currentPitch = 0;
         //protected Vector3 location = new Vector3(0, 0, 0);
-        protected Vector3 direction;
+        //protected Vector3 direction;
         Vector3 position;
         //protected float moveBalloons = 0.5f;
         static Random random = new Random(); //random number (used with function)
@@ -105,10 +105,10 @@ namespace TowerCraft3D
             #endregion
         }
         //GETTERS
-        public Vector3 getDirection()
-        {
-            return direction;
-        }
+        //public Vector3 getDirection()
+        //{
+        //    return direction;
+        //}
 
         public Vector3 getPosition()
         {

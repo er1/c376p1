@@ -17,6 +17,9 @@ namespace TowerCraft
         public ResourceManager manager;
         public List<Gatherer> gatherers;
         public List<Mineral> minerals;
+
+        public Game1 game;
+
         protected Random rand = new Random();
 
         protected List<Gatherer> gatherersAddQueue;
@@ -25,8 +28,9 @@ namespace TowerCraft
         protected List<Gatherer> gatherersDeleteQueue;
         protected List<Mineral> mineralsDeleteQueue;
 
-        public GatherZone(ResourceManager _rm)
+        public GatherZone(ResourceManager _rm, Game1 _game)
         {
+            game = _game;
             manager = _rm;
 
             gatherers = new List<Gatherer>();
@@ -92,6 +96,7 @@ namespace TowerCraft
                 m.update();
             updateLists();
 
+            game.LIFE = gatherers.Count() * 100;
 
         }
 

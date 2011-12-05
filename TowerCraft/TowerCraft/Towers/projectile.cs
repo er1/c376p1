@@ -11,7 +11,7 @@ namespace TowerCraft3D
 {
     class projectile : model
     {
-        float worldSize = 100f;
+        //float worldSize = 100f;
         protected float angle;
         protected Matrix rotation = Matrix.Identity;
         //protected Vector3 location = new Vector3(0, 0, 0);
