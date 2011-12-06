@@ -40,6 +40,8 @@ namespace TowerCraft3D
         bool dPadUp = false;
         bool dPadDown = false;
         bool started = false;
+        bool xButton = false;
+        bool yButton = false;
         #endregion
 
         #region States variables
@@ -413,34 +415,19 @@ namespace TowerCraft3D
                     started = false;
                     base.Initialize();
                 }
-#if XBOX360
-                if (gamePadState.Buttons.A == ButtonState.Released)
+
+                if ((gamePadState.Buttons.A == ButtonState.Released) && Keyboard.GetState().IsKeyUp(Keys.Enter))
                 {
                     aButton = false;
                 }
-                if (gamePadState.DPad.Up == ButtonState.Released)
+                if ((gamePadState.DPad.Up == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Up)))
                 {
                     dPadUp = false;
                 }
-                if (gamePadState.DPad.Down == ButtonState.Released)
+                if ((gamePadState.DPad.Down == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Down)))
                 {
                     dPadDown = false;
                 }
-#endif
-#if !XBOX360
-                if ((Keyboard.GetState().IsKeyUp(Keys.Up)))
-                {
-                    dPadUp = false;
-                }
-                if ((Keyboard.GetState().IsKeyUp(Keys.Down)))
-                {
-                    dPadDown = false;
-                }
-                if (Keyboard.GetState().IsKeyUp(Keys.Enter))
-                {
-                    aButton = false;
-                }
-#endif
 
             }
             #endregion
@@ -515,34 +502,19 @@ namespace TowerCraft3D
 
                 }
 
-#if XBOX360
-                if (gamePadState.Buttons.A == ButtonState.Released)
+                if ((gamePadState.Buttons.A == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Enter)))
                 {
                     aButton = false;
                 }
-                if (gamePadState.DPad.Up == ButtonState.Released)
+                if ((gamePadState.DPad.Up == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Up)))
                 {
                     dPadUp = false;
                 }
-                if (gamePadState.DPad.Down == ButtonState.Released)
+                if ((gamePadState.DPad.Down == ButtonState.Released) && (Keyboard.GetState().IsKeyUp(Keys.Down)))
                 {
                     dPadDown = false;
                 }
-#endif
-#if !XBOX360
-                if ((Keyboard.GetState().IsKeyUp(Keys.Up)))
-                {
-                    dPadUp = false;
-                }
-                if ((Keyboard.GetState().IsKeyUp(Keys.Down)))
-                {
-                    dPadDown = false;
-                }
-                if (Keyboard.GetState().IsKeyUp(Keys.Enter))
-                {
-                    aButton = false;
-                }
-#endif
+
             }
 #endregion
 
@@ -623,7 +595,7 @@ namespace TowerCraft3D
                 //Selecting Resources
                 if (curResource > 0)
                 {
-                    if (((gamePadState.Triggers.Left == 1) || (Keyboard.GetState().IsKeyDown(Keys.Q))) && !SpaceBar)// 
+                    if (((gamePadState.Buttons.X == ButtonState.Pressed) || (Keyboard.GetState().IsKeyDown(Keys.Q))) && !SpaceBar)// 
                     {
                         curResource--;
                         SpaceBar = true;
@@ -631,7 +603,7 @@ namespace TowerCraft3D
                 }
                 if (curResource < 5)
                 {
-                    if (((gamePadState.Triggers.Right == 1) || (Keyboard.GetState().IsKeyDown(Keys.E))) && !SpaceBar)// 
+                    if (((gamePadState.Buttons.Y == ButtonState.Pressed) || (Keyboard.GetState().IsKeyDown(Keys.E))) && !SpaceBar)// 
                     {
                         curResource++;
                         SpaceBar = true;
@@ -792,7 +764,7 @@ namespace TowerCraft3D
 
                 if ((Keyboard.GetState().IsKeyDown(Keys.Z)) || (gamePadState.Buttons.B == ButtonState.Pressed)) {
                     if (bButton == false) {
-                        if (resourcemanager.resourceA >= 6) {
+                        if (resourcemanager.resourceA >= 10) {
                             Gatherer g = new Gatherer(gatherzone, new Vector3(100, 8, 0));
                             g.targetPosition = new Vector3(250, 8, 0);
                             gatherzone.add(g);
@@ -861,16 +833,18 @@ namespace TowerCraft3D
                     }
 
                 }
-                #if !XBOX360
-                if ((Keyboard.GetState().IsKeyUp(Keys.Space)) && (Keyboard.GetState().IsKeyUp(Keys.Q)) && (Keyboard.GetState().IsKeyUp(Keys.E)) && (gamePadState.Buttons.A == ButtonState.Released))
+
+                if (
+                    (Keyboard.GetState().IsKeyUp(Keys.Space)) &&
+                    (Keyboard.GetState().IsKeyUp(Keys.Q)) &&
+                    (Keyboard.GetState().IsKeyUp(Keys.E)) &&
+                    (gamePadState.Buttons.A == ButtonState.Released) &&
+                    (gamePadState.Buttons.X == ButtonState.Released) &&
+                    (gamePadState.Buttons.Y == ButtonState.Released)
+                )
                 {
                     SpaceBar = false;
                 }
-                #endif
-                #if XBOX360
-                 if(gamePadState.Triggers.Left == 0&&gamePadState.Triggers.Right == 0)
-                    SpaceBar = false;           
-                #endif
 
                 #endregion
 
