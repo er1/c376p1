@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TowerCraft3D.Camera" Collapsed="true">
+    <Position X="39" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAEAAAAAEQCADEAAACAEABgAAQAAgQAACAAQgAA=</HashCode>
+      <FileName>Camera\Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.FrameRateCounter" Collapsed="true">
+    <Position X="40.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCEEAAAQAAAgAgACAAAAAAAAACIAAAAAAAgAAAAAQ=</HashCode>
+      <FileName>FrameRateCounter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Game1" Collapsed="true">
+    <Position X="42.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BjWROMICysAiB0AgmIAQGiIABhmABgh4kBZwSGAgADY=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.SpriteManager" Collapsed="true">
+    <Position X="44.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAYACAAAAAAAAwABAAACABigBgAAIMBAAAAEAQEgBgQ=</HashCode>
+      <FileName>Managers\SpriteManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.waveManager" Collapsed="true">
+    <Position X="39" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAEAAAAAAAAAEAACACAAABAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Managers\waveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Colony">
+    <Position X="25.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Map\Colony.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Map" Collapsed="true">
+    <Position X="39" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARQQEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Map\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.world" Collapsed="true">
+    <Position X="40.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAggAgAAAIAAAAAAACAAA=</HashCode>
+      <FileName>Map\world.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.model">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEEYAAAAiAAACAoAAAAgAAAAAAACMAACAAAAAAAAA=</HashCode>
+      <FileName>Model\model.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.player" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAAQAAAACAAECAICAmAAAAAEAAAAQAAAAQAAY=</HashCode>
+      <FileName>Model\player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Sprite" Collapsed="true">
+    <Position X="42.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAgAAAAAAIAACAAAAAgAAAAQAAAAAAAA=</HashCode>
+      <FileName>Model\Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.monster">
+    <Position X="32.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAUCIAgABAAAoACAAAAAAAACABABAIAIAAQAAAAAAAQ=</HashCode>
+      <FileName>Monsters\monster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.monster1">
+    <Position X="29.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monsters\monster1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.monster2">
+    <Position X="32" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monsters\monster2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.monster3">
+    <Position X="34" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monsters\monster3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.monster4">
+    <Position X="35.75" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="TowerCraft3D.monster" FixedToPoint="true">
+      <Path>
+        <Point X="33.375" Y="5.771" />
+        <Point X="33.375" Y="6" />
+        <Point X="33.844" Y="6" />
+        <Point X="33.844" Y="8.309" />
+        <Point X="35.75" Y="8.309" />
+        <Point X="35.75" Y="7.934" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Monsters\monster4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.ParticleExplosion" Collapsed="true">
+    <Position X="42.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQmFAAAAAAAAgBAAkAIMAAAAAAAAAQAACBUAEAAAIA=</HashCode>
+      <FileName>ParticleEffect\ParticleExplosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.ParticleSettings" Collapsed="true">
+    <Position X="46" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ParticleEffect\ParticleSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.ParticleExplosionSettings" Collapsed="true">
+    <Position X="44.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAACAAgAgAIAAACAAQAAAAAQ=</HashCode>
+      <FileName>ParticleEffect\ParticleSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Program" Collapsed="true">
+    <Position X="39" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Bullet">
+    <Position X="15" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.CanonTower">
+    <Position X="4.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\CanonTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.ChickenTower">
+    <Position X="7" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\ChickenTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Egg">
+    <Position X="20.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\Egg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.ElectricTower">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\ElectricTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Explosion">
+    <Position X="22.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\Explosion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.FireTower">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\FireTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.GunTower">
+    <Position X="2.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\GunTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Missile">
+    <Position X="17" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\Missile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.MissileTower">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\MissileTower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.projectile">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQiIAAABAAAIACAAACAAIAEAAAAAIAACAQAACBAAAQ=</HashCode>
+      <FileName>Towers\projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.resource">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAABACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Towers\resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.Tile" Collapsed="true">
+    <Position X="46" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABACAAAAAIAAAAAAEAAIAAAAAAAQACAAAAAACBAAI=</HashCode>
+      <FileName>Towers\Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft3D.tower">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUDMAAIAAAAFAAAAAAIMAAAIBAAAAAIAAAAAAEAAAA=</HashCode>
+      <FileName>Towers\tower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft.Gatherer" Collapsed="true">
+    <Position X="44.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAEAAAEAIAoAAAAIIAIAAAAAAAAQAAAAAACAAMAAA=</HashCode>
+      <FileName>Resource\Gatherer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft.GatherZone" Collapsed="true">
+    <Position X="46" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAECIAAAAAAAAAUAAIAAAAEAwAAAAAIBAAAAAAmAAA=</HashCode>
+      <FileName>Resource\GatherZone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft.Mineral" Collapsed="true">
+    <Position X="40.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAAAAAEAAIgIAAAAAAABAAAAAAACAEMAAA=</HashCode>
+      <FileName>Resource\Mineral.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerCraft.ResourceManager" Collapsed="true">
+    <Position X="40.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resource\ResourceManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TowerCraft3D.TileCoord" Collapsed="true">
+    <Position X="39" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Map\Map.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="TowerCraft3D.InstancingTechnique" Collapsed="true">
+    <Position X="39" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAA=</HashCode>
+      <FileName>Model\model.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
