@@ -12,7 +12,7 @@ using TowerCraft;
 
 namespace TowerCraft3D
 {
-    
+    //This is where most of the gameplay logic resides
     public class Game1 : Microsoft.Xna.Framework.Game
     {
 
@@ -232,19 +232,19 @@ namespace TowerCraft3D
             #region Load incoming waves
             //LOAD WAVE information for Level1
             //SELF NOTE - ADD AN EMPTY FIRST WAVE TO HAVE TIME TO MINE AND PUT STUFF UP
-            wavesLevel.Add(0, new waveManager(1, 10, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(2.0)));
-            wavesLevel.Add(1, new waveManager(1, 15, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(2.0)));
-            wavesLevel.Add(2, new waveManager(1, 15, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.5)));
-            wavesLevel.Add(3, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.5)));
-            wavesLevel.Add(4, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.5)));
-            wavesLevel.Add(5, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
+            wavesLevel.Add(0, new waveManager(1, 10, TimeSpan.FromMinutes(0.6), TimeSpan.FromSeconds(1.5)));
+            wavesLevel.Add(1, new waveManager(1, 15, TimeSpan.FromMinutes(0.6), TimeSpan.FromSeconds(1.4)));
+            wavesLevel.Add(2, new waveManager(1, 15, TimeSpan.FromMinutes(0.6), TimeSpan.FromSeconds(1.4)));
+            wavesLevel.Add(3, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.3)));
+            wavesLevel.Add(4, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.2)));
+            wavesLevel.Add(5, new waveManager(2, 20, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.1)));
             wavesLevel.Add(6, new waveManager(3, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
             wavesLevel.Add(7, new waveManager(3, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(8, new waveManager(3, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(1.0)));
-            wavesLevel.Add(9, new waveManager(4, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.75)));
+            wavesLevel.Add(8, new waveManager(3, 30, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.95)));
+            wavesLevel.Add(9, new waveManager(4, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.85)));
             wavesLevel.Add(10, new waveManager(4, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.75)));
             wavesLevel.Add(11, new waveManager(4, 40, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.75)));
-            wavesLevel.Add(12, new waveManager(5, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.50)));
+            wavesLevel.Add(12, new waveManager(5, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.60)));
             wavesLevel.Add(13, new waveManager(5, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.50)));
             wavesLevel.Add(14, new waveManager(5, 50, TimeSpan.FromMinutes(0.5), TimeSpan.FromSeconds(0.50)));
 
@@ -261,8 +261,9 @@ namespace TowerCraft3D
             explosionEffect.Parameters["theTexture"].SetValue(explosionTexture);
 
             #endregion
-            MediaPlayer.IsRepeating = true;
+            
             #region Load music
+            MediaPlayer.IsRepeating = true;
             menuMusic = Content.Load<Song>(@"Music\\Lament");
             gameMusic = Content.Load<Song>(@"Music\\Science_is_Fun");
             creditsMusic = Content.Load<Song>(@"Music\\Robots_FTW");
@@ -762,13 +763,14 @@ namespace TowerCraft3D
 
                 #region Tower Adding
 
+                //Add Gatherer
                 if ((Keyboard.GetState().IsKeyDown(Keys.Z)) || (gamePadState.Buttons.B == ButtonState.Pressed)) {
                     if (bButton == false) {
-                        if (resourcemanager.resourceA >= 10) {
+                        if (resourcemanager.resourceA >= 8) {
                             Gatherer g = new Gatherer(gatherzone, new Vector3(100, 8, 0));
                             g.targetPosition = new Vector3(250, 8, 0);
                             gatherzone.add(g);
-                            resourcemanager.resourceA -= 10;
+                            resourcemanager.resourceA -= 8;
                         }
                     }
                     bButton = true;
@@ -779,13 +781,14 @@ namespace TowerCraft3D
                 }
 
 
-                //Temporary way to add towers.
+                
                 if (((Keyboard.GetState().IsKeyDown(Keys.Space)) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar) ||
                     ((gamePadState.Buttons.A == ButtonState.Pressed) && (!map.GetTile(chosenTile).anyTower()) && !SpaceBar))
                 {
                     SpaceBar = true;
                     
                     tower towerToAdd;
+                    //Add Gun Tower
                     if ((curResource == 0) && (resourcemanager.resourceA >= 5))
                     {
                         resourcemanager.resourceA -= 5;
@@ -793,40 +796,45 @@ namespace TowerCraft3D
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 1) && (resourcemanager.resourceA >= 3) && (resourcemanager.resourceB >= 2))
+                    //Add Cannon Tower
+                    else if ((curResource == 1) && (resourcemanager.resourceA >= 5) && (resourcemanager.resourceB >= 8))
                     {
-                        resourcemanager.resourceA -= 3;
-                        resourcemanager.resourceB -= 2;
+                        resourcemanager.resourceA -= 5;
+                        resourcemanager.resourceB -= 8;
                         towerToAdd = new CanonTower(ref cannonTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 2) && (resourcemanager.resourceB >= 3) && (resourcemanager.resourceC >= 2))
+                    //Add missile tower
+                    else if ((curResource == 2) && (resourcemanager.resourceB >= 5) && (resourcemanager.resourceC >= 10))
                     {
-                        resourcemanager.resourceB -= 3;
-                        resourcemanager.resourceC -= 2;
+                        resourcemanager.resourceB -= 5;
+                        resourcemanager.resourceC -= 10;
                         towerToAdd = new MissileTower(ref missileTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 3) && (resourcemanager.resourceC >= 3) && (resourcemanager.resourceD >= 2))
+                    //Add Fire Tower
+                    else if ((curResource == 3) && (resourcemanager.resourceC >= 10) && (resourcemanager.resourceD >= 10))
                     {
-                        resourcemanager.resourceC -= 3;
-                        resourcemanager.resourceD -= 2;
+                        resourcemanager.resourceC -= 10;
+                        resourcemanager.resourceD -= 10;
                         towerToAdd = new FireTower(ref fireTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 4) && (resourcemanager.resourceC >= 5))
+                    //Add Electric Tower
+                    else if ((curResource == 4) && (resourcemanager.resourceC >= 15))
                     {
-                        resourcemanager.resourceC -= 5;
+                        resourcemanager.resourceC -= 15;
                         towerToAdd = new ElectricTower(ref electricTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);
                     }
-                    else if ((curResource == 5) && (resourcemanager.resourceD >= 5))
+                    //Add Chicken tower
+                    else if ((curResource == 5) && (resourcemanager.resourceD >= 20))
                     {
-                        resourcemanager.resourceD -= 5;
+                        resourcemanager.resourceD -= 20;
                         towerToAdd = new ChickenTower(ref chickenTower, (new Vector3(chosenTile.x * 20, 5, chosenTile.y * 20)), chosenTile);
                         towers.Add(towerToAdd, true);
                         map.GetTile(chosenTile).addEntity(towerToAdd);

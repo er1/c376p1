@@ -51,6 +51,7 @@ namespace TowerCraft3D
             if (world.M41 >= 400)
             { 
                 hitColony = true;
+                isDead = true;
             }
 
             if (life <= 0)

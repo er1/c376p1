@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TowerCraft3D
 {
+    //FROM Learning XNA by Aaron Reed
     class ParticleExplosion
     {
         // Particle arrays and vertex buffer
